@@ -101,7 +101,7 @@ const v7 = {
   gridAngle: 45
 }
 
-const cfg = v6
+const cfg = v5
 
 function drawRect(color, x, y, w, h, shadowColor, shadowBlur, gco)
 {
