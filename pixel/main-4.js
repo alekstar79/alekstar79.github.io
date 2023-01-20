@@ -132,7 +132,7 @@ class Dot
     let x = this.pos.x - size / 2
     let y = this.pos.y - size / 2
 
-    drawRect(color, x, y, size, size, color, blur, 'lighter')
+    drawRect(color, x, y, size, size, color, blur, 'normal')
   }
 
   moveDot()
