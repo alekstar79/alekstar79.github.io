@@ -114,8 +114,7 @@ class Particle
   }
 }
 
-;(function init()
-{
+;(function init() {
   bubbleTextArray = []
   adjustX = -3
   adjustY = -3
@@ -134,8 +133,7 @@ class Particle
   }
 })()
 
-;(function animate()
-{
+;(function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 
   for (let i = 0; i < bubbleTextArray.length; i++) {
