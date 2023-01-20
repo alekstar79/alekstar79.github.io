@@ -1,5 +1,3 @@
-/** @see https://www.youtube.com/watch?v=8lLqsFCe4-k */
-
 let body, num, array, width, context, logo, myElements, analyser, src, height
 
 width = 10
@@ -31,7 +29,7 @@ window.onclick = () => {
         src = context.createMediaStreamSource(stream)
         src.connect(analyser)
         loop()
-    }).catch(error => { /* eslint no-useless-escape:0 */
+    }).catch(error => {
         alert(error + '\r\n\ Отклонено. Страница будет обновлена!')
         location.reload()
     })
@@ -44,7 +42,7 @@ function loop()
 
     for (let i = 0; i < num; i++) {
         height = array[i + num]
+        myElements[i].style.opacity = `${0.008 * height}`
         myElements[i].style.minHeight = height + 'px'
-        myElements[i].style.opacity = .008 * height
     }
 }
