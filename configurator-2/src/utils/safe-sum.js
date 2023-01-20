@@ -9,12 +9,12 @@ import { SCREEN, PHRASE } from '../config.js'
  */
 export function safeSum(x, y, postfix = ' ₽')
 {
-    const prefix = window.innerWidth > SCREEN.MIN_WIDTH ? PHRASE.TOTAL_COST : ''
+  const prefix = window.innerWidth > SCREEN.MIN_WIDTH ? PHRASE.TOTAL_COST : ''
 
-    try {
+  try {
 
-        return prefix + eval(`${x} + ${y}`) + postfix
-    } catch (e) {
-        return prefix + (x || '0') + postfix
-    }
+    return prefix + eval(`${x} + ${y}`) + postfix
+  } catch (e) {
+    return prefix + (x || '0') + postfix
+  }
 }

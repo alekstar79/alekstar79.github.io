@@ -7,20 +7,20 @@ let debounceTimeout
  */
 export class Emitter
 {
-    constructor()
-    {
-        this.events = {}
-    }
+  constructor()
+  {
+    this.events = {}
+  }
 
-    on(id, fn)
-    {
-        (this.events[id] = this.events[id] || []).push(fn)
-    }
+  on(id, fn)
+  {
+    (this.events[id] = this.events[id] || []).push(fn)
+  }
 
-    emit(id, ...data)
-    {
-        (this.events[id] || []).forEach(fn => fn(...data))
-    }
+  emit(id, ...data)
+  {
+    (this.events[id] || []).forEach(fn => fn(...data))
+  }
 }
 
 /**
@@ -28,29 +28,29 @@ export class Emitter
  */
 export class Enum
 {
-    constructor(obj)
-    {
-        for (const prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                this[prop] = prop
-            }
-        }
-
-        Object.freeze(this)
+  constructor(obj)
+  {
+    for (const prop in obj) {
+      if (obj.hasOwnProperty(prop)) {
+        this[prop] = prop
+      }
     }
 
-    determine(entity)
-    {
-        const obj = {}
+    Object.freeze(this)
+  }
 
-        for (const prop in this) {
-            if (this.hasOwnProperty(prop)) {
-                obj[prop] = prop === entity
-            }
-        }
+  determine(entity)
+  {
+    const obj = {}
 
-        return obj
+    for (const prop in this) {
+      if (this.hasOwnProperty(prop)) {
+        obj[prop] = prop === entity
+      }
     }
+
+    return obj
+  }
 }
 
 /**
@@ -58,22 +58,22 @@ export class Enum
  */
 export class Cost
 {
-    static entry = { value: '320.00', extra: [], id: null, name: null }
+  static entry = { value: '320.00', extra: [], id: null, name: null }
 
-    constructor(data)
-    {
-        let set, entity
+  constructor(data)
+  {
+    let set, entity
 
-        for (entity of Object.keys(Cost.entry)) {
-            set = data[entity] || Cost.entry[entity]
+    for (entity of Object.keys(Cost.entry)) {
+      set = data[entity] || Cost.entry[entity]
 
-            if (entity === 'extra') {
-                set = JSON.stringify(set)
-            }
+      if (entity === 'extra') {
+        set = JSON.stringify(set)
+      }
 
-            this[entity] = set
-        }
+      this[entity] = set
     }
+  }
 }
 
 /**
@@ -81,21 +81,21 @@ export class Cost
  */
 export class MediaTracker
 {
-    constructor(width)
-    {
-        this.maxWidth = window.matchMedia(`(max-width: ${width - 1}px)`)
-        this.minWidth = window.matchMedia(`(min-width: ${width + 1}px)`)
+  constructor(width)
+  {
+    this.maxWidth = window.matchMedia(`(max-width: ${width - 1}px)`)
+    this.minWidth = window.matchMedia(`(min-width: ${width + 1}px)`)
+  }
+
+  setHandler(handler)
+  {
+    if (typeof handler !== 'function') {
+      throw new Error(ERROR.MISMATCH_OF_TYPES)
     }
 
-    setHandler(handler)
-    {
-        if (typeof handler !== 'function') {
-            throw new Error(ERROR.MISMATCH_OF_TYPES)
-        }
-
-        this.maxWidth.addEventListener('change', handler)
-        this.minWidth.addEventListener('change', handler)
-    }
+    this.maxWidth.addEventListener('change', handler)
+    this.minWidth.addEventListener('change', handler)
+  }
 }
 
 /**
@@ -103,25 +103,25 @@ export class MediaTracker
  */
 export class Adapter
 {
-    /**
-     * Transformation of storage data according to the scheme.
-     * @param {Object} data
-     * @return {{rate_area_id: Number, base_charge_value: Number, extra_charges: Object[]}[]}
-     */
-    static perform(data)
-    {
-        return data.selected.map(cost => ({
-            rate_area_id: cost.id,
+  /**
+   * Transformation of storage data according to the scheme.
+   * @param {Object} data
+   * @return {{rate_area_id: Number, base_charge_value: Number, extra_charges: Object[]}[]}
+   */
+  static perform(data)
+  {
+    return data.selected.map(cost => ({
+      rate_area_id: cost.id,
 
-            base_charge_value: cost.value,
+      base_charge_value: cost.value,
 
-            extra_charges: cost.extra.map(extra => ({
-                charge_value: extra.charge_value,
-                min_weight: extra.min_weight,
-                max_weight: extra.max_weight
-            }))
-        }))
-    }
+      extra_charges: cost.extra.map(extra => ({
+        charge_value: extra.charge_value,
+        min_weight: extra.min_weight,
+        max_weight: extra.max_weight
+      }))
+    }))
+  }
 }
 
 /**
@@ -130,44 +130,44 @@ export class Adapter
  */
 export function display(data)
 {
-    if (!data) return
+  if (!data) return
 
-    const walkArray = (arr, p) => arr.map(printObject.bind(null, p)),
-        print = str => console.log(`%c${str}`, CONSOLE.STYLE),
+  const walkArray = (arr, p) => arr.map(printObject.bind(null, p)),
+      print = str => console.log(`%c${str}`, CONSOLE.STYLE),
 
-        now = new Date(),
+      now = new Date(),
 
-        date = now.toLocaleDateString(LOCALE),
-        time = now.toLocaleTimeString(LOCALE)
+      date = now.toLocaleDateString(LOCALE),
+      time = now.toLocaleTimeString(LOCALE)
 
-    function printObject(p, obj, i, a)
-    {
-        const c = i < a.length - 1 ? ',' : ''
+  function printObject(p, obj, i, a)
+  {
+    const c = i < a.length - 1 ? ',' : ''
 
-        print(`${' '.repeat(p)}{`)
+    print(`${' '.repeat(p)}{`)
 
-        Object.entries(obj).forEach(([k, v]) => {
-            switch (true) {
-                case !Array.isArray(v):
-                    print(`${' '.repeat(p + 2)}${k}: ${v},`)
-                    break
-                case !v.length:
-                    print(`${' '.repeat(p + 2)}${k}: [],`)
-                    break
+    Object.entries(obj).forEach(([k, v]) => {
+      switch (true) {
+        case !Array.isArray(v):
+          print(`${' '.repeat(p + 2)}${k}: ${v},`)
+          break
+        case !v.length:
+          print(`${' '.repeat(p + 2)}${k}: [],`)
+          break
 
-                default:
-                    print(`${' '.repeat(p + 2)}${k}: [`)
-                    walkArray(v, p + 4)
-                    print(`${' '.repeat(p + 2)}],`)
-            }
-        })
+        default:
+          print(`${' '.repeat(p + 2)}${k}: [`)
+          walkArray(v, p + 4)
+          print(`${' '.repeat(p + 2)}],`)
+      }
+    })
 
-        print(`${' '.repeat(p)}}${c}`)
-    }
+    print(`${' '.repeat(p)}}${c}`)
+  }
 
-    console.group(`%c${CONSOLE.TITLE}${date} ${time}`, CONSOLE.STYLE)
-    walkArray(data, 0)
-    console.groupEnd()
+  console.group(`%c${CONSOLE.TITLE}${date} ${time}`, CONSOLE.STYLE)
+  walkArray(data, 0)
+  console.groupEnd()
 }
 
 /**
@@ -178,13 +178,13 @@ export function display(data)
  */
 export function debounce(fn, ms = 9)
 {
-    return function(...args) {
-        debounceTimeout && clearTimeout(debounceTimeout)
+  return function(...args) {
+    debounceTimeout && clearTimeout(debounceTimeout)
 
-        debounceTimeout = setTimeout(() => {
-            fn.apply(this, args)
-        }, ms)
-    }
+    debounceTimeout = setTimeout(() => {
+      fn.apply(this, args)
+    }, ms)
+  }
 }
 
 /**
@@ -198,14 +198,14 @@ export function debounce(fn, ms = 9)
  */
 export function safeSum(x, y, postfix = ' ₽')
 {
-    const prefix = window.innerWidth > SCREEN.MIN_WIDTH ? PHRASE.TOTAL_COST : ''
+  const prefix = window.innerWidth > SCREEN.MIN_WIDTH ? PHRASE.TOTAL_COST : ''
 
-    try {
+  try {
 
-        return prefix + eval(`${x} + ${y}`) + postfix
-    } catch (e) {
-        return prefix + (x || '0') + postfix
-    }
+    return prefix + eval(`${x} + ${y}`) + postfix
+  } catch (e) {
+    return prefix + (x || '0') + postfix
+  }
 }
 
 /**
@@ -214,8 +214,8 @@ export function safeSum(x, y, postfix = ' ₽')
  */
 export function addBtnTune(btn)
 {
-    btn.classList.add('btn', SELECTOR.ADD)
-    btn.textContent = PHRASE.ADD
+  btn.classList.add('btn', SELECTOR.ADD)
+  btn.textContent = PHRASE.ADD
 }
 
 /**
@@ -224,8 +224,8 @@ export function addBtnTune(btn)
  */
 export function delBtnTune(btn)
 {
-    btn.classList.add('btn', SELECTOR.DEL)
-    btn.textContent = PHRASE.DEL
+  btn.classList.add('btn', SELECTOR.DEL)
+  btn.textContent = PHRASE.DEL
 }
 
 /**
@@ -235,25 +235,25 @@ export function delBtnTune(btn)
  */
 export function toggleAccordion(target, types)
 {
-    let isActive, elements, node = target
+  let isActive, elements, node = target
 
-    switch (true) {
-        case types.SPAN:
-            node = target.parentElement.parentElement
-            break
-        case types.DIV:
-            node = target.parentElement
-            break
-    }
+  switch (true) {
+    case types.SPAN:
+      node = target.parentElement.parentElement
+      break
+    case types.DIV:
+      node = target.parentElement
+      break
+  }
 
-    elements = node.parentElement.querySelectorAll('li')
-    isActive = node.classList.contains(SELECTOR.ACTIVE)
+  elements = node.parentElement.querySelectorAll('li')
+  isActive = node.classList.contains(SELECTOR.ACTIVE)
 
-    for (const li of elements) {
-        li.classList.remove(SELECTOR.ACTIVE)
-    }
+  for (const li of elements) {
+    li.classList.remove(SELECTOR.ACTIVE)
+  }
 
-    isActive || node.classList.add(SELECTOR.ACTIVE)
+  isActive || node.classList.add(SELECTOR.ACTIVE)
 }
 
 /**
@@ -264,18 +264,18 @@ export function toggleAccordion(target, types)
  */
 export function toggleSearchListBtn(id, list, isAdd)
 {
-    list.some(el => {
-        if (+el.dataset.id !== id) return false
+  list.some(el => {
+    if (+el.dataset.id !== id) return false
 
-        const btn = el.querySelector('button')
+    const btn = el.querySelector('button')
 
-        btn.textContent = isAdd ? PHRASE.DEL : PHRASE.ADD
+    btn.textContent = isAdd ? PHRASE.DEL : PHRASE.ADD
 
-        btn.classList.toggle(SELECTOR.ADD)
-        btn.classList.toggle(SELECTOR.DEL)
+    btn.classList.toggle(SELECTOR.ADD)
+    btn.classList.toggle(SELECTOR.DEL)
 
-        return true
-    })
+    return true
+  })
 }
 
 /**
@@ -287,17 +287,17 @@ export function toggleSearchListBtn(id, list, isAdd)
  */
 export function toggleScreen(selected, empty, save, list)
 {
-    const active = !!list.length
+  const active = !!list.length
 
-    const rem = SELECTOR[active ? 'HIDE_BLOCK' : 'SHOW_BLOCK']
-    const add = SELECTOR[active ? 'SHOW_BLOCK' : 'HIDE_BLOCK']
+  const rem = SELECTOR[active ? 'HIDE_BLOCK' : 'SHOW_BLOCK']
+  const add = SELECTOR[active ? 'SHOW_BLOCK' : 'HIDE_BLOCK']
 
-    selected.classList.remove(rem)
-    selected.classList.add(add)
-    empty.classList.remove(add)
-    empty.classList.add(rem)
+  selected.classList.remove(rem)
+  selected.classList.add(add)
+  empty.classList.remove(add)
+  empty.classList.add(rem)
 
-    save.disabled = !active
+  save.disabled = !active
 }
 
 /**
@@ -307,19 +307,19 @@ export function toggleScreen(selected, empty, save, list)
  */
 export function findActiveListItem(selected)
 {
-    let id = null
+  let id = null
 
-    if (!selected) return id
+  if (!selected) return id
 
-    ;[...selected.querySelectorAll('li')].some(el => {
-        if (!el.classList.contains('active')) return false
+      ;[...selected.querySelectorAll('li')].some(el => {
+  if (!el.classList.contains('active')) return false
 
-        id = +el.dataset.id
+  id = +el.dataset.id
 
-        return true
-    })
+  return true
+})
 
-    return id
+  return id
 }
 
 /**
@@ -331,9 +331,9 @@ export function findActiveListItem(selected)
  */
 export function findElement(selector, el, i = 5)
 {
-    while (!el.classList.contains(selector) && --i) {
-        el = el.parentElement
-    }
+  while (!el.classList.contains(selector) && --i) {
+    el = el.parentElement
+  }
 
-    return el
+  return el
 }

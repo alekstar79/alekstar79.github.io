@@ -6,18 +6,18 @@
  */
 export class Emitter
 {
-    constructor()
-    {
-        this.events = {}
-    }
+  constructor()
+  {
+    this.events = {}
+  }
 
-    on(id, fn)
-    {
-        (this.events[id] = this.events[id] || []).push(fn)
-    }
+  on(id, fn)
+  {
+    (this.events[id] = this.events[id] || []).push(fn)
+  }
 
-    emit(id, ...data)
-    {
-        (this.events[id] || []).forEach(fn => fn(...data))
-    }
+  emit(id, ...data)
+  {
+    (this.events[id] || []).forEach(fn => fn(...data))
+  }
 }

@@ -11,11 +11,11 @@ const Types = new Enum(NODE_TYPES)
  */
 export function saveButtonClickHandler(validator, btn)
 {
-    btn.addEventListener('click', () => {
-        if (validator.validate()) {
-            display(Adapter.perform(storage))
-        }
-    })
+  btn.addEventListener('click', () => {
+    if (validator.validate()) {
+      display(Adapter.perform(storage))
+    }
+  })
 }
 
 /**
@@ -24,15 +24,15 @@ export function saveButtonClickHandler(validator, btn)
  */
 function addExtraChargeBlock({ target })
 {
-    const data = storage.get({ id: +target.dataset.id })
+  const data = storage.get({ id: +target.dataset.id })
 
-    data.extra.push({
-        charge_value: EXTRA.CHARGE_VALUE,
-        min_weight: EXTRA.MIN_WEIGHT,
-        max_weight: EXTRA.MAX_WEIGHT
-    })
+  data.extra.push({
+    charge_value: EXTRA.CHARGE_VALUE,
+    min_weight: EXTRA.MIN_WEIGHT,
+    max_weight: EXTRA.MAX_WEIGHT
+  })
 
-    storage.change(data)
+  storage.change(data)
 }
 
 /**
@@ -41,11 +41,11 @@ function addExtraChargeBlock({ target })
  */
 function removeExtraChargeBlock({ target })
 {
-    const data = storage.get({ id: +target.dataset.id })
+  const data = storage.get({ id: +target.dataset.id })
 
-    data.extra.splice(+target.dataset.idx, 1)
+  data.extra.splice(+target.dataset.idx, 1)
 
-    storage.change(data)
+  storage.change(data)
 }
 
 /**
@@ -56,14 +56,14 @@ function removeExtraChargeBlock({ target })
  */
 export function inputKeyupHandler(list, timeout = 0)
 {
-    let filter
+  let filter
 
-    return debounce(({ target }) => {
-        filter = target.value.toLowerCase()
+  return debounce(({ target }) => {
+    filter = target.value.toLowerCase()
 
-        list.forEach(item => item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none')
+    list.forEach(item => item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none')
 
-    }, timeout)
+  }, timeout)
 }
 
 /**
@@ -74,7 +74,7 @@ export function inputKeyupHandler(list, timeout = 0)
  */
 export function inputFocusHandler(el, timeout)
 {
-    return debounce(() => el.classList.add(SELECTOR.ACTIVE), timeout)
+  return debounce(() => el.classList.add(SELECTOR.ACTIVE), timeout)
 }
 
 /**
@@ -85,7 +85,7 @@ export function inputFocusHandler(el, timeout)
  */
 export function inputBlurHandler(el, timeout)
 {
-    return debounce(() => el.classList.remove(SELECTOR.ACTIVE), timeout)
+  return debounce(() => el.classList.remove(SELECTOR.ACTIVE), timeout)
 }
 
 /**
@@ -95,18 +95,18 @@ export function inputBlurHandler(el, timeout)
  */
 export function searchListClickHandler(handler)
 {
-    return ({ target }) => {
-        handler()
+  return ({ target }) => {
+    handler()
 
-        if (!Types.determine(target.tagName).BUTTON) return
+    if (!Types.determine(target.tagName).BUTTON) return
 
-        storage.resolve({
-            extra: JSON.parse(target.dataset.extra),
-            value: target.dataset.value,
-            name: target.dataset.name,
-            id: +target.dataset.id
-        })
-    }
+    storage.resolve({
+      extra: JSON.parse(target.dataset.extra),
+      value: target.dataset.value,
+      name: target.dataset.name,
+      id: +target.dataset.id
+    })
+  }
 }
 
 /**
@@ -115,25 +115,25 @@ export function searchListClickHandler(handler)
  */
 export function selectedListClickHandler({ target })
 {
-    const types = Types.determine(target.tagName)
+  const types = Types.determine(target.tagName)
 
-    if (!types.BUTTON) {
-        return toggleAccordion(target, types)
-    }
+  if (!types.BUTTON) {
+    return toggleAccordion(target, types)
+  }
 
-    switch (true) {
-        case target.classList.contains(SELECTOR.ADD_EXTRA_CHARGE):
-            addExtraChargeBlock({ target })
-            break
-        case target.classList.contains(SELECTOR.DEL_EXTRA_CHARGE):
-            removeExtraChargeBlock({ target })
-            break
+  switch (true) {
+    case target.classList.contains(SELECTOR.ADD_EXTRA_CHARGE):
+      addExtraChargeBlock({ target })
+      break
+    case target.classList.contains(SELECTOR.DEL_EXTRA_CHARGE):
+      removeExtraChargeBlock({ target })
+      break
 
-        default: storage.resolve({
-            extra: JSON.parse(target.dataset.extra),
-            value: target.dataset.value,
-            name: target.dataset.name,
-            id: +target.dataset.id
-        })
-    }
+    default: storage.resolve({
+      extra: JSON.parse(target.dataset.extra),
+      value: target.dataset.value,
+      name: target.dataset.name,
+      id: +target.dataset.id
+    })
+  }
 }

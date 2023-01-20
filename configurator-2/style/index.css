@@ -1,51 +1,51 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 app-component {
-    display: block;
+  display: block;
 }
 
 app-component:not(:defined) {
-    opacity: 0;
+  opacity: 0;
 }
 
 search-regions,
 selected-regions {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section[class^="app-component"] > * {
-    width: 90%;
+  width: 90%;
 }
 
 section.notice {
-    text-align: center;
+  text-align: center;
 }
 
 section.notice h1 {
-    margin-bottom: 1rem;
-    font-size: 2em;
+  margin-bottom: 1rem;
+  font-size: 2em;
 }
 
 .search-form {
-    position: relative;
+  position: relative;
 }
 
 .configurator__btn {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }

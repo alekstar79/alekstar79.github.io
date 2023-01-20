@@ -7,11 +7,11 @@ import { EXTRA } from '../config.js'
  */
 export function setBaseChargeValue({ id, value })
 {
-    const data = storage.get({ id })
+  const data = storage.get({ id })
 
-    data.value = value
+  data.value = value
 
-    storage.input(data)
+  storage.input(data)
 }
 
 /**
@@ -20,11 +20,11 @@ export function setBaseChargeValue({ id, value })
  */
 export function setExtraChargeValue({ id, idx, fid, value })
 {
-    const data = storage.get({ id })
+  const data = storage.get({ id })
 
-    data.extra[idx][fid] = value
+  data.extra[idx][fid] = value
 
-    storage.input(data)
+  storage.input(data)
 }
 
 /**
@@ -33,15 +33,15 @@ export function setExtraChargeValue({ id, idx, fid, value })
  */
 export function addExtraChargeBlock({ target })
 {
-    const data = storage.get({ id: +target.dataset.id })
+  const data = storage.get({ id: +target.dataset.id })
 
-    data.extra.push({
-        charge_value: EXTRA.CHARGE_VALUE,
-        min_weight: EXTRA.MIN_WEIGHT,
-        max_weight: EXTRA.MAX_WEIGHT
-    })
+  data.extra.push({
+    charge_value: EXTRA.CHARGE_VALUE,
+    min_weight: EXTRA.MIN_WEIGHT,
+    max_weight: EXTRA.MAX_WEIGHT
+  })
 
-    storage.change(data)
+  storage.change(data)
 }
 
 /**
@@ -50,9 +50,9 @@ export function addExtraChargeBlock({ target })
  */
 export function removeExtraChargeBlock({ target })
 {
-    const data = storage.get({ id: +target.dataset.id })
+  const data = storage.get({ id: +target.dataset.id })
 
-    data.extra.splice(+target.dataset.idx, 1)
+  data.extra.splice(+target.dataset.idx, 1)
 
-    storage.change(data)
+  storage.change(data)
 }

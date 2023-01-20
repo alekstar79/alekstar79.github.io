@@ -1,3 +1,5 @@
+// noinspection JSDeprecatedSymbols
+
 import { RuntimeValidator, RuntimeValidatorError } from './runtime-validator.js'
 import { VALIDATOR, ERROR } from '../config.js'
 
@@ -5,32 +7,32 @@ import { VALIDATOR, ERROR } from '../config.js'
 
 export function setValidator(input, rules, validateOn = RuntimeValidator.ON_BLUR)
 {
-    return new RuntimeValidator(input, rules, validateOn)
+  return new RuntimeValidator(input, rules, validateOn)
 }
 
 export function setBaseChargeValidator(input, vid = 'INCORRECT_DATA_ENTRY')
 {
-    return setValidator(input, [{ id: 'baseChargeValue', validator: baseChargeValidator, message: VALIDATOR.MSG[vid] }])
+  return setValidator(input, [{ id: 'baseChargeValue', validator: baseChargeValidator, message: VALIDATOR.MSG[vid] }])
 }
 
 export function setExtraChargeValidator(input, id, validator, vid = 'INCORRECT_DATA_ENTRY')
 {
-    return setValidator(input, [{ id, validator, message: VALIDATOR.MSG[vid] }])
+  return setValidator(input, [{ id, validator, message: VALIDATOR.MSG[vid] }])
 }
 
 export function setChargeValueValidator(input, vid = 'INCORRECT_DATA_ENTRY')
 {
-    return setExtraChargeValidator(input, 'extraChargeValue', extraChargeValidator, vid)
+  return setExtraChargeValidator(input, 'extraChargeValue', extraChargeValidator, vid)
 }
 
 export function setMinWeightValidator(input, vid = 'INCORRECT_DATA_ENTRY')
 {
-    return setExtraChargeValidator(input, 'extraMinWeight', extraWeightValidator, vid)
+  return setExtraChargeValidator(input, 'extraMinWeight', extraWeightValidator, vid)
 }
 
 export function setMaxWeightValidator(input, vid = 'INCORRECT_DATA_ENTRY')
 {
-    return setExtraChargeValidator(input, 'extraMaxWeight', extraWeightValidator, vid)
+  return setExtraChargeValidator(input, 'extraMaxWeight', extraWeightValidator, vid)
 }
 
 // AUXILIARY
@@ -46,14 +48,14 @@ const decimalPlacesAfter = x => x.includes('.') ? x.split('.').pop().length : 0
  */
 function splitByDecimal(source, b, d)
 {
-    if (source.length !== b + d) {
-        throw new RuntimeValidatorError(ERROR.RUNTIME_VALIDATION_ERROR)
-    }
+  if (source.length !== b + d) {
+    throw new RuntimeValidatorError(ERROR.RUNTIME_VALIDATION_ERROR)
+  }
 
-    return [
-        source.substr(0, b),
-        source.substr(b, source.length)
-    ]
+  return [
+    source.substr(0, b),
+    source.substr(b, source.length)
+  ]
 }
 
 // VALIDATORS
@@ -67,51 +69,51 @@ function splitByDecimal(source, b, d)
  */
 export function fitNumber(value, digits, sign = '')
 {
-    let b, d, p, n, w, f
+  let b, d, p, n, w, f
 
-    value = value.toString()
+  value = value.toString()
 
-    p = value.includes('+')
-    n = value.includes('-')
+  p = value.includes('+')
+  n = value.includes('-')
 
-    value = value.replace(/[+\-]/g, '')
+  value = value.replace(/[+\-]/g, '')
 
-    b = decimalPlacesBefore(value)
-    d = decimalPlacesAfter(value)
+  b = decimalPlacesBefore(value)
+  d = decimalPlacesAfter(value)
 
-    value = value.replace(/[.]/g, '')
+  value = value.replace(/[.]/g, '')
 
-    ;[w, f] = value.split('.', 2)
+  ;[w, f] = value.split('.', 2)
 
-    if (!f && b) {
-        [w, f] = splitByDecimal(w, b, d)
-    }
-    if (isNaN(w = Number(w))) {
-        return `0.${'0'.repeat(digits)}`
-    }
+  if (!f && b) {
+    [w, f] = splitByDecimal(w, b, d)
+  }
+  if (isNaN(w = Number(w))) {
+    return `0.${'0'.repeat(digits)}`
+  }
 
-    d > digits && (digits = d)
+  d > digits && (digits = d)
 
-    value = Number([w, f].filter(Boolean).join('.')).toFixed(digits)
+  value = Number([w, f].filter(Boolean).join('.')).toFixed(digits)
 
-    if (typeof sign === 'string' || !sign) {
-        return value
-    }
+  if (typeof sign === 'string' || !sign) {
+    return value
+  }
 
-    switch (true) {
-        case n: sign = '-'; break
-        case p: sign = '+'; break
+  switch (true) {
+    case n: sign = '-'; break
+    case p: sign = '+'; break
 
-        case Number(value) < 0: sign = '-'; break
-        case Number(value) > 0: sign = '+'; break
+    case Number(value) < 0: sign = '-'; break
+    case Number(value) > 0: sign = '+'; break
 
-        default:
-            sign = ''
-    }
+    default:
+      sign = ''
+  }
 
-    return `${sign}${
-        value.replace(/[+\-]/g, '')
-    }`
+  return `${sign}${
+      value.replace(/[+\-]/g, '')
+  }`
 }
 
 /**
@@ -121,14 +123,14 @@ export function fitNumber(value, digits, sign = '')
  */
 export function baseChargeValidator(input/*, id */)
 {
-    if (['','.'].includes(input.value)) {
-        input.value = '0.00'
-        return false
-    }
+  if (['','.'].includes(input.value)) {
+    input.value = '0.00'
+    return false
+  }
 
-    input.value = fitNumber(input.value, 2)
+  input.value = fitNumber(input.value, 2)
 
-    return true
+  return true
 }
 
 /**
@@ -138,14 +140,14 @@ export function baseChargeValidator(input/*, id */)
  */
 export function extraChargeValidator(input/*, id */)
 {
-    if (['','.'].includes(input.value)) {
-        input.value = '0.00'
-        return false
-    }
+  if (['','.'].includes(input.value)) {
+    input.value = '0.00'
+    return false
+  }
 
-    input.value = fitNumber(input.value, 2, true)
+  input.value = fitNumber(input.value, 2, true)
 
-    return true
+  return true
 }
 
 /**
@@ -155,12 +157,12 @@ export function extraChargeValidator(input/*, id */)
  */
 export function extraWeightValidator(input/*, id */)
 {
-    if (['','.'].includes(input.value)) {
-        input.value = '0.000'
-        return false
-    }
+  if (['','.'].includes(input.value)) {
+    input.value = '0.000'
+    return false
+  }
 
-    input.value = fitNumber(input.value, 3)
+  input.value = fitNumber(input.value, 3)
 
-    return true
+  return true
 }

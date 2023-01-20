@@ -1,136 +1,136 @@
 * {
-    box-sizing: border-box;
-    font-size: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .search-form__input {
-    width: 100%;
-    padding: 12px 20px 12px 40px;
+  width: 100%;
+  padding: 12px 20px 12px 40px;
 
-    background-image: url('/assets/searchicon.png');
-    background-position: 10px 16px;
-    background-repeat: no-repeat;
+  background-image: url('/assets/searchicon.png');
+  background-position: 10px 16px;
+  background-repeat: no-repeat;
 
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .configurator__btn {
-    width: 100%;
+  width: 100%;
 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .search-form__list {
-    position: absolute;
-    top: calc(100% + 50px);
-    left: 0;
+  position: absolute;
+  top: calc(100% + 50px);
+  left: 0;
 
-    max-height: 82vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  max-height: 82vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 
-    overflow-y: scroll;
-    box-shadow: 0 0 10px 0 rgba(53,53,53,.33);
-    visibility: hidden;
-    opacity: 0;
+  overflow-y: scroll;
+  box-shadow: 0 0 10px 0 rgba(53,53,53,.33);
+  visibility: hidden;
+  opacity: 0;
 
-    list-style-type: none;
-    background-color: #fff;
-    transition: all .3s ease-in-out;
+  list-style-type: none;
+  background-color: #fff;
+  transition: all .3s ease-in-out;
 
-    z-index: 9;
+  z-index: 9;
 }
 
 .search-form__list.active {
-    top: calc(100% + 10px);
-    visibility: visible;
-    opacity: 1;
+  top: calc(100% + 10px);
+  visibility: visible;
+  opacity: 1;
 }
 
 .search-form__list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    margin-top: -1px;
-    padding: 12px;
+  margin-top: -1px;
+  padding: 12px;
 
-    background-color: rgba(13,110,253,.05);
-    border: 1px solid #ddd;
+  background-color: rgba(13,110,253,.05);
+  border: 1px solid #ddd;
 
-    text-decoration: none;
-    user-select: none;
-    cursor: pointer;
-    color: black;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  color: black;
 }
 
 .search-form__list span {
-    display: block;
-    flex-shrink: 2;
+  display: block;
+  flex-shrink: 2;
 
-    width: 80%;
+  width: 80%;
 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .search-form__list button {
-    flex-shrink: 1;
+  flex-shrink: 1;
 
-    min-width: 90px;
-    width: 20%;
+  min-width: 90px;
+  width: 20%;
 
-    color: rgb(245,245,245);
-    user-select: none;
-    padding: .3em;
+  color: rgb(245,245,245);
+  user-select: none;
+  padding: .3em;
 
-    text-decoration: none;
-    text-align: center;
-    line-height: 2em;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2em;
 
-    outline: none;
-    border-radius: 3px;
-    border: none;
+  outline: none;
+  border-radius: 3px;
+  border: none;
 
-    transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 .search-form__list .add {
-    background-color: #28c17b;
+  background-color: #28c17b;
 }
 
 .search-form__list .del {
-    background-color: #f43547;
+  background-color: #f43547;
 }
 
 .selected__list .primary:hover {
-    background-color: #0b5ed7;
-    color: rgb(245,245,245);
+  background-color: #0b5ed7;
+  color: rgb(245,245,245);
 }
 
 .search-form__list .add:hover {
-    background-color: #157347;
-    color: rgb(245,245,245);
+  background-color: #157347;
+  color: rgb(245,245,245);
 }
 
 .search-form__list .del:hover {
-    background-color: #bb2d3b;
-    color: rgb(245,245,245);
+  background-color: #bb2d3b;
+  color: rgb(245,245,245);
 }
 
 .search-form__list li:hover {
-    background-color: rgba(13,110,253,.1);
+  background-color: rgba(13,110,253,.1);
 }
 
 @media all and (max-width: 320px) {
-    .search-form__list .btn {
-        min-width: 48px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
+  .search-form__list .btn {
+    min-width: 48px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }

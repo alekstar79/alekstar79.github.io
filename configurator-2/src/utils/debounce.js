@@ -8,12 +8,12 @@ let debounceTimeout
  */
 export function debounce(fn, ms = 9)
 {
-    return function(...args) {
-        debounceTimeout && clearTimeout(debounceTimeout)
+  return function(...args) {
+    debounceTimeout && clearTimeout(debounceTimeout)
 
-        debounceTimeout = setTimeout(
-            fn.bind(this, ...args),
-            ms
-        )
-    }
+    debounceTimeout = setTimeout(
+        fn.bind(this, ...args),
+        ms
+    )
+  }
 }

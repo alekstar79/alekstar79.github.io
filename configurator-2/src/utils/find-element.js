@@ -7,9 +7,9 @@
  */
 export function findElement(selector, el, i = 5)
 {
-    while (!el.classList.contains(selector) && --i) {
-        el = el.parentElement
-    }
+  while (!el.classList.contains(selector) && --i) {
+    el = el.parentElement
+  }
 
-    return el
+  return el
 }

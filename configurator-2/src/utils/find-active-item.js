@@ -5,15 +5,15 @@
  */
 export function findActiveListItem(el)
 {
-    let id = null
+  let id = null
 
-    ;[...el.querySelectorAll('li')].some(el => {
-        if (!el.classList.contains('active')) return false
+  ;[...el.querySelectorAll('li')].some(el => {
+    if (!el.classList.contains('active')) return false
 
-        id = +el.dataset.id
+    id = +el.dataset.id
 
-        return true
-    })
+    return true
+  })
 
-    return id
+  return id
 }

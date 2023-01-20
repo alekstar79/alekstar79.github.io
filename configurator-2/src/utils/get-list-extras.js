@@ -8,5 +8,5 @@ import { SELECTOR } from '../config.js'
  */
 export function getListExtras(el)
 {
-    return findElement(SELECTOR.ACCORDION_CONTENT, el).querySelectorAll('div + div')
+  return findElement(SELECTOR.ACCORDION_CONTENT, el).querySelectorAll('div + div')
 }

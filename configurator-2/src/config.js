@@ -9,62 +9,62 @@ export const SHADOW = { SEARCH: false, SELECTED: false }
 export const LOCALE = 'ru-RU'
 
 export const ERROR = {
-    MISMATCH_OF_TYPES: 'The type of the passed argument does not match the function',
-    SERVICE_TEMPORARILY_UNAVAILABLE: 'Сервис временно не доступен',
-    RUNTIME_VALIDATION_ERROR: 'Runtime validation error',
-    COULD_NOT_BE_FOUND: 'The object could not be found',
-    WEIGHT_RANGES_OVERLAP: 'Диапазоны веса перекрываются',
-    UNSPECIFIED_BASE_CHARGE: 'Укажите базовую стоимость',
-    UNSPECIFIED_EXTRA_CHARGE: 'Укажите наценку',
-    UNSPECIFIED_WEIGHT: 'Не указан вес'
+  MISMATCH_OF_TYPES: 'The type of the passed argument does not match the function',
+  SERVICE_TEMPORARILY_UNAVAILABLE: 'Сервис временно не доступен',
+  RUNTIME_VALIDATION_ERROR: 'Runtime validation error',
+  COULD_NOT_BE_FOUND: 'The object could not be found',
+  WEIGHT_RANGES_OVERLAP: 'Диапазоны веса перекрываются',
+  UNSPECIFIED_BASE_CHARGE: 'Укажите базовую стоимость',
+  UNSPECIFIED_EXTRA_CHARGE: 'Укажите наценку',
+  UNSPECIFIED_WEIGHT: 'Не указан вес'
 }
 
 export const SELECTOR = {
-    APP_COMPONENT_TMPL: 'app-component-template',
-    APP_COMPONENT: 'app-component',
+  APP_COMPONENT_TMPL: 'app-component-template',
+  APP_COMPONENT: 'app-component',
 
-    SELECTED_LIST: 'selected__list',
-    LIST_ITEM: 'list-item',
+  SELECTED_LIST: 'selected__list',
+  LIST_ITEM: 'list-item',
 
-    BASE_CHARGE: 'base-charge',
-    BASE_CHARGE_TITLE: 'base-charge__title',
-    ADD_EXTRA_CHARGE: 'add-extra-charge',
-    DEL_EXTRA_CHARGE: 'del-extra-charge',
-    EXTRA_CHARGE_BLOCK: 'extra-charge-block',
-    EXTRA_CHARGE: 'extra-charge',
-    TOTAL_COST: 'total-cost',
+  BASE_CHARGE: 'base-charge',
+  BASE_CHARGE_TITLE: 'base-charge__title',
+  ADD_EXTRA_CHARGE: 'add-extra-charge',
+  DEL_EXTRA_CHARGE: 'del-extra-charge',
+  EXTRA_CHARGE_BLOCK: 'extra-charge-block',
+  EXTRA_CHARGE: 'extra-charge',
+  TOTAL_COST: 'total-cost',
 
-    ACCORDION_ITEM: 'accordion__item',
-    ACCORDION_TITLE: 'accordion__title',
-    ACCORDION_CONTENT: 'accordion__content',
+  ACCORDION_ITEM: 'accordion__item',
+  ACCORDION_TITLE: 'accordion__title',
+  ACCORDION_CONTENT: 'accordion__content',
 
-    BTN_SAVE_CHANGES: 'configurator__btn',
-    FORM_CONTROL: 'form-control',
-    ACTIVE: 'active',
-    ADD: 'add',
-    DEL: 'del'
+  BTN_SAVE_CHANGES: 'configurator__btn',
+  FORM_CONTROL: 'form-control',
+  ACTIVE: 'active',
+  ADD: 'add',
+  DEL: 'del'
 }
 
 export const PHRASE = {
-    BASE_CHARGE_TITLE: 'Базовая стоимость доставки, (₽)',
-    TOTAL_COST: 'Итоговая стоимость: ',
-    ADD: 'Добавить',
-    DEL: 'Удалить'
+  BASE_CHARGE_TITLE: 'Базовая стоимость доставки, (₽)',
+  TOTAL_COST: 'Итоговая стоимость: ',
+  ADD: 'Добавить',
+  DEL: 'Удалить'
 }
 
 export const CONSOLE = {
-    STYLE: 'text-shadow: #a0f9fa 0 0 2px; font-family: monospace; font-size: 1.4em;',
-    TITLE: 'Отчет сформирован: '
+  STYLE: 'text-shadow: #a0f9fa 0 0 2px; font-family: monospace; font-size: 1.4em;',
+  TITLE: 'Отчет сформирован: '
 }
 
 export const VALIDATOR = {
-    MSG: {
-        INCORRECT_DATA_ENTRY: 'Incorrect data entry'
-    },
-    EVENT: {
-        SUCCESS: EVENT.VALIDATOR_SUCCESS,
-        ERROR: EVENT.VALIDATOR_ERROR
-    }
+  MSG: {
+    INCORRECT_DATA_ENTRY: 'Incorrect data entry'
+  },
+  EVENT: {
+    SUCCESS: EVENT.VALIDATOR_SUCCESS,
+    ERROR: EVENT.VALIDATOR_ERROR
+  }
 }
 
 export const EXTRA = { CHARGE_VALUE: '+50.00', MIN_WEIGHT: '1.000', MAX_WEIGHT: '3.000' }

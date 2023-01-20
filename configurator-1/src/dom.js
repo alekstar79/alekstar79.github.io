@@ -6,11 +6,11 @@ import { storage } from './storage.js'
 
 import {
 
-    setBaseChargeValidator,
-    setChargeValueValidator,
-    setMaxWeightValidator,
-    setMinWeightValidator,
-    fitNumber
+  setBaseChargeValidator,
+  setChargeValueValidator,
+  setMaxWeightValidator,
+  setMinWeightValidator,
+  fitNumber
 
 } from './validators.js'
 
@@ -27,11 +27,11 @@ const createDomElements = entities => entities.map(tag => document.createElement
  */
 function setBaseChargeValue({ id, value })
 {
-    const data = storage.get({ id })
+  const data = storage.get({ id })
 
-    data.value = value
+  data.value = value
 
-    storage.input(data)
+  storage.input(data)
 }
 
 /**
@@ -40,11 +40,11 @@ function setBaseChargeValue({ id, value })
  */
 function setExtraChargeValue({ id, idx, fid, value })
 {
-    const data = storage.get({ id })
+  const data = storage.get({ id })
 
-    data.extra[idx][fid] = value
+  data.extra[idx][fid] = value
 
-    storage.input(data)
+  storage.input(data)
 }
 
 /**
@@ -56,16 +56,16 @@ function setExtraChargeValue({ id, idx, fid, value })
  */
 function wrapChildren(el, elClasses = [], wrapClasses = [])
 {
-    const [wrapper] = createDomElements(['div']),
-        children = el.querySelectorAll('*')
+  const [wrapper] = createDomElements(['div']),
+      children = el.querySelectorAll('*')
 
-    children.forEach(wrapper.appendChild, wrapper)
-    wrapper.classList.add(...wrapClasses)
+  children.forEach(wrapper.appendChild, wrapper)
+  wrapper.classList.add(...wrapClasses)
 
-    el.insertAdjacentElement('afterbegin', wrapper)
-    el.classList.add(...elClasses)
+  el.insertAdjacentElement('afterbegin', wrapper)
+  el.classList.add(...elClasses)
 
-    return el
+  return el
 }
 
 /**
@@ -76,13 +76,13 @@ function wrapChildren(el, elClasses = [], wrapClasses = [])
  */
 function wrapIntoForm(el, classes = [])
 {
-    const [form] = createDomElements(['form'])
+  const [form] = createDomElements(['form'])
 
-    form.classList.add(...classes)
-    form.setAttribute('novalidate', '')
-    form.appendChild(el)
+  form.classList.add(...classes)
+  form.setAttribute('novalidate', '')
+  form.appendChild(el)
 
-    return form
+  return form
 }
 
 /**
@@ -93,19 +93,19 @@ function wrapIntoForm(el, classes = [])
  */
 function createNoopItem(cost, className)
 {
-    const [span, li] = createDomElements(['span','li'])
+  const [span, li] = createDomElements(['span','li'])
 
-    li.insertAdjacentElement('afterbegin', span)
-    li.dataset.id = cost.id
+  li.insertAdjacentElement('afterbegin', span)
+  li.dataset.id = cost.id
 
-    span.textContent = cost.name
-    span.classList.add('title')
+  span.textContent = cost.name
+  span.classList.add('title')
 
-    if (className) {
-        li.classList.add(className)
-    }
+  if (className) {
+    li.classList.add(className)
+  }
 
-    return li
+  return li
 }
 
 /**
@@ -115,7 +115,7 @@ function createNoopItem(cost, className)
  */
 function listExtras(el)
 {
-    return findElement(SELECTOR.ACCORDION_CONTENT, el).querySelectorAll('div + div')
+  return findElement(SELECTOR.ACCORDION_CONTENT, el).querySelectorAll('div + div')
 }
 
 /**
@@ -126,62 +126,62 @@ function listExtras(el)
  */
 function cloneBaseChargeContent(cost, el)
 {
-    let li, lock, extra = [], _target = el.cloneNode(true)
+  let li, lock, extra = [], _target = el.cloneNode(true)
 
-    if (_target instanceof HTMLInputElement) {
-        _target.value = fitNumber(cost.value, 2)
-        _target.pattern = DOTS_PATTERN
-        _target.autofocus = true
+  if (_target instanceof HTMLInputElement) {
+    _target.value = fitNumber(cost.value, 2)
+    _target.pattern = DOTS_PATTERN
+    _target.autofocus = true
 
-        setBaseChargeValidator(_target)
+    setBaseChargeValidator(_target)
 
-        function keyUpHandler({ target = _target })
-        {
-            if (lock) return
+    function keyUpHandler({ target = _target })
+    {
+      if (lock) return
 
-            lock = true
+      lock = true
 
-            extra.length || (extra = listExtras(target))
+      extra.length || (extra = listExtras(target))
 
-            li = findElement('list-item', target)
-            li.querySelectorAll('.error-tip').forEach(e => e.remove())
-            li.classList.remove('error')
+      li = findElement('list-item', target)
+      li.querySelectorAll('.error-tip').forEach(e => e.remove())
+      li.classList.remove('error')
 
-            target.value = target.value.replace(/[^\d.]/, '')
-            target.classList.remove('error')
+      target.value = target.value.replace(/[^\d.]/, '')
+      target.classList.remove('error')
 
-            _target = target
+      _target = target
 
-            extra.forEach(el => {
-                const span = el.querySelector(`.${SELECTOR.TOTAL_COST}`),
-                    input = el.querySelectorAll('input')[2]
+      extra.forEach(el => {
+        const span = el.querySelector(`.${SELECTOR.TOTAL_COST}`),
+            input = el.querySelectorAll('input')[2]
 
-                span.textContent = safeSum(input.value, target.value)
-            })
+        span.textContent = safeSum(input.value, target.value)
+      })
 
-            setBaseChargeValue({
-                value: fitNumber(target.value, 2),
-                id: cost.id
-            })
+      setBaseChargeValue({
+        value: fitNumber(target.value, 2),
+        id: cost.id
+      })
 
-            lock = false
-        }
-        function handleMediaChange(e)
-        {
-            if (!e.matches) return
-
-            keyUpHandler({})
-        }
-
-        _target.addEventListener('keyup', keyUpHandler)
-
-        media.setHandler(handleMediaChange)
+      lock = false
     }
-    if (_target instanceof HTMLButtonElement) {
-        _target.dataset.id = cost.id
+    function handleMediaChange(e)
+    {
+      if (!e.matches) return
+
+      keyUpHandler({})
     }
 
-    return _target
+    _target.addEventListener('keyup', keyUpHandler)
+
+    media.setHandler(handleMediaChange)
+  }
+  if (_target instanceof HTMLButtonElement) {
+    _target.dataset.id = cost.id
+  }
+
+  return _target
 }
 
 /**
@@ -191,19 +191,19 @@ function cloneBaseChargeContent(cost, el)
  */
 export function createBaseChargeContent(value)
 {
-    const [input, button, span] = createDomElements(['input','button','span'])
+  const [input, button, span] = createDomElements(['input','button','span'])
 
-    span.classList.add(SELECTOR.BASE_CHARGE_TITLE)
-    span.textContent = PHRASE.BASE_CHARGE_TITLE
+  span.classList.add(SELECTOR.BASE_CHARGE_TITLE)
+  span.textContent = PHRASE.BASE_CHARGE_TITLE
 
-    button.classList.add('btn', 'primary', SELECTOR.ADD_EXTRA_CHARGE)
-    button.textContent = PHRASE.ADD
+  button.classList.add('btn', 'primary', SELECTOR.ADD_EXTRA_CHARGE)
+  button.textContent = PHRASE.ADD
 
-    input.classList.add(SELECTOR.FORM_CONTROL, 'col')
-    input.value = fitNumber(value, 2)
-    input.type = 'text'
+  input.classList.add(SELECTOR.FORM_CONTROL, 'col')
+  input.value = fitNumber(value, 2)
+  input.type = 'text'
 
-    return [span, input, button]
+  return [span, input, button]
 }
 
 /**
@@ -213,13 +213,13 @@ export function createBaseChargeContent(value)
  */
 function weightHandler(target, regexp)
 {
-    const li = findElement('list-item', target)
+  const li = findElement('list-item', target)
 
-    target.value = target.value.replace(regexp, '')
-    target.classList.remove('error')
+  target.value = target.value.replace(regexp, '')
+  target.classList.remove('error')
 
-    li.querySelectorAll('.error-tip').forEach(e => e.remove())
-    li.classList.remove('error')
+  li.querySelectorAll('.error-tip').forEach(e => e.remove())
+  li.classList.remove('error')
 }
 
 /**
@@ -232,57 +232,57 @@ function weightHandler(target, regexp)
  */
 function createAccordionExtraItem(cost, input, extra, idx)
 {
-    let node, el, btn, span, inputs
+  let node, el, btn, span, inputs
 
-    node = extraChargeTmpl.content.cloneNode(true)
-    el = node.firstElementChild
+  node = extraChargeTmpl.content.cloneNode(true)
+  el = node.firstElementChild
 
-    btn = el.querySelector(`.${SELECTOR.DEL_EXTRA_CHARGE}`)
-    span = el.querySelector(`.${SELECTOR.TOTAL_COST}`)
-    inputs = el.querySelectorAll('input')
+  btn = el.querySelector(`.${SELECTOR.DEL_EXTRA_CHARGE}`)
+  span = el.querySelector(`.${SELECTOR.TOTAL_COST}`)
+  inputs = el.querySelectorAll('input')
 
-    inputs[2].value = fitNumber(extra.charge_value, 2, true)
-    inputs[2].pattern = DOTS_PATTERN
-    inputs[2].autofocus = true
+  inputs[2].value = fitNumber(extra.charge_value, 2, true)
+  inputs[2].pattern = DOTS_PATTERN
+  inputs[2].autofocus = true
 
-    inputs[1].value = fitNumber(extra.max_weight, 3)
-    inputs[1].pattern = DOTS_PATTERN
-    inputs[1].autofocus = true
+  inputs[1].value = fitNumber(extra.max_weight, 3)
+  inputs[1].pattern = DOTS_PATTERN
+  inputs[1].autofocus = true
 
-    inputs[0].value = fitNumber(extra.min_weight, 3)
-    inputs[0].pattern = DOTS_PATTERN
-    inputs[0].autofocus = true
+  inputs[0].value = fitNumber(extra.min_weight, 3)
+  inputs[0].pattern = DOTS_PATTERN
+  inputs[0].autofocus = true
 
-    setChargeValueValidator(inputs[2])
-    setMaxWeightValidator(inputs[1])
-    setMinWeightValidator(inputs[0])
+  setChargeValueValidator(inputs[2])
+  setMaxWeightValidator(inputs[1])
+  setMinWeightValidator(inputs[0])
 
-    inputs[2].addEventListener('keyup', ({ target }) => {
-        weightHandler(target, /([^\d.+-])/)
+  inputs[2].addEventListener('keyup', ({ target }) => {
+    weightHandler(target, /([^\d.+-])/)
 
-        setExtraChargeValue({ id: cost.id, idx, fid: 'charge_value', value: fitNumber(target.value, 2, true) })
+    setExtraChargeValue({ id: cost.id, idx, fid: 'charge_value', value: fitNumber(target.value, 2, true) })
 
-        span.textContent = safeSum(input.value, target.value)
-    })
+    span.textContent = safeSum(input.value, target.value)
+  })
 
-    inputs[1].addEventListener('keyup', ({ target }) => {
-        weightHandler(target, /[^\d.]/)
+  inputs[1].addEventListener('keyup', ({ target }) => {
+    weightHandler(target, /[^\d.]/)
 
-        setExtraChargeValue({ id: cost.id, idx, fid: 'max_weight', value: fitNumber(target.value, 3) })
-    })
+    setExtraChargeValue({ id: cost.id, idx, fid: 'max_weight', value: fitNumber(target.value, 3) })
+  })
 
-    inputs[0].addEventListener('keyup', ({ target }) => {
-        weightHandler(target, /[^\d.]/)
+  inputs[0].addEventListener('keyup', ({ target }) => {
+    weightHandler(target, /[^\d.]/)
 
-        setExtraChargeValue({ id: cost.id, idx, fid: 'min_weight', value: fitNumber(target.value, 3) })
-    })
+    setExtraChargeValue({ id: cost.id, idx, fid: 'min_weight', value: fitNumber(target.value, 3) })
+  })
 
-    span.textContent = safeSum(input.value, extra.charge_value)
+  span.textContent = safeSum(input.value, extra.charge_value)
 
-    btn.dataset.id = cost.id
-    btn.dataset.idx = idx
+  btn.dataset.id = cost.id
+  btn.dataset.idx = idx
 
-    return el
+  return el
 }
 
 /**
@@ -293,24 +293,24 @@ function createAccordionExtraItem(cost, input, extra, idx)
  */
 export function createListItem(btnTune, classNames = [SELECTOR.LIST_ITEM])
 {
-    return function(cost) {
-        cost = new Cost(cost)
+  return function(cost) {
+    cost = new Cost(cost)
 
-        const [btn] = createDomElements(['button']),
-            li = createNoopItem(cost)
+    const [btn] = createDomElements(['button']),
+        li = createNoopItem(cost)
 
-        btn.dataset.value = cost.value
-        btn.dataset.extra = cost.extra
-        btn.dataset.name = cost.name
-        btn.dataset.id = cost.id
+    btn.dataset.value = cost.value
+    btn.dataset.extra = cost.extra
+    btn.dataset.name = cost.name
+    btn.dataset.id = cost.id
 
-        btnTune(btn)
+    btnTune(btn)
 
-        li.insertAdjacentElement('beforeend', btn)
-        li.classList.add(...classNames)
+    li.insertAdjacentElement('beforeend', btn)
+    li.classList.add(...classNames)
 
-        return li
-    }
+    return li
+  }
 }
 
 /**
@@ -321,35 +321,35 @@ export function createListItem(btnTune, classNames = [SELECTOR.LIST_ITEM])
  */
 export function createAccordionItem(content = [], activeId)
 {
-    let li, input, fabric = createListItem(delBtnTune, [SELECTOR.ACCORDION_ITEM, SELECTOR.LIST_ITEM])
+  let li, input, fabric = createListItem(delBtnTune, [SELECTOR.ACCORDION_ITEM, SELECTOR.LIST_ITEM])
 
-    return function(cost) {
-        li = fabric(cost)
-        li = wrapChildren(li, [SELECTOR.DIRECTION_COLUMN], [SELECTOR.ACCORDION_TITLE])
+  return function(cost) {
+    li = fabric(cost)
+    li = wrapChildren(li, [SELECTOR.DIRECTION_COLUMN], [SELECTOR.ACCORDION_TITLE])
 
-        const [cont, wrap] = createDomElements(['div','div'])
+    const [cont, wrap] = createDomElements(['div','div'])
 
-        cont.classList.add(SELECTOR.ACCORDION_CONTENT)
-        wrap.classList.add(SELECTOR.BASE_CHARGE)
+    cont.classList.add(SELECTOR.ACCORDION_CONTENT)
+    wrap.classList.add(SELECTOR.BASE_CHARGE)
 
-        content.map(cloneBaseChargeContent.bind(null, cost))
-            .forEach(wrap.appendChild, wrap)
+    content.map(cloneBaseChargeContent.bind(null, cost))
+        .forEach(wrap.appendChild, wrap)
 
-        cont.appendChild(wrap)
+    cont.appendChild(wrap)
 
-        input = wrap.querySelector('input')
+    input = wrap.querySelector('input')
 
-        cost.extra.map(createAccordionExtraItem.bind(null, cost, input))
-            .forEach(cont.appendChild, cont)
+    cost.extra.map(createAccordionExtraItem.bind(null, cost, input))
+        .forEach(cont.appendChild, cont)
 
-        li.insertAdjacentElement('beforeend', cont)
+    li.insertAdjacentElement('beforeend', cont)
 
-        if (activeId && activeId === cost.id) {
-            li.classList.add('active')
-        }
-
-        return li
+    if (activeId && activeId === cost.id) {
+      li.classList.add('active')
     }
+
+    return li
+  }
 }
 
 /**
@@ -362,20 +362,20 @@ export function createAccordionItem(content = [], activeId)
  */
 export function createUl(nodeList, handler, classNames = [SELECTOR.REGIONS_LIST], form = false)
 {
-    let [ul] = createDomElements(['ul'])
+  let [ul] = createDomElements(['ul'])
 
-    nodeList.forEach(ul.appendChild, ul)
+  nodeList.forEach(ul.appendChild, ul)
 
-    ul.classList.add(...classNames)
+  ul.classList.add(...classNames)
 
-    if (typeof handler === 'function') {
-        ul.addEventListener('click', handler)
-    }
-    if (form) {
-        ul = wrapIntoForm(ul, ['needs-validation'])
-    }
+  if (typeof handler === 'function') {
+    ul.addEventListener('click', handler)
+  }
+  if (form) {
+    ul = wrapIntoForm(ul, ['needs-validation'])
+  }
 
-    return ul
+  return ul
 }
 
 /**
@@ -386,15 +386,15 @@ export function createUl(nodeList, handler, classNames = [SELECTOR.REGIONS_LIST]
  */
 export function createInput(className, handlers = {})
 {
-    const [input] = createDomElements(['input'])
+  const [input] = createDomElements(['input'])
 
-    Object.keys(handlers).forEach(e => input.addEventListener(e, handlers[e]))
+  Object.keys(handlers).forEach(e => input.addEventListener(e, handlers[e]))
 
-    input.classList.add(className, SELECTOR.FORM_CONTROL)
-    input.setAttribute('placeholder', PHRASE.SEARCH)
-    input.setAttribute('type', 'text')
+  input.classList.add(className, SELECTOR.FORM_CONTROL)
+  input.setAttribute('placeholder', PHRASE.SEARCH)
+  input.setAttribute('type', 'text')
 
-    return input
+  return input
 }
 
 /**
@@ -405,23 +405,23 @@ export function createInput(className, handlers = {})
  */
 export function showContent(list, input)
 {
-    let node, main, selected, search, save, empty
+  let node, main, selected, search, save, empty
 
-    node = mainWindowTmpl.content.cloneNode(true)
-    main = node.firstElementChild
+  node = mainWindowTmpl.content.cloneNode(true)
+  main = node.firstElementChild
 
-    selected = main.querySelector(`#${SELECTOR.SELECTED_TARIFF_ZONES}`)
-    search = main.querySelector(`#${SELECTOR.SEARCH_TARIFF_ZONES}`)
-    save = main.querySelector(`.${SELECTOR.BTN_SAVE_CHANGES}`)
+  selected = main.querySelector(`#${SELECTOR.SELECTED_TARIFF_ZONES}`)
+  search = main.querySelector(`#${SELECTOR.SEARCH_TARIFF_ZONES}`)
+  save = main.querySelector(`.${SELECTOR.BTN_SAVE_CHANGES}`)
 
-    empty = main.querySelector(`#${SELECTOR.EMPTY_BLOCK}`)
+  empty = main.querySelector(`#${SELECTOR.EMPTY_BLOCK}`)
 
-    search.insertAdjacentElement('afterbegin', input)
-    search.appendChild(list)
+  search.insertAdjacentElement('afterbegin', input)
+  search.appendChild(list)
 
-    document.body.appendChild(node)
+  document.body.appendChild(node)
 
-    return [selected, save, empty]
+  return [selected, save, empty]
 }
 
 /**
@@ -431,14 +431,14 @@ export function showContent(list, input)
  */
 export function rebuildSelectedList(data, selected)
 {
-    const id = findActiveListItem(selected),
-        list = data.map(createAccordionItem(createBaseChargeContent(BASE_CHARGE_VALUE), id)),
-        ulNode = createUl(list, selectedListClickHandler, [
-            SELECTOR.SELECTED_LIST,
-            SELECTOR.ACCORDION
+  const id = findActiveListItem(selected),
+      list = data.map(createAccordionItem(createBaseChargeContent(BASE_CHARGE_VALUE), id)),
+      ulNode = createUl(list, selectedListClickHandler, [
+        SELECTOR.SELECTED_LIST,
+        SELECTOR.ACCORDION
 
-        ], true)
+      ], true)
 
-    selected.innerHTML = ''
-    selected.appendChild(ulNode)
+  selected.innerHTML = ''
+  selected.appendChild(ulNode)
 }

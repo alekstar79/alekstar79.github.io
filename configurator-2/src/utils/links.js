@@ -5,12 +5,12 @@
  */
 export function createStyleLinks(links)
 {
-    return links.map(href => {
-        const lnk = document.createElement('link')
+  return links.map(href => {
+    const lnk = document.createElement('link')
 
-        lnk.rel = 'stylesheet'
-        lnk.href = href
+    lnk.rel = 'stylesheet'
+    lnk.href = href
 
-        return lnk
-    })
+    return lnk
+  })
 }

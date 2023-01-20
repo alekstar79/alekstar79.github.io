@@ -6,6 +6,6 @@ import { PHRASE, SELECTOR } from '../config.js'
  */
 export function btnTune(btn, action)
 {
-    btn.classList.add('btn', SELECTOR[action])
-    btn.textContent = PHRASE[action]
+  btn.classList.add('btn', SELECTOR[action])
+  btn.textContent = PHRASE[action]
 }
