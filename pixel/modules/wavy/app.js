@@ -127,5 +127,5 @@ class Animation
 }
 
 window.onload = () => {
-  new Animation('Half-life ', options, 'pixel/assets/alien.jpg')
+  new Animation('Half-life ', options, 'assets/alien.jpg')
 }
