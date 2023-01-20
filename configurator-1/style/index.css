@@ -1,9 +1,64 @@
 * {
     box-sizing: border-box;
+}
+
+html, body {
     font-size: 16px;
 }
 
-.error-tip {
+#selected-tariff-zones,
+#search-tariff-zones,
+#empty-block {
+    position: relative;
+    justify-content: center;
+    max-width: 90%;
+
+    user-select: none;
+}
+
+#search-tariff-zones {
+    padding: 0;
+}
+
+#selected-tariff-zones form {
+    width: 100%;
+}
+
+#empty-block {
+    background-color: rgba(200,200,200,.2);
+    padding: 32px 0;
+}
+
+#notice-block {
+    text-align: center;
+}
+
+#notice-block h1 {
+    margin-bottom: 1rem;
+    font-size: 2em;
+}
+
+.show {
+    visibility: visible;
+    display: flex;
+}
+
+.hide {
+    visibility: hidden;
+    display: none;
+}
+
+.container .row > [class^="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .row > [class^="col-"] > *:not(#notice-block) {
+    width: 100%;
+}
+
+.container section form .error-tip {
     position: absolute;
     max-width: fit-content;
     padding: .25rem .5rem;
@@ -18,7 +73,27 @@
     z-index: 3;
 }
 
-.selected__list {
+.search-input {
+    width: 100%;
+    padding: 12px 20px 12px 40px;
+
+    background-image: url('/assets/searchicon.png');
+    background-position: 10px 16px;
+    background-repeat: no-repeat;
+
+    font-size: 1.2em;
+}
+
+.container .btn.save-changes-btn {
+    max-width: 90%;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.regions-list,
+.selected-list {
     list-style-type: none;
     width: 100%;
     padding: 0;
@@ -28,7 +103,29 @@
     transition: all .3s ease-in-out;
 }
 
-.selected__list li {
+.regions-list {
+    position: absolute;
+    top: calc(100% + 50px);
+    left: 0;
+
+    max-height: 82vh;
+
+    overflow-y: scroll;
+    box-shadow: 0 0 10px 0 rgba(53,53,53,.33);
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: 9;
+}
+
+.regions-list.active {
+    top: calc(100% + 10px);
+    visibility: visible;
+    opacity: 1;
+}
+
+.selected-list li,
+.regions-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,17 +142,13 @@
     color: black;
 }
 
-.accordion__item:first-child {
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
+.selected-list li.direction-column {
+    flex-direction: column;
+    align-items: start;
 }
 
-.accordion__item:last-child {
-    border-bottom-right-radius: .25rem;
-    border-bottom-left-radius: .25rem;
-}
-
-.selected__list span {
+.selected-list li span,
+.regions-list li span {
     display: block;
     flex-shrink: 2;
 
@@ -66,7 +159,8 @@
     overflow: hidden;
 }
 
-.selected__list button {
+.selected-list li button,
+.regions-list li button {
     flex-shrink: 1;
 
     min-width: 90px;
@@ -87,41 +181,39 @@
     transition: all .4s ease;
 }
 
-.selected__list .primary {
+.selected-list li button.primary {
     background-color: #307ff2;
 }
 
-.selected__list .primary:hover {
+.regions-list li button.add {
+    background-color: #28c17b;
+}
+
+.selected-list li button.del,
+.regions-list li button.del {
+    background-color: #f43547;
+}
+
+.selected-list li button.primary:hover {
     background-color: #0b5ed7;
     color: rgb(245,245,245);
 }
 
-.selected__list .del {
-    background-color: #f43547;
-}
-
-.selected__list .add:hover {
+.selected-list li button.add:hover,
+.regions-list li button.add:hover {
     background-color: #157347;
     color: rgb(245,245,245);
 }
 
-.selected__list .del:hover {
+.selected-list li button.del:hover,
+.regions-list li button.del:hover {
     background-color: #bb2d3b;
     color: rgb(245,245,245);
 }
 
-.selected__list li {
-    display: flex;
-    flex-direction: column;
-}
-
-.selected__list li:hover {
+.selected-list li:hover,
+.regions-list li:hover {
     background-color: rgba(13,110,253,.1);
-}
-
-.selected__list li.disabled {
-    background-color: rgba(110,110,110,.1);
-    justify-content: center;
 }
 
 .accordion .accordion__item .accordion__title {
@@ -176,12 +268,13 @@
     width: unset;
 }
 
-.accordion .accordion__content span.total-cost {
+.accordion .accordion__content .extra-charge span.total-cost {
     margin: 10px 0 0;
     width: 100%;
 }
 
-.accordion .accordion__content input {
+.accordion .accordion__content .extra-charge input,
+.accordion .accordion__content .base-charge input {
     min-width: 52px;
 }
 
@@ -190,23 +283,25 @@
     text-align: right;
 }
 
-.accordion .accordion__content input:invalid,
-.accordion .accordion__content input.error,
+.accordion .accordion__content .extra-charge input:invalid,
+.accordion .accordion__content .base-charge input:invalid,
+.accordion .accordion__content .extra-charge input.error,
+.accordion .accordion__content .base-charge input.error,
 .error {
     box-shadow: 0 0 0 .25rem rgba(255, 0, 36, 0.37);
     border-color: #e8203da3;
 }
 
 @media all and (max-width: 991px) {
-    .selected__list .del-extra-charge,
-    .selected__list .add-extra-charge {
+    .selected-list .del-extra-charge,
+    .selected-list .add-extra-charge {
         margin: 12px 0;
         width: 100%;
     }
-    .accordion .accordion__content .base-charge__title {
+    .accordion .accordion__content .base-charge .base-charge__title {
         padding: 10px 0;
     }
-    .accordion .accordion__content span.total-cost {
+    .accordion .accordion__content .extra-charge span.total-cost {
         text-align: center;
     }
 }
@@ -222,7 +317,7 @@
     .accordion .accordion__item.active .accordion__content {
         padding: 0 10px;
     }
-    .accordion .accordion__content .base-charge__title {
+    .accordion .accordion__content .base-charge .base-charge__title {
         width: unset;
     }
     .accordion .accordion__content .base-charge input {
@@ -237,7 +332,7 @@
     .accordion .accordion__content .base-charge {
         flex-direction: column;
     }
-    .accordion .accordion__content .base-charge__title {
+    .accordion .accordion__content .base-charge .base-charge__title {
         width: 100%;
     }
     .accordion .accordion__content .base-charge input {
@@ -250,8 +345,9 @@
         align-items: center;
     }
     .accordion .accordion__item .accordion__title .btn,
-    .selected__list .del-extra-charge,
-    .selected__list .add-extra-charge {
+    .regions-list .list-item .btn,
+    .selected-list .del-extra-charge,
+    .selected-list .add-extra-charge {
         min-width: 48px;
         text-overflow: ellipsis;
         white-space: nowrap;
