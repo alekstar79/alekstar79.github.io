@@ -208,4 +208,4 @@ class Slices
 }
 
 image.addEventListener('load', () => new Slices(image))
-image.src = 'skyscraper.jpg'
+image.src = 'assets/skyscraper.jpg'
