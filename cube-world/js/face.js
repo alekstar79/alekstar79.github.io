@@ -65,8 +65,6 @@ export class Face
 
   draw(canvas)
   {
-    this.clear(canvas)
-
     // draw face
     canvas.ctx.beginPath()
 
@@ -80,10 +78,5 @@ export class Face
 
     canvas.ctx.fillStyle = 'hsl(' + this.color + ','+ (70) + '%,' + (c) +'%)'
     canvas.ctx.fill()
-  }
-
-  clear(canvas)
-  {
-    canvas.ctx.clearRect(0, 0, canvas.width, canvas.height)
   }
 }

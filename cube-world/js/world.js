@@ -15,7 +15,7 @@ export class World
     this.pointer    = pointer
     this.count      = size * size * size
 
-    // this.cellWidth  = this.width / this.size
+    this.cellWidth  = this.width / this.size
 
     // ---- trigo ----
 

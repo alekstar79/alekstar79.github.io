@@ -10,16 +10,6 @@ export function bindEvents()
     endX = 0,
     endY = 0
 
-  this.pinch || (this.pinch = e => console.log('pinch', e))
-  this.down  || (this.down  = e => console.log('down', e))
-  this.move  || (this.move  = e => console.log('move', e))
-  this.tap   || (this.tap   = e => console.log('tap', e))
-  this.up    || (this.up = e => console.log('up', e))
-
-  this.wheel || (this.wheel = e => {
-    this.scale += (e.deltaY > 0 ? -1 : +1)
-  })
-
   window.addEventListener('wheel', this.wheel.bind(this), false)
 
   Object.entries({
