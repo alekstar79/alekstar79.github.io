@@ -112,10 +112,13 @@ function draw()
   requestAnimationFrame(draw)
 }
 
-;(function init() {
+function init()
+{
   for (let i = 0; i < N; i++) {
     POLY.push(new RandPoly())
   }
 
   draw()
-})()
+}
+
+init()

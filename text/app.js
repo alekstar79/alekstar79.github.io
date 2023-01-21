@@ -151,9 +151,9 @@ const options = {
     fontColor: [60, 200, 255, 255],
     fontSize: 120,
     get fontStyle() {
-      return `${this.fontSize}px Oswald, sans-serif`
+      return `${this.fontSize}px Oswald, serif`
     },
-    message: 'NetAggregator'
+    message: 'alekstar79'
   }
 }
 

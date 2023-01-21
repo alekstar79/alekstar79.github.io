@@ -78,7 +78,8 @@ function draw()
   requestAnimationFrame(draw)
 }
 
-;(function init() {
+function init()
+{
   C.translate(-O, -O)
   C.lineWidth = 3
   C.globalCompositeOperation = 'screen'
@@ -88,4 +89,6 @@ function draw()
   }
 
   draw()
-})()
+}
+
+init()

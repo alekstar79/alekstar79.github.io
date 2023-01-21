@@ -1,21 +1,17 @@
 const container = document.getElementById('container')
-
 const instance = renderer({ minScale: .1, maxScale: 30, element: container.children[0], scaleSensitivity: 50 })
 
 container.addEventListener('mousedown', mousedown)
 
-function mousedown()
-{
+function mousedown() {
   container.addEventListener('mousemove', mousemowe)
 }
 
-function mouseup()
-{
+function mouseup() {
   container.removeEventListener('mousemove', mousemowe)
 }
 
-function mousemowe(e)
-{
+function mousemowe(e) {
   if (!e.shiftKey) return
 
   e.preventDefault()

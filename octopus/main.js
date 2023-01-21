@@ -92,7 +92,7 @@ const spiral = function () {
       */
       ctx.moveTo(x1, y1)
 
-      /* setup the arc path here */
+      /* set up the arc path here */
       ctx.arc(x1, y1, r, 0, 2 * PI)
     }
 

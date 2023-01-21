@@ -1,83 +1,84 @@
 <!--suppress HtmlUnknownAnchorTarget -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset=utf-8 />
-		<title>Flux Slider Demo &#0187; Hardware accelerated image transitions using CSS3</title>
+<head>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Flux Slider Demo &#0187; Hardware accelerated image transitions using CSS3</title>
 
-		<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="/favicon.png" type="image/png">
+	<link rel="stylesheet" href="css/style.css">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-		<script src="js/flux.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="js/flux.js"></script>
 
-		<script>
-			$(function() {
-				if (!flux.browser.supportsTransitions) {
-				  alert('Flux Slider requires a browser that supports CSS3 transitions')
+	<script>
+		$(function() {
+			if (!flux.browser.supportsTransitions) {
+				alert('Flux Slider requires a browser that supports CSS3 transitions')
+			}
+
+			window.f = new flux.slider('#slider', {
+				pagination: false,
+				autoplay: false
+			})
+
+			// Setup a listener for user requested transitions
+			$('div#transitions').bind('click', (event) => {
+				event.preventDefault()
+
+				if (!event.target.href) return
+
+				// If this is a 3D transform and the browser doesn't support 3D then inform the user
+				if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
+					alert(`The '${event.target.innerHTML}' transition requires a browser that supports 3D transforms`)
+					return
 				}
 
-				window.f = new flux.slider('#slider', {
-					pagination: false,
-					autoplay: false
-				})
-
-				// Setup a listener for user requested transitions
-				$('div#transitions').bind('click', (event) => {
-					event.preventDefault()
-
-					if (!event.target.href) return
-
-					// If this is a 3D transform and the browser doesn't support 3D then inform the user
-					if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
-						alert(`The '${event.target.innerHTML}' transition requires a browser that supports 3D transforms`)
-						return
-					}
-
-					window.f.next(event.target.href.split('#')[1])
-				})
+				window.f.next(event.target.href.split('#')[1])
 			})
-		</script>
-	</head>
+		})
+	</script>
+</head>
+<body id="transitiongallery">
+	<section class="container">
+		<h1><span class="flux">Flux</span> <span class="slider">Slider</span></h1>
+		<h2>Hardware accelerated image transitions using CSS3.</h2>
 
-	<body id="transitiongallery">
-		<section class="container">
-			<h1><span class="flux">Flux</span> <span class="slider">Slider</span></h1>
-			<h2>Hardware accelerated image transitions using CSS3.</h2>
-
-			<div id="slidercontainer">
-				<div id="slider">
-					<img src="img/avatar.jpg" alt="" />
-					<img src="img/ironman.jpg" alt="" />
-					<img src="img/tron.jpg" alt="" />
-					<img src="img/greenhornet.jpg" alt="" />
-				</div>
-
-				<div id="transitions">
-					<h2>2D Transitions</h2>
-					<ul id="trans2D">
-						<li><a href="#bars">Bars</a></li>
-						<li><a href="#zip">Zip</a></li>
-						<li><a href="#blinds">Blinds</a></li>
-						<li><a href="#blocks">Blocks</a></li>
-						<li><a href="#concentric">Concentric</a></li>
-						<li><a href="#warp">Warp</a></li>
-						<li><a href="#slide">Slide</a></li>
-					</ul>
-
-					<h2>3D Transitions</h2>
-					<ul id="trans3d">
-						<li><a href="#bars3d">Bars3D</a></li>
-						<li><a href="#cube">Cube</a></li>
-						<li><a href="#tiles3d">Tiles3D</a></li>
-						<li><a href="#blinds3d">Blinds3D</a></li>
-						<li><a href="#turn">Turn</a></li>
-					</ul>
-				</div>
+		<div id="slidercontainer">
+			<div id="slider">
+				<img src="img/avatar.jpg" alt="" />
+				<img src="img/ironman.jpg" alt="" />
+				<img src="img/tron.jpg" alt="" />
+				<img src="img/greenhornet.jpg" alt="" />
 			</div>
 
-			<footer>
-				<img src="img/html5.png" alt="HTML5" />
-			</footer>
-		</section>
-	</body>
+			<div id="transitions">
+				<h2>2D Transitions</h2>
+				<ul id="trans2D">
+					<li><a href="#bars">Bars</a></li>
+					<li><a href="#zip">Zip</a></li>
+					<li><a href="#blinds">Blinds</a></li>
+					<li><a href="#blocks">Blocks</a></li>
+					<li><a href="#concentric">Concentric</a></li>
+					<li><a href="#warp">Warp</a></li>
+					<li><a href="#slide">Slide</a></li>
+				</ul>
+
+				<h2>3D Transitions</h2>
+				<ul id="trans3d">
+					<li><a href="#bars3d">Bars3D</a></li>
+					<li><a href="#cube">Cube</a></li>
+					<li><a href="#tiles3d">Tiles3D</a></li>
+					<li><a href="#blinds3d">Blinds3D</a></li>
+					<li><a href="#turn">Turn</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<footer>
+			<img src="img/html5.png" alt="HTML5" />
+		</footer>
+	</section>
+</body>
 </html>

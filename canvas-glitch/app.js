@@ -1,4 +1,4 @@
-// noinspection JSValidateTypes,JSCheckFunctionSignatures
+// noinspection JSValidateTypes
 
 let { innerWidth: W, innerHeight: H } = window,
   isLoaded = false,
@@ -19,7 +19,7 @@ function setup()
   background(0)
   createCanvas(W, H)
 
-  loadImage('demo.jpg', img => {
+  loadImage('assets/demo.jpg', img => {
     glitch = new Glitch(img)
     isLoaded = true
   })

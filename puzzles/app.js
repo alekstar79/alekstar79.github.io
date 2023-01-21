@@ -1,15 +1,15 @@
 // noinspection PointlessArithmeticExpressionJS
 
-let imgCtx = scene.getContext('2d')
-let pickCtx = pick.getContext('2d')
+const imgCtx = scene.getContext('2d')
+const pickCtx = pick.getContext('2d')
+const objects = Array(22).fill(0).map((e, i) => img(i))
+const bounds = scene.getBoundingClientRect()
+const index = {}
+
+let hover, drag, x, y //, sx, sy
 
 // это важно для того, чтобы сглаживанием не изменялось значение идентификатора
 pickCtx.imageSmoothingEnabled = false
-
-let index = {}
-let objects = Array(22).fill(0).map((e, i) => img(i))
-let bounds = scene.getBoundingClientRect()
-let hover, drag, x, y //, sx, sy
 
 scene.addEventListener('mousemove', e => {
   drag ? handleDrag(e) : handleHover(e)
