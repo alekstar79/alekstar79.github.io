@@ -2,9 +2,10 @@
 
 const imgCtx = scene.getContext('2d')
 const pickCtx = pick.getContext('2d')
+const index = {}
+
 const objects = Array(22).fill(0).map((e, i) => img(i))
 const bounds = scene.getBoundingClientRect()
-const index = {}
 
 let hover, drag, x, y //, sx, sy
 
