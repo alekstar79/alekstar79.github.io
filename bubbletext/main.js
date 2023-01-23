@@ -5,7 +5,7 @@ canvas.height = window.innerHeight
 canvas.width = window.innerWidth
 
 let canvasPosition = canvas.getBoundingClientRect()
-let bubbleTextArray, adjustX, adjustY
+let textCoordinates, bubbleTextArray, adjustX, adjustY
 
 const mouse = {
   x: canvas.width / 2,
@@ -13,26 +13,18 @@ const mouse = {
   radius: 150
 }
 
+window.addEventListener('resize', resize)
+
 canvas.addEventListener('mousemove', e => {
   mouse.x = e.x - canvasPosition.left
   mouse.y = e.y - canvasPosition.top
 })
 
-window.addEventListener('resize', () => {
-  canvasPosition = canvas.getBoundingClientRect()
-
-  canvas.height = window.innerHeight
-  canvas.width = window.innerWidth
-
-  mouse.x = canvas.width / 2
-  mouse.y = canvas.height / 2
-})
-
-ctx.fillStyle = 'white'
 ctx.font = '25px Verdana'
+ctx.fillStyle = 'white'
 ctx.fillText('BUBBLE', 20, 42)
 
-const textCoordinates = ctx.getImageData(0, 0, 500, 100)
+textCoordinates = ctx.getImageData(0, 0, 150, 50)
 
 class Particle
 {
@@ -77,6 +69,7 @@ class Particle
       ctx.beginPath()
       ctx.arc(this.x + 1, this.y - 1, this.size / 3, 0, Math.PI * 2)
     }
+
     ctx.closePath()
     ctx.fill()
   }
@@ -114,7 +107,19 @@ class Particle
   }
 }
 
-;(function init() {
+function resize()
+{
+  canvasPosition = canvas.getBoundingClientRect()
+
+  canvas.height = window.innerHeight
+  canvas.width = window.innerWidth
+
+  mouse.y = canvas.height / 2
+  mouse.x = canvas.width / 2
+}
+
+function init()
+{
   bubbleTextArray = []
   adjustX = -3
   adjustY = -3
@@ -131,8 +136,13 @@ class Particle
       }
     }
   }
-})()
+}
 
+init()
+
+/**
+* Main loop
+*/
 ;(function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 

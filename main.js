@@ -17,27 +17,13 @@ window.requestAnimationFrame || (window.requestAnimationFrame = (function() {
 
 })())
 
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+// const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
 const ctx = document.getElementById('canvas').getContext('2d')
 
-const container = document.querySelector('.container')
+const state = {},
 
-const upBtn = document.querySelector('.up-button')
-const downBtn = document.querySelector('.down-button')
-
-const slide = document.querySelector('.main__slide')
-const sidebar = document.querySelector('.sidebar')
-
-const sCount = slide.querySelectorAll('.slide').length
-
-const height = container.clientHeight
-
-let activeSlideIndex = 0
-
-const target = {},
-
-  tendrils = [],
+  target = {},
 
   settings = {
     friction: 0.5,
@@ -62,6 +48,127 @@ function debounce(fn, ms = 9)
   }
 }
 
+function initModal(options = {})
+{
+  let
+
+    speed = options.speed || 1000,
+    destroyed = false,
+    hiding = false,
+    elModal
+
+  function createModal(options)
+  {
+    elModal = document.createElement('div')
+
+    const template = {
+      button: '<button onclick="{{button_handler}}" class="{{button_class}}" data-event={{button_event}}>{{button_text}}</button>',
+      footer: '<div class="modal__footer">{{buttons}}</div>',
+      modal: `
+        <div class="modal__backdrop" data-dismiss="modal">
+          <div class="modal__content">
+            <div class="modal__header">
+              <div class="modal__title" data-modal="title">{{title}}</div>
+              <span class="modal__btn-close" data-dismiss="modal" title="Закрыть">×</span>
+            </div>
+            
+            <div class="modal__body" data-modal="content">
+            {{content}}
+            </div>
+            {{footer}}
+          </div>
+        </div>
+        `
+    }
+
+    let modalHTML, modalFooterHTML = '', modalFooterButton = ''
+
+    elModal.classList.add('modal')
+
+    modalHTML = template.modal.replace('{{title}}', options.title || 'Новое окно')
+    modalHTML = modalHTML.replace('{{content}}', options.content || '')
+
+    if (options.footerButtons) {
+      for (let i = 0, length = options.footerButtons.length; i < length; i++) {
+        modalFooterButton = template.button.replace('{{button_class}}', options.footerButtons[i].class)
+        modalFooterButton = modalFooterButton.replace('{{button_event}}', options.footerButtons[i].event || '')
+        modalFooterButton = modalFooterButton.replace('{{button_handler}}', options.footerButtons[i].handler || '')
+        modalFooterButton = modalFooterButton.replace('{{button_text}}', options.footerButtons[i].text)
+        modalFooterHTML += modalFooterButton
+      }
+
+      modalFooterHTML = template.footer.replace('{{buttons}}', modalFooterHTML)
+    }
+
+    modalHTML = modalHTML.replace('{{footer}}', modalFooterHTML)
+    elModal.innerHTML = modalHTML
+
+    document.body.appendChild(elModal)
+  }
+
+  function showModal()
+  {
+    if (!destroyed && !hiding) {
+      elModal.classList.add('modal__show')
+      document.dispatchEvent(eventShowModal)
+    }
+  }
+
+  function hideModal()
+  {
+    hiding = true
+
+    elModal.classList.remove('modal__show')
+    elModal.classList.add('modal__hiding')
+
+    setTimeout(() => {
+      elModal.classList.remove('modal__hiding')
+      hiding = false
+
+      document.dispatchEvent(eventHideModal)
+
+    }, speed)
+  }
+
+  function closeModalHandler(e)
+  {
+    if (e.target.dataset.dismiss === 'modal') {
+      hideModal()
+    }
+  }
+
+  createModal(options)
+
+  elModal.addEventListener('click', closeModalHandler)
+
+  const eventShowModal = new CustomEvent('show.modal', { bubbles: false, cancelable: false, detail: elModal })
+  const eventHideModal = new CustomEvent('hide.modal', { bubbles: false, cancelable: false, detail: elModal })
+
+  return {
+    ['$el']: elModal,
+
+    data: {},
+
+    show: showModal,
+    hide: hideModal,
+
+    destroy()
+    {
+      elModal.removeEventListener('click', closeModalHandler)
+      elModal.parentElement.removeChild(elModal)
+      destroyed = true
+    },
+    setContent(html)
+    {
+      elModal.querySelector('[data-modal="content"]').innerHTML = html
+    },
+    setTitle(text)
+    {
+      elModal.querySelector('[data-modal="title"]').innerText = text
+    }
+  }
+}
+
 class Oscillator
 {
   get value()
@@ -78,10 +185,10 @@ class Oscillator
 
   init(options)
   {
-    this.phase = options.phase || 0
-    this.offset = options.offset || 0
     this.frequency = options.frequency || 0.001
     this.amplitude = options.amplitude || 1
+    this.offset = options.offset || 0
+    this.phase = options.phase || 0
   }
 }
 
@@ -175,7 +282,84 @@ class Tendril
   }
 }
 
+/**
+* Reviewer
+*/
 ;(function() {
+
+  const map = {}
+  const modal = initModal({
+    footerButtons: [
+      { class: 'btn btn-demo', text: 'Демо', event: 'demo', handler: 'javascript:void(0)' },
+      { class: 'btn btn-code', text: 'Код',  event: 'code', handler: 'javascript:void(0)' }
+    ]
+  })
+
+  const paths = {
+    code: 'https://github.com/alekstar79/',
+    demo: 'https://alekstar79.github.io/'
+  }
+
+  document.querySelectorAll('.reviewer')
+    .forEach((el, i) => {
+      const key = Symbol(`rev${i}`)
+
+      map[key] = { active: el.querySelector('.reviewer__slide.active') }
+
+      el.addEventListener('click', ({ target }) => {
+        const slide = target.closest('.reviewer__slide')
+
+        if (!slide) return
+
+        if (slide.classList.contains('active')) {
+          const { src } = slide.querySelector('img')
+
+          modal.data.path = slide.dataset.key
+          modal.setTitle(slide.dataset.title)
+          modal.setContent(`<img src="${src}" alt="">`)
+          modal.show()
+
+          return
+        }
+
+        map[key].active.classList.remove('active')
+        slide.classList.add('active')
+        map[key].active = slide
+      })
+    })
+
+  document.addEventListener('hide.modal', () => {
+    setTimeout(() => { state.modalOpened = false }, 7)
+  })
+
+  document.addEventListener('show.modal', () => {
+    setTimeout(() => { state.modalOpened = true }, 7)
+  })
+
+  modal.$el.querySelectorAll('button')
+    .forEach(el => {
+      el.addEventListener('click', () => {
+        window.open(`${paths[el.dataset.event]}${modal.data.path}`, '_blank')
+      })
+    })
+
+})()
+
+/**
+* Slides
+*/
+;(function() {
+
+  const upBtn = document.querySelector('.up-button')
+  const downBtn = document.querySelector('.down-button')
+
+  const slide = document.querySelector('.main__slide')
+  const sidebar = document.querySelector('.sidebar')
+
+  const height = document.querySelector('.container').clientHeight
+  const sCount = slide.querySelectorAll('.slide').length
+
+  let activeSlideIndex = 0
 
   function setTransform(idx)
   {
@@ -185,6 +369,8 @@ class Tendril
 
   function changeSlide(direction)
   {
+    if (state.modalOpened) return
+
     switch (direction) {
       case 'up':
         activeSlideIndex--
@@ -205,7 +391,7 @@ class Tendril
     setTransform(activeSlideIndex)
   }
 
-  const debounsedChangeSlide = debounce(changeSlide, 200)
+  const debounsedChangeSlide = debounce(changeSlide, 250)
 
   window.addEventListener('wheel', ({ deltaY }) => {
     debounsedChangeSlide(Math.sign(deltaY) < 0 ? 'up' : 'down')
@@ -218,15 +404,20 @@ class Tendril
 
 })()
 
+/**
+* Oscillator
+*/
 ;(function() {
 
-  const color = random(1, 2)
+  // const color = random(1, 2)
   const hue = new Oscillator({
     phase: Math.random() * Math.PI2,
     frequency: 0.0025,
     amplitude: 85,
     offset: 285
   })
+
+  let tendrils = []
 
   function init(e)
   {
@@ -247,7 +438,7 @@ class Tendril
 
   function reset()
   {
-    tendrils.splice(0,tendrils.length)
+    tendrils = []
 
     for (let i = 0; i < settings.trails; i++) {
       tendrils.push(new Tendril({
@@ -267,7 +458,6 @@ class Tendril
   function draw()
   {
     ctx.globalCompositeOperation = 'lighter'
-    // ctx.strokeStyle = color === 1 ? 'hsla(346, 100%, 56%, 0.5)' : 'hsla(171, 100%, 56%, 0.5)'
     ctx.strokeStyle = `hsla(${hue.value}, 100%, 50%, 0.7)`
     ctx.lineWidth = 1
 
