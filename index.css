@@ -215,12 +215,13 @@ h2 {
 }
 
 button {
-  background-color: #fff;
-  border: none;
-  color: #aaa;
   cursor: pointer;
   font-size: 16px;
-  padding: 15px;
+  padding: 10px;
+
+  border: none;
+  background-color: #fff;
+  color: #aaa;
 }
 
 button:hover {
@@ -235,6 +236,7 @@ button:focus {
   position: absolute;
   left: 35%;
   top: 50%;
+
   z-index: 100;
 }
 
@@ -332,7 +334,7 @@ button:focus {
   padding: 15px;
 
   line-height: 1.5;
-  font-size: 1.16em;
+  font-size: 1.2em;
   font-weight: 500;
   color: #000;
 
@@ -343,7 +345,6 @@ button:focus {
   margin: 0 15px;
 
   line-height: 1.5;
-  font-size: 1.16em;
   font-weight: 500;
 
   color: #000;
@@ -353,7 +354,6 @@ button:focus {
 .modal__btn-close {
   float: right;
   font-family: sans-serif;
-  font-size: 24px;
   font-weight: 700;
   line-height: 1;
   color: #000;
@@ -367,7 +367,7 @@ button:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .modal__body {
@@ -394,5 +394,5 @@ button:focus {
 
 .btn-code,
 .btn-demo {
-  font-size: 1.16em;
+  font-size: 1em;
 }
