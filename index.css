@@ -77,7 +77,7 @@ h2 {
   width: 100%;
 
   color: #fff;
-  border-right: 2px solid white;
+  border-right: 1px solid white;
 }
 
 .sidebar__text {
@@ -113,7 +113,7 @@ h2 {
   height: 100%;
   width: 100%;
 
-  border-left: 2px solid white;
+  border-left: 1px solid white;
 }
 
 .main__slide > .slide:before {

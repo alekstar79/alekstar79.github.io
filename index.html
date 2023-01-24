@@ -23,15 +23,15 @@
 
       <div style="background-color: rgba(169, 23, 0, .5);">
         <div class="sidebar__text">
-          <h1>Life Hutch</h1>
-          <p>Love, death & robots</p>
+          <h1>Cube World</h1>
+          <p>web, canvas, api</p>
         </div>
       </div>
 
       <div style="background-color: rgba(131, 0, 255, .5);">
         <div class="sidebar__text">
-          <h1>Zima Blue</h1>
-          <p>Love, death & robots</p>
+          <h1>Cover</h1>
+          <p>web, canvas, api</p>
         </div>
       </div>
 
@@ -142,7 +142,7 @@
           <p>
             Внимание модульная <i>&#60;script type="module"&#62;</i> структура приложения!
             Для запуска приложения потребуется что-нибудь из LAMP, LEMP, XAMPP, WAMP...
-            Возможен запуск с помощью VS Code, плагин Live Server. <br>
+            Возможен запуск с помощью VS Code, плагин Live Server.
           </p>
 
           <div class="slide__links slide--block slide--margin">
@@ -161,15 +161,15 @@
         </div>
 
         <div class="slide__text slide--block">
-          <p class="slide--margin">
-            Структурный рефакторинг существующей <a href="https://github.com/alekstar79/cost-configurator-1">[<i>кодовой базы</i>]</a>
+          <p>
+            Структурный рефакторинг существующей <a href="https://github.com/alekstar79/cost-configurator-1"><i>кодовой базы</i></a>
             через классы (web components). Использованны Custom Elements, Shadow DOM, HTML Templates.
           </p>
 
           <p class="slide--margin">
             Внимание модульная <i>&#60;script type="module"&#62;</i> структура приложения!
             Для запуска приложения потребуется что-нибудь из LAMP, LEMP, XAMPP, WAMP...
-            Возможен запуск с помощью VS Code, плагин Live Server. <br>
+            Возможен запуск с помощью VS Code, плагин Live Server.
           </p>
 
           <div class="slide__links slide--block slide--margin">
@@ -192,7 +192,7 @@
         </div>
 
         <div class="slide__text slide--block">
-          <p class="slide--margin">
+          <p>
             Функционал скрипта базируется на использовании библиотеки <a href="https://p5js.org" target="_blank"><i>p5.js</i></a>.
             Это библиотека JavaScript с открытым исходным кодом, имеет набор функций для рисования и не только.
             Так же можно рассматривать всю страницу своего браузера как эскиз, включая объекты HTML5 для текста,
@@ -201,7 +201,7 @@
 
           <p class="slide--margin">
             Запуск скрипта, минимально требует локальный сервер, либо с помощью VS Code, плагин Live Server. Либо сервер,
-            общедоступный по сети интернет. <br>
+            общедоступный по сети интернет.
           </p>
 
           <div class="slide__links slide--block slide--margin">
@@ -212,11 +212,54 @@
       </div>
 
       <div class="slide slide-6" style="background-color: rgba(131, 0, 255, .5);">
-        <div class="slide__text"><h2>Описание</h2></div>
+        <div class="reviewer">
+          <div class="reviewer__slide active" data-key="cover" data-title="Cover">
+            <img src="cover/assets/review.gif" alt="">
+            <h3>Cover</h3>
+          </div>
+        </div>
+
+        <div class="slide__text slide--block">
+          <p>
+            Установка и запуск сценария, минималистичны. Скрипт не использует системы сборки и сторонние библиотеки.
+            Достаточно просто скачать репозиторий. Открыть индексный файл в браузере. Все...
+          </p>
+
+          <p class="slide--margin">
+            Интеграция в собственные проекты сводится к включению двух canvas элементов в html разметку и
+            подключению скрипта и стилей. Более продвинутая интеграция и кастомизация, отдается на откуп
+            разработчику.
+          </p>
+
+          <div class="slide__links slide--block slide--margin">
+            <a href="https://alekstar79.github.io/cover"><i>Демо</i></a>
+            <a href="https://github.com/alekstar79/cover"><i>Код</i></a>
+          </div>
+        </div>
       </div>
 
       <div class="slide slide-7" style="background-color: rgba(169, 23, 0, .5);">
-        <div class="slide__text"><h2>Описание</h2></div>
+        <div class="reviewer">
+          <div class="reviewer__slide active" data-key="cube-world" data-title="Cube World">
+            <img src="cube-world/assets/review.gif" alt="">
+            <h3>Cube World</h3>
+          </div>
+        </div>
+
+        <div class="slide__text slide--block">
+          <p>
+            Архитектура приложения использует модульный подход <i>&#60;script type="module"&#62;</i>
+            В связи с чем, для запуска сценария, необходим сервер. Например, Live Server для VS Code. Npm пакет
+            <a href="https://github.com/vercel/serve" target="_blank"><i>serve</i></a>, позволяет
+            быстро развернуть локальный сервер. Или подтянуть докер образ <i>[ docker pull alekstar79/cube-world ]</i>
+            и запустить на исполнение <i>[ docker run -d -p 80:80 -e DOCKER_ENV=true --rm --name cube-world alekstar79/cube-world ]</i>
+          </p>
+
+          <div class="slide__links slide--block slide--margin">
+            <a href="https://alekstar79.github.io/cube-world"><i>Демо</i></a>
+            <a href="https://github.com/alekstar79/cube-world"><i>Код</i></a>
+          </div>
+        </div>
       </div>
 
       <div class="slide slide-8" style="background-color: rgba(0, 161, 1, .5);">
