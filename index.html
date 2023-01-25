@@ -16,15 +16,15 @@
     <div class="sidebar">
       <div style="background-color: rgba(0, 161, 1, .5);">
         <div class="sidebar__text">
-          <h1>Snow in the desert</h1>
-          <p>Love, death & robots</p>
+          <h1>Mystical</h1>
+          <p>web, canvas, api, 3d</p>
         </div>
       </div>
 
       <div style="background-color: rgba(169, 23, 0, .5);">
         <div class="sidebar__text">
           <h1>Cube World</h1>
-          <p>web, canvas, api</p>
+          <p>web, canvas, api, 3d</p>
         </div>
       </div>
 
@@ -140,9 +140,10 @@
 
         <div class="slide__text slide--block">
           <p>
-            Внимание модульная <i>&#60;script type="module"&#62;</i> структура приложения!
-            Для запуска приложения потребуется что-нибудь из LAMP, LEMP, XAMPP, WAMP...
-            Возможен запуск с помощью VS Code, плагин Live Server.
+            Внимание модульная <code class="code--inline">&#60;script type="module"&#62;</code> структура приложения!
+            Для запуска приложения потребуется локальный сервер. Возможен запуск с помощью VS Code, плагин Live Server.
+            Или npm пакет <a href="https://github.com/vercel/serve" target="_blank"><i>serve</i></a>, который позволяет
+            быстро развернуть локальный сервер на вашем компьютере.
           </p>
 
           <div class="slide__links slide--block slide--margin">
@@ -167,9 +168,10 @@
           </p>
 
           <p class="slide--margin">
-            Внимание модульная <i>&#60;script type="module"&#62;</i> структура приложения!
-            Для запуска приложения потребуется что-нибудь из LAMP, LEMP, XAMPP, WAMP...
-            Возможен запуск с помощью VS Code, плагин Live Server.
+            Внимание модульная <code class="code--inline">&#60;script type="module"&#62;</code> структура приложения!
+            Для запуска приложения потребуется локальный сервер. Возможен запуск с помощью VS Code, плагин Live Server.
+            Или npm пакет <a href="https://github.com/vercel/serve" target="_blank"><i>serve</i></a>, который позволяет
+            быстро развернуть локальный сервер на вашем компьютере.
           </p>
 
           <div class="slide__links slide--block slide--margin">
@@ -247,12 +249,28 @@
         </div>
 
         <div class="slide__text slide--block">
-          <p>
-            Архитектура приложения использует модульный подход <i>&#60;script type="module"&#62;</i>
+          <p class="slide--margin">
+            Архитектура приложения использует модульный подход <code class="code--inline">&#60;script type="module"&#62;</code>
             В связи с чем, для запуска сценария, необходим сервер. Например, Live Server для VS Code. Npm пакет
             <a href="https://github.com/vercel/serve" target="_blank"><i>serve</i></a>, позволяет
-            быстро развернуть локальный сервер. Или подтянуть докер образ <i>[ docker pull alekstar79/cube-world ]</i>
-            и запустить на исполнение <i>[ docker run -d -p 80:80 -e DOCKER_ENV=true --rm --name cube-world alekstar79/cube-world ]</i>
+            быстро развернуть локальный сервер.
+          </p>
+
+          Или подтянуть докер образ:
+
+          <code class="custom__lh custom__ls">
+            docker pull alekstar79/cube-world
+          </code>
+
+          и запустить:
+
+          <code class="custom__lh custom__ls">
+            docker run -d -p 80:80 -e DOCKER_ENV=true --rm --name cube-world alekstar79/cube-world
+          </code>
+
+          <p class="slide--margin">
+            Для простоты использования был создан Makefile с короткими командами
+            <code class="code--inline"> pull, run, stop </code>.
           </p>
 
           <div class="slide__links slide--block slide--margin">
@@ -263,7 +281,55 @@
       </div>
 
       <div class="slide slide-8" style="background-color: rgba(0, 161, 1, .5);">
-        <div class="slide__text"><h2>Описание</h2></div>
+        <div class="reviewer">
+          <div class="reviewer__slide" data-key="mystical" data-title="Mystical Tentacles">
+            <img src="mystical/assets/review.gif" alt="">
+            <h3>Mystical Tentacles</h3>
+          </div>
+          <div class="reviewer__slide active" data-key="bubbletext" data-title="HTML Structure">
+            <img src="bubbletext/assets/review-2.png" alt="">
+            <h3 class="black">Mystical HTML Structure</h3>
+          </div>
+        </div>
+
+        <div class="slide__text slide--block">
+          <p class="slide--margin">
+            Pure Javascript application that demonstrates the functionality of canvas. When developing the application,
+            code decomposition and an object-oriented approach were applied.
+          </p>
+
+          <h3>Installation and use</h3>
+
+          You can install the script by cloning this repository and running (dev):
+
+          <code>npm run serve</code>
+
+          or (prod):
+
+          <code>npm run build</code>
+
+          It is also possible to pull the image from the docker hub:
+
+          <code class="custom__lh custom__ls">
+            docker pull alekstar79/mystical
+          </code>
+
+          and run:
+
+          <code class="custom__lh custom__ls">
+            docker run -d -p 80:80 -e DOCKER_ENV=true --rm --name mystical alekstar79/mystical
+          </code>
+
+          <p class="slide--margin">
+            For ease of use, a Makefile has been created with short commands
+            <code class="code--inline"> pull, run, stop </code>.
+          </p>
+
+          <div class="slide__links slide--block slide--margin">
+            <a href="https://alekstar79.github.io/mystical"><i>Демо</i></a>
+            <a href="https://github.com/alekstar79/mystical"><i>Код</i></a>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -39,6 +39,32 @@ h2 {
   margin-bottom: 20px;
 }
 
+h3 {
+  margin-bottom: 15px;
+}
+
+code {
+  color: #1e1e1e;
+  background-color: #c8c8c8;
+  border-radius: 3px;
+  font-family: monospace, courier;
+  margin-bottom: 7px;
+  padding: 3px 7px;
+}
+
+.code--inline {
+  display: inline-block !important;
+  padding: 0 3px;
+}
+
+.custom__lh {
+  line-height: 2;
+}
+
+.custom__ls {
+  letter-spacing: -1px;
+}
+
 .black {
   color: black;
 }
