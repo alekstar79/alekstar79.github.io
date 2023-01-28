@@ -1,12 +1,11 @@
-# Сost configurator 1
+# Balloons
 
-### Конфигуратор стоимости доставки товара в регионы с наценками за вес посылки.
+> Простой скрипт на чистом javascript. Красивая 2D анимация на
+_[Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)_.  
+Не требует сложных манипуляций с установкой, достаточно просто скачать архив и запустить индексный файл.
+Дальнейшая интеграция скрипта на ваше усмотрение.
 
-![review](https://github.com/alekstar79/cost-configurator-1/blob/main/assets/review.gif "Обзор")
 
-#### Внимание модульная ```<script type="module">``` структура приложения!
+Или, можно просто посмотреть, результат работы [приложения](https://alekstar79.github.io/balloons)
 
-Для запуска приложения потребуется что-нибудь из LAMP, LEMP, XAMPP, WAMP...  
-Возможен запуск с помощью VS Code, плагин Live Server.
-
-Или, можно просто посмотреть, результат работы [приложения](https://alekstar79.github.io/configurator-1)
+![review](assets/review.gif "Balloons Animation")
