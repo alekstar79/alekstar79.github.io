@@ -1,0 +1,107 @@
+.payment-order {
+  height: 620px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 80px;
+  box-sizing: border-box;
+}
+
+.payment-order__title {
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 85px;
+  color: #FFFFFF;
+  max-width: 917px;
+}
+
+.payment-order__text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  color: #FFFFFF;
+  width: 790px;
+  height: 58px;
+  margin-top: 24px;
+  line-height: 30px;
+}
+
+.payment-order__button {
+  width: 280px;
+  height: 78px;
+  color: #FFFFFF;
+  background-color: #FF9900;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 90px;
+  border: 0;
+  line-height: 29px;
+  transition-duration: 200ms;
+}
+
+.payment-order__button:hover {
+  background-color: rgba(255, 153, 0, 0.7);
+  transition-duration: 200ms;
+}
+
+.payment-order__button:focus {
+  background-color: rgba(255, 153, 0, 0.7);
+  transition-duration: 200ms;
+}
+
+.payment-order__button:active {
+  background-color: #E1670E;
+  transition-duration: 200ms;
+}
+
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  background-size: cover;
+}
+
+.slide1 {
+  background-image: url(../img/low-angle-photo-of-balconies.png);
+}
+
+.slide2 {
+  background-image: url(../img/brown-and-blue-glass-building.jpg);
+}
+
+.slide3 {
+  background-image: url(../img/apartment-apartment-building-architecture-building.jpg);
+}
+
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 10px;
+}

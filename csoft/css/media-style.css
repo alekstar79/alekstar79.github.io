@@ -1,0 +1,729 @@
+@media (max-width: 1600px) {
+  .footer__section3 {
+    display: none;
+  }
+
+  .information__cards {
+    flex-direction: column;
+  }
+
+  .information__picture1 {
+    width: 100%;
+    min-height: 640px;
+    margin-bottom: 36px;
+  }
+
+  .information__picture2 {
+    width: 100%;
+  }
+
+  .our-work__information::after {
+    height: 610px;
+  }
+}
+
+@media (max-width: 1281px) {
+  .header__burger {
+    display: block;
+  }
+
+  #nav {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    background: #505050;
+    height: 0;
+    max-height: 0;
+    list-style-type: none;
+    padding-left: 0;
+    -webkit-transition: linear 1s;
+    transition: linear 1s;
+  }
+
+  #nav.open {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    height: auto;
+    max-height: 500px;
+    -webkit-transition: linear 1s;
+    transition: linear 1s;
+    z-index: 5;
+    top: 100px;
+    left: 50px;
+    width: 200px;
+  }
+
+  #nav li {
+    float: none;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+    margin: 0;
+    -webkit-transition: linear 1s;
+    transition: linear 1s;
+    padding: 15px 20px;
+  }
+
+  #nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    display: block;
+    margin: 0;
+    -webkit-transition: linear 1s;
+    transition: linear 1s;
+  }
+
+  .our-work__information::after {
+    height: 689px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 26px 50px;
+  }
+
+  .header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header__img {
+    width: 150px;
+  }
+
+  main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .payment-order {
+    height: 668px;
+    padding: 160px 77px;
+  }
+
+  .slide1 {
+    background-image: url(../img/low-angle-photo-of-balconies-2462015_1.jpg);
+  }
+
+  .slide2 {
+    background-image: url(../img/brown-and-blue-glass-building.jpg);
+    background-size: cover;
+  }
+
+  .slide3 {
+    background-image: url(../img/apartment-apartment-building-architecture-building.jpg);
+    background-size: cover;
+  }
+
+  .payment-order__title {
+    font-size: 60px;
+    line-height: 73px;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+
+  .payment-order__text {
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .payment-order__button {
+    margin-top: 60px;
+    margin-left: 0;
+  }
+
+  .information {
+    margin-top: 80px;
+  }
+
+  .information__title {
+    line-height: 59px;
+    text-indent: 0;
+  }
+
+  .information__text {
+    margin-top: 11px;
+    width: 100%;
+  }
+
+  .information__cards {
+    margin-top: 61px;
+  }
+
+  .information__picture1 {
+    background-image: url(../img/rectangle_2_2.jpg);
+    margin-bottom: 32px;
+  }
+
+  .information__picture2-content {
+    background-position: 77px 65px;
+    padding: 65px 0 63px 317px;
+  }
+
+  .information__picture2-title {
+    margin-bottom: 9px;
+  }
+
+  .information__picture2-text {
+    padding-right: 157px;
+  }
+
+  .our-work {
+    margin-top: 80px;
+  }
+
+  .our-work__slides {
+    margin-bottom: 50px;
+  }
+
+  .our-work__information-part1 {
+    width: 47.3%;
+  }
+
+  .our-work__button {
+    margin-top: 25px;
+  }
+
+  .our-work__information::after {
+    background-image: url(../img/rectangle_18_2.jpg);
+    width: 47.3%;
+  }
+
+  .questions {
+    margin-top: 80px;
+  }
+
+  .questions__title {
+    margin-bottom: 32px;
+  }
+
+  .acc-header {
+    min-height: 110px;
+  }
+
+  .item {
+    height: auto;
+    border-top: 1px solid #CACACA;
+  }
+
+  .item:last-child {
+    border-bottom: 1px solid #CACACA;
+  }
+
+  .item.active {
+    border-top: 1px solid #CACACA;
+  }
+
+  .item.active + .item:last-child {
+    border-color:#CACACA;
+    border-bottom: 1px solid #CACACA;
+  }
+
+  .questions__text {
+    font-size: 20px;
+    max-width: 86%;
+    padding: 30px 0;
+  }
+
+  .footer {
+    margin-top: 80px;
+    padding: 50px 49px;
+  }
+
+  .footer__section2 {
+    padding: 0;
+    min-width: 541px;
+  }
+
+  .footer__section2-button {
+    width: 240px;
+  }
+
+}
+
+@media (max-width: 960px) {
+  .payment-order {
+    height: auto;
+    padding: 160px 40px;
+  }
+
+  .slide1 {
+    background-image: url(../img/low-angle-photo-of-balconies-2462015_1.jpg);
+  }
+
+  .slide2 {
+    background-image: url(../img/brown-and-blue-glass-building.jpg);
+    background-size: cover;
+  }
+
+  .slide3 {
+    background-image: url(../img/apartment-apartment-building-architecture-building.jpg);
+    background-size: cover;
+  }
+
+  .payment-order__title {
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  .payment-order__text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .our-work__slides {
+    justify-content: space-between;
+  }
+
+  .our-work__information {
+    flex-direction: column-reverse;
+  }
+
+  .our-work__information-part1 {
+    width: 100%;
+  }
+
+  .our-work__information::after {
+    width: 100%;
+    background-image: url(../img/rectangle_18_3.jpg);
+    height: 284px;
+    margin-bottom: 38px;
+    background-size: cover;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer__section1 {
+    order: 2;
+    margin-top: 50px;
+  }
+
+  .footer__list {
+    display: none;
+  }
+
+  .footer__logo{
+    margin-bottom: 16px;
+  }
+
+  .footer__contacts-images {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 50px;
+    height: auto;
+  }
+
+  #nav.open {
+    top: 68px;
+    left: 15px;
+  }
+
+  .information__picture2 {
+    min-height: auto;
+  }
+
+  .information__picture2-content {
+    background-position: 40px 68px;
+    padding: 35px 0 35px 170px;
+    background-size: 114px;
+    min-height: 235px;
+  }
+
+  .information__picture2-text {
+    padding-right: 48px;
+  }
+
+  .questions__text {
+    max-width: 86%;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 17px 15px;
+    height: auto;
+  }
+
+  #nav.open {
+    top: 82px;
+  }
+
+  main {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .payment-order {
+    padding: 60px 22px;
+  }
+
+  .slide1 {
+    background-image: url(../img/low-angle-photo-of-balconies-2462015_1.jpg);
+  }
+
+  .slide2 {
+    background-image: url(../img/brown-and-blue-glass-building.jpg);
+    background-size: cover;
+  }
+
+  .slide3 {
+    background-image: url(../img/apartment-apartment-building-architecture-building.jpg);
+    background-size: cover;
+  }
+
+  .payment-order__title {
+    font-size: 39px;
+    line-height: 61px;
+  }
+
+  .payment-order__text {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .footer__section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__section {
+    width: 100%;
+  }
+
+  .footer__section2 {
+    min-width: 100%;
+  }
+
+  .footer__section2-shipment {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__section2-text {
+    width: auto;
+    margin-left: 0;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px){
+  .header__logo {
+    width: 110px;
+  }
+
+  #nav.open {
+    top: 70px;
+  }
+
+  .payment-order {
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 22px 66px 22px;
+  }
+
+  .slide1 {
+    background-image: url(../img/low-angle-photo-of-balconies-2462015_1_2.jpg);
+  }
+
+  .slide2 {
+    background-image: url(../img/brown-and-blue-glass-building.jpg);
+    background-size: cover;
+  }
+
+  .slide3 {
+    background-image: url(../img/apartment-apartment-building-architecture-building.jpg);
+    background-size: cover;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .payment-order__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+
+  .payment-order__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .payment-order__button {
+    margin-top: 32px;
+    width: 162px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .information {
+    margin-top: 60px;
+  }
+
+  .information__title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .information__text {
+    font-size: 14px;
+    line-height: 28px;
+    margin-top: 20px;
+  }
+
+  .information__cards {
+    margin-top: 14px;
+  }
+
+  .information__picture1 {
+    background-image: none;
+    margin-bottom: 30px;
+    min-height: auto;
+    display: block;
+  }
+
+  .information__img {
+    display: block;
+  }
+
+  .information__picture1-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 35px 0 0;
+  }
+
+  .information__picture1-text {
+    min-height: 96px;
+    width: 100%;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 28px;
+    color: #000;
+  }
+
+
+  .information__picture1-button {
+    width: 162px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF9900;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #FF9900;
+    margin-top: 10px;
+  }
+
+  .information__picture2-content {
+    background-position: 0 1%;
+    padding: 65px 0 28px 0;
+    background-size: 64px;
+    min-height: auto;
+    border: 0;
+    margin-bottom: 0;
+    background-image: url(../img/frame_39.svg);
+  }
+
+  .information__picture2-content:nth-child(2) {
+    background-image: url(../img/frame_38.svg);
+  }
+
+  .information__picture2-title {
+    font-size: 18px;
+    line-height: 22px;
+    font-style: normal;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .information__picture2-text {
+    padding-right: 0;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .our-work {
+    margin-top: 34px;
+  }
+
+  .our-work__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+  }
+
+  .our-work__slides {
+    margin-bottom: 16px;
+    margin-top: 22px;
+  }
+
+  .our-work__slide:not(:last-child) {
+    margin-right: auto;
+  }
+
+  .our-work__slide {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .our-work__information {
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .our-work__text-title {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+
+  .our-work__text {
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .our-work__button {
+    margin-top: 16px;
+  }
+
+  .our-work__button1 {
+    margin-right: 10px;
+    height: 40px;
+    width: 162px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .our-work__button2 {
+    height: 40px;
+    width: 118px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .our-work__information::after {
+    width: 100%;
+    background-image: url(../img/rectangle_18_4.png);
+    height: 160px;
+    margin-bottom: 15px;
+    background-size: cover;
+  }
+
+  .questions {
+    margin-top: 60px;
+  }
+
+  .questions__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+  }
+
+  .questions__text {
+    max-width: 243px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 30px 0;
+  }
+
+  .questions__svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 32px 14px;
+  }
+
+  .footer__section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .footer__section2 {
+    min-width: 100%;
+    border-bottom: 1px solid #595959;
+  }
+
+  .footer__section2-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+  }
+
+  .footer__section2-shipment {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__section2-button {
+    width: 180px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .footer__section2-text {
+    width: auto;
+    margin-left: 0;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .footer__form {
+    margin-bottom: 16px;
+  }
+
+  .footer__logo {
+    width: 131px;
+    margin-bottom: 0;
+  }
+
+  .footer__contacts-images {
+    width: 153px;
+    height: 40px;
+  }
+
+  .footer__social-link {
+    width: 40px;
+    height: 40px;
+  }
+}
