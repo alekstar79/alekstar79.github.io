@@ -1,0 +1,123 @@
+.courses_title {
+  margin-top: -5px;
+  margin-bottom: 23px;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 100%;
+  color: #212133;
+}
+/* 750 */
+.courses_part {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 47%;
+  min-height: 480px;
+  margin-bottom: 30px;
+  padding: 0;
+  background: #EDF0F9 no-repeat top right;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.courses_part-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 0;
+  padding: 200px 30px 30px 30px;
+}
+
+.courses_part:nth-child(2n) {
+  margin-left: 30px;
+}
+
+.part1 {
+  position: relative;
+  background-image: url("../img/courses1.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: inherit;
+}
+
+.part2 {
+  position: relative;
+  background-image: url("../img/courses2.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: inherit;
+}
+
+.part3 {
+  position: relative;
+  background-image: url("../img/courses3.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: inherit;
+}
+
+.part4 {
+  position: relative;
+  background-image: url("../img/courses4.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: inherit;
+}
+
+.part-time {
+  position: relative;
+  background-image: url("../img/watch.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: inherit;
+}
+
+.courses_button {
+  width: 202px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  color: #FFFFFF;
+  background: #3F2AFF;
+  border-radius: 20px;
+  transition: 200ms;
+}
+
+.courses_button:hover {
+  background-color: #2f18ff;
+  transition: 200ms;
+}
+
+.courses_part-title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 50%;
+  color: #212133;
+}
+
+.courses_part-text {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 150%;
+  color: #666666;
+}
+
+.courses_time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 9px;
+  padding-right: 4px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.courses_time > svg {
+  margin-right: 4px;
+}
