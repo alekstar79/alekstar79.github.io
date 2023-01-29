@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", serif;
+}
+
+main {
+  width: 100%;
+}
+
+.container {
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.header > .container {
+  padding: 0;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid #85859B;
+  border-radius: 12px;
+}
+
+.modal-btn {
+  margin-top: 30px;
+}
+
+.modal-backdrop {
+  opacity: 0;
+  z-index: -1;
+}
