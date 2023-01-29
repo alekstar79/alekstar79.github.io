@@ -1,0 +1,22 @@
+.footer_top {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  background-color: #2E2B44;
+}
+
+.footer_social-linc-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: clamp(min(20vw, 24rem), 50%, max(40vw, 42rem));
+}
+
+.footer_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+}

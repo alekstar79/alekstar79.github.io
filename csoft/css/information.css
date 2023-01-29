@@ -1,0 +1,133 @@
+.information{
+  margin-top: 101px;
+}
+
+.information__title {
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+  font-size: 48px;
+  line-height: 59px;
+  text-indent: 2px;
+}
+
+.information__text {
+  width: 69.5%;
+  margin-top: 20px;
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.information__cards{
+  margin-top: 49px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.information__picture1{
+  width: 49%;
+  border: 3px;
+  background-image: url(../img/rectangle_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+
+.information__picture1-content{
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.information__picture1-text {
+  min-height: 96px;
+  width: 57%;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+.information__img {
+  display: none;
+}
+
+.information__picture1-button {
+  width: 175px;
+  height: 60px;
+  align-items: center;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid #FF9900;
+  transition-duration: 200ms;
+}
+
+.information__picture1-button:hover {
+  background-color: #FF9900;
+  transition-duration: 200ms;
+}
+
+.information__picture1-button:focus {
+  background-color: rgba(255, 153, 0, 0.7);
+  transition-duration: 200ms;
+}
+
+.information__picture1-button:active {
+  background-color: #E1670E;
+  transition-duration: 200ms;
+}
+
+.information__picture2 {
+  min-height: 622px;
+  width: 49.2%;
+}
+
+.cards-picture2 {
+  margin-right: 32px;
+}
+
+.information__picture2-content {
+  min-height: 295px;
+  border: 1px solid #CACACA;
+  padding: 64px 0 63px 299px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  background-image: url(../img/frame_16.svg);
+  background-repeat: no-repeat;
+  background-position: 59px 64px;
+}
+
+.information__picture2-title {
+  font-size: 24px;
+  line-height: 29px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.information__picture2-text {
+  height: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 32px;
+  padding-right: 102px;
+}
+
+.information__picture2-content:nth-child(2) {
+  background-image: url(../img/frame_12.svg);
+  margin-bottom: 0;
+}
