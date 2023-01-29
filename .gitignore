@@ -59,3 +59,11 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# git
+refs
+config
+description
+hooks
+info
+logs
