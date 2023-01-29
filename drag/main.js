@@ -1,5 +1,5 @@
-const placeholders = document.querySelectorAll('.placeholder'),
-  item = document.querySelector('.item')
+// const placeholders = document.querySelectorAll('.placeholder')
+const item = document.querySelector('.item')
 
 let elemBelow = null, belowDroppable = null, currentDroppable = null
 

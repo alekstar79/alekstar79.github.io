@@ -148,7 +148,7 @@ function createPickImage(img, pickColor)
 }
 
 // эта функция создает signed distance field до изображения на входе
-// визуально это градиент, его мы будем использовать для обводки
+// визуально это градиент, используем для обводки
 function ImageSDF(image)
 {
   let INF = 1e20

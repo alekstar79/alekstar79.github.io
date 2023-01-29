@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="favicon.png" type="image/png">
   <title>GEO</title>
 
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin="anonymous">
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <script
+    src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
+
   <style>
     #map {
       height: 450px;
     }
-
     button {
       min-height: 2em;
     }
@@ -27,8 +38,6 @@
   <h2>Map</h2>
   <div id="map"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""></script>
   <script src="main.js"></script>
 </body>
 </html>

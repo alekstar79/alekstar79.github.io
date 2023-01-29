@@ -1,15 +1,11 @@
 window.requestAnimationFrame || (window.requestAnimationFrame = (function() {
-  if (typeof window === 'undefined') {
-    return cb => setTimeout(() => cb(Date.now()), 1000 / 60)
-  }
-
   let ios6 = /iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent),
-    nextFrame = window.requestAnimationFrame
+    rAF = window.requestAnimationFrame
 
-  if (typeof nextFrame !== 'function' || ios6) {
+  if (typeof rAF !== 'function' || ios6) {
     (['webkit','moz','o','ms']).some(p => {
       if (window[p + 'RequestAnimationFrame']) {
-        nextFrame = window[p + 'RequestAnimationFrame']
+        rAF = window[p + 'RequestAnimationFrame']
         return true
       }
 
@@ -17,7 +13,7 @@ window.requestAnimationFrame || (window.requestAnimationFrame = (function() {
     })
   }
 
-  return nextFrame
+  return rAF
 })())
 
 let canvas = document.getElementById('canvas'),

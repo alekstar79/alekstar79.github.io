@@ -7,7 +7,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 })
   .addTo(mymap)
 
-const setMap = ({latitude, longitude, accuracy}) => {
+const setMap = ({ latitude, longitude, accuracy }) => {
   mymap.setView([latitude, longitude], 13)
 
   const circle = L.circle([latitude, longitude], {

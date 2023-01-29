@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png">
   <title>Curved Text</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <table>
-    <tr><td><input size="80" type="text" id="curve" name="curve" value="16,180,310,-150,600,480,890,170"></td></tr>
-    <tr><td><input size="80" type="text" id="text" name="text" value="another good day for testing curved text 1234567890"></td>
+    <tr>
+      <td>
+        <input size="80" type="text" id="curve" name="curve" value="16,180,310,-150,600,480,890,170">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input size="80" type="text" id="text" name="text" value="another good day for testing curved text 1234567890">
+      </td>
     </tr>
   </table>
-
   <canvas id="canvas" width="900" height="500"></canvas>
   <script src="main.js"></script>
 </body>

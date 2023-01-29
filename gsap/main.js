@@ -1,5 +1,3 @@
-/** @see https://greensock.com */
-
 const c = document.getElementById('container'),
   boxes = [],
   max = 1,

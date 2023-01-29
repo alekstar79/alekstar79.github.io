@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import { Canvas } from './canvas.js'
 
 /**
@@ -126,6 +128,6 @@ class Animation
   }
 }
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   new Animation('Half-life ', options, 'assets/alien.jpg')
-}
+})

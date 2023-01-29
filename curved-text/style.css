@@ -1,9 +1,13 @@
-html, body, canvas {
+html,
+body,
+canvas {
   height: 100%;
 }
+
 html {
   overflow: hidden;
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -11,6 +15,7 @@ body {
   align-items: center;
   margin: 0;
 }
+
 canvas {
   height: 500px;
   width: 900px;

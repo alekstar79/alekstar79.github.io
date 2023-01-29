@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 export class Mesh
 {
   constructor({ w, h })

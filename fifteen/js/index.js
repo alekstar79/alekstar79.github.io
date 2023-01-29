@@ -1,1 +1,210 @@
-!function(t){const e=document.querySelector(".page"),r=document.querySelector(".fifteen"),n=Array.from(r.querySelectorAll(".item"));var a=document.querySelector(".shuffle");let s=Array.from(Array(16),(e,t)=>t+1),i=t.getMatrix(n.map(e=>Number(e.dataset.matrixId))),o=150,l=null,d=null,u;function y(e){for(let t=0;t<i.length;t++)for(let e=0;e<i[t].length;e++)n[i[t][e]-1].style.transform=`translate(${100*e}%, ${100*t}%)`;e||l||!function(){var t=i.flat();for(let e=0;e<s.length;e++)if(t[e]!==s[e])return;return 1}()||setTimeout(()=>{r.classList.add("fifteenWin"),setTimeout(()=>{r.classList.remove("fifteenWin")},1500)},200)}n[15].style.display="none",r.addEventListener("click",({target:e})=>{!l&&(u=e.closest("button"))&&(i=t.changePositionByClick(Number(u.dataset.matrixId),i,16),y())}),a.addEventListener("click",()=>{l||(e.classList.add("shuffling"),l=setInterval(()=>{o<=0&&(e.classList.remove("shuffling"),clearInterval(l),o=150,l=null),{matrix:i,block:d}=t.randomSwap(i,16,d),y(),o--},70))}),window.addEventListener("keydown",({key:e})=>{!l&&e.toLowerCase().includes("arrow")&&(e=e.split("Arrow")[1].toLowerCase(),i=t.changePositionByKeydown(e,i,16),y())}),y(!0)}(new class{getMatrix(e){var t=[[],[],[],[]];let r,n,a;for(r=n=a=0;a<e.length;a++)4<=r&&(r=0,n++),t[n][r]=e[a],r++;return t}changePositionByClick(e,t,r){e=this.findCoordsByNumber(e,t),r=this.findCoordsByNumber(r,t);return this.isValidForSwap(e,r)?this.swapTiles(e,r,t):t}changePositionByKeydown(e,t,r){var r=this.findCoordsByNumber(r,t),n={x:r.x,y:r.y},a=t.length;switch(e){case"up":n.y+=1;break;case"down":--n.y;break;case"left":n.x+=1;break;case"right":--n.x}return n.y<a&&n.x<a&&0<=n.y&&0<=n.x?this.swapTiles(n,r,t):t}findCoordsByNumber(r,n){for(let t=0;t<n.length;t++)for(let e=0;e<n[t].length;e++)if(n[t][e]===r)return{x:e,y:t};return null}findValidCoords(r,n,a){var s=[];for(let t=0;t<a.length;t++)for(let e=0;e<a[t].length;e++)n&&n.x===e&&n.y===t||this.isValidForSwap({x:e,y:t},r)&&s.push({x:e,y:t});return s[Math.random()*s.length|0]}isValidForSwap(e,t){var r;return(e?.x===t?.x||e?.y===t?.y)&&(r=Math.abs(e.x-t.x),e=Math.abs(e.y-t.y),1===r||1===e)}swapTiles(e,t,r){var n=r[e.y][e.x];return r[e.y][e.x]=r[t.y][t.x],r[t.y][t.x]=n,r}randomSwap(e,t,r){t=this.findCoordsByNumber(t,e),r=this.findValidCoords(t,r,e);return{matrix:this.swapTiles(r,t,e),block:t}}});
+;(function(M) {
+  const page = document.querySelector('.page')
+  const container = document.querySelector('.fifteen')
+  const nodes = Array.from(container.querySelectorAll('.item'))
+  const shuffle = document.querySelector('.shuffle')
+
+  const countTiles = 16
+  const shift = 100
+
+  let win = Array.from(Array(countTiles), (_, i) => i + 1),
+    matrix = M.getMatrix(nodes.map(item => Number(item.dataset.matrixId))),
+    blankTile = countTiles,
+    countShuffle = 150,
+    timer = null,
+    block = null,
+    btn
+
+  function setPosition(init)
+  {
+    for (let y = 0; y < matrix.length; y++) {
+      for (let x = 0; x < matrix[y].length; x++) {
+        nodes[matrix[y][x] - 1].style.transform = `translate(${x * shift}%, ${y * shift}%)`
+      }
+    }
+
+    if (!init && !timer && isWin()) {
+      setTimeout(() => {
+        container.classList.add('fifteenWin')
+
+        setTimeout(() => {
+          container.classList.remove('fifteenWin')
+        }, 1500)
+
+      }, 200)
+    }
+  }
+
+  function isWin()
+  {
+    const currentMatrix = matrix.flat()
+
+    for (let i = 0; i < win.length; i++) {
+      if (currentMatrix[i] !== win[i]) {
+        return false
+      }
+    }
+
+    return true
+  }
+
+  nodes[countTiles - 1].style.display = 'none'
+
+  container.addEventListener('click', ({ target }) => {
+    if (timer || !(btn = target.closest('button'))) return
+
+    matrix = M.changePositionByClick(Number(btn.dataset.matrixId), matrix, blankTile)
+
+    setPosition()
+  })
+
+  shuffle.addEventListener('click', () => {
+    if (timer) return
+
+    page.classList.add('shuffling')
+    timer = setInterval(() => {
+      if (countShuffle <= 0) {
+        page.classList.remove('shuffling')
+        clearInterval(timer)
+        countShuffle = 150
+        timer = null
+      }
+
+      ({ matrix, block } = M.randomSwap(matrix, blankTile, block))
+      setPosition()
+
+      countShuffle--
+
+    }, 70)
+  })
+
+  window.addEventListener('keydown', ({ key }) => {
+    if (timer || !key.toLowerCase().includes('arrow')) return
+
+    const direction = key.split('Arrow')[1].toLowerCase()
+
+    matrix = M.changePositionByKeydown(direction, matrix, blankTile)
+
+    setPosition()
+  })
+
+  setPosition(true)
+
+})(new class /* Matrix */ {
+  getMatrix(arr)
+  {
+    const matrix = [[], [], [], []]
+
+    let x, y, i
+
+    for (x = y = i = 0; i < arr.length; i++) {
+      if (x >= 4) {
+        x = 0
+        y++
+      }
+
+      matrix[y][x] = arr[i]
+      x++
+    }
+
+    return matrix
+  }
+
+  changePositionByClick(number, matrix, blank)
+  {
+    const coords1 = this.findCoordsByNumber(number, matrix)
+    const coords2 = this.findCoordsByNumber(blank, matrix)
+
+    return this.isValidForSwap(coords1, coords2)
+      ? this.swapTiles(coords1, coords2, matrix)
+      : matrix
+  }
+
+  changePositionByKeydown(direction, matrix, blank)
+  {
+    const coords2 = this.findCoordsByNumber(blank, matrix)
+    const coords1 = { x: coords2.x, y: coords2.y }
+
+    const maxIdx = matrix.length
+
+    switch (direction) {
+      case 'up':
+        coords1.y += 1
+        break
+      case 'down':
+        coords1.y -= 1
+        break
+      case 'left':
+        coords1.x += 1
+        break
+      case 'right':
+        coords1.x -= 1
+        break
+    }
+
+    return coords1.y < maxIdx && coords1.x < maxIdx && coords1.y >= 0 && coords1.x >= 0
+      ? this.swapTiles(coords1, coords2, matrix)
+      : matrix
+  }
+
+  findCoordsByNumber(number, matrix)
+  {
+    for (let y = 0; y < matrix.length; y++) {
+      for (let x = 0; x < matrix[y].length; x++) {
+        if (matrix[y][x] === number) {
+          return { x, y }
+        }
+      }
+    }
+
+    return null
+  }
+
+  findValidCoords(coords, blocked, matrix)
+  {
+    const validCoords = []
+
+    for (let y = 0; y < matrix.length; y++) {
+      for (let x = 0; x < matrix[y].length; x++) {
+        if (blocked && blocked.x === x && blocked.y === y) continue
+
+        if (this.isValidForSwap({ x, y }, coords)) {
+          validCoords.push({ x, y })
+        }
+      }
+    }
+
+    return validCoords[Math.random() * validCoords.length | 0]
+  }
+
+  isValidForSwap(coords1, coords2)
+  {
+    if (coords1?.x !== coords2?.x && coords1?.y !== coords2?.y) return false
+
+    const diffX = Math.abs(coords1.x - coords2.x)
+    const diffY = Math.abs(coords1.y - coords2.y)
+
+    return (diffX === 1 || diffY === 1)
+  }
+
+  swapTiles(coords1, coords2, matrix)
+  {
+    const tmp = matrix[coords1.y][coords1.x]
+
+    matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x]
+    matrix[coords2.y][coords2.x] = tmp
+
+    return matrix
+  }
+
+  randomSwap(matrix, blank, block)
+  {
+    const coords2 = this.findCoordsByNumber(blank, matrix)
+    const coords1 = this.findValidCoords(coords2, block, matrix)
+
+    return {
+      matrix: this.swapTiles(coords1, coords2, matrix),
+      block: coords2
+    }
+  }
+})

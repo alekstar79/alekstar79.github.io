@@ -178,7 +178,7 @@ class Particles
       this.particle[i].xPos = -this.particle[i].radius
       this.particle[i].yPos = Particles._rand(0, this.canvas.height)
     } else {
-      // .. or bottom of window
+      // ... or bottom of window
       this.particle[i].xPos = Particles._rand(0, canvas.width)
       this.particle[i].yPos = this.canvas.height + this.particle[i].radius
     }
@@ -214,6 +214,6 @@ class Particles
   }
 }
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', () => {
   Particles.init(document.getElementById('canvas'), {})
-}
+})
