@@ -1,5 +1,5 @@
-import { createNoise3D } from 'simplex-noise'
-import { PropsArray, fadeIn, fadeInOut, rand, angle } from './utils'
+import { createNoise3D } from './simplex-noise.js'
+import { PropsArray, fadeIn, fadeInOut, rand, angle } from './utils.js'
 
 export const TAU = 2 * Math.PI
 

@@ -1,6 +1,6 @@
-import { createNoise3D } from 'simplex-noise.js'
-import { Tentacle, TAU } from 'tentacle.js'
-import { lerp, rand } from 'utils.js'
+import { createNoise3D } from './simplex-noise.js'
+import { Tentacle, TAU } from './tentacle.js'
+import { lerp, rand } from './utils.js'
 
 const { cos, round, sin } = Math
 

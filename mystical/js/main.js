@@ -1,4 +1,4 @@
-import { Colony } from 'colony.js'
+import { Colony } from './colony.js'
 
 let canvas, ctx, center, creature, tick = 0
 
