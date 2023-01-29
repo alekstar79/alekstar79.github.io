@@ -60,6 +60,9 @@ sw.*
 # Vim swap files
 *.swp
 
+#make
+Makefile
+
 # git
 refs
 config
