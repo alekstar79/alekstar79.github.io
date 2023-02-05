@@ -3,7 +3,7 @@ const input = document.querySelector('.input-box')
 const content = document.querySelector('.content')
 const clear = document.querySelector('.clear')
 
-fetch('/autocomplete.json').then(async keywords => {
+fetch('autocomplete.json').then(async keywords => {
   keywords = await keywords.json()
 
   const span = document.createElement('span')
