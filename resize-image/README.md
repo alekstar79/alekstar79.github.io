@@ -1,6 +1,6 @@
-# Resize and Compress Images
+# Resize Images
 
-[Demo](https://alekstar79.github.io/compress-image)
+[Demo](https://alekstar79.github.io/resize-image)
 
 **How to use:**
 
@@ -10,15 +10,15 @@ or just open index file in browser. That's all...
 
 Clone this repo:
 ```shell
-git clone git@github.com:alekstar79/compress-image.git
+git clone git@github.com:alekstar79/resize-image.git
 ```
 Go to project directory:
 ```shell
-cd compress-image
+cd resize-image
 ```
 Start server:
 ```shell
 serve -s .
 ```
 
-![review](assets/review.jpg "Resize and Compress Images")
+![review](assets/review.jpg "Resize Images")
