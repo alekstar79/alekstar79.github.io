@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Renovation Live | DB Control</title>
+
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/preloader.css">
+
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+  <main class="main">
+    <div id="container" class="container">
+      <div class="table-title">
+        <div class="admin-exit">
+          <button class="button"> Сменить логин </button>
+        </div>
+        <div class="table_title-text">
+          <span class="title-page">Список услуг</span>
+        </div>
+      </div>
+
+      <div class="table_header">
+        <div class="table_header-left">
+          <label>
+            <select name="typeItem" id="typeItem"></select>
+          </label>
+        </div>
+
+        <div class="table_header-filter">
+          <input type="text" class="input_filter_name" placeholder="поиск по виду работ" />
+          <div class="button_filter filter_on" title="искать вид работ">&#9685</div>
+          <div class="button_filter filter_off" title="отменить поиск">&#11198;</div>
+        </div>
+
+        <div class="table_header-right">
+          <button class="button btn-addItem">
+            <span class="svg_ui">&#10753;</span><span>Добавить Услугу</span>
+          </button>
+        </div>
+      </div>
+
+      <tds-box id="catalog"></tds-box>
+    </div>
+  </main>
+
+  <div class="modal__overlay" id="modal">
+    <div class="modal">
+      <button class="button button__close">
+        <span class="svg_ui">&#10005;</span>
+      </button>
+
+      <h3 class="modal__header">Добавление новой услуги</h3>
+
+      <form>
+        <label class="label">
+          <input id="type" class="input input__type" placeholder="Тип услуги*">
+        </label>
+        <label class="label">
+          <input id="name" class="input input__name" placeholder="Виды работ*">
+        </label>
+        <label class="label">
+          <input id="units" class="input input__units" placeholder="Единицы измерения*">
+        </label>
+        <label class="label">
+          <input id="cost" class="input input__cost" placeholder="Цена*">
+        </label>
+        <div class="button button-ui_firm">
+          <span>Сохранить</span>
+        </div>
+        <div class="button cancel-button">
+          <span>Отмена</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
