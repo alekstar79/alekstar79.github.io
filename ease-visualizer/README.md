@@ -1,8 +1,6 @@
 # Ease Visualizer
 
-![review](img/review.gif "Drawing App")
-
-[Demo](https://alekstar79.github.io/ease-visualizer)
+![review](img/review.gif "Easy Visualizer")
 
 ### Installation and use
 
