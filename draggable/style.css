@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: monospace;
+  overflow: hidden;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+select {
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  background: -webkit-linear-gradient(90deg,#008bc9,#4ae184);
+  background: linear-gradient(90deg,#008bc9,#4ae184);
+}
+
+[class^="row"] {
+  flex: 1;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+}
+
+[class^="ceil-"] {
+  flex: 1 1 33.33%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: clamp(160px, 33.3%, 400px);
+  height: 100%;
+
+  border: thin dashed rgba(71, 71, 71, .5);
+}
+
+.droppable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 150px;
+  height: fit-content;
+  width: 300px;
+
+  padding: 25px;
+  margin: 0;
+
+  background: #d0d0d0;
+  border: 2px solid #252424;
+  border-radius: 7px;
+  user-select: none;
+}
+
+.droppable h1 {
+  color: #504d4d;
+  margin: 5px;
+}
+
+[id^="drag-"] {
+  display: flex;
+  justify-content: space-between;
+
+  height: 100px;
+  min-width: 250px;
+  margin: 10px 5px 3px;
+  padding: 10px;
+
+  border: 1px solid #fff;
+  border-radius: 7px;
+  background: #6db6d0;
+  color: #fff;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+[id^="drag-"] * {
+  user-select: none;
+}
+
+[id^="drag-"]:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+  -23px 0 20px -23px rgba(0, 0, 0, .8),
+  23px 0 20px -23px rgba(0, 0, 0, .8),
+  0 0 40px rgba(0, 0, 0, .1) inset;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.display__coords {
+  display: flex;
+  flex-direction: column;
+}
+
+.display__title {
+  flex: 1;
+}
+
+.controlls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.controlls__buttons,
+.controlls__select {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[id^="drag-"] button {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 0;
+  border-radius: 6px;
+  transition: background .3s;
+  height: 30px;
+  width: 30px;
+}
+
+[id^="drag-"] button:hover {
+  background: rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.output__info {
+  display: block;
+  position: absolute;
+  right: 7px;
+  top: 6px;
+
+  min-width: 230px;
+  width: fit-content;
+  padding: 3px 10px;
+
+  font-weight: 900;
+  line-height: 5px;
+
+  border-radius: 5px;
+  background: rgba(255, 255, 255, .5);
+}
+
+.active__value span {
+  color: red;
+}

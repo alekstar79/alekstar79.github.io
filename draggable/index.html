@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Drag & Drop</title>
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <template id="draggable-template">
+    <drag-component>
+      <div class="display">
+        <h2 class="display__title"></h2>
+
+        <div class="display__coords">
+          <span>X: <span class="coords__x"></span></span>
+          <span>Y: <span class="coords__y"></span></span>
+        </div>
+      </div>
+
+      <div class="controlls">
+        <div class="controlls__buttons">
+          <button class="controlls__btn" data-type="lock">
+            <i class="fa-solid fa-lock-open"></i>
+          </button>
+          <button class="controlls__btn" data-type="direction">
+            <i class="fa-solid"></i>
+          </button>
+        </div>
+
+        <div class="controlls__select">
+          <label>
+            STEP
+            <select>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="75">75</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </drag-component>
+  </template>
+
+  <main class="container">
+    <div class="row-1">
+      <div class="ceil-1"></div>
+      <div class="ceil-2"></div>
+      <div class="ceil-3"></div>
+    </div>
+
+    <div class="row-2">
+      <div class="ceil-1"></div>
+
+      <div class="ceil-2 target">
+        <div class="droppable">
+          <h1>target</h1>
+        </div>
+      </div>
+
+      <div class="ceil-3"></div>
+    </div>
+
+    <div class="row-3">
+      <div class="ceil-1"></div>
+      <div class="ceil-2"></div>
+      <div class="ceil-3"></div>
+    </div>
+  </main>
+
+  <aside class="output__info">
+    <p class="info__title">Status</p>
+
+    <p class="active__value">
+      Active Block: <span></span>
+    </p>
+    <p class="lock__value">
+      Lock: <span></span>
+    </p>
+    <p class="direction__value">
+      Direction: <span></span>
+    </p>
+    <p class="step__value">
+      Step: <span></span>
+    </p>
+  </aside>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
