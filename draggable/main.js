@@ -284,7 +284,7 @@ DRAG.emitter.once(DRAG.INIT.AFTER, async function({ map }) {
   */
   function prepare(id, lockDefault = 'opened', snapDefault = 20, modeDefault = 0)
   {
-    let { lock, snap, mode } = state[id]
+    let { lock, snap, mode } = state[id] || {}
 
     typeof lock !== 'undefined' || (lock = lockDefault)
     typeof snap !== 'undefined' || (snap = snapDefault)
