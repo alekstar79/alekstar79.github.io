@@ -1,5 +1,3 @@
-'use strict';
-
 ymaps.ready(function() {
   const yMap = new ymaps.Map('map', {
     center: [55.68, 37.57],
