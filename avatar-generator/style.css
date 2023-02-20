@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5px;
+  background: #ccc;
+  text-align: center;
+}
+
+canvas {
+  display: inline-block;
+  margin: 5px;
+  border-radius: 10%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3)
+}
