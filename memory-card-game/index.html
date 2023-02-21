@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Memory Card Game</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/48792bcfa7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="menu">
+    <div class="sec">
+      <div class="flex-s">
+        <div class="ht flipCount">Flips: 0</div>
+        <div class="ht nav">0s</div>
+        <div style="cursor: pointer;" class="ht restart-btn">Restart</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="scoretext"></div>
+      <div class="stat">
+        <div class="flips"></div>
+        <div class="secs"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sushi">
+    <div class="card-container">
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/1.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/1.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/2.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/2.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/5.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/5.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/diamond.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/diamond.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/hearts.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/hearts.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/jack.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/jack.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/joker.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/joker.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/king.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/king.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/spades.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/spades.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/spades2.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/spades2.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/yonca.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/yonca.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/6.png" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="f-view view"></div>
+        <div class="b-view view">
+          <img class="cardimg" src="cards/6.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="main.js"></script>
+</body>
+</html>

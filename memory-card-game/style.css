@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #000000;
+  opacity: 1;
+  background-image: radial-gradient(#340e0e 2px, #000000 2px);
+  background-size: 40px 40px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: inset 0 0 750px rgba(255, 106, 0, 0.4);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.ht, .restart-btn {
+  position: relative;
+  padding: 10px;
+  margin: 20px 5px;
+  min-width: 150px;
+  width: 33.3%;
+
+  color: #fff;
+  background: linear-gradient(to right, rgb(86, 6, 6), #000);
+  box-shadow: 0 0 10px #00000030;
+  border: 1px solid #a55b0b;
+  border-radius: 50px;
+
+  font-size: 16px;
+  text-align: center;
+
+  overflow: hidden;
+  transition: .4s ease;
+}
+
+.restart-btn {
+  cursor: pointer;
+}
+
+.nav {
+  width: 30%;
+  background: #000000aa;
+}
+
+.restart-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50px;
+  width: 15%;
+  transform: rotate(30deg);
+  height: 200%;
+  background: #fff;
+  transition: .6s ease;
+}
+
+.restart-btn:active {
+  transform: scale(.90);
+}
+
+.restart-btn:hover::before {
+  left: 150%;
+}
+
+.flex-s {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: auto;
+}
+
+.sushi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  position: relative;
+  width: 90px;
+  height: 133px;
+  margin: 8px;
+  cursor: pointer;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transition: .3s ease transform;
+}
+
+.view::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -300%;
+  width: 100%;
+  transform: rotate(30deg);
+  height: 200%;
+  background: #fff;
+  transition: .3s ease;
+}
+
+.cards:hover {
+  transform: scale(1.05);
+}
+
+.cards.flip:hover {
+  transform: scale(1);
+}
+
+.cards:hover .view::before {
+  left: 150px;
+}
+
+.cards.flip .view::before {
+  left: 150px;
+}
+
+.view {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transition: transform .4s linear;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cards .f-view {
+  font-size: 64px;
+  background: url(card-back.png) ;
+  background-size: 100%;
+  box-shadow: 0 0 10px #00000050;
+}
+
+.cardimg {
+  width: 100%;
+}
+
+.cards .b-view {
+  display: flex;
+  align-items: center;
+  transform: rotateY(-180deg);
+  font-size: 64px;
+  box-shadow: 0 0 10px #00000050;
+}
+
+.cards.flip .b-view {
+  transform: rotateY(0deg);
+}
+
+.cards.flip .f-view {
+  transform: rotateY(180deg);
+}
+
+.modal {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000090;
+  z-index: 99;
+}
+
+.modal-content {
+  position: absolute;
+  top: 150px;
+  width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00000030;
+  animation: fade 1s ease;
+}
+
+@keyframes fade {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 150px;
+  }
+}
+
+.scoretext {
+  font-size: 26px;
+  padding: 15px;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(17, 17, 17), rgb(42, 41, 41));
+}
+
+.flips, .secs {
+  font-size: 24px;
+  padding: 15px;
+  color: #fff;
+}
+
+.damn {
+  background: linear-gradient(to right, rgb(73, 11, 49),rgb(171, 13, 105));
+  color: #fff;
+}
+
+.great {
+  background: linear-gradient(to right, rgb(11, 73, 20), rgb(13, 171, 98));
+  color: #fff;
+}
+
+.mid {
+  background: linear-gradient(to right, rgb(178, 48, 12), rgb(193, 115, 7));
+  color: #fff;
+}
+
+.bad {
+  background: linear-gradient(to right, rgb(73, 11, 11), rgb(171, 13, 47));
+  color: #fff;
+}
