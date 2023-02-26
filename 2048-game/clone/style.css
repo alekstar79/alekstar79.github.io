@@ -1,0 +1,174 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Gugi', sans-serif;
+}
+
+:root {
+  --text-color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 5.5vmin;
+  background: #666 linear-gradient(to top, #859398, #283048);
+}
+
+.background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  z-index: -1;
+}
+
+.header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2vmin;
+  align-items: center;
+  border-bottom: 2px solid var(--text-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+#title {
+  font-weight: bold;
+  flex: 1;
+}
+
+#max-tile-container,
+#score-container {
+  flex: 1;
+}
+
+#score,
+#max-tile {
+  font-size: 3vmin;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 2.5vmin;
+  font-weight: bold;
+}
+
+.game-container {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/*noinspection CssUnresolvedCustomProperty*/
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+  background-color: rgba(120, 120, 120, 0.6);
+  gap: var(--cell-gap);
+  border-radius: 1vmin;
+  padding: var(--cell-gap);
+  position: relative;
+}
+
+.cell {
+  background-color: rgba(41, 48, 90, 0.7);
+  border-radius: 1vmin;
+}
+
+/*noinspection CssUnresolvedCustomProperty*/
+.tile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: 1vmin;
+  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  font-weight: bold;
+  background-color: hsl(194, 93%, var(--background-lightness));
+  color: hsl(120, 25%, var(--text-lightness));
+  animation: show 200ms ease-in-out;
+  transition: 100ms ease-in-out;
+}
+
+#game-over {
+  width: 75%;
+  height: 50%;
+  background: rgba(60, 60, 60, .95);
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px,
+  rgba(0, 0, 0, 0.12) 0 -12px 30px,
+  rgba(0, 0, 0, 0.12) 0 4px 6px,
+  rgba(0, 0, 0, 0.17) 0 12px 13px,
+  rgba(0, 0, 0, 0.09) 0 -3px 5px;
+}
+
+#GO-Title {
+  font-size: 10vmin;
+}
+
+.GO-value {
+  font-size: 6vmin;
+}
+
+/* From uiverse.io by @Voxybuns */
+button {
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+
+@keyframes show {
+  0% {
+    opacity: .5;
+    transform: scale(0);
+  }
+}

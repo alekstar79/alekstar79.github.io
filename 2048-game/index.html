@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>2048 Игра</title>
+
+  <link rel="stylesheet" href="css/clear-sans.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="heading">
+        <h1 class="title">2048</h1>
+
+        <div class="scores-container">
+          <div class="score-container">0</div>
+          <div class="best-container">0</div>
+        </div>
+      </div>
+
+      <div class="game-intro">
+        <a class="restart-button">Новая Игра</a>
+        <h2 class="subtitle">онлайн</h2>
+      </div>
+
+      <div class="game-container">
+        <div class="game-message">
+          <p></p>
+
+          <div class="lower">
+            <a class="keep-playing-button">Keep playing</a>
+            <a class="retry-button">Try again</a>
+          </div>
+        </div>
+
+        <div class="grid-container">
+          <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+          </div>
+          <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+          </div>
+        </div>
+
+        <div class="tile-container">
+          <div class="tile tile-2 tile-position-3-2 tile-new">
+            <div class="tile-inner">2</div>
+          </div>
+          <div class="tile tile-2 tile-position-4-4 tile-new">
+            <div class="tile-inner">2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="fb-line">
+        <p class="game-explanation">
+          <strong class="important">Как играть:</strong> Используйте клавиши <strong>стрелки</strong>,
+          чтобы перемещать плитки. Когда две плитки с одним и тем же номером, они <strong>сливаются в одну!</strong>
+        </p>
+      </div>
+
+      <hr>
+
+      <footer class="text-center">
+        <h3>Игра 2048</h3>
+      </footer>
+    </div>
+  </main>
+<script src="js/app.js" type="module"></script>
+</body>
+</html>

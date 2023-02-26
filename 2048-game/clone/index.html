@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>2048</title>
+
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/atkinson-hyperlegible-2">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="header">
+    <div id="title">2048</div>
+
+    <div id="score-container">
+      <div class="score-label">Score:</div>
+      <div id="score">0</div>
+    </div>
+
+    <div id="max-tile-container">
+      <div class="score-label">Top Tile:</div>
+      <div id="max-tile">0</div>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <div id="game-board"></div>
+  </div>
+
+  <div id="game-over">
+    <div id="GO-Title">GAME OVER!</div>
+
+    <div id="GO-Scores">
+      <div>Total Score: <span class="GO-value" id="GO-score"></span></div>
+      <div>Best Score: <span class="GO-value" id="Best-score"></span></div>
+      <div>Highest Tile: <span class="GO-value" id="GO-max-tile"></span></div>
+      <div>Best Tile: <span class="GO-value" id="Best-tile"></span></div>
+    </div>
+
+    <button>
+      <span id="try-again" class="button_top">
+        Try Again
+      </span>
+    </button>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
