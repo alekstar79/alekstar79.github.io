@@ -4,7 +4,7 @@
 
 ## Intro
 
-Flexbox playground with React and Bootstrap.
+Flexbox playground with Vue(JSX).
 
 ### Flex Container
 - flex-direction
