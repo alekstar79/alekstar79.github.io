@@ -1,0 +1,244 @@
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* flex-start */
+  align-items: center;
+
+  min-height: 100vh;
+  background: #595DB8;
+}
+
+h1 {
+  padding: 30px 40px;
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.container.column {
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+@media (max-width: 780px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.sortable-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px 0;
+
+  min-width: 50%;
+  width: 100%;
+
+  background: #fff;
+}
+
+.sortable-list.root {
+  width: fit-content;
+  padding: 20px;
+}
+
+.sortable-list:last-child:not(.root) {
+  padding: 12px 0 0;
+}
+
+.avatar,
+.sortable-list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 13px;
+  width: 100%;
+
+  border-radius: 5px;
+}
+
+.sortable-list .item:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
+.sortable-list .right .person-name {
+  color: #3ae374;
+}
+
+.sortable-list .wrong .person-name {
+  color: #ff3838;
+}
+
+.item.column {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 30px;
+  padding: 0;
+  width: 90%;
+}
+
+.item.column.hover {
+  background: rgba(100, 100, 100, .5);
+}
+
+.item.column .fa-caret-up {
+  display: flex;
+}
+
+.item.column .fa-caret-down {
+  display: none;
+}
+
+.item.column.collapsed .fa-caret-up {
+  display: none;
+}
+
+.item.column.collapsed .fa-caret-down {
+  display: flex;
+}
+
+.item.column.collapsed > .sortable-list {
+  overflow: hidden;
+  height: 0;
+}
+
+.item .collapsed__toggler {
+  background: transparent;
+  border: none;
+}
+
+.item.column.root {
+  margin-left: unset;
+  width: unset;
+}
+
+.item.dragging {
+  background: rgba(100,100,100,.1);
+}
+
+.border {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 3px 12px;
+}
+
+.avatar {
+  background: #fff;
+}
+
+.collapsed.avatar > .sortable-list {
+  padding: 0;
+}
+
+.item .details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.item .details img,
+.item .details i {
+  height: 43px;
+  width: 43px;
+}
+
+.item .details img,
+.item .details i:not(
+  [class~="fa-grip-lines"],
+  [class~="fa-caret-down"],
+  [class~="fa-caret-up"],
+  [class~="fa-bullet"]
+) {
+  background: rgba(0,0,0,.1);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.item .details i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item .details span {
+  /* margin: 0 auto 0 0; */
+  margin-left: 12px;
+  font-size: 1.13rem;
+  flex-grow: 1;
+}
+
+.item i:not(.fa-user) {
+  margin-left: 12px;
+  font-size: 1.13rem;
+  color: #474747;
+}
+
+.item.dragging :where(.details, i) {
+  opacity: 0;
+}
+
+.fa-grip-lines {
+  cursor: grab;
+}
+
+.fa-caret-up {
+  cursor: pointer;
+}
+
+.fa-caret-down {
+  cursor: pointer;
+}
+
+.check-btn {
+  padding: 10px 20px;
+  margin: 30px;
+
+  background-color: #FFF;
+  border-radius: 5px;
+  border: none;
+
+  color: #34444F;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(.98);
+}
+
+.check-btn:focus {
+  outline: none;
+}
+
+.check-btn i {
+  margin-left: 10px;
+}
