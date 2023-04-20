@@ -164,7 +164,7 @@ function moveBall()
 
 // Increase score
 function increaseScore() {
-  score++;
+  score++
 
   if (score % (brickRowCount * brickColumnCount) === 0) {
     paddle.visible = false
