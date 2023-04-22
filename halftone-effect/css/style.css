@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+main,
+.container {
+  height: 100%;
+}
+
+.album .container .col {
+  display: flex;
+  justify-content: center;
+}
+
+.album .container .card {
+  max-height: fit-content;
+  max-width: 900px;
+  padding: 1rem;
+}
