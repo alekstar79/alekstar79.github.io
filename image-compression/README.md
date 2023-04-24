@@ -2,7 +2,8 @@
 
 ![review](review.gif "Image Compression Tool")
 
-[DEMO](https://alekstar79.github.io/image-compression)
+| [DEMO](https://alekstar79.github.io/image-compression) | [CODEPEN](https://codepen.io/alekstar79/pen/gOBmRoN) |
+|:------------------------------------------------------:|:----------------------------------------------------:|
 
 ## Available Scripts
 
