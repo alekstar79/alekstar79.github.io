@@ -1,6 +1,3 @@
-/*! Fabric.js Copyright 2008-2015, Printio (Juriy Zaytsev, Maxim Chernyak) */
-
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -17,14 +14,6 @@ PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-
-/*!
- * cookie
- * Copyright(c) 2012-2014 Roman Shtylman
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
 
 
 /*!
@@ -45,6 +34,32 @@ PERFORMANCE OF THIS SOFTWARE.
  *
  * @author   Feross Aboukhadijeh <http://feross.org>
  * @license  MIT
+ */
+
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/*!
+ * Intro.js v4.3.0
+ * https://introjs.com
+ *
+ * Copyright (C) 2012-2021 Afshin Mehrabani (@afshinmeh).
+ * https://raw.githubusercontent.com/usablica/intro.js/master/license.md
+ *
+ * Date: Sat, 06 Nov 2021 14:22:05 GMT
+ */
+
+
+/*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
  */
 
 
@@ -82,15 +97,67 @@ PERFORMANCE OF THIS SOFTWARE.
   PERFORMANCE OF THIS SOFTWARE.
   ***************************************************************************** */
 
+/**
+ * @module posthtml-render
+ *
+ * @version 1.1.5
+ * @license MIT
+ */
+
+
+/*! Fabric.js Copyright 2008-2015, Printio (Juriy Zaytsev, Maxim Chernyak) */
+
+
+/**
+  * vue-class-component v7.0.1
+  * (c) 2015-present Evan You
+  * @license MIT
+  */
+
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
 
 /*!
- * Intro.js v4.3.0
- * https://introjs.com
+ * Viewer.js v1.11.1
+ * https://fengyuanchen.github.io/viewerjs
  *
- * Copyright (C) 2012-2021 Afshin Mehrabani (@afshinmeh).
- * https://raw.githubusercontent.com/usablica/intro.js/master/license.md
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
  *
- * Date: Sat, 06 Nov 2021 14:22:05 GMT
+ * Date: 2022-11-06T05:18:19.939Z
+ */
+
+
+/*!
+ * Compressor.js v1.1.1
+ * https://fengyuanchen.github.io/compressorjs
+ *
+ * Copyright 2018-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2021-10-05T02:32:40.212Z
+ */
+
+
+/**
+ * @module posthtml-render
+ *
+ * @version 1.1.5
+ * @license MIT
  */
 
 
@@ -117,38 +184,6 @@ and limitations under the License.
 ***************************************************************************** */
 
 
-/**
- * @module posthtml-render
- *
- * @version 1.1.5
- * @license MIT
- */
-
-
-/*!
- * Compressor.js v1.1.1
- * https://fengyuanchen.github.io/compressorjs
- *
- * Copyright 2018-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2021-10-05T02:32:40.212Z
- */
-
-
-/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
-
-
-/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-
-/**
-  * vue-class-component v7.0.1
-  * (c) 2015-present Evan You
-  * @license MIT
-  */
-
-
 /*!
  * OverlayScrollbars
  * https://github.com/KingSora/OverlayScrollbars
@@ -163,27 +198,11 @@ and limitations under the License.
  */
 
 
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-
-/*!
- * Viewer.js v1.11.1
- * https://fengyuanchen.github.io/viewerjs
- *
- * Copyright 2015-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2022-11-06T05:18:19.939Z
- */
-
-
-/**
- * @module posthtml-render
- *
- * @version 1.1.5
- * @license MIT
- */
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
