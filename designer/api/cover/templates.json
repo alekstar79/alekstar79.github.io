@@ -1,0 +1,977 @@
+[{
+  "_id": "61aa5c5bf8bf7e5288610fc4",
+  "version": 4,
+  "widgets": [
+    "widget-countdown"
+  ],
+  "tags": [
+    "all",
+    "popular",
+    "business",
+    "event"
+  ]
+},
+  {
+    "_id": "61aa4e924dcece0ca9200753",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-time",
+      "widget-calendar",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "brand",
+      "studio"
+    ]
+  },
+  {
+    "_id": "61aa45244dcece0ca9200752",
+    "version": 4,
+    "widgets": [
+      "widget-time",
+      "widget-calendar",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "holiday",
+      "studio"
+    ]
+  },
+  {
+    "_id": "61aa3364f8bf7e5288610fc3",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-time",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "business",
+      "brand"
+    ]
+  },
+  {
+    "_id": "61aa280cf8bf7e5288610fc2",
+    "version": 4,
+    "widgets": [
+      "widget-time",
+      "widget-calendar",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "urban",
+      "person"
+    ]
+  },
+  {
+    "_id": "61a4f0edff72d437e834f3e2",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "event",
+      "club",
+      "holiday"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2df1",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-calendar",
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "game"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2df0",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club",
+      "studio"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2def",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "game"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dee",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "travel",
+      "studio"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2ded",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "studio",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dec",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2deb",
+    "version": 4,
+    "widgets": [],
+    "tags": [
+      "all",
+      "brand",
+      "studio"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dea",
+    "version": 4,
+    "widgets": [
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de9",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "travel",
+      "holiday"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de8",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club",
+      "studio"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de7",
+    "version": 4,
+    "widgets": [
+      "widget-countdown",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "shop"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de6",
+    "version": 4,
+    "widgets": [
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "holiday",
+      "event"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de5",
+    "version": 4,
+    "widgets": [
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "holiday",
+      "event"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de4",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "holiday",
+      "event"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de3",
+    "version": 4,
+    "widgets": [
+      "widget-countdown",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "holiday",
+      "event"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de2",
+    "version": 4,
+    "widgets": [
+      "widget-countdown",
+      "widget-calendar"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de1",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "holiday",
+      "event"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2de0",
+    "version": 4,
+    "widgets": [],
+    "tags": [
+      "all",
+      "popular",
+      "business",
+      "brand"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2ddf",
+    "version": 4,
+    "widgets": [
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "game"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dde",
+    "version": 4,
+    "widgets": [],
+    "tags": [
+      "all",
+      "club",
+      "game"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2ddd",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-info"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "game"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2ddc",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-calendar",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "brand",
+      "studio"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2ddb",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dda",
+    "version": 4,
+    "widgets": [
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "shop",
+      "holiday"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd9",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd8",
+    "version": 4,
+    "widgets": [
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "person",
+      "brand",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd7",
+    "version": 4,
+    "widgets": [
+      "widget-time",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "studio",
+      "person"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd6",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "travel",
+      "holiday",
+      "club"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd5",
+    "version": 4,
+    "widgets": [
+      "widget-info",
+      "widget-time",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "shop",
+      "brand"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd4",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "urban",
+      "game"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd3",
+    "version": 4,
+    "widgets": [
+      "widget-info",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "shop",
+      "travel"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd2",
+    "version": 4,
+    "widgets": [
+      "widget-currency"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "business",
+      "popular"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd1",
+    "version": 4,
+    "widgets": [
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "shop",
+      "event"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dd0",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "shop",
+      "business",
+      "brand"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dcf",
+    "version": 4,
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "club"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dce",
+    "version": 4,
+    "widgets": [
+      "widget-time",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "studio",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dcd",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "shop",
+      "travel"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dcc",
+    "version": 4,
+    "widgets": [
+      "widget-info"
+    ],
+    "tags": [
+      "all",
+      "person",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dcb",
+    "version": 4,
+    "widgets": [
+      "widget-countdown"
+    ],
+    "tags": [
+      "all",
+      "event",
+      "club",
+      "holiday"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dca",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "person",
+      "travel"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dc9",
+    "version": 4,
+    "widgets": [
+      "widget-weather",
+      "widget-calendar",
+      "widget-time",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "shop",
+      "brand"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dc8",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-time",
+      "widget-currency"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "travel"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dc7",
+    "version": 4,
+    "widgets": [
+      "widget-weather",
+      "widget-time",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "business"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dc6",
+    "version": 4,
+    "widgets": [
+      "widget-feed",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "urban"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dc5",
+    "version": 4,
+    "widgets": [
+      "widget-calendar",
+      "widget-time",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "sport"
+    ]
+  },
+  {
+    "_id": "60e879f6af5b2230f9fa2dc4",
+    "version": 4,
+    "widgets": [
+      "widget-weather",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club",
+      "sport"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b6",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-time",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "brand"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b5",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-info",
+      "widget-weather",
+      "widget-rss"
+    ],
+    "tags": [
+      "all",
+      "urban",
+      "popular"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b4",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "game"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b3",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "urban",
+      "studio"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b2",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "game"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b1",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-time",
+      "widget-calendar",
+      "widget-currency"
+    ],
+    "tags": [
+      "all",
+      "person"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1b0",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-calendar",
+      "widget-time",
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "club",
+      "holiday",
+      "person",
+      "studio"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1af",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club",
+      "brand",
+      "studio"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1ae",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-weather",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "urban",
+      "travel"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1ad",
+    "version": "3.6.6",
+    "widgets": [],
+    "tags": [
+      "all",
+      "business",
+      "studio",
+      "popular",
+      "brand"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1ac",
+    "version": "3.6.6",
+    "widgets": [],
+    "tags": [
+      "all",
+      "business",
+      "shop"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1ab",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "game"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1aa",
+    "version": "3.6.6",
+    "widgets": [],
+    "tags": [
+      "all",
+      "club",
+      "holiday",
+      "travel"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a9",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-weather",
+      "widget-calendar"
+    ],
+    "tags": [
+      "all",
+      "club"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a8",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "urban",
+      "travel",
+      "business"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a7",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-time",
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "brand",
+      "business"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a6",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile",
+      "widget-calendar",
+      "widget-time"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "brand"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a5",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-profile",
+      "widget-profile",
+      "widget-profile"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "brand"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a4",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-weather"
+    ],
+    "tags": [
+      "all",
+      "popular",
+      "club"
+    ]
+  },
+  {
+    "_id": "6023aa9ece850a023029c1a3",
+    "version": "3.6.6",
+    "widgets": [
+      "widget-feed"
+    ],
+    "tags": [
+      "all",
+      "brand",
+      "business"
+    ]
+  },
+  {
+    "_id": "6023aa9dce850a023029c1a2",
+    "version": 4,
+    "widgets": [
+      "widget-weather",
+      "widget-info"
+    ],
+    "tags": [
+      "all",
+      "urban"
+    ]
+  }]
