@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[32],{511:function(t,a,i){"use strict";i.r(a),a.default={type:"Redify",initialize:function(t){t&&this.setOptions(t)},applyTo:function(t){for(var a=t.ctx,i=t.imageData,n=i.data,e=0;e<n.length;e+=4)i.data[e+1]=0,i.data[e+2]=0;a.putImageData(i,0,0)}}}}]);

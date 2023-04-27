@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[86],{746:function(a,t,e){"use strict";e.r(t);var n=e(80);t.default={type:"Sepia2",applyTo:function(a){var t=a.ctx,e=a.imageData;n.Effect.fromImageData(e).then((function(a){t.putImageData(a.sepia(.7).getData(),0,0)}))}}}}]);

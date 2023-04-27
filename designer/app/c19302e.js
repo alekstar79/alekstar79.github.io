@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[85],{745:function(a,t,e){"use strict";e.r(t),t.default={type:"Redeye",applyTo:function(a){for(var t,e,o,d=a.ctx,n=a.imageData,p=n.width*n.height,c=4*p;p--;)c-=4,t=n.data[c],o=n.data[c+1],e=n.data[c+2],parseFloat("".concat(t/(e+o)/2))>.5&&(n.data[c]=Math.round((e+o)/2));d.putImageData(n,0,0)}}}}]);
