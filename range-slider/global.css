@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 252, 255);
+}
+
+body {
+  color: #434d5a;
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+hr {
+  width: 90%;
+  margin: 2em auto;
+  height: 1px;
+  background: rgba(0, 40, 100, 0.2);
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-top: 1em;
+}
+
+h2, h3 {
+  margin-top: 3em;
+  padding-top: 3em;
+  border-top: 1px dotted #d9cbc5
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-top: 0;
+  padding-top: 2em;
+}
+
+p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 1em 0;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #de6262;
+  border-bottom: 1px dotted transparent;
+  text-decoration: none;
+  line-height: inherit;
+  transition: all 0.2s ease;
+}
+
+a:focus,
+a:hover {
+  color: #00c7d7;
+  border-bottom: 1px dotted;
+}
+
+h1[id] a,
+h2[id] a,
+h3[id] a,
+h4[id] a,
+h5[id] a {
+  color: #434d5a;
+}
+
+.table-wrapper {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 40, 100, 0.2);
+  overflow: hidden;
+  font-size: 0.875em;
+}
+
+table {
+  border-radius: 5px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background: rgba(0, 40, 100, 0.05);
+}
+
+thead th {
+  padding: 0.5em 0.4em;
+  color: rgba(0, 40, 100, 0.6);
+}
+
+th, td strong {
+  font-weight: 600;
+}
+
+th, td {
+  padding: 0.3em 0.4em;
+  vertical-align: top;
+}
+
+thead tr,
+tr:not(:last-child) {
+  border-bottom: 1px solid  rgba(0, 40, 100, 0.2);
+}
+
+th:not(:last-child), 
+td:not(:last-child) {
+  border-right: 1px solid  rgba(0, 40, 100, 0.2);
+}
+
+tbody tr:nth-child(even) td,
+tbody tr:nth-child(even) th {
+  background: rgba(0, 40, 100, 0.025);
+}
+
+table.middle th,
+table.middle td {
+  vertical-align: middle;
+}
+
+td > h5 {
+  margin: 0;
+}

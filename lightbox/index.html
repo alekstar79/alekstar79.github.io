@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Responsive Image Lightbox</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header__container">
+    <h1>Lightbox</h1>
+    <p>
+      A component approach in pure JavaScript. Splitting of image gallery code and view code with individual scope.
+      Features: slide, fit, zoom, pan, full screen, key control.
+    </p>
+  </div>
+
+  <div class="toggler">
+    <div class="justify-center">
+      <input type="checkbox" id="theme" checked>
+      <label for="theme">IMG</label>
+    </div>
+
+    <div class="btn refresh-btn">
+      <span class="fas fa-sync-alt"></span>
+    </div>
+  </div>
+
+  <div class="wrapper"></div>
+
+  <div class="shadow"></div>
+
+  <div class="preview-box">
+    <div class="details">
+      <span class="title"><p class="current-img"></p> / <p class="total-img"></p></span>
+      <div class="actions">
+        <span class="icon fas fa-expand"></span>
+        <span class="icon fas fa-times"></span>
+      </div>
+    </div>
+    <div class="image-box">
+      <img src="" alt="">
+
+      <div class="pan-overlay"></div>
+
+      <div class="slide prev">
+        <i class="fas fa-angle-left"></i>
+      </div>
+      <div class="slide next">
+        <i class="fas fa-angle-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <script src="emitter.js"></script>
+  <script src="controller.js"></script>
+  <script src="gallery.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
