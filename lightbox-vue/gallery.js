@@ -1,9 +1,17 @@
 const fn = (_, i) => ({ src: `images/img-${`${i + 1}`.padStart(2, '0')}.jpg`})
+const expose = 'lightbox:open'
 
 const gallery = Vue.component('gallery', {
   template: '#gallery-template',
 
+  props: {
+    eventbus: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
+    theme: 'light',
     list: 'img',
     source: []
   }),
@@ -14,6 +22,14 @@ const gallery = Vue.component('gallery', {
       },
       get() {
         return this.list === 'img'
+      }
+    },
+    light: {
+      set(theme) {
+        this.theme = theme ? 'light' : 'dark'
+      },
+      get() {
+        return this.theme === 'light'
       }
     }
   },
@@ -35,13 +51,21 @@ const gallery = Vue.component('gallery', {
       data.list = [...this.source]
         .map(({ src }, idx) => {
           if (link.includes(src)) {
-            data.currentIdx = idx
+            data.idx = idx
           }
 
           return src
         })
 
-      this.$bus.$emit('open', data)
+      this.eventbus
+        ? this.$bus.$emit(expose, data)
+        : this.$emit(expose, data)
+    },
+    toggleTheme()
+    {
+      document.documentElement.classList.toggle('dark-theme')
+
+      this.light = !this.light
     },
     reload()
     {
