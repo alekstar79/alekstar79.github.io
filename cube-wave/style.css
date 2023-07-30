@@ -1,0 +1,492 @@
+@-webkit-keyframes anim-scale {
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes anim-scale {
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@-webkit-keyframes anim-rotate {
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+            transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+@keyframes anim-rotate {
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+            transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+:root {
+  --ids: direction, delay, mode, view, time, gap;
+  --length: 49;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#defs {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+html,
+body,
+form,
+section,
+output,
+li,
+div,
+span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section,
+output,
+ul,
+li,
+div,
+span {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  background: #1b2a49;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #1b2a49;
+  -webkit-perspective: 170vmin;
+          perspective: 170vmin;
+}
+
+form.direction li:nth-of-type(n + 1):nth-of-type(-n + 8) {
+  --delay: 0s;
+}
+form.direction li:nth-of-type(n + 8):nth-of-type(-n + 15) {
+  --delay: 0.0833333333s;
+}
+form.direction li:nth-of-type(n + 15):nth-of-type(-n + 22) {
+  --delay: 0.1666666667s;
+}
+form.direction li:nth-of-type(n + 22):nth-of-type(-n + 29) {
+  --delay: 0.25s;
+}
+form.direction li:nth-of-type(n + 29):nth-of-type(-n + 36) {
+  --delay: 0.3333333333s;
+}
+form.direction li:nth-of-type(n + 36):nth-of-type(-n + 43) {
+  --delay: 0.4166666667s;
+}
+form.direction li:nth-of-type(n + 43):nth-of-type(-n + 50) {
+  --delay: 0.5s;
+}
+form.direction li:nth-of-type(n + 50):nth-of-type(-n + 57) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(1) {
+  --delay: 0s;
+}
+form:not(.direction) li:nth-of-type(7) {
+  --delay: 0s;
+}
+form:not(.direction) li:nth-of-type(2) {
+  --delay: 0.0833333333s;
+}
+form:not(.direction) li:nth-of-type(8) {
+  --delay: 0.0833333333s;
+}
+form:not(.direction) li:nth-of-type(14) {
+  --delay: 0.0833333333s;
+}
+form:not(.direction) li:nth-of-type(3) {
+  --delay: 0.1666666667s;
+}
+form:not(.direction) li:nth-of-type(9) {
+  --delay: 0.1666666667s;
+}
+form:not(.direction) li:nth-of-type(15) {
+  --delay: 0.1666666667s;
+}
+form:not(.direction) li:nth-of-type(21) {
+  --delay: 0.1666666667s;
+}
+form:not(.direction) li:nth-of-type(4) {
+  --delay: 0.25s;
+}
+form:not(.direction) li:nth-of-type(10) {
+  --delay: 0.25s;
+}
+form:not(.direction) li:nth-of-type(16) {
+  --delay: 0.25s;
+}
+form:not(.direction) li:nth-of-type(22) {
+  --delay: 0.25s;
+}
+form:not(.direction) li:nth-of-type(28) {
+  --delay: 0.25s;
+}
+form:not(.direction) li:nth-of-type(5) {
+  --delay: 0.3333333333s;
+}
+form:not(.direction) li:nth-of-type(11) {
+  --delay: 0.3333333333s;
+}
+form:not(.direction) li:nth-of-type(17) {
+  --delay: 0.3333333333s;
+}
+form:not(.direction) li:nth-of-type(23) {
+  --delay: 0.3333333333s;
+}
+form:not(.direction) li:nth-of-type(29) {
+  --delay: 0.3333333333s;
+}
+form:not(.direction) li:nth-of-type(35) {
+  --delay: 0.3333333333s;
+}
+form:not(.direction) li:nth-of-type(6) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(12) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(18) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(24) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(30) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(36) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(42) {
+  --delay: 0.4166666667s;
+}
+form:not(.direction) li:nth-of-type(7) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(13) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(19) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(25) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(31) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(37) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(43) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(49) {
+  --delay: 0.5s;
+}
+form:not(.direction) li:nth-of-type(14) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(20) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(26) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(32) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(38) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(44) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(50) {
+  --delay: 0.5833333333s;
+}
+form:not(.direction) li:nth-of-type(21) {
+  --delay: 0.6666666667s;
+}
+form:not(.direction) li:nth-of-type(27) {
+  --delay: 0.6666666667s;
+}
+form:not(.direction) li:nth-of-type(33) {
+  --delay: 0.6666666667s;
+}
+form:not(.direction) li:nth-of-type(39) {
+  --delay: 0.6666666667s;
+}
+form:not(.direction) li:nth-of-type(45) {
+  --delay: 0.6666666667s;
+}
+form:not(.direction) li:nth-of-type(51) {
+  --delay: 0.6666666667s;
+}
+form:not(.direction) li:nth-of-type(28) {
+  --delay: 0.75s;
+}
+form:not(.direction) li:nth-of-type(34) {
+  --delay: 0.75s;
+}
+form:not(.direction) li:nth-of-type(40) {
+  --delay: 0.75s;
+}
+form:not(.direction) li:nth-of-type(46) {
+  --delay: 0.75s;
+}
+form:not(.direction) li:nth-of-type(52) {
+  --delay: 0.75s;
+}
+form:not(.direction) li:nth-of-type(35) {
+  --delay: 0.8333333333s;
+}
+form:not(.direction) li:nth-of-type(41) {
+  --delay: 0.8333333333s;
+}
+form:not(.direction) li:nth-of-type(47) {
+  --delay: 0.8333333333s;
+}
+form:not(.direction) li:nth-of-type(53) {
+  --delay: 0.8333333333s;
+}
+form:not(.direction) li:nth-of-type(42) {
+  --delay: 0.9166666667s;
+}
+form:not(.direction) li:nth-of-type(48) {
+  --delay: 0.9166666667s;
+}
+form:not(.direction) li:nth-of-type(54) {
+  --delay: 0.9166666667s;
+}
+form:not(.direction) li:nth-of-type(49) {
+  --delay: 1s;
+}
+form:not(.direction) li:nth-of-type(55) {
+  --delay: 1s;
+}
+form:not(.direction) li:nth-of-type(56) {
+  --delay: 1.0833333333s;
+}
+form.delay {
+  --d: 2;
+}
+form.view {
+  --angle: 112.5deg;
+}
+form.time {
+  --time: 1s;
+}
+form.gap {
+  --gap: 1.6666666667vmin;
+}
+form.mode {
+  --scale: -1;
+}
+
+section {
+  position: absolute;
+}
+section:nth-of-type(2) {
+  bottom: 6.0714285714vmin;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 12.1428571429vmin;
+  grid-row-gap: 6.0714285714vmin;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+output {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  -webkit-transform: translate3d(0, 0, -85vmin) rotate3d(1, 0, 0, var(--angle, 67.5deg));
+          transform: translate3d(0, 0, -85vmin) rotate3d(1, 0, 0, var(--angle, 67.5deg));
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 12.1428571429vmin);
+  grid-template-rows: repeat(7, 12.1428571429vmin);
+  grid-gap: var(--gap, 0);
+  -webkit-animation: anim-rotate 30s linear infinite;
+          animation: anim-rotate 30s linear infinite;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  -webkit-transition-property: grid-gap, -webkit-transform;
+  transition-property: grid-gap, -webkit-transform;
+  transition-property: grid-gap, transform;
+  transition-property: grid-gap, transform, -webkit-transform;
+}
+
+li {
+  position: relative;
+  -webkit-animation: anim-scale var(--time, 0.5s) calc(var(--delay) * var(--d, 1)) ease-in-out infinite alternate;
+          animation: anim-scale var(--time, 0.5s) calc(var(--delay) * var(--d, 1)) ease-in-out infinite alternate;
+  -webkit-transform: scale3d(1, 1, var(--scale, 0.01));
+          transform: scale3d(1, 1, var(--scale, 0.01));
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+div {
+  -webkit-transform: translate3d(0, 0, 6.0714285714vmin);
+          transform: translate3d(0, 0, 6.0714285714vmin);
+}
+div, div::after, div::before {
+  position: absolute;
+}
+div::after, div::before {
+  content: '';
+  height: 12.1428571429vmin;
+  width: 12.1428571429vmin;
+  background: var(--color);
+}
+div:nth-child(1) {
+  --color: #366ed8;
+}
+div:nth-child(1)::after {
+  -webkit-transform: rotate3d(0, 0, 0, 180deg) translate3d(0, 0, 6.0714285714vmin);
+          transform: rotate3d(0, 0, 0, 180deg) translate3d(0, 0, 6.0714285714vmin);
+}
+div:nth-child(1)::before {
+  -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, 6.0714285714vmin);
+          transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, 6.0714285714vmin);
+}
+div:nth-child(2) {
+  --color: #064acb;
+}
+div:nth-child(2)::after {
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+          transform: rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+}
+div:nth-child(2)::before {
+  -webkit-transform: rotate3d(-1, 0, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+          transform: rotate3d(-1, 0, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+}
+div:nth-child(3) {
+  --color: #24009c;
+}
+div:nth-child(3)::after {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+          transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+}
+div:nth-child(3)::before {
+  -webkit-transform: rotate3d(0, -1, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+          transform: rotate3d(0, -1, 0, 90deg) translate3d(0, 0, 6.0714285714vmin);
+}
+
+input {
+  height: 7.5vmin;
+  width: 7.5vmin;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  -webkit-transition-property: background, -webkit-transform;
+  transition-property: background, -webkit-transform;
+  transition-property: background, transform;
+  transition-property: background, transform, -webkit-transform;
+  background: var(--icon) no-repeat center;
+}
+input:focus {
+  outline-color: dodgerblue;
+}
+input#direction:not(:checked) {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M0 -10 l9 9 h-7 v11 h-4 v-11 h-7 z" transform="rotate(90)" /></svg>');
+}
+input#direction:checked {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M0 -10 l9 9 h-7 v11 h-4 v-11 h-7 z" transform="rotate(45)" /></svg>');
+}
+input#delay:not(:checked) {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M-10 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 -20 0 z M-8 0 a 8 8 0 0 0 16 0 a 8 8 0 0 0 -16 0 z" transform="none" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="translate(0, 2)" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="rotate(90) translate(0, 2)" /></svg>');
+}
+input#delay:checked {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M-10 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 -20 0 z M-8 0 a 8 8 0 0 0 16 0 a 8 8 0 0 0 -16 0 z" transform="none" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="rotate(90) translate(0, 2)" /></svg>');
+}
+input#mode:not(:checked) {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M0 -10 h10 v10 h-10 z" transform="none" /> <path d="M0 -10 h10 v10 h-10 z" transform="scale(-1, -1)" /></svg>');
+}
+input#mode:checked {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M0 -10 h10 v10 h-10 z" transform="none" /> <path d="M0 -10 h10 v10 h-10 z" transform="scale(-1, -1)" /> <path d="M0 -10 h10 v10 h-10 z" transform="scale(1, -1)" /></svg>');
+}
+input#view:not(:checked) {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M0 -10 l9 9 h-7 v11 h-4 v-11 h-7 z" transform="none" /></svg>');
+}
+input#view:checked {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M0 -10 l9 9 h-7 v11 h-4 v-11 h-7 z" transform="scale(1, -1)" /></svg>');
+}
+input#time:not(:checked) {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M-10 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 -20 0 z M-8 0 a 8 8 0 0 0 16 0 a 8 8 0 0 0 -16 0 z" transform="none" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="none" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="rotate(90)" /></svg>');
+}
+input#time:checked {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M-10 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 -20 0 z M-8 0 a 8 8 0 0 0 16 0 a 8 8 0 0 0 -16 0 z" transform="none" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="none" /> <path d="M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z" transform="rotate(135)" /></svg>');
+}
+input#gap:not(:checked) {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M1 1 l7 5 v-4 h2 v8 h-8 v-2 h4 z" transform="none" /> <path d="M1 1 l7 5 v-4 h2 v8 h-8 v-2 h4 z" transform="rotate(90)" /> <path d="M1 1 l7 5 v-4 h2 v8 h-8 v-2 h4 z" transform="rotate(-90)" /> <path d="M1 1 l7 5 v-4 h2 v8 h-8 v-2 h4 z" transform="rotate(180)" /></svg>');
+}
+input#gap:checked {
+  --icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" fill="dodgerblue"><path d="M10 10 l-7 -5 v4 h-2 v-8 h8 v2 h-4 z" transform="none" /> <path d="M10 10 l-7 -5 v4 h-2 v-8 h8 v2 h-4 z" transform="rotate(90)" /> <path d="M10 10 l-7 -5 v4 h-2 v-8 h8 v2 h-4 z" transform="rotate(-90)" /> <path d="M10 10 l-7 -5 v4 h-2 v-8 h8 v2 h-4 z" transform="rotate(180)" /></svg>');
+}
+
+@media only screen and (min-width: 1000px) {
+  section:nth-of-type(1) {
+    -webkit-transform: scale3d(1.125, 1.125, 1.125);
+            transform: scale3d(1.125, 1.125, 1.125);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section:nth-of-type(1) {
+    -webkit-transform: scale3d(1.25, 1.25, 1.25);
+            transform: scale3d(1.25, 1.25, 1.25);
+  }
+}

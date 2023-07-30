@@ -1,0 +1,301 @@
+// Functions
+@function url-icon ($icon) {
+  @return url('data:image/svg+xml;utf8,#{svg($icon)}');
+}
+
+@function path ($d, $t) {
+  @return '<path d="#{$d}" transform="#{$t}" />';
+}
+
+
+@function svg (
+  $icon,
+  $color: dodgerblue,
+  $vB: -12 -12 24 24,
+  $ns: 'http://www.w3.org/2000/svg',
+) {
+  @return '<svg xmlns="#{$ns}" viewBox="#{$vB}" fill="#{$color}">#{$icon}</svg>';
+}
+
+@function icon (
+  $path,
+  $ts: (),
+  $paths: $paths,
+  $d: map-get($paths, $path),
+) {
+  $result: ();
+
+  @each $t in $ts {
+    $result: append($result, path($d, $t));
+  }
+
+  @return $result;
+}
+
+// Variables
+$length: 7;
+$base: 85vmin;
+$size: $base / $length;
+$half: $size / 2;
+$time: .5s;
+$delay: $time / ($length - 1);
+$perspective: $length * $size * 2;
+$angle: 67.5deg;
+$gap: (95vmin - $base) / ($length - 1);
+$transition: .25s ease-in-out;
+
+// Colors
+$color-1: #366ed8;
+$color-2: #064acb;
+$color-3: #24009c;
+$color-4: #1b2a49;
+
+// Paths
+$paths: (
+  circle: 'M-10 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 -20 0 z M-8 0 a 8 8 0 0 0 16 0 a 8 8 0 0 0 -16 0 z',
+  bar: 'M-1 -5 a 1 1 0 0 1 2 0 v6 a 1 1 0 0 1 -2 0 z',
+  arrow: 'M0 -10 l9 9 h-7 v11 h-4 v-11 h-7 z',
+  corner: 'M1 1 l7 5 v-4 h2 v8 h-8 v-2 h4 z',
+  center: 'M10 10 l-7 -5 v4 h-2 v-8 h8 v2 h-4 z',
+  cube: 'M0 -10 h10 v10 h-10 z',
+);
+
+// Icons
+$icons: (
+  direction: (
+    icon(arrow, ('rotate(90)')),
+    icon(arrow, ('rotate(45)'))
+  ),
+  delay: (
+    join(icon(circle, (none)), icon(bar, ('translate(0, 2)')) icon(bar, ('rotate(90) translate(0, 2)'))),
+    join(icon(circle, (none)), icon(bar, ('rotate(90) translate(0, 2)'))),
+  ),
+  mode: (
+    icon(cube, (none, 'scale(-1, -1)')),
+    icon(cube, (none, 'scale(-1, -1)', 'scale(1, -1)'))
+  ),
+  view: (
+    icon(arrow, (none)),
+    icon(arrow, ('scale(1, -1)'))
+  ),
+  time: (
+    join(icon(circle, (none)), icon(bar, (none)) icon(bar, ('rotate(90)'))),
+    join(icon(circle, (none)), icon(bar, (none)) icon(bar, ('rotate(135)'))),
+  ),
+  gap: (
+    icon(corner, (none, 'rotate(90)', 'rotate(-90)', 'rotate(180)')),
+    icon(center, (none, 'rotate(90)', 'rotate(-90)', 'rotate(180)'))
+  ),
+);
+
+// Animation Scale
+$delay-scale: calc(#{var(--delay)} * #{var(--d, 1)});
+$amim-scale: anim-scale var(--time, $time) $delay-scale ease-in-out infinite alternate;
+@keyframes anim-scale { to { transform: scale3d(1, 1, 1) } }
+
+// Animation rotate
+$anim-rotate: anim-rotate 30s linear infinite;
+@keyframes anim-rotate { to { transform: rotate3d(0, 0, 1, 360deg) } }
+
+// Mixin for side animation
+@mixin animate-side ($length, $delay) {
+  @for $i from 0 through $length {
+    $start: $i * $length + 1;
+    $end: $start + $length;
+
+    li:nth-of-type(n + #{$start}):nth-of-type(-n + #{$end}) {
+      --delay: #{$i * $delay};
+    }
+  }
+}
+
+// Mixin for diag animation
+@mixin animate-diag ($length, $delay) {
+  @for $i from 1 through $length * 2 {
+    $start: if($i > $length, $i - $length, 0);
+    $end: if($i > $length, $length, $i);
+
+    @for $j from $start through $end {
+      $index: $j * $length + $i - $j;
+
+      li:nth-of-type(#{$index}) {
+        --delay: #{($i - 1) * $delay};
+      }
+    }
+  }
+}
+
+:root {
+  --ids: #{map-keys($icons)};
+  --length: #{$length * $length};
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#defs {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+html,
+body,
+form,
+section,
+output,
+li,
+div,
+span {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section,
+output,
+ul,
+li,
+div,
+span {
+  transform-style: preserve-3d;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  background: $color-4;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: $color-4;
+  perspective: $perspective;
+}
+
+form {
+  &.direction { @include animate-side($length, $delay); }
+  &:not(.direction) { @include animate-diag($length, $delay); }
+  &.delay { --d: #{2}; }
+  &.view { --angle: #{$angle + 45}; }
+  &.time { --time: #{$time * 2}; }
+  &.gap { --gap: #{$gap}; }
+  &.mode { --scale: #{-1}; }
+}
+
+section {
+  position: absolute;
+
+  &:nth-of-type(2) {
+    bottom: $half;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: $size;
+    grid-row-gap: $half;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+output {
+  position: absolute;
+  transition: transform $transition;
+  transform:
+    translate3d(0, 0, -$perspective / 2)
+    rotate3d(1, 0, 0, var(--angle, $angle));
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat($length, $size);
+  grid-template-rows: repeat($length, $size);
+  grid-gap: var(--gap, 0);
+  animation: $anim-rotate;
+  transition: $transition;
+  transition-property: grid-gap, transform;
+}
+
+li {
+  position: relative;
+  animation: $amim-scale;
+  transform: scale3d(1, 1, var(--scale, 0.01));
+  transition: transform $transition;
+}
+
+div {
+  transform: translate3d(0, 0, $half);
+
+  &,
+  &::after,
+  &::before {
+    position: absolute;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    height: $size;
+    width: $size;
+    background: var(--color);
+  }
+
+  &:nth-child(1) {
+    --color: #{$color-1};
+    &::after { transform: rotate3d(0, 0, 0, 180deg) translate3d(0, 0, $half) }
+    &::before { transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, $half) }
+  }
+
+  &:nth-child(2) {
+    --color: #{$color-2};
+    &::after { transform: rotate3d(1, 0, 0, 90deg) translate3d(0, 0, $half) }
+    &::before { transform: rotate3d(-1, 0, 0, 90deg) translate3d(0, 0, $half) }
+  }
+
+  &:nth-child(3) {
+    --color: #{$color-3};
+    &::after { transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, $half) }
+    &::before { transform: rotate3d(0, -1, 0, 90deg) translate3d(0, 0, $half) }
+  }
+}
+
+input {
+  height: 7.5vmin;
+  width: 7.5vmin;
+  cursor: pointer;
+  appearance: none;
+  transition: $transition;
+  transition-property: background, transform;
+  background: var(--icon) no-repeat center;
+
+  &:focus{
+    outline-color: dodgerblue;
+  }
+
+  @each $name, $states in $icons {
+    &##{$name} {
+      &:not(:checked) { --icon: #{url-icon(nth($states, 1))}; }
+      &:checked { --icon: #{url-icon(nth($states, 2))}; }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  section:nth-of-type(1) { transform: scale3d(1.125, 1.125, 1.125); }
+}
+
+@media only screen and (min-width: 1200px) {
+  section:nth-of-type(1) { transform: scale3d(1.25, 1.25, 1.25); }
+}
