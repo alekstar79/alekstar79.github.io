@@ -237,7 +237,7 @@ DRAG.emitter.once(DRAG.INIT.AFTER, async function({ map }) {
       this.currentDroppable.style.background = ''
     })
 
-    select.selectedIndex = ({ 5:0, 10:1, 20:2, 50:3, 75:4 }[this.snap])
+    select.selectedIndex = ({ 5: 0, 10: 1, 20: 2, 50: 3, 75: 4 }[this.snap])
 
     select.addEventListener('change', e => {
       this.node.dataset.snap = `${this.snap = Number(e.target.value)}`

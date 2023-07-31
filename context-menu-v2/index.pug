@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='shortcut icon', href='favicon.png', type='image/x-icon')
+        title Context Menu v2
+        link(rel='stylesheet', href='style.css')
+    body
+        mixin icon(name)
+            svg.f(width=24, height=24, class='f-' + name)
+                use(xlink:href='#' + name)
+
+        mixin sub()
+            if block
+            +icon('chevron-right')
+            ul.context.sub
+                block
+
+        h1 Right-click #[strong anywhere] for #[strong #[em awesome! ]]
+        p overriding the default browser contextmenu
+
+        div.colors
+            h4 Pick your own colors!
+            input(type="color", name="c1", id="c1", value="#673ab7", alt="")
+            input(type="color", name="c2", id="c2", value="#3f51b5", alt="")
+
+        ul.context
+            li.top
+                +icon('edit-3')
+                | #[i E]dit
+
+                +sub()
+                    li(title='Chosen: Red')
+                        +icon( 'circle' )
+                        | Colo#[i r]
+                    li(title='Chosen: Xtra Large')
+                        +icon( 'maximize' )
+                        | Si#[i z]e
+                        span.size XL
+            li.hilight
+                +icon('shopping-cart')
+                | #[i A]dd to Cart
+            li
+                +icon('heart')
+                | Save to #[i W]ishlist
+
+            li.div
+
+            li
+                +icon('share-2')
+                | S#[i h]are
+
+                +sub()
+                    li.hilight
+                        +icon('codepen')
+                        | Codepen
+                    li
+                        +icon('mail')
+                        | Email to friend
+                    li
+                        +icon('message-circle')
+                        | Social
+                    li.nope(title="lol, not likely")
+                        +icon('alert-octagon')
+                        | FBI / CIA
+            li
+                +icon('copy')
+                | Copy #[i l]ink
+
+            li.div
+
+            li
+                +icon('image')
+                | #[i V]iew image
+            li
+                +icon('settings')
+                | Settin#[i g]s
+
+        include icons.svg
+
+        script(src='main.js')

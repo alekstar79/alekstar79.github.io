@@ -1,0 +1,277 @@
+:root {
+  --bg: #24262d;
+  --text: #dfe3ff;
+  --color1: #673ab7;
+  --color2: #3f51b5;
+  --divider: rgba(255,255,255,0.16);
+}
+
+.context {
+  &,
+  & * {
+    user-select: none;
+    cursor: default;
+  }
+
+  font-size: 0.875rem;
+
+  color: var(--text);
+  list-style: none;
+  margin: 0;
+  padding: 0.05em 0.25em;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-right-color: rgba(255, 255, 255, 0.15);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+
+  position: absolute;
+  min-width: 16em;
+  z-index: 1;
+
+  background: linear-gradient(145deg, var(--color1), var(--color2));
+  box-shadow: 2px 5px 16px -4px #141321;
+
+  will-change: transform, opacity, filter;
+  transition: transform, opacity, visibility, filter;
+  transition-duration: 0.5s, 0.2s, 0.4s, 0.3s;
+  transition-delay: 0.1s, 0s, 0.4s, 0.2s;
+  transition-timing-function: ease;
+
+  transform: rotate3d(-1, -1, 0, 30deg) scale(1);
+  transform-origin: 0 0;
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(6px);
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s, 0s, 0s, 0s;
+    visibility: visible;
+    filter: none;
+  }
+
+  &.sub {
+    background: var(--color2);
+    width: max-content;
+    min-width: 10em;
+    left: 100%;
+    top: -0.4em;
+    transform: translateX(-0.7em);
+    transition: transform, opacity, width, min-width, visibility;
+    transition-timing-function: ease;
+    transition-duration: 0.4s, 0.25s, 0.15s, 0.15s, 0.01s;
+    transition-delay: 0.4s, 0.25s, 0.3s, 0.3s, 0.35s;
+    overflow: hidden;
+    filter: none;
+
+    .f {
+      transform: translateX(-2.25em);
+    }
+
+    &.oppositeX {
+      right: 100%;
+      left: auto;
+      transform: translateX(0.7em);
+    }
+
+    &.oppositeY {
+      top: auto;
+      bottom: -0.4em;
+    }
+  }
+
+  > li {
+    padding: 0.3em 1.5em 0.35em 2.8em;
+    border-radius: 3px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 3px;
+      z-index: -1;
+      background-color: rgba(97, 97, 97, 0.37);
+      mix-blend-mode: color-dodge;
+      transition: opacity 0.15s cubic-bezier(.55,.06,.68,.19);
+      opacity: 0;
+    }
+
+    &.hilight {
+      font-weight: 500;
+      padding-bottom: 0.5em;
+      color: white;
+    }
+
+    &:not(&.nope):hover {
+
+      color: white;
+
+      &:before {
+        opacity: 1;
+        transition: opacity 0.1s cubic-bezier(.25,.46,.45,.94);
+      }
+      .sub {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.2s, 0.25s, 0.2s, 0.2s, 0s;
+        border-radius: 0 3px 3px 3px;
+        visibility: visible;
+      }
+    }
+
+    &:hover > .f,
+    &.hilight > .f {
+      opacity: 1;
+      // mix-blend-mode: normal; // buggy in chrome?
+    }
+
+    &:last-child {
+      margin-bottom: 0.25em;
+    }
+
+    &:first-child {
+      margin-top: 0.25em;
+    }
+
+    &.nope {
+      color: rgba(white, 0.3);
+    }
+
+    &.active {
+      animation: flash 0.5s ease 1;
+    }
+
+    &:nth-of-type(1) {
+      margin-top: .5em;
+    }
+
+    .f {
+      opacity: 0.5;
+      // mix-blend-mode: overlay; // buggy in chrome?
+      transition: all 0.2s ease;
+    }
+
+    i {
+      font-style: normal;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.35);
+    }
+
+  }
+
+  .div {
+    border-bottom: 1px solid var(--divider);
+    // mix-blend-mode: soft-light;  // buggy in chrome?
+    padding: 0;
+    margin-top: 0.3em;
+    margin-bottom: 0.35em;
+  }
+
+  .f {
+    font-style: normal;
+    position: absolute;
+    transform: translateX(-2.4em);
+
+    &[class*=chevron-right] {
+      right: 0;
+      transform: none;
+    }
+  }
+}
+
+.f.f-circle {
+  fill: red;
+}
+
+span.size {
+  position: absolute;
+  font-size: 0.675em;
+  left: 1.2em;
+  top: 0.8em;
+  text-shadow: aliceblue;
+}
+
+@keyframes flash {
+  0% {
+    background: rgba(white, 0);
+  }
+  7% {
+    background: rgba(white, 0.2);
+  }
+  14% {
+    background: rgba(white, 0);
+  }
+  21% {
+    background: rgba(white, 0.3);
+  }
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+body,
+html {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+
+  min-height: 100%;
+  font-weight: 300;
+}
+
+.hide {
+  display: none;
+}
+
+.f {
+  width: 1.2em;
+  height: 1.2em;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+h1, h2, h3, h4 {
+  margin: 30px 30px 0.2em;
+  font-weight: 300;
+  user-select: none;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+p {
+  margin: 0 32px;
+  user-select: none;
+}
+
+.colors {
+  position: absolute;
+  bottom: 1.5em;
+  left: 0;
+  padding: 0;
+  margin: 30px 30px 0.2em;
+  text-align: left;
+  h4 {
+    margin: 1em 0;
+    font-size: 0.875rem;
+  }
+  input {
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    appearance: none;
+  }
+}
