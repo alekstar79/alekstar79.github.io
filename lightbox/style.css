@@ -161,8 +161,53 @@ body {
   }
 }
 
-.featured {
-  grid-column: span 2;
+.flow {
+  min-height: 200px;
+  width: clamp(4rem, 100%, 20rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3px);
+}
+
+.flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: pulse 2.5s infinite;
+  background-color: white;
+}
+
+.flow.loaded {
+  min-height: unset;
+  background-image: none !important;
+  filter: none;
+}
+
+.flow.loaded::before {
+  animation: none;
+  content: none;
+}
+
+.flow.loaded img {
+  opacity: 1;
+}
+
+.flow img {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .flow > * + * {
@@ -177,12 +222,13 @@ img {
 .content {
   padding: .7em;
   box-shadow: 0 0 3em rgba(0,0,0,.15);
-  background: white;
+  background-color: white;
+  overflow: hidden;
 }
 
 .gallery .image img {
   vertical-align: middle;
-  transition: all .3s ease;
+  transition: transform .3s ease;
 }
 
 .gallery .image:hover img {
