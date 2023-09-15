@@ -2345,7 +2345,7 @@ main.container .explanation-block__subtext {
 main.container .explanation-block__map {
   height: clamp(152px, 20vw, 337px);
   background-color: rgb(41, 36, 33);
-  background-image: url(/img/map.png), url(/img/icons/vector.png), url(/img/icons/vector.png), url(/img/icons/vector.png);
+  background-image: url(../img/map.png), url(../img/icons/vector.png), url(../img/icons/vector.png), url(../img/icons/vector.png);
   background-repeat: no-repeat;
   background-position: right, 45% 10%, 72% 70%, 97% 7%;
   background-size: contain, 2%, 2%, 2%;
@@ -2421,7 +2421,7 @@ main.container .explanation-block__cards .cards--bottom {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   height: 50%;
-  background-image: url(/img/maintenance.png);
+  background-image: url(../img/maintenance.png);
   background-repeat: no-repeat;
   background-position-x: right;
   background-size: contain;
@@ -2453,7 +2453,7 @@ main.container .evolution-block__image::before {
   right: 20px;
   width: clamp(200px, 20vw, 380px);
   height: clamp(200px, 20vw, 380px);
-  background-image: url(/img/seo.png);
+  background-image: url(../img/seo.png);
   background-repeat: no-repeat;
   background-size: contain;
 }

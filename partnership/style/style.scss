@@ -217,10 +217,10 @@ main.container {
       height: clamp(152px, 20vw, 337px);
 
       background-color: rgba(41, 36, 33, 1);
-      background-image: url(/img/map.png),
-        url(/img/icons/vector.png),
-        url(/img/icons/vector.png),
-        url(/img/icons/vector.png);
+      background-image: url(../img/map.png),
+        url(../img/icons/vector.png),
+        url(../img/icons/vector.png),
+        url(../img/icons/vector.png);
 
       background-repeat: no-repeat;
       background-position: right, 45% 10%, 72% 70%, 97% 7%;
@@ -283,7 +283,7 @@ main.container {
         border-radius: 10px;
         height: 50%;
 
-        background-image: url(/img/maintenance.png);
+        background-image: url(../img/maintenance.png);
         background-repeat: no-repeat;
         background-position-x: right;
         background-size: contain;
@@ -319,7 +319,7 @@ main.container {
         right: 20px;
         width: clamp(200px, 20vw, 380px);
         height: clamp(200px, 20vw, 380px);
-        background-image: url(/img/seo.png);
+        background-image: url(../img/seo.png);
         background-repeat: no-repeat;
         background-size: contain;
       }
