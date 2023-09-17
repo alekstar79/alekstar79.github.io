@@ -2162,12 +2162,28 @@ button {
   -webkit-box-flex: min-content;
       -ms-flex: min-content;
           flex: min-content;
+  height: 100%;
+}
+.top-toolbar__menu .menu__submenu {
+  display: none;
+  position: absolute;
+  top: 3em;
+  left: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 1.4em 0 0 0;
+}
+.top-toolbar__menu .menu__submenu li {
+  background-color: rgb(41, 36, 33);
+  text-align: left;
 }
 .top-toolbar__menu ul {
+  height: 100%;
   margin: 0;
-  gap: 30px;
 }
 .top-toolbar__menu li {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2175,10 +2191,44 @@ button {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  padding: 0 15px;
+  min-height: 4em;
 }
 .top-toolbar__menu a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em 1.2em 1em 0;
+  width: 100%;
+  white-space: nowrap;
+}
+.top-toolbar__menu a .menu__info {
+  position: relative;
+  width: 100%;
+}
+.top-toolbar__menu a .menu__info::after {
+  content: ">";
+  font-size: 1.2em;
+  position: absolute;
+  right: -1.2em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.top-toolbar__menu a span:not(.link) {
+  color: rgb(111, 111, 111);
+}
+.top-toolbar.touch .top-toolbar__menu .menu__item--active {
+  background-color: rgb(57, 53, 51);
+}
+.top-toolbar.touch .top-toolbar__menu .menu__item--active .menu__submenu--open {
   display: block;
-  padding: 22px 0;
+}
+.top-toolbar:not(.touch) li:hover {
+  background-color: rgb(57, 53, 51);
+}
+.top-toolbar:not(.touch) li:hover .menu__submenu {
+  display: block;
 }
 .top-toolbar__menu, .top-toolbar__control {
   font-size: 0.9em;

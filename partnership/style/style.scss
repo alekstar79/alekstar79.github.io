@@ -42,21 +42,81 @@ button {
   }
   &__menu {
     flex: min-content;
+    height: 100%;
+
+    .menu__submenu {
+      display: none;
+      position: absolute;
+      top: 3em;
+      left: 0;
+
+      min-width: fit-content;
+      padding: 1.4em 0 0 0;
+
+      li {
+        background-color: rgb(41, 36, 33);
+        text-align: left;
+      }
+    }
 
     ul {
+      height: 100%;
       margin: 0;
-      gap: 30px;
     }
     li {
+      position: relative;
+
       display: flex;
       align-items: center;
       text-align: center;
+      padding: 0 15px;
+      min-height: 4em;
     }
     a {
-      display: block;
-      padding: 22px 0;
+      align-items: center;
+      padding: 1em 1.2em 1em 0;
+      width: 100%;
+      white-space: nowrap;
+
+      .menu__info {
+        position: relative;
+        width: 100%;
+
+        &::after {
+          content: '>';
+          font-size: 1.2em;
+          position: absolute;
+          right: -1.2em;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      span:not(.link) {
+        color: rgba(111, 111, 111, 1)
+      }
     }
   }
+
+  &.touch .top-toolbar__menu {
+    .menu__item--active {
+      background-color: rgba(57, 53, 51, 1);
+
+      .menu__submenu--open {
+        display: block;
+      }
+    }
+  }
+  &:not(.touch) {
+    li:hover {
+      background-color: rgba(57, 53, 51, 1);
+
+      .menu__submenu {
+        display: block;
+      }
+    }
+  }
+
   &__menu,
   &__control {
     font-size: .9em;
