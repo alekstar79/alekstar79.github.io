@@ -97,7 +97,7 @@ $grid-breakpoints: (
   }
 }
 
-// Media between the breakpoint's minimum and maximum widths.
+// Media between the breakpoints minimum and maximum widths.
 @mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
   $max: breakpoint-max($name, $breakpoints);
