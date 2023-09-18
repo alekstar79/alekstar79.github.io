@@ -22,7 +22,7 @@ Object.defineProperties(isMobile, {
     enumerable: true,
     get() {
       return Boolean(
-        (isMobile.Android || isMobile.BlackBerry || isMobile.iOS || isMobile.Opera || isMobile.Windows) ||
+        (isMobile.Android || isMobile.BlackBerry || isMobile.iOS || isMobile.Opera || isMobile.Windows) &&
         isMobile.touchEnabled
       )
     }
