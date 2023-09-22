@@ -1,182 +1,33 @@
-@import "fonts";
-@import "reset";
+@import "./utils/fonts";
+@import "./utils/reset";
 
-@import "spacing";
-@import "grid";
+@import "./utils/spacing";
+@import "./utils/grid";
 
-@import "utils";
+@import "./utils/utils";
 
+html,
 body {
+  min-height: 100vh;
+
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 1em;
 
-  background-color: rgba(22,22,22,1);
-  color: rgba(256,256,256,1);
+  &.theme--light {
+    background-color: rgba(249, 249, 249, 1);
+    color: rgba(41, 36, 33, 1);
+  }
+  &.theme--dark {
+    background-color: rgba(22, 22, 22, 1);
+    color: rgba(255, 255, 255, 1);
+  }
 }
 
 button {
   border: 0;
   outline: none;
   appearance: none;
-}
-
-.top-toolbar {
-  justify-content: space-between;
-  align-items: center;
-
-  height: 64px;
-  padding: 0 30px;
-
-  border-radius: 10px;
-  background-color: rgba(41,36,33,1);
-
-  &__logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    .logo-icon {
-      margin-top: 4px;
-    }
-  }
-  &__menu {
-    flex: min-content;
-    height: 100%;
-
-    .menu__list > li {
-      padding: 0;
-    }
-    .menu__submenu {
-      display: none;
-      position: absolute;
-      top: 3em;
-      left: 0;
-
-      min-width: fit-content;
-      padding: 1.4em 0 0 0;
-
-      li {
-        background-color: rgb(41, 36, 33);
-        text-align: left;
-      }
-      a {
-        white-space: nowrap;
-      }
-    }
-
-    ul {
-      height: 100%;
-      margin: 0;
-    }
-    li {
-      position: relative;
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-      padding: 0 15px 0 0;
-      min-height: 4em;
-    }
-    a {
-      align-items: center;
-      padding: 1em 1.2em 1em 1.2em;
-      width: 100%;
-
-      .menu__info {
-        position: relative;
-        width: 100%;
-
-        &::after {
-          content: '>';
-          font-size: 1.2em;
-          position: absolute;
-          right: -1.2em;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-
-      span:not(.link) {
-        color: rgba(111, 111, 111, 1)
-      }
-    }
-  }
-
-  &.touch .top-toolbar__menu {
-    .menu__item--active {
-      background-color: rgba(57, 53, 51, 1);
-
-      .menu__submenu--open {
-        display: block;
-      }
-    }
-  }
-  &:not(.touch) {
-    li:hover {
-      background-color: rgba(57, 53, 51, 1);
-
-      .menu__submenu {
-        display: block;
-      }
-    }
-  }
-
-  &__menu,
-  &__control {
-    font-size: .9em;
-  }
-  &__control {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    .menu-icon {
-      cursor: pointer;
-    }
-
-    button {
-      padding: 10px 20px;
-      border-radius: 10px;
-      background: rgba(254, 214, 2, 1);
-      color: rgba(22, 22, 22, 1);
-      font-size: .8em;
-    }
-    a {
-      margin: 0 .3rem;
-      padding: 1em 0;
-    }
-  }
-
-  @include mq(1590) {
-    .logo-title {
-      display: none;
-    }
-  }
-  @include mq(1160) {
-    margin: 0 !important;
-    border-radius: 0;
-  }
-  @include mq(795) {
-    &__menu {
-      display: none;
-    }
-    &__control {
-      span {
-        margin: 0 10px;
-      }
-    }
-  }
-  @include mq(360) {
-    &__control {
-      letter-spacing: -.3px;
-
-      button {
-        letter-spacing: -.3px;
-        padding: 10px;
-      }
-    }
-  }
 }
 
 main.container {
@@ -208,14 +59,14 @@ main.container {
       color: rgba(22, 22, 22, 1);
       font-size: .9em;
     }
-    &__brand {
+    /* &__brand {
       align-items: center;
       gap: 10px;
 
       span {
         color: rgba(238, 185, 11, 1);
       }
-    }
+    } */
     &__indicators {
       justify-content: flex-start;
       gap: 12%;
@@ -283,9 +134,9 @@ main.container {
 
       background-color: rgba(41, 36, 33, 1);
       background-image: url(../img/map.png),
-        url(../img/icons/vector.png),
-        url(../img/icons/vector.png),
-        url(../img/icons/vector.png);
+        url(../img/vector.png),
+        url(../img/vector.png),
+        url(../img/vector.png);
 
       background-repeat: no-repeat;
       background-position: right, 45% 10%, 72% 70%, 97% 7%;
@@ -592,117 +443,4 @@ section.third {
 footer.footer {
   background-color: rgba(41, 36, 33, 1);
   color: rgba(255, 255, 255, 1);
-
-  .content {
-    gap: 3em;
-    flex-direction: column;
-    min-height: fit-content;
-    padding: 3em;
-
-    line-height: 1.8em;
-    font-weight: 400;
-    font-size: .8em;
-
-    .title {
-      font-weight: 600;
-      font-size: 1em;
-      margin-bottom: 1em;
-    }
-    .support__button {
-      width: 100%;
-      padding: 10px 20px;
-      margin: 10px 0;
-
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 1);
-      color: rgba(41, 36, 33, 1);
-      font-size: .9em;
-    }
-    .mobile-bar {
-      display: none;
-    }
-    .level-top {
-      justify-content: space-between;
-
-      .wrapper {
-        gap: 5em;
-      }
-
-      @include mq(1366) {
-        .block__fourth {
-          display: none;
-        }
-      }
-      @include mq(1066) {
-        .block__third {
-          display: none;
-        }
-      }
-    }
-    .level-bottom .container {
-      justify-content: flex-start;
-      gap: 7em;
-
-      max-width: fit-content;
-      border-bottom: 1px solid rgba(111,111,111,1);
-
-      a, figure {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      @include mq(671) {
-        max-width: 100%;
-
-        .block__third {
-          display: none;
-        }
-      }
-
-      .block__third figure {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-
-        padding: 20px;
-
-        line-height: 1em;
-        font-weight: 600;
-        font-size: 1em;
-
-        color: rgb(41, 36, 33);
-        background-color: rgba(255, 255, 255, 1);
-        border-radius: 10px;
-      }
-    }
-    .copyright {
-      span {
-        font-weight: 600;
-      }
-      a {
-        text-decoration: underline;
-      }
-    }
-
-    @include mq(600) {
-      padding: 2em;
-      gap: 2em;
-
-      .block__fifth {
-        display: none;
-      }
-      .mobile-bar {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-    @include mq(420) {
-      padding: 2em 1em;
-    }
-    @include mq(360) {
-      padding: 2em 0;
-    }
-  }
 }

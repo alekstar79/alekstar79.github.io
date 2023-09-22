@@ -1,0 +1,133 @@
+@import "../utils/fonts";
+@import "../utils/reset";
+
+@import "../utils/spacing";
+@import "../utils/grid";
+
+@import "../utils/utils";
+
+button {
+  border: 0;
+  outline: none;
+  appearance: none;
+}
+
+.content {
+  gap: 3em;
+  flex-direction: column;
+  min-height: fit-content;
+  padding: 3em;
+
+  line-height: 1.8em;
+  font-weight: 400;
+  font-size: .8em;
+
+  .title {
+    font-weight: 600;
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+  .support__button {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px 0;
+
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(41, 36, 33, 1);
+    font-size: .9em;
+  }
+  .mobile-bar {
+    display: none;
+  }
+  .level-top {
+    justify-content: space-between;
+
+    .wrapper {
+      gap: 5em;
+    }
+
+    @include mq(1366) {
+      .block__fourth {
+        display: none;
+      }
+    }
+    @include mq(1066) {
+      .block__third {
+        display: none;
+      }
+    }
+  }
+  .level-bottom .container {
+    justify-content: flex-start;
+    gap: 7em;
+
+    max-width: fit-content;
+    border-bottom: 1px solid rgba(111, 111, 111, 1);
+
+    a, figure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include mq(671) {
+      max-width: 100%;
+
+      .block__third {
+        display: none;
+      }
+    }
+
+    .block__third figure {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+
+      padding: 20px;
+
+      line-height: 1em;
+      font-weight: 600;
+      font-size: 1em;
+
+      color: rgb(41, 36, 33);
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+    }
+  }
+  .copyright {
+    span {
+      font-weight: 600;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &--light {
+    .support__button {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(41, 36, 33, 1);
+    }
+  }
+
+  @include mq(600) {
+    padding: 2em;
+    gap: 2em;
+
+    .block__fifth {
+      display: none;
+    }
+    .mobile-bar {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @include mq(420) {
+    padding: 2em 1em;
+  }
+  @include mq(360) {
+    padding: 2em 0;
+  }
+}

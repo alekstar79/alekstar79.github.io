@@ -1,0 +1,52 @@
+.marquee-container {
+  position: fixed;
+  top: calc(100vh - var(--mq-height));
+  height: var(--mq-height);
+  width: var(--width);
+  overflow-x: hidden;
+  z-index: 9;
+
+  .marquee {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--bg-color);
+    color: var(--color);
+    white-space: nowrap;
+  }
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  //noinspection CssInvalidFunction
+  @mixin gradient {
+    background: linear-gradient(to right, var(--gradient-color));
+  }
+
+  &::before,
+  &::after {
+    @include gradient;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: var(--gradient-width);
+    z-index: 2;
+  }
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  &::before {
+    left: 0;
+    top: 0;
+  }
+}

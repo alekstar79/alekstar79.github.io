@@ -1,97 +1,76 @@
-const isMobile = {}
+import { MediaTracker, emitter, initObserver, BREACKPOINTS, WIDTH_795, WIDTH_991, WIDTH_768, WIDTH_425 } from './utils/index.js'
 
-Object.defineProperties(isMobile, {
-  touchEnabled: {
-    enumerable: true,
-    get() {
-      if (
-        ('ontouchstart' in window) || window.TouchEvent ||
-        (window.DocumentTouch && document instanceof DocumentTouch) ||
-        (navigator.MaxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0)
-      ) {
-        return true
-      }
+import './definitions.js'
 
-      return window.matchMedia([
-        '(', ' -webkit- -moz- -o- -ms- '.split(' ').join('touch-enabled),('), 'heartz', ')'
-      ].join('')).matches
-    }
-  },
-  any: {
-    enumerable: true,
-    get() {
-      return Boolean(
-        (isMobile.Android || isMobile.BlackBerry || isMobile.iOS || isMobile.Opera || isMobile.Windows) &&
-        isMobile.touchEnabled
-      )
-    }
-  },
-  Android: {
-    enumerable: true,
-    get() {
-      return /Android/i.test(navigator.userAgent)
-    }
-  },
-  BlackBerry: {
-    enumerable: true,
-    get() {
-      return /BlackBerry/i.test(navigator.userAgent)
-    }
-  },
-  iOS: {
-    enumerable: true,
-    get() {
-      return /iPhone|iPad|iPod/i.test(navigator.userAgent)
-    }
-  },
-  Opera: {
-    enumerable: true,
-    get() {
-      return /Opera Mini/i.test(navigator.userAgent)
-    }
-  },
-  Windows: {
-    enumerable: true,
-    get() {
-      return /IEMobile/i.test(navigator.userAgent)
-    }
-  }
-})
-
-function setupMenu()
+function observe(target, impact)
 {
-  document.querySelector('.top-toolbar').classList.add('touch')
+  target = document.querySelector(target)
+  impact = document.querySelector(impact)
 
-  document.querySelectorAll('.menu__item--sub')
-    .forEach(item => {
-      const submenu = item.querySelector('.menu__submenu')
+  return initObserver(target, entry => {
+    if (!impact) return
 
-      item.addEventListener('pointerdown', () => {
-        submenu.classList.toggle('menu__submenu--open')
-        item.classList.toggle('menu__item--active')
-      })
-
-      clickOutside(item, () => {
-        submenu.classList.remove('menu__submenu--open')
-        item.classList.remove('menu__item--active')
-      })
-    })
-}
-
-function clickOutside(el, callback)
-{
-  document.body.addEventListener('pointerdown', event => {
-    if (!(el === event.target || el.contains(event.target))) {
-      callback(event)
+    if (entry.isIntersecting) {
+      impact.style.display = 'none'
+    } else {
+      impact.style.display = 'block'
     }
   })
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.copyright .year').textContent = `${new Date().getFullYear()}`
+/**
+* Application scope
+*/
+window.addEventListener('DOMContentLoaded', async function() {
+  const media = new MediaTracker(BREACKPOINTS)
 
-  if (isMobile.any) {
-    setupMenu()
-  }
+  const first = document.querySelector('section.first')
+  const image = document.querySelector('img.bg-image')
+
+  emitter.on('match:media', screen => {
+    switch (screen.width) {
+      case 991:
+        // do something...
+        break
+
+      case 795:
+        if (screen.max) {
+          first.classList.remove('cell__7')
+          image.classList.remove('mt-5')
+          first.classList.add('mx-auto')
+
+        } else {
+          first.classList.remove('mx-auto')
+          first.classList.add('cell__7')
+          image.classList.add('mt-5')
+        }
+        break
+
+      case 768:
+        // do something...
+        break
+
+      case 425:
+        // do something...
+    }
+  })
+
+  await Promise.all([
+    customElements.whenDefined('top-menu'),
+    customElements.whenDefined('bottom-content'),
+    customElements.whenDefined('marquee-component')
+  ])
+
+  observe('footer', 'marquee-component')
+
+  media
+    .setHandler(screenMode => {
+      emitter.emit('match:media', screenMode)
+    })
+    .updateSize(WIDTH_991)
+    .updateSize(WIDTH_795)
+    .updateSize(WIDTH_768)
+    .updateSize(WIDTH_425)
+
+    .onTrack()
 })

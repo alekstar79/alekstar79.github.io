@@ -1,0 +1,47 @@
+.marquee-container {
+  position: fixed;
+  top: calc(100vh - var(--mq-height));
+  height: var(--mq-height);
+  width: var(--width);
+  overflow-x: hidden;
+  z-index: 9;
+}
+.marquee-container .marquee {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--color);
+  white-space: nowrap;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.overlay::before, .overlay::after {
+  background: -webkit-gradient(linear, left top, right top, from(var(--gradient-color)));
+  background: linear-gradient(to right, var(--gradient-color));
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: var(--gradient-width);
+  z-index: 2;
+}
+.overlay::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+.overlay::before {
+  left: 0;
+  top: 0;
+}
