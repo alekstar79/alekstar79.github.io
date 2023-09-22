@@ -1,7 +1,7 @@
 export const STYLES = {
-  TOPMENU: ['../../style/components/topmenu.css'],
-  FOOTER: ['../../style/components/bottom-content.css'],
-  MARQUEE: ['../../style/components/marquee.css']
+  TOPMENU: ['../style/components/topmenu.css'],
+  FOOTER: ['../style/components/bottom-content.css'],
+  MARQUEE: ['../style/components/marquee.css']
 }
 
 export const WIDTH_2000 = 2000
