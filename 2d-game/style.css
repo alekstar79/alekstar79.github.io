@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#canvas1 {
+  border: 5px solid black;
+  position: absolute;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background: #4d79bc;
+  /* max-width: 100%;
+  max-height: 100%; */
+  font-family: 'Bangers', cursive;
+  /* Подключаем шрифт Bangers*/
+}
+
+#description {
+  text-align: center;
+  margin: 20px auto 20px auto;
+  width: 1500px;
+}
+
+#container {
+  position: relative;
+  margin: auto;
+  width: 1510px;
+  height: 510px;
+}
+
+#shoot_btn {
+  position: absolute;
+  display: none;
+  width: 120px;
+  height: 120px;
+  bottom: 15px;
+  right: 45px;
+}
+
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#player,
+#angler1,
+#angler2,
+#lucky,
+#projectile,
+#gears,
+#hivewhale,
+#drone,
+#smokeExplosion,
+#fireExplosion {
+  display: none;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Game</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="description">
+    Используй клавиши "вверх"/"вниз" для движения игрока и пробел для стрельбы <br>
+    Для победы необходимо за 30 секунд набрать 100 очков
+  </div>
+
+  <div id="container">
+    <canvas id="canvas1"></canvas>
+    <img id="shoot_btn" src="./assets/shoot_button.png" alt="">
+  </div>
+
+  <!-- Characters -->
+  <img id="player" src="./assets/player.png" alt="">
+  <img id="angler1" src="./assets/enemies/angler1.png" alt="">
+  <img id="angler2" src="./assets/enemies/angler2.png" alt="">
+  <img id="lucky" src="./assets/enemies/lucky.png" alt="">
+  <img id="hivewhale" src="./assets/enemies/hivewhale.png" alt="">
+  <img id="drone" src="./assets/enemies/drone.png" alt="">
+
+  <!-- Effects -->
+  <img id="projectile" src="./assets/projectile.png" alt="">
+  <img id="gears" src="./assets/gears.png" alt="">
+  <img id="smokeExplosion" src="assets/collisions/smoke-explosion.png" alt="">
+  <img id="fireExplosion" src="assets/collisions/fire-explosion.png" alt="">
+
+  <!-- Layers -->
+  <img id="layer1" src="./assets/layers/layer1.png" alt="">
+  <img id="layer2" src="./assets/layers/layer2.png" alt="">
+  <img id="layer3" src="./assets/layers/layer3.png" alt="">
+  <img id="layer4" src="./assets/layers/layer4.png" alt="">
+
+  <!-- Main script file -->
+  <script src="./main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+export { Enemy } from './enemy.js'
+export { HiveWhale } from './hive-whale.js'
+export { LuckyFish } from './lucky-fish.js'
+export { Angler1 } from './angler1.js'
+export { Angler2 } from './angler2.js'
+export { Drone } from './drone.js'
