@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+    <title>3D Slider</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="slider" id="slider" style="--img-prev:url(https://lh3.googleusercontent.com/pw/AP1GczOVVTgMJAn7hixht0rHB3EG1-fAFmcGSNE8mcRjZSByXP4_lw_zDmutsP3erjJOxm00Uu8t5nNuMCK0sXOcHSSD0lib1uai1Fg9KhpPBFAIJfU2iO0=w1600-h766);">
+      <div class="slider__content" id="slider-content">
+        <div class="slider__images">
+          <div class="slider__images-item slider__images-item--active" data-id="1"><img src="https://lh3.googleusercontent.com/pw/AP1GczOVVTgMJAn7hixht0rHB3EG1-fAFmcGSNE8mcRjZSByXP4_lw_zDmutsP3erjJOxm00Uu8t5nNuMCK0sXOcHSSD0lib1uai1Fg9KhpPBFAIJfU2iO0=w1600-h766" alt=""></div>
+          <div class="slider__images-item" data-id="2"><img src="https://lh3.googleusercontent.com/pw/AP1GczNPWphot080FUelYeTCC02eFjmCH1Yp27QYFmPayTf_HeQGOKqysXZAUQw18jh5XNMOu-z52EyomGfvi8nocmj2AklEAM3UEp04kiV0qmXyDW_Xfaw=w1600-h766" alt=""></div>
+          <div class="slider__images-item" data-id="3"><img src="https://lh3.googleusercontent.com/pw/AP1GczNDyfcm-jWxl1T_esgPEbs2Aq-PjFZDyU446poUbuKtqeX-8c1w2Yw13IG6sXfsXIB04OGKxdufoqZ3O6dLVNxHY9dquFVF_QNhqJN_NypvnRoBmfA=w1600-h766" alt=""></div>
+          <div class="slider__images-item" data-id="4"><img src="https://lh3.googleusercontent.com/pw/AP1GczM0um3yFClHCbGVfaVPWjfkUNH-av1eOdRZD44A5yJ7cmUka6HWjxUJHoa5_UBG9rUjK2FJXJuLYnr4CgvCe7fSJafOlkc6eG4lg7F7Crpbgm3LczI=w1600-h766" alt=""></div>
+          <div class="slider__images-item" data-id="5"><img src="https://lh3.googleusercontent.com/pw/AP1GczM7bI4Pj_tBBqnhC5PPIDso2HikLe_xhSO5kmQAVVXVTUbx20Zy3T9mexhNta8Yi3oO_Nfa8lg0YDiIzoLTkXGGj1INj_lOPjw1y1t64ndR8TCUcf8=w1600-h766" alt=""></div>
+        </div>
+        <div class="slider__text">
+          <div class="slider__text-item slider__text-item--active" data-id="1">
+            <div class="slider__text-item-head">
+              <h3>Forest</h3>
+            </div>
+            <div class="slider__text-item-info">
+              <p>“And into the forest I go, to lose my mind and find my soul”</p>
+            </div>
+          </div>
+          <div class="slider__text-item" data-id="2">
+            <div class="slider__text-item-head">
+              <h3>Lake</h3>
+            </div>
+            <div class="slider__text-item-info">
+              <p>“Mist to mist, drops to drops. For water thou art, and unto water shalt thou return”</p>
+            </div>
+          </div>
+          <div class="slider__text-item" data-id="3">
+            <div class="slider__text-item-head">
+              <h3>Cliffs</h3>
+            </div>
+            <div class="slider__text-item-info">
+              <p>“Go to the edge of the cliff and jump off. Build your wings on the way down”</p>
+            </div>
+          </div>
+          <div class="slider__text-item" data-id="4">
+            <div class="slider__text-item-head">
+              <h3>Mountains</h3>
+            </div>
+            <div class="slider__text-item-info">
+              <p>“What are men to rocks and mountains?”</p>
+            </div>
+          </div>
+          <div class="slider__text-item" data-id="5">
+            <div class="slider__text-item-head">
+              <h3>Peaks</h3>
+            </div>
+            <div class="slider__text-item-info">
+              <p>“On all the peaks lies peace”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider__nav">
+        <div class="slider__nav-arrows">
+          <div class="slider__nav-arrow slider__nav-arrow--left" id="left">to left</div>
+          <div class="slider__nav-arrow slider__nav-arrow--right" id="right">to right</div>
+        </div>
+        <div class="slider__nav-dots" id="slider-dots">
+          <div class="slider__nav-dot slider__nav-dot--active" data-id="1"></div>
+          <div class="slider__nav-dot" data-id="2"></div>
+          <div class="slider__nav-dot" data-id="3"></div>
+          <div class="slider__nav-dot" data-id="4"></div>
+          <div class="slider__nav-dot" data-id="5"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./slider.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+- var images = ["https://lh3.googleusercontent.com/pw/AP1GczOVVTgMJAn7hixht0rHB3EG1-fAFmcGSNE8mcRjZSByXP4_lw_zDmutsP3erjJOxm00Uu8t5nNuMCK0sXOcHSSD0lib1uai1Fg9KhpPBFAIJfU2iO0=w1600-h766","https://lh3.googleusercontent.com/pw/AP1GczNPWphot080FUelYeTCC02eFjmCH1Yp27QYFmPayTf_HeQGOKqysXZAUQw18jh5XNMOu-z52EyomGfvi8nocmj2AklEAM3UEp04kiV0qmXyDW_Xfaw=w1600-h766","https://lh3.googleusercontent.com/pw/AP1GczNDyfcm-jWxl1T_esgPEbs2Aq-PjFZDyU446poUbuKtqeX-8c1w2Yw13IG6sXfsXIB04OGKxdufoqZ3O6dLVNxHY9dquFVF_QNhqJN_NypvnRoBmfA=w1600-h766","https://lh3.googleusercontent.com/pw/AP1GczM0um3yFClHCbGVfaVPWjfkUNH-av1eOdRZD44A5yJ7cmUka6HWjxUJHoa5_UBG9rUjK2FJXJuLYnr4CgvCe7fSJafOlkc6eG4lg7F7Crpbgm3LczI=w1600-h766","https://lh3.googleusercontent.com/pw/AP1GczM7bI4Pj_tBBqnhC5PPIDso2HikLe_xhSO5kmQAVVXVTUbx20Zy3T9mexhNta8Yi3oO_Nfa8lg0YDiIzoLTkXGGj1INj_lOPjw1y1t64ndR8TCUcf8=w1600-h766"];
+- var texts = { Forest: '“And into the forest I go, to lose my mind and find my soul”', Lake: '“Mist to mist, drops to drops. For water thou art, and unto water shalt thou return”', Cliffs: '“Go to the edge of the cliff and jump off. Build your wings on the way down”', Mountains: '“What are men to rocks and mountains?”', Peaks: '“On all the peaks lies peace”' };
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='shortcut icon', href='./favicon.png', type='image/png')
+    title 3D Slider
+    link(rel='stylesheet', href='./style.css')
+  body
+    #slider.slider(style="--img-prev:url(" + images[0] + ");")
+      #slider-content.slider__content
+        .slider__images
+          each src, index in images
+            - var imgClassName = 'slider__images-item';
+            if index === 0
+              - imgClassName += ' slider__images-item--active';
+            div(class=imgClassName, data-id=index + 1)
+              img(src=src, alt="")
+
+        .slider__text
+          - var i = 0;
+
+          each text, key in texts
+            - var textClassName = 'slider__text-item';
+            if ++i === 1
+              - textClassName += ' slider__text-item--active';
+            div(class=textClassName data-id=i)
+              .slider__text-item-head
+                h3= key
+              .slider__text-item-info
+                p= text
+
+      .slider__nav
+        .slider__nav-arrows
+          #left.slider__nav-arrow.slider__nav-arrow--left to left
+          #right.slider__nav-arrow.slider__nav-arrow--right to right
+
+        #slider-dots.slider__nav-dots
+          .slider__nav-dot.slider__nav-dot--active(data-id='1')
+          .slider__nav-dot(data-id='2')
+          .slider__nav-dot(data-id='3')
+          .slider__nav-dot(data-id='4')
+          .slider__nav-dot(data-id='5')
+
+    script(src='./slider.js')
+    script(src='./index.js')
