@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <title>Toast Notifications</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./demo-styles.css">
+
+  <script src="./index.js"></script>
+</head>
+<body>
+<script src="./demo-script.js"></script>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Basic examples</div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel-content-unit">
+        <p>Notifications of default group</p>
+
+        <button type="button" class="btn btn-default" onclick="addNotificationToDefaultGroup()">
+          Add notification to default group
+        </button>
+        <button type="button" class="btn btn-default" onclick="removeNotificationsFromDefaultGroup()">
+          Remove notifications from default group
+        </button>
+
+        <p>.. and of custom group (i.e. group with id 'test')</p>
+
+        <button type="button" class="btn btn-default" onclick="addTestGroup()">
+          Add 'test' group
+        </button>
+        <button type="button" class="btn btn-default" onclick="addTestNotification()">
+          Add notification to 'test' group
+        </button>
+        <button type="button" class="btn btn-default" onclick="removeTestGroup()">
+          Remove notifications from 'test' group
+        </button>
+
+        <p>
+          'greedy' group notifications (only one notification can be added to greedy group)
+        </p>
+
+        <button type="button" class="btn btn-default" onclick="addNotifToGreedyGroup()">
+          Add notification to 'greedy' group
+        </button>
+        <button type="button" class="btn btn-default" onclick="removeGreedyGroup()">
+          Remove notifications from 'greedy' group
+        </button>
+        <p>Notifications with different types</p>
+        <button type="button" class="btn btn-success" onclick="addSuccessNotif()">
+          Add Success notification
+        </button>
+        <button type="button" class="btn btn-info" onclick="addInfoNotification()">
+          Add Info notification
+        </button>
+        <button type="button" class="btn btn-warning" onclick="addWarningNotif()">
+          Add Warning notification
+        </button>
+        <button type="button" class="btn btn-danger" onclick="addErrorNotif()">
+          Add Error notification
+        </button>
+        <p>Notifications with different timeouts</p>
+        <button type="button" class="btn btn-default" onclick="addTimeoutNotif()">
+          Add notification with timeout
+        </button>
+
+        <p>Removing notification</p>
+
+        <button type="button" class="btn btn-default" onclick="removeAll()">
+          Remove all notifications
+        </button>
+        <button type="button" class="btn btn-info" onclick="addInfoNotificationToRemove()">
+          Add notification to remove
+        </button>
+        <button type="button" class="btn btn-default" onclick="removeSpecificNotif()">
+          Remove specific notification
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel-content-unit">
+        <div id="notifications" class="notifications-container"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Direction of notification show</div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel-content-unit">
+        <p>Let notifications occur from top</p>
+
+        <button type="button" class="btn btn-success" onclick="addSuccessNotifFromTopDir()">
+          Add "Success" notification
+        </button>
+
+        <button type="button" class="btn btn-default" onclick="addTimeoutNotifFromTopDir()">
+          Add notification with timeout
+        </button>
+
+        <div id="notifications-from-top" class="notifications-container"></div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel-content-unit">
+        <p>Let notifications occur from bottom</p>
+
+        <button type="button" class="btn btn-success" onclick="addSuccessNotifFromBottomDir()">
+          Add "Success" notification
+        </button>
+
+        <button type="button" class="btn btn-default" onclick="addTimeoutNotifFromBottomDir()">
+          Add notification with timeout
+        </button>
+
+        <div
+          id="notifications-from-bottom"
+          class="notifications-container notifications-container-from-bottom"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Customization</div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel-content-unit">
+        <button type="button" class="btn btn-default" onclick="pushCustomNotif()">
+          Add customized notification
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel-content-unit">
+        <div class="cmd">
+          <div class="cmd-tool-panel">
+            <span>cmd</span>
+
+            <div class="cmd-tool-panel-btns">
+              <span onclick="pullCustomizedNotifs()" class="cmd-pull-all-btn">[X]</span>
+            </div>
+          </div>
+
+          <div class="cmd-canvas">
+            <div id="custom-notifications-container"></div>
+            <span>&gt;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
