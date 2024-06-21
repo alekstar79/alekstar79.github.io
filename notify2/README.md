@@ -1,11 +1,24 @@
-# Notifications
+# Notify2 [![npm](https://img.shields.io/npm/v/@alekstar79/notify2.svg)](https://www.npmjs.com/package/@alekstar79/notify2) [![GitHub repo](https://img.shields.io/badge/github-repo-green.svg?style=flat)](https://github.com/alekstar79/notify2)
 
-#### JS library for displaying Notifications inside specified html element containers (Modules). You can create multiple independent Modules which own separate set of Notifications.
+#### TS library for displaying notifications inside specific containers. It is possible to create several independent modules that will have a separate set of notifications.
 
-You can check out the [DEMO](https://alekstar79.github.io/notifications)
+This project was bootstrapped with [Create Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite#readme)
+
+You can check out the [DEMO](https://alekstar79.github.io/notify2)
 <br />
 <br />
-<img src="./demo-view.png" alt="Notifications Preview" />
+
+![Visualization of the package's work](review.gif "Notify2")
+
+## <a name="install">Installation</a>
+
+```shell
+npm install @alekstar79/notify2
+```
+or
+```shell
+yarn add @alekstar79/notify2
+```
 
 ## <a name="usage">Usage</a>
 
