@@ -216,6 +216,12 @@ export function templater(content)
       btn.addEventListener('click', fns[attr])
     })
 
+  const span = container.firstElementChild.querySelector('.cmd-pull-all-btn')
+  const listener = span.getAttribute('onclick')
+
+  span.removeAttribute('onclick')
+  span.addEventListener('click', fns[listener])
+
   return container.firstElementChild
 }
 
