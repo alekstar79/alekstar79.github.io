@@ -16,7 +16,7 @@ export function addNotificationToDefaultGroup()
 {
   myNotifier?.pushNotification({
     title: 'Default Group notification',
-    type: 'info',
+    type: 'info'
   })
 }
 
@@ -35,7 +35,7 @@ export function addTestNotification()
   myNotifier?.pushNotification({
     title: 'Test Group notification',
     type: 'success',
-    groupId: 'test',
+    groupId: 'test'
   })
 }
 
@@ -49,7 +49,7 @@ export function addNotifToGreedyGroup()
   myNotifier?.pushNotification({
     title: 'Greedy Group notification',
     type: 'warning',
-    groupId: 'greedy',
+    groupId: 'greedy'
   })
 }
 
@@ -63,7 +63,7 @@ export function addSuccessNotif()
   myNotifier?.pushNotification({
     title: 'Success',
     message: 'Notification',
-    type: 'success',
+    type: 'success'
   })
 }
 
@@ -72,7 +72,7 @@ export function addInfoNotification()
   myNotifier?.pushNotification({
     title: 'Info',
     message: 'Notification',
-    type: 'info',
+    type: 'info'
   })
 }
 
@@ -81,7 +81,7 @@ export function addWarningNotif()
   myNotifier?.pushNotification({
     title: 'Warning',
     message: 'Notification',
-    type: 'warning',
+    type: 'warning'
   })
 }
 
@@ -90,7 +90,7 @@ export function addErrorNotif()
   myNotifier?.pushNotification({
     title: 'Error',
     message: 'Notification',
-    type: 'error',
+    type: 'error'
   })
 }
 
@@ -100,23 +100,21 @@ export function addTimeoutNotif()
     closeInMS: 2000,
     title: 'Info',
     message: 'Notification with Timeout',
-    type: 'info',
+    type: 'info'
   })
 }
-
 
 export function removeAll()
 {
   myNotifier?.removeNotifications()
 }
 
-
 export function addInfoNotificationToRemove()
 {
   notifToRemove = myNotifier?.pushNotification({
     title: 'Add notification',
     message: 'to remove it',
-    type: 'info',
+    type: 'info'
   })
 }
 
@@ -124,7 +122,6 @@ export function removeSpecificNotif()
 {
   notifToRemove?.remove()
 }
-
 
 /* DEMONSTRAING THE DIRECTIONS */
 export function addSuccessNotifFromTopDir()
@@ -160,7 +157,6 @@ export function addTimeoutNotifFromBottomDir()
     type: 'info'
   })
 }
-
 
 export function pushCustomNotif()
 {
@@ -202,7 +198,8 @@ const fns = {
   'addTimeoutNotifFromTopDir()': addTimeoutNotifFromTopDir,
   'addSuccessNotifFromBottomDir()': addSuccessNotifFromBottomDir,
   'addTimeoutNotifFromBottomDir()': addTimeoutNotifFromBottomDir,
-  'pushCustomNotif()': pushCustomNotif
+  'pushCustomNotif()': pushCustomNotif,
+  'pullCustomizedNotifs()': pullCustomizedNotifs
 }
 
 export function templater(content)
@@ -221,7 +218,6 @@ export function templater(content)
 
   return container.firstElementChild
 }
-
 
 document.onreadystatechange || (document.onreadystatechange = () => {
   if (document.readyState !== 'complete') return
