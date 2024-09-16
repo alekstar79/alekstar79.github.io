@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon.png" type="image/png">
-    <title>Curriculum Vitae</title>
+    <title>CV | Wide</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,800@display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -33,6 +33,24 @@
         position: relative;
         background: #003147;
         padding: 40px;
+      }
+      .download-btn {
+        display: -ms-grid;
+        display: grid;
+        place-content: center;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        background: rgba(51, 51, 51, 0.2);
+      }
+      .download-btn .btn-sign {
+        font-size: 26px;
+        color: #fff;
       }
       .container {
         position: relative;
@@ -360,5 +378,7 @@
         </section>
       </main>
     </div>
+    <div class="download-btn"><span class="btn-sign"><i class="fas fa-file-download"></i></span></div>
+    <script src="./main.js"></script>
   </body>
 </html>

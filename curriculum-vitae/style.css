@@ -35,6 +35,25 @@ body {
           box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
 }
 
+.download-btn {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgba(51, 51, 51, 0.2);
+}
+.download-btn .btn-sign {
+  font-size: 26px;
+  color: #fff;
+}
+
 aside {
   position: relative;
   background: #003147;
@@ -202,7 +221,6 @@ main p {
 @media (max-width: 1000px) {
   .container {
     margin: 10px;
-    -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
   }
 }
