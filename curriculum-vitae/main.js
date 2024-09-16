@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const error = 'something went wrong'
-const link = '/doc.pdf'
+const link = './doc.pdf'
 
 function download()
 {
