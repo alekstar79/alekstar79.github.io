@@ -35,13 +35,13 @@ body {
           box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
 }
 
+.link-btn,
 .download-btn {
   display: -ms-grid;
   display: grid;
   place-content: center;
   position: fixed;
   top: 30px;
-  right: 30px;
   width: 60px;
   height: 60px;
   padding: 15px 20px;
@@ -49,9 +49,18 @@ body {
   border-radius: 50%;
   background: rgba(51, 51, 51, 0.2);
 }
+.link-btn .btn-sign,
 .download-btn .btn-sign {
   font-size: 26px;
   color: #fff;
+}
+
+.link-btn {
+  left: 30px;
+}
+
+.download-btn {
+  right: 30px;
 }
 
 aside {
