@@ -2,7 +2,7 @@
 
 ![review](review.gif "Morph")
 
-[DEMO](https://alekstar79.github.io/morph)
+[DEMO](https://alekstar79.github.io/morphing)
 
 All functionality is implemented using HTML5 and pure JavaScript, no external platform or library is used.
 
