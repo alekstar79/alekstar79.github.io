@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --light: #ffffff;
+  --info: #3498DB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: var(--light);
+}
+
+.container {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+.morph-title {
+  justify-self: center;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  color: var(--info);
+}
