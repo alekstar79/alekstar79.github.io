@@ -4,12 +4,9 @@ const error = 'something went wrong'
 const btn = '.download-btn'
 const img = '.imgBx'
 
-let path = window.location.pathname.slice(1)
-
-path = path
+const path = window.location.pathname.slice(1)
   .replace(/curriculum-vitae\//, '')
-  .replace(/\.html/, '')
-path = path || 'doc'
+  .replace(/\.html/, '') || 'doc'
 
 const link = ({
   doc: 'https://alekstar79.github.io/curriculum-vitae/doc-new.pdf',
@@ -24,8 +21,6 @@ function init()
 
 function download()
 {
-  console.log({ path, link })
-
   fetch(link)
     .then(resp => resp.status === 200 ? resp.blob() : Promise.reject(error))
     .then(blob => {
