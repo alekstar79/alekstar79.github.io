@@ -23,21 +23,23 @@ function init()
 
 function download()
 {
-  fetch(links[path])
-    .then(resp => resp.status === 200 ? resp.blob() : Promise.reject(error))
-    .then(blob => {
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement('a')
+  console.log({ path, link: links[path] })
 
-      a.style.display = 'none'
-      a.download = 'cv.pdf'
-      a.href = url
-
-      document.body.appendChild(a)
-      a.click()
-      window.URL.revokeObjectURL(url)
-    })
-    .catch(e => alert(e))
+  // fetch(links[path])
+  //   .then(resp => resp.status === 200 ? resp.blob() : Promise.reject(error))
+  //   .then(blob => {
+  //     const url = window.URL.createObjectURL(blob)
+  //     const a = document.createElement('a')
+  //
+  //     a.style.display = 'none'
+  //     a.download = 'cv.pdf'
+  //     a.href = url
+  //
+  //     document.body.appendChild(a)
+  //     a.click()
+  //     window.URL.revokeObjectURL(url)
+  //   })
+  //   .catch(e => alert(e))
 }
 
 function toggleAvatar()
