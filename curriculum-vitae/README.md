@@ -1,7 +1,7 @@
-| [PREVIEW](https://alekstar79.github.io/curriculum-vitae) | [WIDE](https://alekstar79.github.io/curriculum-vitae/wide.html) | [DOC](https://alekstar79.github.io/curriculum-vitae/doc.html) |
-|:--------------------------------------------------------:|:---------------------------------------------------------------:|:-------------------------------------------------------------:|
+| [DOC](https://alekstar79.github.io/curriculum-vitae) | [WIDE](https://alekstar79.github.io/curriculum-vitae/wide.html) |
+|:----------------------------------------------------:|:---------------------------------------------------------------:|
 
-![photo](./IMG_0502.jpeg)
+![photo](./IMG_05021.jpeg)
 
 Алексей Тарасенко Web разработчик
 --------------------------------

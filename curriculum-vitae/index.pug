@@ -1,0 +1,214 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon', href='./favicon.png', type='image/png')
+    title Curriculum Vitae
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,800@display=swap')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+    link(rel='stylesheet', href='./style.css')
+  body
+    .container.portrait
+      aside
+        .profileText
+          .imgBx
+            .imgBx__inner
+          h2
+            | Алексей Тарасенко
+            span Frontend Developer (Vue Specialist)
+        .contact.info
+          h3.title Контакты
+          ul
+            li
+              span.icon
+                i.fas.fa-phone-alt
+              a(href='tel:+79272724417').text +7 927 272 4417
+            li
+              span.icon
+                i.far.fa-envelope
+              a(href='mailto:alekstar79@yandex.ru').text alekstar79@yandex.ru
+            li
+              span.icon
+                i.fab.fa-telegram-plane
+              a(href='https://t.me/alekstar79', target='_blank').text alekstar79
+            li
+              span.icon
+                i.fab.fa-github
+              a(href='https://github.com/alekstar79?tab=repositories', target='_blank').text alekstar79
+            li
+              span.icon
+                i.fas.fa-map-marker-alt
+              a.text Ульяновск, РФ
+        .contact.education
+          h3.title Образование
+          ul
+            li
+              h5 Самолето- и вертолетостроение инженер-конструктор
+              h4 Самарский Государственный Аэрокосмический Университет им. С.П. Королева
+        .contact.about
+          h3.title Обо мне
+          ul
+            li
+              span(
+                style='text-transform: uppercase'
+                class='text'
+              ) Профессиональный профиль
+              br
+              span.small
+                | Frontend-разработчик 10+ лет в веб-разработке, 7+ лет коммерческой разработки.
+                | Опыт создания веб-приложений на Vue более чем 7-лет. Специализируюсь на полном цикле разработки:
+                | от проектирования архитектуры и выбора стека до реализации, оптимизации производительности и
+                | код-ревью, миграции с Vue 2 на Vue 3, внедрении современных практик (TypeScript, Composition
+                | API). Нацелен на решение бизнес-задач через создание чистого, эффективного, поддерживаемого и
+                | масштабируемого кода.
+            li
+              span(style='text-transform: uppercase', class='text') Ключевые навыки и компетенции
+              br
+              span(style='font-weight: 600', class='text') Frontend
+              ul
+                li
+                  span.text.small
+                    | TypeScript:&nbsp;
+                    | Использование в продакшн-проектах для повышения надежности и поддерживаемости кода.
+                li
+                  span.text.small
+                    | Фреймворки:&nbsp;
+                    | Vue 2/3, Nuxt.js (SSR, PWA), Vuetify.
+                    | Опыт управления состоянием (Vuex, Pinia), маршрутизации (Vue Router).
+                li
+                  span.text.small
+                    | Языки:&nbsp;
+                    | JavaScript (ES6+), HTML5, CSS3, Sass(SCSS).
+                li
+                  span.text.small
+                    | Стилизация:&nbsp;
+                    | Адаптивная и кроссбраузерная верстка, методология БЭМ, Flex/Grid.
+                li
+                  span.text.small
+                    | Графика и данные:&nbsp;
+                    | Canvas (Fabric.js), работа с большими данными (AG-Grid), WebSocket для
+                    | данных в реальном времени.
+              br
+              span(style='font-weight: 600', class='text') Backend для Frontend
+              ul
+                li
+                  span.text.small Node.js, Express, REST API, JWT.
+              ul
+                li
+                  span(
+                    style='text-transform: uppercase; margin-top: 30px; margin-bottom: 10px'
+                    class='text'
+                  ) Инструменты и окружение
+                ul
+                  li(style='margin: 5px')
+                    span.text.small Сборка: &nbsp; Vite, Webpack, Gulp.
+                  li(style='margin: 5px')
+                    span.text.small Контроль версий: &nbsp; Git, GitHub, GitLab.
+                  li(style='margin: 5px')
+                    span.text.small Контейнеризация: &nbsp; Docker.
+                  li(style='margin: 5px')
+                    span.text.small Дизайн: &nbsp; Figma (работа с макетами).
+          ul
+            li
+              span(
+                style='text-transform: uppercase; margin-top: 30px; margin-bottom: 10px'
+                class='text'
+              ) Достижения
+            ul
+              li
+                span(style='font-weight: 600', class='text') Архитектурные преобразования:
+                span.text.small Проводил миграцию проектов с Vue 2 на Vue 3 + TypeScript, сократив количество runtime-ошибок
+                span.text.small Совместно с командой внедрял микросервисную архитектуру для корпоративной платформы
+              li
+                span(style='font-weight: 600', class='text') Производительность и оптимизация:
+                span.text.small Оптимизировал рендеринг данных в реальном времени (WebSocket + AG-Grid)
+                span.text.small Снизил время первой загрузки приложения через внедрение code-splitting, tree-shaking и кэширования
+      main
+        section.profile
+          h2 Профиль
+          p Локация: Ульяновск
+          p Специализация: веб разработчик
+          p Занятость: полная занятость
+          p График работы: гибкий, удаленная работа
+          p Готовность к переезду: Нет
+        section.experience
+          h2 Опыт
+          .position
+            header
+              h5 Июнь 2023 - Ноябрь 2024 (удаленно).
+              h5 ГК Ramax (АО «ИНТЕГРО ТЕКНОЛОДЖИЗ»)
+            .description
+              h4 Frontend Developer Vue 3 (Middle+)
+              p Разработка и поддержка функциональных модулей для крупных корпоративных систем (Panorama Hub, Configurator).
+              p Модернизация UI/UX для корпоративных продуктов.
+              p Проведение рефакторинга и оптимизации производительности legacy-кода.
+              p Внедрение современного стека (Vue 3 Composition API, TypeScript, Vite) в проекты.
+              p Участие в код-ревью и принятии архитектурных решений.
+              br
+              p Стек: Vue 3, TypeScript, Vite, Pinia, SCSS, GitLab.
+          .position
+            header
+              h5 Июнь 2023 - Ноябрь 2024 (удаленно).
+              h5 AWEX КРИПТО ЭКСПЛОРЕР
+            .description
+              h4 Frontend Developer Vue 2 (Middle+)
+              p Разработка пользовательского интерфейса для финансового (FinTech/Crypto) приложения.
+              p Реализация ключевых модулей: дашборд с аналитикой портфеля, партнерский раздел, админ-панель, система переводов, механизмы кэширования и offline-работы для мобильных клиентов.
+              p Проведение анализа и декомпозиции сложных задач, самостоятельная реализация функциональности.
+              p Оптимизация производительности клиентской части приложения (code-splitting и lazy loading).
+              br
+              p Стек: Vue 2, JavaScript, SCSS, БЭМ, Websocket, Web Workers, IndexedDB, Git.
+          .position
+            header
+              h5 Ноябрь 2022 — Май 2023 (удаленно).
+              h5 Волга-Днепр
+            .description
+              h4
+                | Frontend Developer Vue 3
+                br
+                | (проектный контракт)
+              p Проектировал и реализовывал систему визуализации авиаперелетов
+              p Разработал кастомный rendering engine на Canvas (Fabric.js) для системы диспетчеризации авиаперелетов, что позволило визуализировать данные в реальном времени.
+              p Интеграция системы collision detection и predictive analytics для диспетчерских операций
+              p Участие в выборе архитектуры и технологического стека проекта.
+              br
+              p Стек: Vue 3, Pinia, Canvas, Fabric.js, WebSocket.
+          .position
+            header
+              h5 Август 2020 — Октябрь 2022
+              h5 ООО Открытая Школа
+            .description
+              h4 FullStack Developer (Middle)
+              p Разработка и поддержка образовательной платформы (frontend + backend + infrastructure).
+              p Редизайн интерфейса и улучшение UX.
+              p Разработка новой навигационной системы (краулер) для генерации контента навигационного меню налету.
+              p Рефакторинг legacy-codebase, что значительно повысило стабильность работы, исправление ошибок, поддержка работоспособности сервиса.
+              br
+              p Стек: JS, Node.js, Express, MongoDB, Redis, Docker.
+          .position
+            header
+              h5 Май 2014 — Июль 2020
+              h5 ИП | Фриланс
+            .description
+              h4 Fullstack Web Developer
+              p Разработка fullstack-решений для клиентов: от лендингов до комплексных веб-сервисов.
+              p Собственный стартап приложения Netaggregator.
+              br
+              p Стек: Vue/Nuxt.js (SPA, SSR, PWA, isomorphic applications), REST API, Axios, Fetch, Node.js, Express, Gulp, Webpack, PHP, MongoDB/PostgreSQL, Docker.
+        section.skills
+          h2 Профессиональные навыки
+          - var skils = ['JavaScript','TypeScript','Node.js','HTML5','CSS3','SCSS','Bootstrap','AG-Grid','BEM','Vue 2/3','Nuxt 2/3','REST API','SPA','SSR','PWA','FSD','Gulp','Webpack','Vite','Docker','NPM','PHP','Composer','Git','Gitlab','MongoDB','WebSocket','Firebase','Figma','Linux']
+          div.tag-list
+            each skil in skils
+              div.tag-list__item.inline
+                span.text
+                  span= skil
+    div.link-btn
+      a.btn-sign(href='./wide.html')
+        i.fas.fa-id-card
+    div.download-btn
+      span.btn-sign
+        i.fas.fa-file-download
+    script(src='./main.js')

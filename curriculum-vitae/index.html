@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon.png" type="image/png">
-    <title>CV</title>
+    <title>Curriculum Vitae</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,800@display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container portrait">
       <aside>
         <div class="profileText">
-          <div class="imgBx"><img src="./IMG_0502.jpeg" alt=""></div>
-          <h2>Алексей Тарасенко<span>Web разработчик</span></h2>
+          <div class="imgBx">
+            <div class="imgBx__inner"></div>
+          </div>
+          <h2>Алексей Тарасенко<span>Frontend Developer (Vue Specialist)</span></h2>
         </div>
         <div class="contact info">
           <h3 class="title">Контакты</h3>
@@ -24,7 +26,7 @@
             <li><span class="icon"><i class="far fa-envelope"></i></span><a class="text" href="mailto:alekstar79@yandex.ru">alekstar79@yandex.ru</a></li>
             <li><span class="icon"><i class="fab fa-telegram-plane"></i></span><a class="text" href="https://t.me/alekstar79" target="_blank">alekstar79</a></li>
             <li><span class="icon"><i class="fab fa-github"></i></span><a class="text" href="https://github.com/alekstar79?tab=repositories" target="_blank">alekstar79</a></li>
-            <li><span class="icon"><i class="fas fa-map-marker-alt"></i></span><span class="text">Ульяновск, РФ</span></li>
+            <li><span class="icon"><i class="fas fa-map-marker-alt"></i></span><a class="text">Ульяновск, РФ</a></li>
           </ul>
         </div>
         <div class="contact education">
@@ -39,48 +41,108 @@
         <div class="contact about">
           <h3 class="title">Обо мне</h3>
           <ul>
-            <li>
-              <h5>
-                Коммерческий опыт работы и запуска проектов на JS / Vue.js / Nuxt.
-                Стремление к оптимизации в организации любого труда, постоянная модернизация придожений
-                с целью достижения максимальной эффективности работы, работа в условиях многозадачности,
-                опыт работы в команде, самостоятельная постановка и декомпозиция задач,
-                ответственность и соблюдение сроков.
-              </h5>
+            <li><span class="text" style="text-transform: uppercase">Профессиональный профиль</span><br><span class="small">
+                Frontend-разработчик 10+ лет в веб-разработке, 7+ лет коммерческой разработки.
+                Опыт создания веб-приложений на Vue более чем 7-лет. Специализируюсь на полном цикле разработки:
+                от проектирования архитектуры и выбора стека до реализации, оптимизации производительности и
+                код-ревью, миграции с Vue 2 на Vue 3, внедрении современных практик (TypeScript, Composition
+                API). Нацелен на решение бизнес-задач через создание чистого, эффективного, поддерживаемого и
+                масштабируемого кода.</span></li>
+            <li><span class="text" style="text-transform: uppercase">Ключевые навыки и компетенции</span><br><span class="text" style="font-weight: 600">Frontend</span>
+              <ul>
+                <li><span class="text small">
+                    TypeScript:&nbsp;
+                    Использование в продакшн-проектах для повышения надежности и поддерживаемости кода.</span></li>
+                <li><span class="text small">
+                    Фреймворки:&nbsp;
+                    Vue 2/3, Nuxt.js (SSR, PWA), Vuetify.
+                    Опыт управления состоянием (Vuex, Pinia), маршрутизации (Vue Router).</span></li>
+                <li><span class="text small">
+                    Языки:&nbsp;
+                    JavaScript (ES6+), HTML5, CSS3, Sass(SCSS).</span></li>
+                <li><span class="text small">
+                    Стилизация:&nbsp;
+                    Адаптивная и кроссбраузерная верстка, методология БЭМ, Flex/Grid.</span></li>
+                <li><span class="text small">
+                    Графика и данные:&nbsp;
+                    Canvas (Fabric.js), работа с большими данными (AG-Grid), WebSocket для
+                    данных в реальном времени.</span></li>
+              </ul><br><span class="text" style="font-weight: 600">Backend для Frontend</span>
+              <ul>
+                <li><span class="text small">Node.js, Express, REST API, JWT.</span></li>
+              </ul>
+              <ul>
+                <li><span class="text" style="text-transform: uppercase; margin-top: 30px; margin-bottom: 10px">Инструменты и окружение</span></li>
+                <ul>
+                  <li style="margin: 5px"><span class="text small">Сборка: &nbsp; Vite, Webpack, Gulp.</span></li>
+                  <li style="margin: 5px"><span class="text small">Контроль версий: &nbsp; Git, GitHub, GitLab.</span></li>
+                  <li style="margin: 5px"><span class="text small">Контейнеризация: &nbsp; Docker.</span></li>
+                  <li style="margin: 5px"><span class="text small">Дизайн: &nbsp; Figma (работа с макетами).</span></li>
+                </ul>
+              </ul>
             </li>
+          </ul>
+          <ul>
+            <li><span class="text" style="text-transform: uppercase; margin-top: 30px; margin-bottom: 10px">Достижения</span></li>
+            <ul>
+              <li><span class="text" style="font-weight: 600">Архитектурные преобразования:</span><span class="text small">Проводил миграцию проектов с Vue 2 на Vue 3 + TypeScript, сократив количество runtime-ошибок</span><span class="text small">Совместно с командой внедрял микросервисную архитектуру для корпоративной платформы</span></li>
+              <li><span class="text" style="font-weight: 600">Производительность и оптимизация:</span><span class="text small">Оптимизировал рендеринг данных в реальном времени (WebSocket + AG-Grid)</span><span class="text small">Снизил время первой загрузки приложения через внедрение code-splitting, tree-shaking и кэширования</span></li>
+            </ul>
           </ul>
         </div>
       </aside>
       <main>
         <section class="profile">
           <h2>Профиль</h2>
+          <p>Локация: Ульяновск</p>
           <p>Специализация: веб разработчик</p>
           <p>Занятость: полная занятость</p>
           <p>График работы: гибкий, удаленная работа</p>
+          <p>Готовность к переезду: Нет</p>
         </section>
         <section class="experience">
           <h2>Опыт</h2>
           <div class="position">
             <header>
-              <h5>июнь 2023 - н.в.</h5>
-              <h5>AWEX КРИПТО ЭКСПЛОРЕР</h5>
+              <h5>Июнь 2023 - Ноябрь 2024 (удаленно).</h5>
+              <h5>ГК Ramax (АО «ИНТЕГРО ТЕКНОЛОДЖИЗ»)</h5>
             </header>
             <div class="description">
-              <h4>Frontend Developer (Middle+)</h4>
-              <p>Разработка нового интерфейса приложения на Vue.js Отладка приложения / бота, оптимизация и устранение дефектов. Поддержание работоспособности сервиса. Анализ и декомпозиция задач. Code review.</p>
+              <h4>Frontend Developer Vue 3 (Middle+)</h4>
+              <p>Разработка и поддержка функциональных модулей для крупных корпоративных систем (Panorama Hub, Configurator).</p>
+              <p>Модернизация UI/UX для корпоративных продуктов.</p>
+              <p>Проведение рефакторинга и оптимизации производительности legacy-кода.</p>
+              <p>Внедрение современного стека (Vue 3 Composition API, TypeScript, Vite) в проекты.</p>
+              <p>Участие в код-ревью и принятии архитектурных решений.</p><br>
+              <p>Стек: Vue 3, TypeScript, Vite, Pinia, SCSS, GitLab.</p>
             </div>
           </div>
           <div class="position">
             <header>
-              <h5>Ноябрь 2022 — Май 2023</h5>
+              <h5>Июнь 2023 - Ноябрь 2024 (удаленно).</h5>
+              <h5>AWEX КРИПТО ЭКСПЛОРЕР</h5>
+            </header>
+            <div class="description">
+              <h4>Frontend Developer Vue 2 (Middle+)</h4>
+              <p>Разработка пользовательского интерфейса для финансового (FinTech/Crypto) приложения.</p>
+              <p>Реализация ключевых модулей: дашборд с аналитикой портфеля, партнерский раздел, админ-панель, система переводов, механизмы кэширования и offline-работы для мобильных клиентов.</p>
+              <p>Проведение анализа и декомпозиции сложных задач, самостоятельная реализация функциональности.</p>
+              <p>Оптимизация производительности клиентской части приложения (code-splitting и lazy loading).</p><br>
+              <p>Стек: Vue 2, JavaScript, SCSS, БЭМ, Websocket, Web Workers, IndexedDB, Git.</p>
+            </div>
+          </div>
+          <div class="position">
+            <header>
+              <h5>Ноябрь 2022 — Май 2023 (удаленно).</h5>
               <h5>Волга-Днепр</h5>
             </header>
             <div class="description">
-              <h4>JS / Frontend Developer (проектная работа)</h4>
-              <p>
-                Разработка графического интерфейса диспетчеризации авиаперелетов.
-                Участие в полном цикле разработки проекта. Отладка приложения и устранение дефектов, оптимизация кода, оценка сложности задач.
-              </p>
+              <h4>Frontend Developer Vue 3<br>(проектный контракт)</h4>
+              <p>Проектировал и реализовывал систему визуализации авиаперелетов</p>
+              <p>Разработал кастомный rendering engine на Canvas (Fabric.js) для системы диспетчеризации авиаперелетов, что позволило визуализировать данные в реальном времени.</p>
+              <p>Интеграция системы collision detection и predictive analytics для диспетчерских операций</p>
+              <p>Участие в выборе архитектуры и технологического стека проекта.</p><br>
+              <p>Стек: Vue 3, Pinia, Canvas, Fabric.js, WebSocket.</p>
             </div>
           </div>
           <div class="position">
@@ -90,26 +152,23 @@
             </header>
             <div class="description">
               <h4>FullStack Developer (Middle)</h4>
-              <p>
-                Разработка, доработка и редизайн бекенда и фронтенда на JS (Node.js) и Vue.js.
-                Исправление ошибок, рефакторинг и код-ревью.
-                Поддержание работоспособности сервисов.
-                Командная разработка по гибким методологиям.
-                Система контроля версий Gitlab
-              </p>
+              <p>Разработка и поддержка образовательной платформы (frontend + backend + infrastructure).</p>
+              <p>Редизайн интерфейса и улучшение UX.</p>
+              <p>Разработка новой навигационной системы (краулер) для генерации контента навигационного меню налету.</p>
+              <p>Рефакторинг legacy-codebase, что значительно повысило стабильность работы, исправление ошибок, поддержка работоспособности сервиса.</p><br>
+              <p>Стек: JS, Node.js, Express, MongoDB, Redis, Docker.</p>
             </div>
           </div>
           <div class="position">
             <header>
               <h5>Май 2014 — Июль 2020</h5>
-              <h5>ИП | фриланс | аутсорсинг</h5>
+              <h5>ИП | Фриланс</h5>
             </header>
             <div class="description">
               <h4>Fullstack Web Developer</h4>
-              <p>
-                Разработка сайтов и веб приложений.
-                Стартап приложения Netaggregator.
-              </p>
+              <p>Разработка fullstack-решений для клиентов: от лендингов до комплексных веб-сервисов.</p>
+              <p>Собственный стартап приложения Netaggregator.</p><br>
+              <p>Стек: Vue/Nuxt.js (SPA, SSR, PWA, isomorphic applications), REST API, Axios, Fetch, Node.js, Express, Gulp, Webpack, PHP, MongoDB/PostgreSQL, Docker.</p>
             </div>
           </div>
         </section>

@@ -20,21 +20,6 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  min-height: 1000px;
-  margin: 50px;
-  background: #fff;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2fr;
-  grid-template-columns: 1fr 2fr;
-  -webkit-box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
-}
-
 .link-btn,
 .download-btn {
   display: -ms-grid;
@@ -68,10 +53,28 @@ body {
   right: 30px;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  -webkit-box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+
+.container.portrait {
+  max-width: 1000px;
+  min-height: 1000px;
+  margin: 50px;
+}
+
 aside {
   position: relative;
   background: #003147;
-  padding: 40px;
+  padding: 30px;
 }
 
 .profileText {
@@ -95,17 +98,36 @@ aside {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
-.profileText .imgBx img {
+.profileText .imgBx__inner {
   position: absolute;
-  top: 0;
-  left: 0;
+  border-radius: 50%;
+  background: center/cover no-repeat url(./IMG_05021.jpeg);
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  border: 0 solid white;
+  -webkit-box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 9;
 }
-.profileText h2 {
+.profileText .imgBx--show {
+  position: static;
+}
+.profileText .imgBx--show .imgBx__inner {
+  border-width: 0.5em;
+  height: 50vmin;
+  width: 50vmin;
+  left: 25vmin;
+  top: 25vmin;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.profileText h2, .profileText h3 {
   color: #fff;
   font-size: 1.5em;
   margin: 20px;
@@ -114,8 +136,21 @@ aside {
   font-weight: 600;
   line-height: 1.4em;
 }
-.profileText h2 span {
+.profileText span {
+  color: #fff;
   font-size: 0.8em;
+  font-weight: 300;
+  display: block;
+  text-decoration: none;
+}
+
+span {
+  display: block;
+}
+
+span.small {
+  color: #fff;
+  font-size: 0.9em;
   font-weight: 300;
   display: block;
   text-decoration: none;
@@ -124,31 +159,34 @@ aside {
 .contact {
   padding-top: 40px;
 }
-.contact .title {
+
+.title {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
 }
-.contact ul {
+
+ul {
   position: relative;
 }
-.contact ul li {
+ul li {
   position: relative;
   list-style: none;
   margin: 10px 0;
   cursor: pointer;
 }
-.contact ul li .icon {
+ul li .icon {
   display: inline-block;
   width: 30px;
   font-size: 18px;
   color: #03a9f4;
 }
-.contact ul li .text {
+ul li .text {
   color: #fff;
   font-weight: 300;
   text-decoration: none;
+  text-transform: none;
 }
 
 .education li {
@@ -193,6 +231,16 @@ main p {
   color: #333;
 }
 
+.experience {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
 .experience .position {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,10 +249,12 @@ main p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: 20px 0;
+  gap: 20px;
+  margin: 0;
 }
 .experience .position header {
-  min-width: 150px;
+  max-width: 160px;
+  min-width: 160px;
 }
 .experience .position header h5 {
   text-transform: uppercase;
@@ -235,6 +285,7 @@ main p {
 @media (max-width: 1000px) {
   .container {
     margin: 10px;
+    -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
   }
 }

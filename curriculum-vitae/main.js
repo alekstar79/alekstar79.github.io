@@ -1,14 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.download-btn')
-    .addEventListener('click', download)
-})
+document.addEventListener('DOMContentLoaded', init)
 
 const error = 'something went wrong'
-const link = './doc.pdf'
+const btn = '.download-btn'
+const img = '.imgBx'
+
+const links = {
+  doc: './doc-new.pdf',
+  wide: './wide-new.pdf'
+}
+
+let path = window.location.pathname.slice(1)
+
+path = path.replace(/\.html/, '')
+path = path || 'doc'
+
+function init()
+{
+  document.querySelector(img).addEventListener('click', toggleAvatar)
+  document.querySelector(btn).addEventListener('click', download)
+}
 
 function download()
 {
-  fetch(link)
+  fetch(links[path])
     .then(resp => resp.status === 200 ? resp.blob() : Promise.reject(error))
     .then(blob => {
       const url = window.URL.createObjectURL(blob)
@@ -22,5 +36,10 @@ function download()
       a.click()
       window.URL.revokeObjectURL(url)
     })
-    .catch(() => alert(error))
+    .catch(e => alert(e))
+}
+
+function toggleAvatar()
+{
+  this.classList.toggle('imgBx--show')
 }
