@@ -11,6 +11,7 @@ const links = {
 
 let path = window.location.pathname.slice(1)
 
+path = path.replace(/curriculum-vitae\//, '')
 path = path.replace(/\.html/, '')
 path = path || 'doc'
 
