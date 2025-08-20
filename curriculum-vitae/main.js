@@ -5,8 +5,8 @@ const btn = '.download-btn'
 const img = '.imgBx'
 
 const links = {
-  doc: './doc-new.pdf',
-  wide: './wide-new.pdf'
+  doc: 'https://alekstar79.github.io/curriculum-vitae/doc-new.pdf',
+  wide: 'https://alekstar79.github.io/curriculum-vitae/wide-new.pdf'
 }
 
 let path = window.location.pathname.slice(1)
