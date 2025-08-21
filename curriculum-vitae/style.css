@@ -122,10 +122,10 @@ aside {
   border-width: 0.5em;
   height: 50vmin;
   width: 50vmin;
-  left: 25vmin;
-  top: 25vmin;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  left: 25vw;
+  top: 25vh;
+  -webkit-transform: scale(1.2) translate(-22%, -10%);
+          transform: scale(1.2) translate(-22%, -10%);
 }
 .profileText h2, .profileText h3 {
   color: #fff;
@@ -156,6 +156,61 @@ span.small {
   text-decoration: none;
 }
 
+.container.wide aside .profileText .imgBx--show .imgBx__inner {
+  -webkit-transform: scale(1.2) translate(-20%, -10%);
+          transform: scale(1.2) translate(-20%, -10%);
+}
+
+@media screen and (min-width: 640px) {
+  .container.portrait aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-22%, -10%);
+            transform: scale(1.2) translate(-22%, -10%);
+  }
+  .container.wide aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-15%, -10%);
+            transform: scale(1.2) translate(-15%, -10%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .container.portrait aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-17%, -10%);
+            transform: scale(1.2) translate(-17%, -10%);
+  }
+  .container.wide aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-10%, -10%);
+            transform: scale(1.2) translate(-10%, -10%);
+  }
+}
+@media screen and (min-width: 960px) {
+  .container.portrait aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-8%, -10%);
+            transform: scale(1.2) translate(-8%, -10%);
+  }
+  .container.wide aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-6%, -10%);
+            transform: scale(1.2) translate(-6%, -10%);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container.portrait aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-10%, -10%);
+            transform: scale(1.2) translate(-10%, -10%);
+  }
+  .container.wide aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(10%, -10%);
+            transform: scale(1.2) translate(10%, -10%);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container.portrait aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(-40%, -10%);
+            transform: scale(1.2) translate(-40%, -10%);
+  }
+  .container.wide aside .profileText .imgBx--show .imgBx__inner {
+    -webkit-transform: scale(1.2) translate(40%, -10%);
+            transform: scale(1.2) translate(40%, -10%);
+  }
+}
 .contact {
   padding-top: 40px;
 }

@@ -88,10 +88,9 @@ aside
         border-width: .5em
         height: 50vmin
         width: 50vmin
-        left: 25vmin
-        top: 25vmin
-        transform: scale(1.2)
-
+        left: 25vw
+        top: 25vh
+        transform: scale(1.2) translate(-22%, -10%)
     // img
       position: absolute
       top: 0
@@ -121,6 +120,66 @@ span.small
   font-weight: 300
   display: block
   text-decoration: none
+.container.wide
+  aside .profileText
+    .imgBx--show
+      .imgBx__inner
+        transform: scale(1.2) translate(-20%, -10%)
+@media screen and (min-width: 640px)
+  .container.portrait
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-22%, -10%)
+  .container.wide
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-15%, -10%)
+@media screen and (min-width: 768px)
+  .container.portrait
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-17%, -10%)
+  .container.wide
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-10%, -10%)
+@media screen and (min-width: 960px)
+  .container.portrait
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-8%, -10%)
+  .container.wide
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-6%, -10%)
+@media screen and (min-width: 1024px)
+  .container.portrait
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-10%, -10%)
+  .container.wide
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(10%, -10%)
+@media screen and (min-width: 1600px)
+  .container.portrait
+    aside .profileText
+      .imgBx--show
+        .imgBx__inner
+          transform: scale(1.2) translate(-40%, -10%)
+  .container.wide
+    aside .profileText
+     .imgBx--show
+      .imgBx__inner
+        transform: scale(1.2) translate(40%, -10%)
 .contact
   padding-top: 40px
 .title
@@ -155,7 +214,6 @@ ul
     h4
       color: #fff
       font-weight: 500
-
 // .languages
   .percent
     position: relative
@@ -170,7 +228,6 @@ ul
       left: 0
       bottom: 0
       background: #03a9f4
-
 .about
   li
     margin-bottom: 15px
@@ -178,26 +235,21 @@ ul
     h4
       color: #fff
       font-weight: 500
-
 main
   position: relative
   background: #fff
   padding: 40px
-
   section
     margin-bottom: 50px
     &:last-child
       margin-bottom: 0
-
   h2
     color: #003147
     text-transform: uppercase
     letter-spacing: 1px
     margin-bottom: 10px
-
   p
     color: #333
-
 .experience
   display: flex
   flex-direction: column
@@ -219,7 +271,6 @@ main
         text-transform: uppercase
         color: #2a7da2
         font-size: 16px
-
 .skills
   .tag-list
     display: flex
@@ -230,7 +281,6 @@ main
     padding: 5px 15px
     background-color: #eef1f7
     border-radius: 5px
-
   // li
     position: relative
     list-style: none
@@ -271,7 +321,6 @@ main
         color: #03a9f4
         font-size: 18px
         width: 20px
-
 @media (max-width: 1000px)
   .container
     margin: 10px
