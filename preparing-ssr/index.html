@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Server Side Rendering (SSR): как добавить в Vue 3 + Vite приложение</title>
+  <meta name="description" content="При разработке на реактивных фреймворках многие забывают о том, что итоговое приложение – это что-то ближе к SPA, а не классический сайт как «на Wordpress». И когда дело доходит до SEO-продвижения, многие хватаются за голову, потому что поисковые системы плохо работают с такими ресурсами. Поэтому давайте сегодня познакомимся с технологией SSR, которая решит данную проблему.">
+  <meta name="keywords" content="Server Side Rendering, SSR, SEO, Vue 3, Vite, node.js">
+
+  <link rel="shortcut icon" type="image/png" href="./favicon.png">
+
+  <link rel="stylesheet" href="assets/main.min.css">
+  <link rel="stylesheet" href="assets/service.min.css">
+  <link rel="stylesheet" href="assets/highlight.service.min.css">
+
+  <style>
+    @font-face {
+      font-family: "YS Text Variable";
+      src: url("https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2") format("woff2");
+      font-weight: 400 700;
+      font-display: optional;
+    }
+
+    .sheet__content {
+      display: flex;
+      justify-content: center;
+    }
+
+    .sheet-content-width {
+      max-width: calc(100% - 160px);
+    }
+
+    .entity--post {
+      padding-bottom: 1em;
+    }
+
+    @media screen and (max-width: 48rem) {
+      .sheet-content-width {
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="base-layout theme--base entity-page entity-page--post post-page has-live live-closed has-sidebar live-visible">
+<div class="basis sheet">
+  <div class="flex align-center info-block-container"></div>
+
+  <header class="sheet__header sheet-header sheet-header--info">
+    <div class="flex">
+      <div class="basis__h-offset basis__h-offset--left"></div>
+      <div class="basis__h-content">
+        <nav class="container h-100"></nav>
+      </div>
+
+      <div class="basis__h-offset basis__h-offset--right"></div>
+      <div class="semi-mask"></div>
+    </div>
+  </header>
+
+  <div class="basis__h-wrapper sheet__ac-block">
+    <div class="basis__h-offset basis__h-offset--left"></div>
+    <div class="basis__h-content"></div>
+    <div class="basis__h-offset basis__h-offset--right"></div>
+    <div class="semi-mask"></div>
+  </div>
+
+  <div class="basis__h-wrapper sheet__center">
+    <div class="basis__h-offset basis__h-offset--left"></div>
+
+    <div class="basis__h-content">
+      <div class="container h-100">
+        <div class="sheet__content mt-8">
+
+          <main class="sheet__main sheet-content-width">
+            <article class="entity entity--post block" data-entity="post">
+              <header class="block__header mb-4">
+                <h1 class="ma-0 mt-4 mb-10 entity__title">Добавляем SSR в Vue 3 + Vite приложение</h1>
+
+                <div class="mb-8" itemprop="description">
+                  При разработке на реактивных фреймворках многие забывают о том, что итоговое
+                  приложение – это что-то ближе к SPA, а не классический сайт как «на Wordpress».
+                  И когда дело доходит до SEO-продвижения, многие хватаются за
+                  голову, потому что поисковые системы плохо работают с такими ресурсами.
+                  Поэтому давайте сегодня познакомимся с технологией SSR, которая решит данную проблему.
+                </div>
+
+                <div class="block__full mv-4">
+                  <picture>
+                    <source srcset="assets/96d6c9a83d3789a9c1e31e7edec1e6fc.webp 1x" type="image/webp">
+                    <source srcset="assets/96d6c9a83d3789a9c1e31e7edec1e6fc.jpg 1x" type="image/jpg">
+                    <img src="assets/96d6c9a83d3789a9c1e31e7edec1e6fc.jpg"
+                         alt="⚡ Добавляем SSR в Vue 3 + Vite приложение">
+                  </picture>
+                </div>
+              </header>
+
+              <div class="block__content ugc entity__content" itemprop="articleBody">
+                <div>
+                  <h2>Что такое SSR</h2>
+
+                  <p>
+            <span>
+              SSR – (с англ. Server Side Rendering) технология, позволяющая выполнять на
+              сервере JavaScript код для достижения каких-либо целей.
+            </span>
+                  </p>
+
+                  <h3>Зачем нужен SSR и что такое SEO</h3>
+
+                  <p>
+            <span>
+              SSR в первую очередь необходим для продвижения сайта в интернете. Есть такое направление
+              в маркетинге как SEO. И чаще всего, SSR необходим именно для этого.
+            </span>
+                  </p>
+
+                  <p>
+            <span>
+              SEO – (с англ. Search Engine Optimization) это оптимизация сайта под нужды
+              поисковой системы. Само по себе, SEO продвижение – это целое
+              самостоятельное направление в маркетинге с большой концентрацией
+              капитала бизнеса, поэтому для многих это очень важная тема. Особенно
+              если бизнес генерирует деньги в интернете.
+            </span>
+                  </p>
+
+                  <div id="info-block-in-post" class="mv-4"
+                       style="display: block; position: relative; left: -20px; width: calc(100% + 40px);"></div>
+
+                  <p>
+            <span>
+              Видите ли, когда поисковый робот делает запрос к сайту, сделанному на
+              реактивных фреймворках по типу: Vue, React, Angular, то он видит примерно это:
+            </span>
+                  </p>
+
+                  <figure class="content-image stretched">
+                    <img alt="⚡ Добавляем SSR в Vue 3 + Vite приложение"
+                         src="assets/ac122e183e46a627978f08054c5478fb.png">
+                  </figure>
+
+                  <p>
+            <span>
+              Никакого контента, только полупустой HTML. Хотя, если зайти на сайт с точки зрения
+              обычного человека, мы увидим много текста и картинки.
+            </span>
+                  </p>
+
+                  <p>
+                    <span>А вот та же самая страница, но с уже включенным SSR:</span>
+                  </p>
+
+                  <figure class="content-image stretched">
+                    <img alt="⚡ Добавляем SSR в Vue 3 + Vite приложение"
+                         src="assets/cb193c3783eb48c6cf749af697086c1b.png">
+                  </figure>
+
+                  <p>
+                    <span>Как видите, тут контент есть. Что вообще происходит?</span>
+                  </p>
+
+                  <p>
+            <span>
+              Все просто – сайты, сделанные на JavaScript, обычно, инициализируются в
+              реальном времени на стороне клиента. То есть, в браузере у пользователя.
+              Поэтому поисковая система просто не может грамотно считать контент сайта,
+              и значит, дать ему корректное место в поисковой выдаче. Тут вряд ли можно
+              рассчитывать на первое место.
+            </span>
+                  </p>
+
+                  <div class="flash mv-4"></div>
+
+                  <h3>Автор не прав, поисковые системы индексируют JavaScript сайты…</h3>
+
+                  <p>Раздел для тех, кто где-то видел или читал какие-то новости на этому тему. Да, вы в целом правы. Но
+                    есть огромное <i>но</i>…</p>
+
+                  <p>
+            <span>
+              Поисковые системы это делают крайне неохотно, в том же Google можно ждать индексации сайта
+              неделями, а то и месяцами. SEO-специалисты, как представители бизнеса, просто затюкают
+              бедного программиста разными вопросами. Ведь им нужно быстро, здесь и сейчас.
+            </span>
+                  </p>
+
+                  <p><span>Дьявол
+ кроется в деталях. Чтобы поисковой системе проиндексировать
+JavaScript-сайт, ей нужны большие мощности. Сначала нужно сделать запрос
+ к сайту, понять, что тут нет контента и это JavaScript-сайт. После
+этого надо выкачать сайт, куда-то сложить, запустить исполнительную
+среду JavaScript и только потом считать контент. </span></p>
+
+                  <p><span>А теперь представьте классический сайт на PHP, C#, Python. Сделал запрос – получил контент. Все.</span>
+                  </p>
+
+                  <h3>Как рендерить JavaScript на сервере</h3>
+
+                  <p><span>С помощью Node.js. Не любите Node.js? Извините, других способов у нас для вас нет. </span>
+                  </p>
+
+                  <p><span>Хотя внутри Node.js за исполнение JavaScript отвечает движок </span><a
+                    href="https://ru.wikipedia.org/wiki/V8_(%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA_JavaScript)"
+                    target="_blank" rel="noopener noreferrer nofollow"><span>V8</span></a><span>,
+ можете его скачать с GitHub и засунуть в свой проект. Только учтите: V8
+ написан на С++. Как вы свяжите между собой кучу инструментов, мы
+представляем лишь примерно, но точно можем сказать что вам будет очень
+«весело».</span></p>
+
+                  <p>
+                    <span>Технически, возможно добавить SSR и в Laravel + Vue проект (помним, Laravel это PHP), но это </span><a
+                    href="https://blog.vverh.digital/2022/add-ssr-in-laravel9-vue3-vite/" target="_blank"
+                    rel="noopener noreferrer nofollow"><span>будет выглядеть как-то так</span></a><span>. Сомнительный монолит получится. Да и вам все равно потребуется Node.js, как ни крути. Так что, будем работать с Node.js.</span>
+                  </p>
+
+                  <h2>Добавляем SSR во Vue приложение</h2>
+
+                  <p><span>Перед
+ тем как начать, мы с вами сейчас создадим простое двухстраничное
+Vue-приложение. Это нужно лишь для того, чтобы вы поняли принцип
+рендеринга контента. Можете взять свое, но лучше давайте начнем вместе с
+ простой базы, так вы сделаете меньше ошибок и будет понятно, что за что
+ отвечает. А иначе, вопросов будет просто миллион.</span></p>
+
+                  <h3>Создаем Vue приложение</h3>
+
+                  <div class="flash flash__primary mv-4">
+                    <div>
+                      <div class="h3">Примечание</div>
+                      <div>Используется Node.js 16.15.0.</div>
+                    </div>
+                  </div>
+
+                  <p><span>Инициализируем Vue приложение с помощью команды:</span></p>
+
+                  <figure class="code-block">
+                    <pre class="code-wrapper sh"> <code class="hljs bash">npm init vue@latest</code> </pre>
+                  </figure>
+
+                  <p><span>Далее нам зададут некоторые вопросы, отвечаем на них:</span></p>
+
+                  <ol>
+                    <li><b>Project name.</b> Пишите любое.</li>
+                    <li><b>Add TypeScript?</b> Нет.</li>
+                    <li><b>Add JSX Support?</b> Нет.</li>
+                    <li><b>Add Vue Router for Single Page Application development?</b> Обязательно да.</li>
+                    <li><b>Add Pinia for state management?</b> Нет, если надо, позже сами добавите.</li>
+                    <li><b>Add Vitest for Unit Testing?</b> Нет.</li>
+                    <li><b>Add an End-to-End Testing Solution?</b> Нет.</li>
+                    <li><b>Add ESLint for code quality?</b> Как хотите, автор использует всегда.</li>
+                    <li><b>Add Prettier for code formatting?</b> Как хотите.</li>
+                  </ol>
+
+                  <p><span>Теперь
+ переходим в папку с проектом, устанавливаем пакеты и запускаем
+приложение в режиме разработки (команды вводите по порядку):</span></p>
+
+                  <figure class="code-block">
+
+        <pre class="code-wrapper sh"> <code class="hljs bash"><span class="hljs-built_in">cd</span> “ваше название”
+npm install
+npm run dev</code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>У нас с вами появился такой проект, который нужен:</span></p>
+
+                  <figure class="content-image stretched">
+                    <img alt="Добавляем SSR в Vue 3 + Vite приложение"
+                         src="assets/6ab1a795d08fe1db79c7dc551ee4dad1.png">
+                  </figure>
+
+                  <p>Мы имеем <code class="inline-code">App.vue</code> как шаблон и несколько страниц добавленных через
+                    <code class="inline-code">router/index.js</code>: <code class="inline-code">HomeView.vue</code> и
+                    <code class="inline-code">AboutView.vue</code>.</p>
+
+                  <figure class="content-image stretched">
+                    <img alt="Добавляем SSR в Vue 3 + Vite приложение"
+                         src="assets/e9532ce95e49e5a1c9c23fe8f03e75c9.png">
+                  </figure>
+
+                  <p><span>Если мы сейчас нажмем в браузере «Посмотреть код страницы», то не увидим никакого текста в нашем базовом приложении:</span>
+                  </p>
+
+                  <figure class="content-image stretched">
+                    <img alt="Добавляем SSR в Vue 3 + Vite приложение"
+                         src="assets/90447ab7bd40aec357e079697d9210e0.png">
+                  </figure>
+
+                  <p><span>Хотя в компонентах текст есть:</span></p>
+
+                  <figure class="content-image stretched">
+                    <img alt="Компонент TheWelcome.vue, он вызывается внутри HomeView.vue."
+                         src="assets/a1a393981283be910bc695aa05500d76.png">
+                    <figcaption>Компонент TheWelcome.vue, он вызывается внутри HomeView.vue.</figcaption>
+                  </figure>
+
+                  <h3>Создаем сервер для рендеринга JavaScript</h3>
+
+                  <p><span>Для начала идем в package.json и добавляем туда строчку:</span></p>
+
+                  <figure class="code-block">
+
+        <pre class="code-wrapper javascript"> <code class="hljs"><span class="hljs-string">"type"</span>: <span
+          class="hljs-string">"module"</span>,</code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>Должно получится как-то так:</span></p>
+
+                  <figure class="content-image stretched">
+                    <img alt="⚡ Добавляем SSR в Vue 3 + Vite приложение"
+                         src="assets/585cbc54643000650b8d59e886176a83.png">
+                  </figure>
+                  <p><span>Это для того чтобы в Node.js файлах использовать конструкцию </span><span><code
+                    class="inline-code">import</code></span><span>.</span></p>
+
+                  <p><span>Теперь надо создать сервер. Пусть будет Express:</span></p>
+
+                  <figure class="code-block">
+
+        <pre class="code-wrapper sh">        <code class="hljs bash">npm install express</code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>В папке src создайте файл </span><span><code
+                    class="inline-code">server.js</code></span><span> со следующим содержимым:</span></p>
+
+                  <figure class="code-block">
+                    <figcaption>server.js</figcaption>
+
+                    <pre class="code-wrapper javascript"> <code class="hljs"><span class="hljs-comment">// Node.js utility</span>
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">'path'</span>
+<span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">'fs'</span>
+<span class="hljs-keyword">import</span> { fileURLToPath } <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">'url'</span>
+
+<span class="hljs-comment">// Vite</span>
+<span class="hljs-keyword">import</span> { createServer } <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">'vite'</span>
+
+<span class="hljs-comment">// Express</span>
+<span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>
+
+<span class="hljs-comment">// Helpers</span>
+<span class="hljs-keyword">const</span> __dirname = path.dirname(fileURLToPath(<span class="hljs-keyword">import</span>.meta.url))
+<span class="hljs-keyword">const</span> resolve = <span class="hljs-function">(<span class="hljs-params">p</span>) =&gt;</span> path.resolve(__dirname, p)
+
+<span class="hljs-keyword">const</span> getIndexHTML = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> indexHTML = resolve(<span class="hljs-string">'../index.html'</span>)
+  <span class="hljs-keyword">const</span> html = <span class="hljs-keyword">await</span> fs.promises.readFile(indexHTML, <span
+                        class="hljs-string">'utf-8'</span>)
+  <span class="hljs-keyword">return</span> html
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                        class="hljs-title">start</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> manifest = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">const</span> ssrServer = resolve(<span class="hljs-string">'./main-server.js'</span>)
+
+  <span class="hljs-keyword">const</span> app = express()
+  <span class="hljs-keyword">const</span> router = express.Router()
+
+  <span class="hljs-keyword">const</span> vite = <span class="hljs-keyword">await</span> createServer({
+    <span class="hljs-attr">server</span>: { <span class="hljs-attr">middlewareMode</span>: <span class="hljs-literal">true</span> },
+    <span class="hljs-attr">appType</span>: <span class="hljs-string">'custom'</span>
+  })
+
+  app.use(vite.middlewares)
+
+  <span class="hljs-comment">// Ловим все запросы, а вообще можно продублировать тут</span>
+  <span class="hljs-comment">// логику из src/router.js</span>
+  router.get(<span class="hljs-string">'/*'</span>, <span class="hljs-keyword">async</span> (req, res, next) =&gt; {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> url = req.url
+      <span class="hljs-keyword">let</span> template = <span class="hljs-keyword">await</span> getIndexHTML()
+      template = <span class="hljs-keyword">await</span> vite.transformIndexHtml(url, template)
+
+      <span class="hljs-keyword">let</span> render = (<span class="hljs-keyword">await</span> vite.ssrLoadModule(ssrServer)).render
+
+      <span class="hljs-keyword">const</span> [appHtml, preloadLinks] = <span class="hljs-keyword">await</span> render(url, manifest)
+      <span class="hljs-keyword">const</span> html = template
+        .replace(<span class="hljs-string">`&lt;!--preload-links--&gt;`</span>, preloadLinks)
+        .replace(<span class="hljs-string">'&lt;!--app-html--&gt;'</span>, appHtml)
+
+      res.status(<span class="hljs-number">200</span>).set({ <span class="hljs-string">'Content-Type'</span>: <span
+                        class="hljs-string">'text/html'</span> }).end(html)
+    } <span class="hljs-keyword">catch</span> (e) {
+      vite.ssrFixStacktrace(e)
+      next(e)
+    }
+  })
+
+  <span class="hljs-comment">// Routes</span>
+  app.use(<span class="hljs-string">'/'</span>, router)
+
+  app.listen(<span class="hljs-number">3000</span>, () =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Сервер запущен'</span>)
+  })
+}
+
+start()</code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>Давайте обсудим, что же здесь написано. Это очень важно.</span></p>
+
+                  <p><span>На 22 строке функция <code class="inline-code">start()</code>
+ запускает Express-сервер, предварительно запуская внутри себя
+Vite-сервер на 29 строке. Сам Vite-сервер – это некое дополнительное
+приложение, которое умеет компилировать Vue-файлы.</span></p>
+
+                  <p><span>По идее, если через Node.js вызвать файл:</span></p>
+
+                  <figure class="code-block">
+
+        <pre class="code-wrapper javascript">        <code class="hljs">node index.js</code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>в котором будем </span><span><code class="inline-code">import</code></span><span> файла с расширением </span><span><code
+                    class="inline-code">.vue</code></span><span>, то произойдет ошибка, так как нам нужно заранее предсобрать наше приложение особым способом через Vite (что мы и делаем).</span>
+                  </p>
+
+                  <p>
+                    <span>Вообще, вся магия происходит с 40 по 51 строчку. В первую очередь, с помощью функции </span><span><code
+                    class="inline-code">getIndexHTML()</code></span><span>, которую мы чуть выше реализовали. Мы берем наш <code
+                    class="inline-code">index.html</code> из корня проекта, для того чтобы через регулярные выражения в нужное место установить отрендеренный контент. </span>Да,
+                    нам нужно немного модернизировать <code class="inline-code">index.html</code>. Для этого вставьте
+                    под тег <code class="inline-code">title</code> конструкцию:</p>
+
+                  <figure class="code-block">
+
+        <pre class="code-wrapper xml">        <code class="hljs"><span
+          class="hljs-comment">&lt;!--preload-links--&gt;</span></code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>И между </span><span><code class="inline-code">&lt;div id="app"&gt;&lt;/div&gt;</code></span><span> конструкцию:</span>
+                  </p>
+
+                  <figure class="code-block">
+
+        <pre class="code-wrapper xml">        <code class="hljs"><span class="hljs-comment">&lt;!--app-html--&gt;</span></code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>Должно выйти так:</span></p>
+
+                  <figure class="content-image stretched">
+                    <img alt="index.html" src="assets/d5a0a41c8a983abc7560cdd06bd65ed7.png">
+                    <figcaption>index.html</figcaption>
+                  </figure>
+
+                  <p><span>В </span><span><code class="inline-code">preload-links</code></span><span> полетят стили и еще всякие полезные ссылки, собираемые Vite. А в </span><span><code
+                    class="inline-code">app-html</code></span><span>, собранное с помощью SSR, – приложение.</span></p>
+                  <p><span>Кого-то может смутить пустая переменная </span><span><code
+                    class="inline-code">manifest</code></span><span>. Все так и должно быть. Это не конечный вид файла, и чтобы вас не запутать, мы даем информацию постепенно.</span>
+                  </p>
+                  <p><span>За сам рендер JavaScript отвечает функция </span><span><code class="inline-code">vite.ssrLoadModule()</code></span><span>. В нее мы передаем путь до нашей специальной версии приложения – <code
+                    class="inline-code">entry point </code>для SSR. Да, мы сейчас говорим про файл </span><span><code
+                    class="inline-code">main-server.js</code></span><span>, которого у вас еще нету. </span></p>
+                  <p><span>В папке <code class="inline-code">src</code> создайте еще один файл </span><span><code
+                    class="inline-code">main-server.js</code></span><span> с таким содержимым:</span></p>
+
+                  <figure class="code-block">
+                    <figcaption>&nbsp;main-server.js</figcaption>
+
+                    <pre class="code-wrapper javascript">        <code class="hljs"><span class="hljs-comment">// Node.js</span>
+<span class="hljs-keyword">import</span> { basename } <span class="hljs-keyword">from</span> <span class="hljs-string">'node:path'</span>
+
+<span class="hljs-comment">// Vue SSR</span>
+<span class="hljs-keyword">import</span> { createSSRApp } <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">'vue'</span>
+<span class="hljs-keyword">import</span> { renderToString } <span class="hljs-keyword">from</span> <span
+                        class="hljs-string">'vue/server-renderer'</span>
+
+<span class="hljs-comment">// App</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./App.vue'</span>
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">'./router/index.js'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span
+                        class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span
+                        class="hljs-params">url, manifest = null</span>) </span>{
+  <span class="hljs-keyword">const</span> app = createSSRApp(App)
+  app.use(router)
+
+  <span class="hljs-keyword">await</span> router.push(url)
+  <span class="hljs-keyword">await</span> router.isReady()
+
+  <span class="hljs-comment">// ctx - context. Плагин @vitejs/plugin-vue</span>
+  <span class="hljs-comment">// https://vitejs.dev/guide/ssr.html#generating-preload-directives</span>
+  <span class="hljs-keyword">const</span> ctx = {
+    <span class="hljs-attr">modules</span>: []
+  }
+  <span class="hljs-keyword">const</span> html = <span class="hljs-keyword">await</span> renderToString(app)
+  <span class="hljs-keyword">let</span> preloadLinks = <span class="hljs-string">''</span>
+  <span class="hljs-keyword">if</span> (manifest) {
+    renderPreloadLinks(ctx.modules, manifest)
+  }
+
+  <span class="hljs-keyword">return</span> [html, preloadLinks]
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span
+  class="hljs-title">renderPreloadLinks</span>(<span class="hljs-params">modules, manifest</span>) </span>{
+  <span class="hljs-keyword">let</span> links = <span class="hljs-string">''</span>
+  <span class="hljs-keyword">const</span> seen = <span class="hljs-keyword">new</span> <span
+                        class="hljs-built_in">Set</span>()
+  modules.forEach(<span class="hljs-function">(<span class="hljs-params">id</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> files = manifest[id]
+    <span class="hljs-keyword">if</span> (files) {
+      files.forEach(<span class="hljs-function">(<span class="hljs-params">file</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (!seen.has(file)) {
+          seen.add(file)
+          <span class="hljs-keyword">const</span> filename = basename(file)
+          <span class="hljs-keyword">if</span> (manifest[filename]) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> depFile <span
+                        class="hljs-keyword">of</span> manifest[filename]) {
+              links += renderPreloadLink(depFile)
+              seen.add(depFile)
+            }
+          }
+          links += renderPreloadLink(file)
+        }
+      })
+    }
+  })
+  <span class="hljs-keyword">return</span> links
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderPreloadLink</span>(<span
+  class="hljs-params">file</span>) </span>{
+  <span class="hljs-keyword">if</span> (file.endsWith(<span class="hljs-string">'.js'</span>)) {
+    <span class="hljs-keyword">return</span> <span
+                        class="hljs-string">`&lt;link rel="modulepreload" crossorigin href="<span class="hljs-subst">${file}</span>"&gt;`</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (file.endsWith(<span
+                        class="hljs-string">'.css'</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;link rel="stylesheet" href="<span
+                        class="hljs-subst">${file}</span>"&gt;`</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (file.endsWith(<span
+                        class="hljs-string">'.woff'</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">` &lt;link rel="preload" href="<span
+                        class="hljs-subst">${file}</span>" as="font" type="font/woff" crossorigin&gt;`</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (file.endsWith(<span
+                        class="hljs-string">'.woff2'</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">` &lt;link rel="preload" href="<span
+                        class="hljs-subst">${file}</span>" as="font" type="font/woff2" crossorigin&gt;`</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (file.endsWith(<span
+                        class="hljs-string">'.gif'</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">` &lt;link rel="preload" href="<span
+                        class="hljs-subst">${file}</span>" as="image" type="image/gif"&gt;`</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (file.endsWith(<span
+                        class="hljs-string">'.jpg'</span>) || file.endsWith(<span class="hljs-string">'.jpeg'</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">` &lt;link rel="preload" href="<span
+                        class="hljs-subst">${file}</span>" as="image" type="image/jpeg"&gt;`</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (file.endsWith(<span
+                        class="hljs-string">'.png'</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">` &lt;link rel="preload" href="<span
+                        class="hljs-subst">${file}</span>" as="image" type="image/png"&gt;`</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>
+  }
+}</code>
+    </pre>
+
+                  </figure>
+
+                  <p><span>По </span><a href="https://vitejs.dev/guide/ssr.html" target="_blank"
+                                        rel="noopener noreferrer nofollow"><span>документации</span></a><span> Vite, функция </span><span><code
+                    class="inline-code">vite.ssrLoadModule()</code></span><span> возвращает другие экспортируемые функции из передаваемого файла. Поэтому внутри </span><span><code
+                    class="inline-code">main-server.js</code></span><span> мы объявляем функцию </span><span><code
+                    class="inline-code">render()</code></span><span> и в ней напишем классический SSR сервер из </span><a
+                    href="https://vuejs.org/guide/scaling-up/ssr.html" target="_blank"
+                    rel="noopener noreferrer nofollow"><span>документации Vue.js</span></a><span>.</span></p>
+
+                  <p><span>Сама функция </span><span><code class="inline-code">render()</code></span><span> будет вызываться из файла </span><span><code
+                    class="inline-code">server.js</code></span><span>.</span></p>
+
+                  <p>Внутри <code class="inline-code">main-server.js</code> у многих могут вызывать вопросы две функции:
+                    <code class="inline-code">renderPreloadLinks()</code> и <code class="inline-code">renderPreloadLink()</code>.
+                    Хотя они и выглядят страшно, но на самом деле выполняют простую роль: они помогают нам и
+                    подготавливают ссылки на <code class="inline-code">.css</code>
+                    файлы. Все ссылки на чанки стилей будут находиться в манифесте. Мы его
+                    просто тут читаем. Понимаем, вопросов много, но пока у нас нет
+                    манифеста, мы его сделаем чуть позже, и все станет сразу в разы
+                    понятней. </p>
+
+                  <p><span>К
+ сожалению, это еще не все (хотя уже финишная прямая). Даже если мы
+сейчас попытаемся запустить сервер, то ничего хорошего не произойдет.
+Нам надо еще перенастроить наш </span><span><code class="inline-code">router/index.js</code></span><span>. Для этого откройте этот файл.</span>
+                  </p>
+
+                  <p><span>Смотрите на 5 строку, раздел </span><span><code
+                    class="inline-code">history</code></span><span>. Тут используется функция </span><span><code
+                    class="inline-code">createWebHistory()</code></span><span>. Под капотом у этой функции есть использование глобальных переменных </span><span><code
+                    class="inline-code">document</code></span><span> и </span><span><code
+                    class="inline-code">window</code></span><span>.
+ Только вот беда: когда мы будем собирать наше приложение через SSR-мод с
+ помощью Node.js, мы не сможем обратиться к этим переменным. Просто
+потому, что в Node.js нет их. Вместо </span><span><code
+                    class="inline-code">window</code></span><span> в Node.js есть </span><span><code
+                    class="inline-code">global</code></span><span> и </span><span><code
+                    class="inline-code">process</code></span><span>, но там совсем другое содержимое. А </span><span><code
+                    class="inline-code">document</code></span><span> вообще является DOM API, которого тем более там нет… это же не браузер.</span>
+                  </p>
+
+                  <p><span>Поэтому мы должны поменять </span><span><code
+                    class="inline-code">createWebHistory()</code></span><span> на </span><span><code
+                    class="inline-code">сreateMemoryHistory()</code></span><span>, но только для SSR, дабы в обычном режиме приложение не сломалось. Поэтому модернизируйте файл </span><span><code
+                    class="inline-code">router/index.js</code></span><span> таким способом:</span></p>
+
+                  <figure class="code-block">
+                    <figcaption>router/index.js</figcaption>
+
+                    <pre class="code-wrapper javascript">        <code class="hljs"><span
+                      class="hljs-keyword">import</span> { createRouter, createWebHistory, createMemoryHistory } <span
+                      class="hljs-keyword">from</span> <span class="hljs-string">'vue-router'</span>
+<span class="hljs-keyword">import</span> HomeView <span class="hljs-keyword">from</span> <span class="hljs-string">'../views/HomeView.vue'</span>
+
+<span class="hljs-keyword">const</span> baseUrl = <span class="hljs-keyword">import</span>.meta.env.BASE_URL
+<span class="hljs-keyword">const</span> history = <span class="hljs-keyword">import</span>.meta.env.SSR ? createMemoryHistory(baseUrl) : createWebHistory(baseUrl)
+
+<span class="hljs-keyword">const</span> router = createRouter({
+  history,
+  <span class="hljs-attr">routes</span>: [
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'home'</span>,
+      <span class="hljs-attr">component</span>: HomeView
+    },
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'/about'</span>,
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'about'</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span
+                        class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span
+                        class="hljs-string">'../views/AboutView.vue'</span>)
+    }
+  ]
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router</code>
+    </pre>
+
+                  </figure>
+
+                  <p>Теперь можете запустить наше творение командой:</p>
+
+                  <figure class="code-block">
+                    <pre class="code-wrapper sh"> <code class="hljs bash">node ./src/server.js</code> </pre>
+                  </figure>
+
+                  <p><b>Во-первых</b>, сервер запустился под адресом <code class="inline-code">localhost:3000</code>, и
+                    если вы перейдете на него и откроете исходный код, то увидите результат своего труда:</p>
+
+                  <figure class="content-image stretched">
+                    <img alt="Можете проскролить вправо и там будет еще контент из компонентов"
+                         src="assets/775ef5672ac7e53c85a16aefbad63d77.png">
+                    <figcaption>Можете проскролить вправо и там будет еще контент из компонентов</figcaption>
+                  </figure>
+
+                  <p>
+      <span>
+        Первый заход на сайт будет отдавать контент компонента, на который мы попали.
+        На клиентской стороне реактивность сохраняется за счет
+      </span>
+                    <a href="https://vuejs.org/guide/scaling-up/ssr.html#client-hydration" target="_blank"
+                       rel="noopener noreferrer nofollow">
+                      <span>гидрации</span>
+                    </a><span>.</span>
+                  </p>
+
+                  <p><span><b>Во-вторых</b></span><span>,
+ если нажимать F5, то как-то некрасиво встают стили. Мы это исправим за
+счет манифеста. В режиме разработки мы поработаем и так, а для
+production сделаем все чуть красивее.</span></p>
+
+                  <p><b>В-третьих</b>, если вы меняете файлы, Vite подхватывает изменения и делает Hot Reload. Ну, кроме
+                    файла <code class="inline-code">server.js</code>… тут, если хотите, то же самое – надо поставить <b>nodemon</b>
+                    и запускать <code class="inline-code">server.js</code> уже через него. Как-то так:</p>
+
+                  <figure class="code-block">
+              <pre class="code-wrapper sh"> <code class="hljs bash">npm install -g nodemon
+nodemon ./src/server.js</code>
+              </pre>
+                  </figure>
+
+                  <p><b>P.S</b>: Это по желанию.</p>
+
+                  <h3>Финал: сборка для production</h3>
+
+                  <p>
+                    <span>Замените содержимое <code class="inline-code">server.js</code> на новое:</span>
+                  </p>
+
+                  <figure class="code-block">
+                    <figcaption>server.js</figcaption>
+
+                    <pre class="code-wrapper javascript">
+<code class="hljs"><span class="hljs-comment">// Node.js utility</span>
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span
+    class="hljs-string">'path'</span>
+<span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">'fs'</span>
+<span class="hljs-keyword">import</span> { fileURLToPath } <span class="hljs-keyword">from</span> <span
+    class="hljs-string">'url'</span>
+
+<span class="hljs-comment">// Vite</span>
+<span class="hljs-keyword">import</span> { createServer } <span class="hljs-keyword">from</span> <span
+    class="hljs-string">'vite'</span>
+
+<span class="hljs-comment">// Express</span>
+<span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>
+
+<span class="hljs-comment">// eslint-disable-next-line no-undef</span>
+<span class="hljs-keyword">const</span> isProd = process.env.NODE_ENV === <span class="hljs-string">'production'</span>
+
+<span class="hljs-comment">// Helpers</span>
+<span class="hljs-keyword">const</span> __dirname = path.dirname(fileURLToPath(<span class="hljs-keyword">import</span>.meta.url))
+<span class="hljs-keyword">const</span> resolve = <span class="hljs-function">(<span class="hljs-params">p</span>) =&gt;</span> path.resolve(__dirname, p)
+
+<span class="hljs-keyword">const</span> getIndexHTML = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> indexHTML = isProd
+    ? resolve(<span class="hljs-string">'../dist/client/index.html'</span>)
+    : resolve(<span class="hljs-string">'../index.html'</span>)
+  <span class="hljs-keyword">const</span> html = <span class="hljs-keyword">await</span> fs.promises.readFile(indexHTML, <span
+    class="hljs-string">'utf-8'</span>)
+  <span class="hljs-keyword">return</span> html
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+    class="hljs-title">start</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> manifest = isProd
+    ? <span class="hljs-built_in">JSON</span>.parse(fs.readFileSync(resolve(<span class="hljs-string">'../dist/client/ssr-manifest.json'</span>), <span
+    class="hljs-string">'utf-8'</span>))
+    : <span class="hljs-literal">null</span>
+
+  <span class="hljs-keyword">const</span> app = express()
+  <span class="hljs-keyword">const</span> router = express.Router()
+
+  <span class="hljs-keyword">let</span> vite = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">if</span> (isProd) {
+    app.use(express.static(<span class="hljs-string">'dist/client'</span>, { <span class="hljs-attr">index</span>: <span
+    class="hljs-literal">false</span> }))
+  } <span class="hljs-keyword">else</span> {
+    vite = <span class="hljs-keyword">await</span> createServer({
+      <span class="hljs-comment">// eslint-disable-next-line no-undef</span>
+      <span class="hljs-attr">root</span>: process.cwd(),
+      <span class="hljs-attr">server</span>: { <span class="hljs-attr">middlewareMode</span>: <span
+    class="hljs-literal">true</span> },
+      <span class="hljs-attr">appType</span>: <span class="hljs-string">'custom'</span>
+    })
+
+    app.use(vite.middlewares)
+  }
+
+  <span class="hljs-comment">// Ловим все запросы, а вообще можно продублировать тут</span>
+  <span class="hljs-comment">// логику из src/router.js</span>
+  router.get(<span class="hljs-string">'/*'</span>, <span class="hljs-keyword">async</span> (req, res, next) =&gt; {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> url = req.url
+      <span class="hljs-keyword">let</span> template = <span class="hljs-keyword">await</span> getIndexHTML()
+
+      <span class="hljs-keyword">let</span> render = <span class="hljs-literal">null</span>
+      <span class="hljs-keyword">if</span> (isProd) {
+        render = (<span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span
+    class="hljs-string">'../dist/server/main-server.js'</span>)).render
+      } <span class="hljs-keyword">else</span> {
+        template = <span class="hljs-keyword">await</span> vite.transformIndexHtml(url, template)
+        render = (<span class="hljs-keyword">await</span> vite.ssrLoadModule(resolve(<span class="hljs-string">'./main-server.js'</span>))).render
+      }
+
+      <span class="hljs-keyword">const</span> [appHtml, preloadLinks] = <span class="hljs-keyword">await</span> render(url, manifest)
+      <span class="hljs-keyword">const</span> html = template
+        .replace(<span class="hljs-string">`&lt;!--preload-links--&gt;`</span>, preloadLinks)
+        .replace(<span class="hljs-string">'&lt;!--app-html--&gt;'</span>, appHtml)
+
+      res.status(<span class="hljs-number">200</span>).set({ <span class="hljs-string">'Content-Type'</span>: <span
+    class="hljs-string">'text/html'</span> }).end(html)
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-keyword">if</span> (vite) {
+        vite.ssrFixStacktrace(e)
+      }
+      next(e)
+    }
+  })
+
+  <span class="hljs-comment">// Routes</span>
+  app.use(<span class="hljs-string">'/'</span>, router)
+
+  app.listen(<span class="hljs-number">3000</span>, () =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Сервер запущен'</span>)
+  })
+}
+
+start()
+</code>
+</pre>
+                  </figure>
+
+                  <p>
+                    <span>Тут не так много правок, как может показаться. В самом вверху мы добавили переменную </span>
+                    <span><code class="inline-code">isProd</code></span><span>.</span>
+                  </p>
+
+                  <p>
+                    С помощью этой переменной мы будем понимать в каком режиме мы сейчас
+                    функционируем. По-хорошему, для production нужно заранее собрать наше
+                    приложение через Vite и больше не использовать Vite сервер (там ведь
+                    много лишнего под капотом). После сборки наше приложение помещается в
+                    папку <code class="inline-code">dist</code> и мы будем просто тянуть файлы оттуда. Посмотрите на
+                    строки <b>20</b>, <b>28</b>, <b>36</b> и <b>57</b>. Тут как раз у нас еще и манифест появился.
+                  </p>
+
+                  <p>
+                    <span>Теперь давайте соберем наше приложение в боевом режиме. Давайте внесем корректировки в <code
+                      class="inline-code">package.json</code>:</span>
+                  </p>
+
+                  <figure class="code-block">
+                    <figcaption>Добавить в&nbsp;&nbsp;package.json</figcaption>
+                    <pre class="code-wrapper json"> <code class="hljs">
+<span class="hljs-string">"dev"</span>: <span class="hljs-string">"node ./src/server.js"</span>,
+<span class="hljs-string">"serve"</span>: <span class="hljs-string">"NODE_ENV=production node ./src/server.js"</span>,
+<span class="hljs-string">"build"</span>: <span class="hljs-string">"npm run build:client &amp;&amp; npm run build:server"</span>,
+<span class="hljs-string">"build:client"</span>: <span class="hljs-string">"vite build --ssrManifest --outDir dist/client"</span>,
+<span class="hljs-string">"build:server"</span>: <span class="hljs-string">"vite build --ssr src/main-server.js --outDir dist/server"</span>,
+</code>
+</pre>
+                  </figure>
+
+                  <p>
+                    <span>Должно получится так:</span>
+                  </p>
+
+                  <figure class="content-image stretched">
+                    <img alt="package.json" src="assets/acea193f0c81ee1e7322bc1247c0bd71.png">
+                    <figcaption>package.json</figcaption>
+                  </figure>
+
+                  <p>Теперь вместо:</p>
+
+                  <figure class="code-block">
+                    <pre class="code-wrapper sh"> <code class="hljs bash">node ./src/server.js</code> </pre>
+                  </figure>
+
+                  <p>
+                    <span>Можно использовать: </span>
+                  </p>
+
+                  <figure class="code-block">
+                    <pre class="code-wrapper sh"> <code class="hljs bash">npm run dev</code> </pre>
+                  </figure>
+
+                  <p>
+                    <span>А для production есть команда:</span>
+                  </p>
+
+                  <figure class="code-block">
+                    <pre class="code-wrapper sh"> <code class="hljs bash">npm run serve</code> </pre>
+                  </figure>
+
+                  <p>
+                    <span>Но только перед тем как ее запустить, выполните команду:</span>
+                  </p>
+
+                  <figure class="code-block">
+                    <pre class="code-wrapper sh"> <code class="hljs bash">npm run build</code> </pre>
+                  </figure>
+
+                  <p>
+                    <span>Ибо без сборки нечего «обслуживать».</span>
+                  </p>
+
+                  <h3>Бонус: альтернативные способы внедрения SSR</h3>
+
+                  <p>
+                    <span>Например, в рамках Vue 3 существуют такие инструменты как </span>
+                    <a href="https://nuxtjs.org/" target="_blank"
+                       rel="noopener noreferrer nofollow"><span>Nuxt</span></a>
+                    <span> и </span>
+                    <a href="https://quasar.dev/" target="_blank" rel="noopener noreferrer nofollow"><span>Quasar</span></a>.
+                    <span>
+                Данные инструменты позволяют не создавать всякие Express сервера, а
+                просто работать с Vue, как привыкли. Минусы такого подхода лишь в том,
+                что не вы сами настраиваете Express сервер, а разработчик фреймворка.
+                Поэтому, вы, как программист, придерживаетесь чужой логики (но это не
+                всегда плохо).
+              </span>
+                  </p>
+
+                  <div class="delimiter text-center">***</div>
+
+                  <h2>Итог</h2>
+
+                  <p>
+                    <span>Настроили SSR в JavaScript. Ссылка готового проекта на </span>
+                    <a href="https://github.com/alekstar79/vue3-vite-ssr" target="_blank"
+                       rel="noopener noreferrer nofollow">
+                      <span>GitHub</span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+          </main>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="basis__h-offset basis__h-offset--right"></div>
+    <div class="semi-mask"></div>
+  </div>
+</div>
+
+<script
+  src="assets/highlight.service.min.js"
+  async="" onload="initHighlight()"
+></script>
+
+<div id="mask" class="mask"></div>
+
+<script>
+  function initHighlight() {
+    window.highlight.initBlock(document.querySelector('.entity__content'))
+  }
+</script>
+</body>
+</html>
