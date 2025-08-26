@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <title>Drag and Drop element example</title>
+
+  <style>
+    file-drop {
+      display: block;
+      margin: 2em;
+      padding: 3em;
+      border: 2px dashed #0000FF;
+    }
+    file-drop.drop-valid {
+      background-color: rgba(20, 210, 20, .5);
+    }
+    file-drop.drop-invalid {
+      background-color: rgba(230, 50, 50, .5);
+    }
+  </style>
+
+  <script src='../dist/filesdrop.umd.js'></script>
+
+  <script>
+    /*
+      Usage:
+      dropElement.addEventListener('filedrop', e => {
+        console.log(e.action, e.files)
+      })
+    */
+    window.addEventListener('DOMContentLoaded', () => {
+      const dropElement = document.getElementById('drop')
+      dropElement?.addEventListener('filedrop', (event) => {
+        console.log('drop', event.action, event.files)
+
+        if (event.files.length) {
+          dropElement.innerText = event.files.map(f => f.name).join('\n')
+        }
+      })
+
+      const dropAnyElement = document.getElementById('dropAny')
+      dropAnyElement?.addEventListener('filedrop', (event) => {
+        console.log('dropAny', event.action, event.files)
+
+        if (event.files.length) {
+          dropAnyElement.innerText = event.files.map(f => f.name).join('\n')
+        }
+      })
+
+      const dropManyElement = document.getElementById('dropMany')
+      dropManyElement?.addEventListener('filedrop', (event) => {
+        console.log('dropMany', event.action, event.files)
+
+        if (event.files)
+        dropManyElement.innerText = event.files.map(f => f.name).join('\n')
+      })
+
+      const dropManyImagesElement = document.getElementById('dropManyImages')
+      dropManyImagesElement?.addEventListener('filedrop', (event) => {
+        console.log('dropManyImages', event.action, event.files)
+
+        if (event.files.length) {
+          dropManyImagesElement.innerText = event.files.map(f => f.name).join('\n')
+        }
+      })
+
+      const clickManyElement = document.getElementById('clickableManyImages')
+      clickManyElement?.addEventListener('filedrop', (event) => {
+        console.log('clickManyImages', event.action, event.files)
+
+        if (event.files.length) {
+          clickManyElement.innerText = event.files.map(f => f.name).join('\n')
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <!--
+    Usage:
+    <file-drop
+      accept='image/*'
+      multiple | undefined
+      clickable | undefined
+      class='drop-valid|drop-invalid'
+    >
+      [everything in here is a drop target]
+    </file-drop>
+  -->
+
+  <file-drop id='drop' accept='video/*'>
+    Drop video/* here
+  </file-drop>
+
+  <file-drop id='dropAny'>
+    Drop any file here
+  </file-drop>
+
+  <file-drop id='dropMany' multiple>
+    Drop many files here
+  </file-drop>
+
+  <file-drop id='dropManyImages' multiple accept='image/*'>
+    Drop many images here
+  </file-drop>
+
+  <file-drop id='clickableManyImages' multiple clickable accept='image/*'>
+    Drop many images here or click here
+  </file-drop>
+</body>
+</html>
