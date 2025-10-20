@@ -8,8 +8,7 @@ All functionality is implemented using HTML5 and pure JavaScript, no external pl
 
 **How to use:**
 
-Just clone or download this repository. Start local server
-(LiveServer plugin for VS Code / [serve](https://github.com/vercel/serve) npm package)
+Just clone or download this repository. Start local server [serve](https://github.com/vercel/serve)
 or just open index file in browser. That's all...
 
 Clone this repo:

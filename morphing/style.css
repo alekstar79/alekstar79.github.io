@@ -2,6 +2,7 @@
 
 :root {
   --light: #ffffff;
+  --dark: #34495E;
   --info: #3498DB;
 }
 
@@ -21,7 +22,7 @@ body {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background: var(--light);
+  background: var(--dark);
 }
 
 .container {
@@ -36,4 +37,49 @@ body {
   margin-bottom: 1em;
   text-transform: uppercase;
   color: var(--info);
+}
+
+.morph-wrapper {
+  position: relative;
+
+  height: auto;
+  max-width: 640px;
+  width: 100%;
+}
+.morph-canvas {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+.morph-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+
+  padding: 5px;
+
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  color: white;
+
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.morph-btn {
+  padding: 7px 10px;
+  margin: 5px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.morph-btn:hover {
+  background: #0056b3;
+}
+.image-counter {
+  margin: auto 10px;
+  font-size: 22px;
 }
