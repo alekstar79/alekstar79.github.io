@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marquee Canvas TS</title>
+  <meta name="description" content="High-performance canvas-based marquee animations with TypeScript and Vite">
+
+  <!-- Preload critical resources for better performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300..700&display=swap">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./favicon.png">
+
+  <!-- Demo CSS styles (will be processed by Vite) -->
+  <!-- No CSS style links are imported manually as JavaScript -->
+  <!-- <link rel="stylesheet" href="./src/css/library.css"> -->
+  <!-- <link rel="stylesheet" href="./src/css/demo.css"> -->
+
+  <!-- App scripts -->
+  <script type="module" crossorigin src="/js/marquee.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+</head>
+<body class="roboto-roman500">
+  <!-- Main application container. Uses ARIA attributes for accessibility -->
+  <section class="banner" data-banner role="main" aria-label="Marquee Canvas Demonstrations">
+
+    <!--
+      Demo Section 1: Using Custom Elements
+      This demonstrates the modern approach using Web Components
+    -->
+    <div class="demo-section" aria-labelledby="custom-elements-heading">
+      <!-- Accessible heading that's visually hidden but available to screen readers -->
+      <h2 id="custom-elements-heading" class="visually-title">Custom Elements Demo</h2>
+
+      <marquee-canvas
+        class="marquee-1"
+        phrase="Enjoy every moment"
+        font="bold 4em Roboto"
+        padding-y="48"
+        speed="4"
+        aria-label="Marquee: Enjoy every moment"
+      ></marquee-canvas>
+
+      <marquee-canvas
+        class="marquee-2"
+        phrase="Be loyal to the one who is loyal to you"
+        font="bold 6em Roboto"
+        color="#1e2327"
+        padding-y="48"
+        speed="2"
+        reverse
+        aria-label="Marquee: Be loyal to the one who is loyal to you"
+        uppercase
+      ></marquee-canvas>
+
+      <marquee-canvas
+        class="marquee-3"
+        phrase="Never look back"
+        font="bold 5em Roboto"
+        color="rgba(47,215,31,0.8)"
+        padding-y="48"
+        speed="5"
+        aria-label="Marquee: Never look back"
+        uppercase
+      ></marquee-canvas>
+
+      <marquee-canvas
+        class="marquee-4"
+        phrase="Follow your heart"
+        font="bold 5em Roboto"
+        color="rgba(202,39,39,0.7)"
+        padding-y="48"
+        speed="3"
+        reverse
+        aria-label="Marquee: Follow your heart"
+      ></marquee-canvas>
+    </div>
+
+    <!--
+      Demo Section 2: Using Data Attributes (Fallback Approach)
+      This demonstrates the traditional approach for broader browser support
+    -->
+    <div class="demo-section" aria-labelledby="data-attributes-heading">
+      <h2 id="data-attributes-heading" class="visually-title">Data Attributes Demo</h2>
+
+      <div class="marquee-canvas marquee-canvas-1">
+        <canvas
+          data-canvas
+          data-phrase="Life is beautiful"
+          data-font="bold 7em Roboto"
+          data-color="#bdbdbd"
+          data-padding-y="48"
+          data-speed="3"
+          aria-label="Marquee: Life is beautiful"
+          data-reverse
+        ></canvas>
+      </div>
+
+      <div class="marquee-canvas marquee-canvas-2">
+        <canvas
+          data-canvas
+          data-phrase="Create amazing things"
+          data-font="bold 3em Roboto"
+          data-color="#333333"
+          data-speed="5"
+          aria-label="Marquee: Create amazing things"
+        ></canvas>
+      </div>
+
+      <div class="marquee-canvas marquee-canvas-3">
+        <canvas
+          data-canvas
+          data-phrase="Stay curious"
+          data-font="bold 5em Roboto"
+          data-speed="4"
+          data-padding-y="48"
+          aria-label="Marquee: Stay curious"
+          data-uppercase
+          data-reverse
+        ></canvas>
+      </div>
+
+      <div class="marquee-canvas marquee-canvas-4">
+        <canvas
+          data-canvas
+          data-phrase="Dream big"
+          data-font="bold 2em Roboto"
+          data-color="rgba(202,39,39,0.7)"
+          data-speed="3"
+          data-padding-y="48"
+          aria-label="Marquee: Dream big"
+          data-uppercase
+        ></canvas>
+      </div>
+    </div>
+
+  </section>
+
+  <!--
+    Critical Inline Styles
+    These styles are inlined to ensure they load immediately
+    and provide basic styling before the main CSS loads
+  -->
+  <style>
+    /*
+      Visually Hidden Utility Class
+      Hides content visually but keeps it available for screen readers
+    */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    /*
+      Ensure content is visible while JavaScript loads
+      These styles provide a basic fallback appearance
+    */
+    .marquee-canvas,
+    marquee-canvas {
+      display: flex;
+      align-items: center;
+      min-height: 80px;
+    }
+  </style>
+</body>
+</html>
