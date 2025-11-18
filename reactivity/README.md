@@ -1,4 +1,11 @@
-# Reactivity (Vue 3 like reactivity)
+# Reactivity (Vue3-like reactivity)
+
+[![NPM](https://img.shields.io/npm/v/@alekstar79/reactivity.svg)](https://www.npmjs.com/package/@alekstar79/reactivity)
+[![GitHub repo](https://img.shields.io/badge/github-repo-green.svg?style=flat)](https://github.com/alekstar79/reactivity)
+[![Typescript](https://img.shields.io/badge/TypeScript-Ready-blue?logo=typescript)]()
+[![License](https://img.shields.io/badge/License-MIT-green)]()
+[![Version](https://img.shields.io/badge/Version-1.0.0-orange)]()
+[![Coverage](https://img.shields.io/badge/Coverage-87.7%25-green)]()
 
 ![Reactivity](reactivity.jpg)
 
@@ -27,6 +34,7 @@
     * [Example 4: Debounced Search](#example-4-debounced-search)
   * [🏗️ Architecture](#-architecture)
   * [🧪 Testing](#-testing)
+  * [📊 Test Coverage](#-test-coverage)
   * [🔧 Configuration](#-configuration)
   * [📊 Performance](#-performance)
   * [🤝 Contributing](#-contributing)
@@ -476,6 +484,15 @@ describe('watch', () => {
   })
 })
 ```
+
+## 📊 Test Coverage
+
+| File          | % Stmts | % Branch | % Funcs | % Lines |
+|---------------|---------|----------|---------|---------|
+| All files     | 87.7    | 77.43    | 86.4    | 88.96   |
+| clone.ts      | 100     | 94.73    | 100     | 100     |
+| index.ts      | 100     | 100      | 85.71   | 100     |
+| reactivity.ts | 86.08   | 76.05    | 85.71   | 87.4    |
 
 ## 🔧 Configuration
 
