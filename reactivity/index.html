@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactivity System Demo</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">⚡ Reactivity</h1>
+        <p class="tagline">Modern Reactive Programming Library</p>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-links">
+          <button class="nav-link active" data-section="ref">Ref & Effect</button>
+          <button class="nav-link" data-section="reactive">Reactive Objects</button>
+          <button class="nav-link" data-section="computed">Computed Values</button>
+          <button class="nav-link" data-section="watch">Watch & WatchEffect</button>
+          <button class="nav-link" data-section="advanced">Advanced Patterns</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="container">
+
+        <!-- Ref & Effect Section -->
+        <section id="ref" class="section active">
+          <h2>Ref & Effect</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Counter with Ref</h3>
+              <div class="counter-display">
+                <span class="counter-value" id="counterValue">0</span>
+              </div>
+              <div class="button-group">
+                <button class="btn btn-primary" id="increment">+</button>
+                <button class="btn btn-secondary" id="decrement">-</button>
+                <button class="btn btn-outline" id="resetCounter">Reset</button>
+              </div>
+              <div class="log" id="counterLog"></div>
+            </div>
+
+            <div class="card">
+              <h3>Effect Tracking</h3>
+              <div class="stats">
+                <div class="stat">
+                  <span class="stat-label">Effect Runs:</span>
+                  <span class="stat-value" id="effectRuns">0</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-label">Current Value:</span>
+                  <span class="stat-value" id="currentValue">0</span>
+                </div>
+              </div>
+              <input type="range" id="slider" min="0" max="100" value="0" class="slider">
+              <div class="log" id="effectLog"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reactive Objects Section -->
+        <section id="reactive" class="section">
+          <h2>Reactive Objects</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3>User Profile</h3>
+              <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="userName" placeholder="Enter name" class="input">
+              </div>
+              <div class="form-group">
+                <label>Age:</label>
+                <input type="number" id="userAge" placeholder="Enter age" class="input">
+              </div>
+              <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="userEmail" placeholder="Enter email" class="input">
+              </div>
+              <div class="user-display">
+                <div class="user-avatar">
+                  <span id="userInitial">U</span>
+                </div>
+                <div class="user-info">
+                  <div id="userDisplayName">User Name</div>
+                  <div id="userDisplayAge">Age: 0</div>
+                  <div id="userDisplayEmail">email@example.com</div>
+                </div>
+              </div>
+              <div class="log" id="userLog"></div>
+            </div>
+
+            <div class="card">
+              <h3>Todo List</h3>
+              <div class="todo-input">
+                <input type="text" id="todoInput" placeholder="Add a new todo..." class="input">
+                <button class="btn btn-primary" id="addTodo">Add</button>
+              </div>
+              <div class="todo-stats">
+                <span>Total: <span id="todoTotal">0</span></span>
+                <span>Completed: <span id="todoCompleted">0</span></span>
+              </div>
+              <div class="todo-list" id="todoList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Computed Values Section -->
+        <section id="computed" class="section">
+          <h2>Computed Values</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Shopping Cart</h3>
+              <div class="cart-controls">
+                <button class="btn btn-outline" id="addItem">Add Item</button>
+                <button class="btn btn-outline" id="removeItem">Remove Item</button>
+                <button class="btn btn-outline" id="applyDiscount">Apply 10% Discount</button>
+              </div>
+              <div class="cart-summary">
+                <div class="summary-item">
+                  <span>Items:</span>
+                  <span id="cartCount">0</span>
+                </div>
+                <div class="summary-item">
+                  <span>Subtotal:</span>
+                  <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                  <span>Discount:</span>
+                  <span id="cartDiscount">0%</span>
+                </div>
+                <div class="summary-item total">
+                  <span>Total:</span>
+                  <span id="cartTotal">$0.00</span>
+                </div>
+              </div>
+              <div class="log" id="cartLog"></div>
+            </div>
+
+            <div class="card">
+              <h3>Currency Converter</h3>
+              <div class="converter">
+                <div class="form-group">
+                  <label>USD:</label>
+                  <input type="number" id="usdAmount" value="100" class="input">
+                </div>
+                <div class="exchange-rate">
+                  <span>1 USD = </span>
+                  <span id="exchangeRate">0.85</span>
+                  <span> EUR</span>
+                </div>
+                <div class="form-group">
+                  <label>EUR:</label>
+                  <input type="number" id="eurAmount" class="input" readonly>
+                </div>
+              </div>
+              <div class="rate-controls">
+                <button class="btn btn-outline" id="increaseRate">↑ Rate</button>
+                <button class="btn btn-outline" id="decreaseRate">↓ Rate</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Watch Section -->
+        <section id="watch" class="section">
+          <h2>Watch & WatchEffect</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Search with Debounce</h3>
+              <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Type to search..." class="input search-input">
+                <div class="search-status">
+                  Searching for: "<span id="searchResult"></span>"
+                </div>
+              </div>
+              <div class="log" id="searchLog"></div>
+            </div>
+
+            <div class="card">
+              <h3>Form Validation</h3>
+              <div class="form-group">
+                <label>Username:</label>
+                <input type="text" id="valUsername" placeholder="min 3 characters" class="input">
+                <div class="error-message" id="valUsernameError"></div>
+              </div>
+              <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="valEmail" placeholder="valid email" class="input">
+                <div class="error-message" id="valEmailError"></div>
+              </div>
+              <div class="form-group">
+                <label>Password:</label>
+                <input type="password" id="valPassword" placeholder="min 8 characters" class="input">
+                <div class="error-message" id="valPasswordError"></div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" id="validateForm">Validate</button>
+                <div class="form-status" id="formStatus"></div>
+              </div>
+              <div class="log" id="validationLog"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Advanced Patterns Section -->
+        <section id="advanced" class="section">
+          <h2>Advanced Patterns</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Batch Updates</h3>
+              <div class="batch-demo">
+                <div class="batch-values">
+                  <div class="value-display">
+                    <span>A:</span>
+                    <span id="batchA">0</span>
+                  </div>
+                  <div class="value-display">
+                    <span>B:</span>
+                    <span id="batchB">0</span>
+                  </div>
+                  <div class="value-display">
+                    <span>C:</span>
+                    <span id="batchC">0</span>
+                  </div>
+                </div>
+                <div class="update-count">
+                  Effect runs: <span id="batchCount">0</span>
+                </div>
+                <div class="button-group">
+                  <button class="btn btn-outline" id="updateSeparate">Update Separately (3 runs)</button>
+                  <button class="btn btn-primary" id="updateBatch">Update with Batch (1 run)</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Effect Scope</h3>
+              <div class="scope-demo">
+                <div class="scope-controls">
+                  <button class="btn btn-primary" id="startScope">Start Scope</button>
+                  <button class="btn btn-secondary" id="stopScope">Stop Scope</button>
+                </div>
+                <div class="scope-status">
+                  Scope: <span id="scopeStatus">Inactive</span>
+                </div>
+                <div class="log" id="scopeLog"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Built with 💜 using Reactivity System</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Global Log -->
+  <div id="globalLog" class="log global-log" style="display: none;">
+    <div class="log-entry log-info">
+      <span class="log-time">[00:00:00]</span>
+      <span class="log-icon">📝</span>
+      <span class="log-message">Global log ready</span>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/main.js"></script>
+</body>
+</html>
