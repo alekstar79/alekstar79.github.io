@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <title>Zoom Pan</title>
-
-  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/favicon-CqhK_U27.png" type="image/png">
+  <title>Zoom Pan - Example with Image Viewer</title>
+  <script type="module" crossorigin src="/assets/index-CjoVkeSA.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BDEjgf3A.css">
 </head>
 <body>
-  <div id="container">
-    <div class="area">
-      <div class="rectangle"></div>
-      <div class="circle"></div>
+  <div class="header">
+    <h1>🖼️ Zoom Pan Example</h1>
+    <p class="description">Interactive image viewer with real-time statistics and controls</p>
+  </div>
 
-      <div class="text-area">
-        <h1>Example line of text</h1>
+  <div class="container">
+    <div class="viewer">
+      <div class="viewer-canvas" id="viewerCanvas">
+        <div class="viewer-content" id="viewerContent">📱</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-line">
+          <span class="stat-label">Scale:</span>
+          <span id="statScale">1.00</span>x
+        </div>
+
+        <div class="stat-line">
+          <span class="stat-label">Offset:</span>
+          <span id="statOffsetX">0</span>, <span id="statOffsetY">0</span>
+        </div>
+
+        <div class="stat-line">
+          <span class="stat-label">Position:</span>
+          <span id="statOriginX">0</span>, <span id="statOriginY">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="panel">
+        <div class="panel-title">🔍 Zoom</div>
+        <div class="control-group">
+          <div class="button-group">
+            <button id="zoomIn">+ Zoom In</button>
+            <button id="zoomOut">- Zoom Out</button>
+          </div>
+          <div class="control-item">
+            <label>Zoom: <span id="zoomLevelText">100%</span></label>
+            <input type="range" id="zoomLevel" min="10" max="500" value="100">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">📍 Pan</div>
+        <div class="control-group">
+          <div class="control-item">
+            <button id="panUp">↑ Up</button>
+            <button id="panDown">↓ Down</button>
+          </div>
+          <div class="control-item">
+            <button id="panLeft">← Left</button>
+            <button id="panRight">→ Right</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">⚙️ Actions</div>
+        <div class="button-group">
+          <button id="reset">Reset View</button>
+          <button id="fitContent">Fit Content</button>
+        </div>
+        <div class="hint">
+          💡 <strong>Shortcuts:</strong><br>
+          • Ctrl + Scroll: Zoom<br>
+          • Shift + Drag: Pan
+        </div>
       </div>
     </div>
   </div>
-
-  <script src="renderer.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
