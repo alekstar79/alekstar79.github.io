@@ -1,0 +1,54 @@
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  height: 50%;
+  width: 50%;
+
+  border: 1px dashed black;
+}
+
+.circle {
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  width: 200px;
+
+  margin: 10px;
+  background-color: navajowhite;
+  border-radius: 50%;
+}
+
+.rectangle {
+  position: relative;
+  height: 150px;
+  width: 250px;
+
+  margin: 10px;
+  background-color: navajowhite;
+}
+
+.text-area {
+  position: relative;
+}
