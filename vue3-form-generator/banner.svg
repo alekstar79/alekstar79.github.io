@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон с градиентом -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)"/>
+  
+  <!-- Декор -->
+  <g opacity="0.1">
+    <circle cx="200" cy="200" r="150" fill="white"/>
+    <circle cx="1700" cy="300" r="100" fill="white"/>
+    <circle cx="400" cy="800" r="80" fill="white"/>
+  </g>
+  
+  <!-- Основной контент -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="240" width="1200" height="600" rx="24" fill="white"/>
+  </g>
+  
+  <!-- Заголовок -->
+  <text x="960" y="380" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="64" fill="#4361ee">
+    Vue 3 Form Generator
+  </text>
+  
+  <!-- Подзаголовок -->
+  <text x="960" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="32" fill="#64748b">
+    Мощный генератор форм с TypeScript и Vue 3
+  </text>
+  
+  <!-- Иконки технологий -->
+  <g>
+    <!-- Vue -->
+    <circle cx="700" cy="600" r="50" fill="#42b883"/>
+    <text x="700" y="615" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="36" fill="white">Vue</text>
+    
+    <!-- TypeScript -->
+    <circle cx="880" cy="600" r="50" fill="#3178c6"/>
+    <text x="880" y="615" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="28" fill="white">TS</text>
+    
+    <!-- SCSS -->
+    <circle cx="1060" cy="600" r="50" fill="#cc6699"/>
+    <text x="1060" y="615" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="28" fill="white">SASS</text>
+    
+    <!-- Pinia -->
+    <circle cx="1240" cy="600" r="50" fill="#ffd859"/>
+    <text x="1240" y="615" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="26" fill="#2c3e50">Pinia</text>
+  </g>
+  
+  <!-- Пример формы -->
+  <g opacity="0.8">
+    <rect x="600" y="700" width="600" height="50" rx="8" fill="#e2e8f0"/>
+    <rect x="600" y="770" width="600" height="50" rx="8" fill="#e2e8f0"/>
+    <rect x="600" y="840" width="280" height="50" rx="8" fill="#4361ee"/>
+    <rect x="920" y="840" width="280" height="50" rx="8" fill="#94a3b8"/>
+  </g>
+  
+  <!-- Текст на кнопках -->
+  <text x="740" y="875" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="white">Отправить</text>
+  <text x="1060" y="875" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="white">Отмена</text>
+  
+  <!-- Лейблы -->
+  <text x="600" y="690" font-family="Inter, sans-serif" font-weight="500" font-size="18" fill="#64748b">Имя пользователя</text>
+  <text x="600" y="760" font-family="Inter, sans-serif" font-weight="500" font-size="18" fill="#64748b">Email</text>
+  
+  <!-- Декоративные элементы форм -->
+  <g opacity="0.3">
+    <rect x="200" y="400" width="120" height="40" rx="6" fill="#4361ee"/>
+    <rect x="1600" y="500" width="160" height="50" rx="8" fill="#10b981"/>
+    <circle cx="250" cy="700" r="20" fill="#ef4444"/>
+  </g>
+  
+  <!-- Слоган -->
+  <text x="960" y="980" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="28" fill="white">
+    Создавайте сложные формы быстро и легко
+  </text>
+  
+  <!-- Градиенты -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee"/>
+      <stop offset="50%" stop-color="#3a0ca3"/>
+      <stop offset="100%" stop-color="#7209b7"/>
+    </linearGradient>
+    
+    <filter id="shadow" x="0" y="0" width="1920" height="1080" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="20"/>
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+</svg>
