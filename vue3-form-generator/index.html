@@ -5,11 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="./favicon.png" />
   <title>Vue 3 Form Generator</title>
-  <script type="module" crossorigin src="./index.js"></script>
-  <link rel="stylesheet" href="./index.css">
+  <script type="module" crossorigin src="/vue3-form-generator/index.js"></script>
+  <link rel="stylesheet" href="/vue3-form-generator/index.css">
 </head>
 <body>
   <div id="app"></div>
+
+  <script>
+    if (sessionStorage.redirect) {
+      let redirect = sessionStorage.redirect
+
+      delete sessionStorage.redirect
+
+      let pathname = new URL(redirect).pathname.replace('/vue3-form-generator', '')
+
+      window.history.replaceState(null, null, pathname)
+    }
+  </script>
   
 </body>
 </html>
