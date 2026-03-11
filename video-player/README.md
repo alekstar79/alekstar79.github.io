@@ -80,7 +80,7 @@ npm install vue                        # for Vue wrapper
 
 ## Usage
 
-### Vanilla JavaScript / TypeScript  [[example]](src/examples/vanilla)
+### Vanilla JavaScript / TypeScript  [[example]](https://github.com/alekstar79/video-player/tree/main/src/examples/vanilla)
 
 1. **Import the styles and register the custom elements**
 
@@ -118,7 +118,7 @@ const player = await createPlayer(container, {
 })
 ```
 
-### Vue 3  [[example]](src/examples/vue)
+### Vue 3  [[example]](https://github.com/alekstar79/video-player/tree/main/src/examples/vue)
 
 ```vue
 <template>
