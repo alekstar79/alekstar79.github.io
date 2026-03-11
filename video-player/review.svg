@@ -1,0 +1,227 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    .title { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 80px; fill: white; }
+    .subtitle { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 400; font-size: 32px; fill: rgba(255,255,255,0.7); }
+    .feature-text { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 24px; fill: white; }
+    .icon-bg { fill: rgba(255,255,255,0.1); stroke: rgba(255,255,255,0.3); stroke-width: 1.5; }
+    .icon-fg { fill: white; }
+    .player-bg { fill: #1a1e2b; rx: 24; ry: 24; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6)); }
+    .screen { fill: #0b0d14; rx: 12; ry: 12; }
+    .control-bar { fill: #252a3a; rx: 30; ry: 30; }
+    .progress-bg { fill: #3a4055; rx: 4; ry: 4; }
+    .progress-fill { fill: #4f9eff; rx: 4; ry: 4; }
+    .button-circle { fill: #32384b; stroke: rgba(255,255,255,0.2); stroke-width: 2; }
+    .menu-slice { fill: #2f354a; stroke: rgba(255,255,255,0.15); stroke-width: 2; }
+    .menu-center { fill: #1e2333; stroke: #4f9eff; stroke-width: 3; }
+    .accent { fill: #4f9eff; }
+  </style>
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="70%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#1a1f2f" />
+      <stop offset="100%" stop-color="#0a0c14" />
+    </radialGradient>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="60" height="60">
+      <path d="M 60 0 L 0 0 0 60" stroke="rgba(255,255,255,0.03)" stroke-width="1" fill="none"/>
+    </pattern>
+    <linearGradient id="sectorGrad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-0.2" y="-0.2" width="1.4" height="1.4">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- Paths for sectors and hints -->
+    <path id="sectorRing" d="M 216.5,-125 A 250,250 0 0 1 216.5,125 L 103.9,60 A 120,120 0 0 0 103.9,-60 Z" />
+    <path id="hintMedium" d="M 272.5,-99 A 290,290 0 0 1 272.5,99" />
+    <path id="centralHint" d="M 67.2,67.2 A 95,95 0 0 1 -67.2,67.2" />
+  </defs>
+
+  <!-- background (fixed) -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)" />
+  <rect width="1920" height="1080" fill="url(#grid)" />
+
+  <!-- All content shifted down by 80px -->
+  <g transform="translate(0,80)">
+    <!-- decorative circles (part of the composition) -->
+    <circle cx="1400" cy="200" r="300" fill="rgba(79,158,255,0.02)" stroke="rgba(79,158,255,0.1)" stroke-width="2"/>
+    <circle cx="200" cy="900" r="400" fill="rgba(79,158,255,0.02)" stroke="rgba(79,158,255,0.1)" stroke-width="2"/>
+
+    <!-- video player (on the left) -->
+    <g transform="translate(250,270)">
+      <rect width="800" height="460" class="player-bg" />
+      <rect x="30" y="30" width="740" height="340" class="screen" />
+      <g transform="scale(1.5) translate(250,110)">
+          <path d="M14.0 7.6C13.1 7.1 12.0 7.1 11.1 7.6C10.2 8.2 9.6 9.2 9.6 10.2L9.6 37.8C9.6 38.9 10.2 39.9 11.1 40.4C12.0 40.9 13.1 40.9 14.0 40.4L39.2 26.6C40.2 26.1 40.8 25.1 40.8 24.0C40.8 22.9 40.2 21.9 39.2 21.4L14.0 7.6Z" fill="#ccc"/>
+      </g>
+      <rect x="30" y="390" width="740" height="50" class="control-bar" />
+      <rect x="50" y="405" width="500" height="10" class="progress-bg" />
+      <rect x="50" y="405" width="250" height="10" class="progress-fill" />
+      <circle cx="600" cy="415" r="16" class="button-circle" />
+      <circle cx="650" cy="415" r="16" class="button-circle" />
+      <circle cx="700" cy="415" r="16" class="button-circle" />
+      <circle cx="750" cy="415" r="16" class="button-circle" />
+      <g transform="scale(0.65) translate(330, 223)">
+        <path d="M580 408 L590 408 L600 400 L600 430 L590 422 L580 422 Z" fill="white" opacity="0.8"/>
+      </g>
+    </g>
+
+    <!-- playlist (bottom right) -->
+    <g transform="translate(1350,650)">
+      <rect width="300" height="220" rx="20" fill="#1e2333" stroke="#4f9eff" stroke-width="2" />
+      <rect x="20" y="20" width="260" height="40" rx="8" fill="#2f354a" />
+      <rect x="20" y="80" width="260" height="40" rx="8" fill="#2f354a" />
+      <rect x="20" y="140" width="260" height="40" rx="8" fill="#2f354a" />
+      <circle cx="40" cy="40" r="8" fill="#4f9eff" />
+      <circle cx="40" cy="100" r="8" fill="rgba(255,255,255,0.3)" />
+      <circle cx="40" cy="160" r="8" fill="rgba(255,255,255,0.3)" />
+    </g>
+
+    <!-- preview panel (above right) -->
+    <g transform="translate(1150,400)">
+      <rect width="240" height="180" rx="16" fill="#1e2333" stroke="#4f9eff" stroke-width="2" />
+      <rect x="15" y="15" width="210" height="100" rx="8" fill="#0b0d14" />
+      <rect x="15" y="130" width="100" height="30" rx="6" fill="#2f354a" />
+      <rect x="130" y="130" width="95" height="30" rx="6" fill="#2f354a" />
+      <circle cx="210" cy="30" r="10" fill="#4f9eff" />
+    </g>
+
+    <!-- text part on the right -->
+    <g transform="translate(1250,80)">
+      <text x="0" y="0" class="title">Video Player</text>
+      <text x="0" y="100" class="subtitle">Customizable · Context Menu · Playlist</text>
+      <text x="0" y="150" class="subtitle">Thumbnails · Metadata · PiP · Speed</text>
+      
+      <g transform="translate(0,200)">
+        <circle cx="30" cy="0" r="24" class="icon-bg" />
+        <g transform="scale(0.5) translate(40,-20)">
+          <path fill="white" d="M14.0 7.6C13.1 7.1 12.0 7.1 11.1 7.6C10.2 8.2 9.6 9.2 9.6 10.2L9.6 37.8C9.6 38.9 10.2 39.9 11.1 40.4C12.0 40.9 13.1 40.9 14.0 40.4L39.2 26.6C40.2 26.1 40.8 25.1 40.8 24.0C40.8 22.9 40.2 21.9 39.2 21.4L14.0 7.6Z" />
+        </g>
+        <text x="70" y="8" class="feature-text">Play / Pause</text>
+      </g>
+      
+      <g transform="translate(0,260)">
+        <circle cx="30" cy="0" r="24" class="icon-bg" />
+        <g transform="scale(0.5) translate(40, -20)">
+          <path fill="white" d="M30.3 8.0C29.4 7.2 28.1 7.0 27.0 7.4C25.9 7.9 25.2 9.0 25.2 10.2L25.2 20.4L12.3 8.0C11.4 7.2 10.1 7.0 9.0 7.4C7.9 7.9 7.2 9.0 7.2 10.2L7.2 37.8C7.2 39.0 7.9 40.1 9.0 40.6C10.1 41.0 11.4 40.8 12.3 39.7L25.2 27.6L25.2 37.8C25.2 39.0 25.9 40.1 27.0 40.6C28.1 41.0 29.4 40.8 30.3 39.7L44.7 26.2C45.3 25.6 45.6 25.0 45.6 24.0C45.6 23.0 45.3 22.4 44.7 21.8L30.3 8.0Z"/>
+        </g>
+        <text x="70" y="8" class="feature-text">Skip forward/back</text>
+      </g>
+      
+      <g transform="translate(0,320)">
+        <circle cx="30" cy="0" r="24" class="icon-bg" />
+        <g transform="scale(0.5) translate(40,-20)">
+          <path fill="white" d="M8.4 31.2L12.0 31.2L22.1 40.1C22.5 40.6 23.2 40.8 23.8 40.8C25.2 40.8 26.4 39.6 26.4 38.2L26.4 9.8C26.4 8.4 25.2 7.2 23.8 7.2C23.2 7.2 22.5 7.4 22.1 7.9L12.0 16.8L8.4 16.8C6.4 16.8 4.8 18.4 4.8 20.4L4.8 27.6C4.8 29.6 6.4 31.2 8.4 31.2ZM37.9 12.8C37.1 12.2 36.0 12.4 35.3 13.4C34.7 14.4 35.0 15.7 36.1 16.8C38.0 17.6 39.6 20.6 39.6 24.0C39.6 27.4 38.0 30.4 36.1 32.4C35.0 33.4 34.7 34.7 35.3 35.7C36.0 36.7 37.1 37.0 37.9 36.2C41.1 32.5 43.2 28.5 43.2 24.0C43.2 19.5 41.1 15.5 37.9 12.8ZM33.3 18.4C32.6 17.8 31.4 18.1 30.8 19.0C30.2 19.9 30.3 21.1 31.1 22.1C31.9 23.0 32.4 24.0 32.4 24.0C32.4 24.0 31.9 25.0 31.1 25.9C30.3 26.8 30.2 28.1 30.8 29.0C31.4 29.8 32.6 30.1 33.3 29.5C35.0 27.8 36.0 24.8 36.0 24.0C36.0 23.2 35.0 20.2 33.3 18.4Z"/>
+        </g>
+        <text x="70" y="8" class="feature-text">Volume control</text>
+      </g>
+      
+      <g transform="translate(0,380)">
+        <circle cx="30" cy="0" r="24" class="icon-bg" />
+        <g transform="scale(0.5) translate(40, -20)">
+          <path fill="white" d="M38.4 7.2C41.0 7.2 43.2 9.4 43.2 12.0L43.2 20.4L38.4 20.4L38.4 12.0L9.6 12.0L9.6 36.0L20.4 36.0L20.4 40.8L9.6 40.8L9.1 40.8C7.4 40.6 5.1 39.0 4.8 37.0L4.8 36.0L4.8 12.0C4.8 9.5 6.7 7.5 9.1 7.2L9.6 7.2L38.4 7.2ZM39.6 24.0C41.6 24.0 43.2 25.6 43.2 27.6L43.2 37.2C43.2 39.2 41.6 40.8 39.6 40.8L27.6 40.8C25.6 40.8 24.0 39.2 24.0 37.2L24.0 27.6C24.0 25.6 25.6 24.0 27.6 24.0L39.6 24.0Z"/>
+        </g>
+        <text x="70" y="8" class="feature-text">Fullscreen / PiP</text>
+      </g>
+    </g>
+
+    <!-- ROUND-UP CONTEXT MENU -->
+    <g transform="translate(270,750) scale(0.6)" filter="url(#shadow)">
+      <!-- внешние декоративные круги -->
+      <circle r="263" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8 8" opacity="0.2"/>
+      <circle r="320" fill="none" stroke="#3b82f6" stroke-width="1" stroke-dasharray="16 8" opacity="0.15"/>
+
+      <!-- sector group -->
+      <g>
+        <!-- Sector 0° (right) - NEXT -->
+        <g transform="rotate(0)">
+          <use xlink:href="#sectorRing" fill="url(#sectorGrad)" opacity="0.6"/>
+          <g transform="rotate(8) translate(190,-25)">
+            <path transform="translate(-24,-24)" d="M35.2,21.3c1.5,1.5,1.5,3.7,0,5.2l-17.2,17.3c-1.5,1.4-3.7,1.4-5.2,0c-1.4-1.5-1.4-3.7,0-5.2l14.8-14.8-14.8-14.8c-1.4-1.4-1.4-3.7,0-5.2s3.7-1.4,5.2,0l17.2,17.3z" fill="#ccc"/>
+          </g>
+          <use xlink:href="#hintMedium" stroke="url(#sectorGrad)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#hintMedium" startOffset="35%" dominant-baseline="central">NEXT</textPath>
+          </text>
+        </g>
+
+        <!-- Sector 60° (bottom right) - FULLSCREEN (expand) -->
+        <g transform="rotate(60)">
+          <use xlink:href="#sectorRing" fill="url(#sectorGrad)" opacity="0.6"/>
+          <g transform="rotate(6) translate(190,-25)">
+            <path transform="translate(-24,-24) rotate(-12)" d="M9.6 7.2C8.3 7.2 7.2 8.3 7.2 9.6L7.2 16.8C7.2 18.1 8.3 19.2 9.6 19.2C10.9 19.2 12.0 18.1 12.0 16.8L12.0 12.0L16.8 12.0C18.1 12.0 19.2 10.9 19.2 9.6C19.2 8.3 18.1 7.2 16.8 7.2L9.6 7.2ZM12.0 31.2C12.0 30.0 10.9 28.8 9.6 28.8C8.3 28.8 7.2 30.0 7.2 31.2L7.2 38.4C7.2 39.7 8.3 40.8 9.6 40.8L16.8 40.8C18.1 40.8 19.2 39.7 19.2 38.4C19.2 37.2 18.1 36.0 16.8 36.0L12.0 36.0L12.0 31.2ZM31.2 7.2C30.0 7.2 28.8 8.3 28.8 9.6C28.8 10.9 30.0 12.0 31.2 12.0L36.0 12.0L36.0 16.8C36.0 18.1 37.2 19.2 38.4 19.2C39.7 19.2 40.8 18.1 40.8 16.8L40.8 9.6C40.8 8.3 39.7 7.2 38.4 7.2L31.2 7.2ZM40.8 31.2C40.8 30.0 39.7 28.8 38.4 28.8C37.2 28.8 36.0 30.0 36.0 31.2L36.0 36.0L31.2 36.0C30.0 36.0 28.8 37.2 28.8 38.4C28.8 39.7 30.0 40.8 31.2 40.8L38.4 40.8C39.7 40.8 40.8 39.7 40.8 38.4L40.8 31.2Z" fill="#ccc"/>
+          </g>
+          <use xlink:href="#hintMedium" stroke="url(#sectorGrad)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#hintMedium" startOffset="3%" dominant-baseline="central">FULLSCREEN</textPath>
+          </text>
+        </g>
+
+        <!-- Sector 120° (lower left) - OPEN -->
+        <g transform="rotate(120)">
+          <use xlink:href="#sectorRing" fill="url(#sectorGrad)" opacity="0.6"/>
+          <g transform="rotate(8) translate(230,-25)">
+            <path transform="translate(-24,-24) rotate(85)" d="M6.6 21.7L4.8 27.0L4.8 12.0C4.8 9.4 7.0 7.2 9.6 7.2L20.0 7.2C21.1 7.2 22.1 7.6 22.9 8.2L25.8 10.3C26.2 10.6 26.7 10.8 27.2 10.8L36.0 10.8C38.7 10.8 41.0 13.0 41.0 15.6L41.0 16.8L13.4 16.8C10.3 16.8 7.6 18.8 6.6 21.7ZM38.2 38.4L9.8 38.4C7.4 38.4 5.6 36.5 6.4 34.7L10.0 22.9C10.5 21.4 12.0 20.4 13.4 20.4L41.8 20.4C44.5 20.4 47.0 22.8 46.2 25.1L42.1 35.9C41.7 37.4 40.3 38.4 38.2 38.4Z" fill="#ccc"/>
+          </g>
+          <use xlink:href="#hintMedium" stroke="url(#sectorGrad)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#hintMedium" startOffset="30%" dominant-baseline="central">OPEN</textPath>
+          </text>
+        </g>
+
+        <!-- Sector 180° (left) - PREV -->
+        <g transform="rotate(180)">
+          <use xlink:href="#sectorRing" fill="url(#sectorGrad)" opacity="0.6"/>
+          <g transform="rotate(8) translate(230,10)">
+            <path transform="translate(-24,-24) rotate(170)" d="M12.8,26.7c-1.5-1.5-1.5-3.7 0-5.2l17.2-17.3c1.5-1.4 3.7-1.4 5.2 0c1.4 1.5 1.4 3.7 0 5.2L20.5 24l14.7 14.7c1.4 1.4 1.4 3.7 0 5.2-1.4 1.4-3.7 1.4-5.2 0L12.8 26.7z" fill="#ccc"/>
+          </g>
+          <use xlink:href="#hintMedium" stroke="url(#sectorGrad)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#hintMedium" startOffset="30%" dominant-baseline="central">PREV</textPath>
+          </text>
+        </g>
+
+        <!-- Sector 240° (top left) - PREVIEW -->
+        <g transform="rotate(240)">
+          <use xlink:href="#sectorRing" fill="url(#sectorGrad)" opacity="0.6"/>
+          <g transform="rotate(8) translate(230,-25)">
+            <path transform="translate(-24,-24) rotate(85)" d="M16.0 9.7L15.2 12.0L9.6 12.0C7.0 12.0 4.8 14.2 4.8 16.8L4.8 36.0C4.8 38.6 7.0 40.8 9.6 40.8L38.4 40.8C41.0 40.8 43.2 38.6 43.2 36.0L43.2 16.8C43.2 14.2 41.0 12.0 38.4 12.0L32.8 12.0L32.0 9.7C31.5 8.2 30.2 7.2 28.6 7.2L19.4 7.2C17.8 7.2 16.5 8.2 16.0 9.7ZM24.0 19.2C28.0 19.2 31.2 22.4 31.2 26.4C31.2 30.4 28.0 33.6 24.0 33.6C20.0 33.6 17.6 30.4 17.6 26.4C17.6 22.4 20.0 19.2 24.0 19.2Z" fill="#ccc"/>
+          </g>
+          <use xlink:href="#hintMedium" stroke="url(#sectorGrad)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#hintMedium" startOffset="17%" dominant-baseline="central">PREVIEW</textPath>
+          </text>
+        </g>
+
+        <!-- Sector 300° (upper right) - PLAYLIST -->
+        <g transform="rotate(300)">
+          <use xlink:href="#sectorRing" fill="url(#sectorGrad)" opacity="0.6"/>
+          <g transform="rotate(8) translate(230,-25)">
+            <path transform="translate(-24,-24) rotate(85)" d="M8.4 15.6C10.4 15.6 12.0 14.0 12.0 12.0C12.0 10.0 10.4 8.4 8.4 8.4C6.4 8.4 4.8 10.0 4.8 12.0C4.8 14.0 6.4 15.6 8.4 15.6ZM19.2 9.6C18.4 9.6 17.6 10.4 17.6 12.0C17.6 13.6 18.4 14.4 19.2 14.4L40.8 14.4C42.4 14.4 43.2 13.6 43.2 12.0C43.2 10.4 42.4 9.6 40.8 9.6L19.2 9.6ZM19.2 21.6C18.4 21.6 17.6 22.4 17.6 24.0C17.6 25.6 18.4 26.4 19.2 26.4L40.8 26.4C42.4 26.4 43.2 25.6 43.2 24.0C43.2 22.4 42.4 21.6 40.8 21.6L19.2 21.6ZM19.2 33.6C18.4 33.6 17.6 34.4 17.6 36.0C17.6 37.6 18.4 38.4 19.2 38.4L40.8 38.4C42.4 38.4 43.2 37.6 43.2 36.0C43.2 34.4 42.4 33.6 40.8 33.6L19.2 33.6ZM8.4 39.6C10.4 39.6 12.0 38.0 12.0 36.0C12.0 34.0 10.4 32.4 8.4 32.4C6.4 32.4 4.8 34.0 4.8 36.0C4.8 38.0 6.4 39.6 8.4 39.6ZM12.0 24.0C12.0 22.0 10.4 20.4 8.4 20.4C6.4 20.4 4.8 22.0 4.8 24.0C4.8 26.0 6.4 27.6 8.4 27.6C10.4 27.6 12.0 26.0 12.0 24.0Z" fill="#ccc"/>
+          </g>
+          <use xlink:href="#hintMedium" stroke="url(#sectorGrad)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#hintMedium" startOffset="20%" dominant-baseline="central">PLAYLIST</textPath>
+          </text>
+        </g>
+      </g>
+
+      <!-- Central button (PLAY) -->
+      <g class="central-btn">
+        <circle cx="0" cy="0" r="70" fill="url(#sectorGrad)" opacity="0.6" stroke="none"/>
+        <g transform="scale(1.5) translate(-24,-24)">
+          <path d="M14.0 7.6C13.1 7.1 12.0 7.1 11.1 7.6C10.2 8.2 9.6 9.2 9.6 10.2L9.6 37.8C9.6 38.9 10.2 39.9 11.1 40.4C12.0 40.9 13.1 40.9 14.0 40.4L39.2 26.6C40.2 26.1 40.8 25.1 40.8 24.0C40.8 22.9 40.2 21.9 39.2 21.4L14.0 7.6Z" fill="#ccc"/>
+        </g>
+        <g transform="rotate(180)">
+          <use xlink:href="#centralHint" stroke="url(#sectorGrad)" stroke-width="26" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="600" fill="#ccc">
+            <textPath xlink:href="#centralHint" startOffset="26%" dominant-baseline="central">PLAY</textPath>
+          </text>
+        </g>
+      </g>
+    </g>
+
+    <!-- bottom signature -->
+    <text x="1600" y="950" fill="rgba(255,255,255,0.2)" font-family="Inter, sans-serif" font-size="28" text-anchor="end">@alekstar79/video-player</text>
+  </g>
+</svg>
