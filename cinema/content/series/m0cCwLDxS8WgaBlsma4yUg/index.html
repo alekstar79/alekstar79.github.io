@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Фиксики</title><style id="vuetify-theme-stylesheet">:root {
-      --v-theme-background: 255,255,255;
+      --v-theme-background: 247,248,252;
       --v-theme-background-overlay-multiplier: 1;
       --v-theme-surface: 255,255,255;
       --v-theme-surface-overlay-multiplier: 1;
@@ -10,37 +10,34 @@
       --v-theme-surface-variant: 66,66,66;
       --v-theme-surface-variant-overlay-multiplier: 2;
       --v-theme-on-surface-variant: 238,238,238;
-      --v-theme-primary: 25,118,210;
+      --v-theme-primary: 44,62,80;
       --v-theme-primary-overlay-multiplier: 2;
       --v-theme-primary-darken-1: 31,85,146;
       --v-theme-primary-darken-1-overlay-multiplier: 2;
-      --v-theme-secondary: 255,64,129;
-      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary: 52,73,94;
+      --v-theme-secondary-overlay-multiplier: 2;
       --v-theme-secondary-darken-1: 1,135,134;
       --v-theme-secondary-darken-1-overlay-multiplier: 1;
-      --v-theme-error: 255,82,82;
-      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
       --v-theme-info: 33,150,243;
       --v-theme-info-overlay-multiplier: 1;
       --v-theme-success: 76,175,80;
       --v-theme-success-overlay-multiplier: 1;
-      --v-theme-warning: 255,193,7;
+      --v-theme-warning: 251,140,0;
       --v-theme-warning-overlay-multiplier: 1;
-      --v-theme-accent: 130,177,255;
-      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
       --v-theme-on-background: 0,0,0;
       --v-theme-on-surface: 0,0,0;
       --v-theme-on-surface-bright: 0,0,0;
       --v-theme-on-surface-light: 0,0,0;
-      --v-theme-on-primary: 255,255,255;
       --v-theme-on-primary-darken-1: 255,255,255;
-      --v-theme-on-secondary: 255,255,255;
       --v-theme-on-secondary-darken-1: 255,255,255;
       --v-theme-on-error: 255,255,255;
       --v-theme-on-info: 255,255,255;
       --v-theme-on-success: 255,255,255;
-      --v-theme-on-warning: 0,0,0;
-      --v-theme-on-accent: 0,0,0;
+      --v-theme-on-warning: 255,255,255;
       --v-border-color: 0, 0, 0;
       --v-border-opacity: 0.12;
       --v-high-emphasis-opacity: 0.87;
@@ -60,7 +57,7 @@
     }
     .v-theme--light {
       color-scheme: normal;
-      --v-theme-background: 255,255,255;
+      --v-theme-background: 247,248,252;
       --v-theme-background-overlay-multiplier: 1;
       --v-theme-surface: 255,255,255;
       --v-theme-surface-overlay-multiplier: 1;
@@ -71,37 +68,34 @@
       --v-theme-surface-variant: 66,66,66;
       --v-theme-surface-variant-overlay-multiplier: 2;
       --v-theme-on-surface-variant: 238,238,238;
-      --v-theme-primary: 25,118,210;
+      --v-theme-primary: 44,62,80;
       --v-theme-primary-overlay-multiplier: 2;
       --v-theme-primary-darken-1: 31,85,146;
       --v-theme-primary-darken-1-overlay-multiplier: 2;
-      --v-theme-secondary: 255,64,129;
-      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary: 52,73,94;
+      --v-theme-secondary-overlay-multiplier: 2;
       --v-theme-secondary-darken-1: 1,135,134;
       --v-theme-secondary-darken-1-overlay-multiplier: 1;
-      --v-theme-error: 255,82,82;
-      --v-theme-error-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
       --v-theme-info: 33,150,243;
       --v-theme-info-overlay-multiplier: 1;
       --v-theme-success: 76,175,80;
       --v-theme-success-overlay-multiplier: 1;
-      --v-theme-warning: 255,193,7;
+      --v-theme-warning: 251,140,0;
       --v-theme-warning-overlay-multiplier: 1;
-      --v-theme-accent: 130,177,255;
-      --v-theme-accent-overlay-multiplier: 1;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
       --v-theme-on-background: 0,0,0;
       --v-theme-on-surface: 0,0,0;
       --v-theme-on-surface-bright: 0,0,0;
       --v-theme-on-surface-light: 0,0,0;
-      --v-theme-on-primary: 255,255,255;
       --v-theme-on-primary-darken-1: 255,255,255;
-      --v-theme-on-secondary: 255,255,255;
       --v-theme-on-secondary-darken-1: 255,255,255;
       --v-theme-on-error: 255,255,255;
       --v-theme-on-info: 255,255,255;
       --v-theme-on-success: 255,255,255;
-      --v-theme-on-warning: 0,0,0;
-      --v-theme-on-accent: 0,0,0;
+      --v-theme-on-warning: 255,255,255;
       --v-border-color: 0, 0, 0;
       --v-border-opacity: 0.12;
       --v-high-emphasis-opacity: 0.87;
@@ -123,7 +117,7 @@
       color-scheme: dark;
       --v-theme-background: 18,18,18;
       --v-theme-background-overlay-multiplier: 1;
-      --v-theme-surface: 33,33,33;
+      --v-theme-surface: 30,30,30;
       --v-theme-surface-overlay-multiplier: 1;
       --v-theme-surface-bright: 204,191,214;
       --v-theme-surface-bright-overlay-multiplier: 2;
@@ -132,37 +126,34 @@
       --v-theme-surface-variant: 200,200,200;
       --v-theme-surface-variant-overlay-multiplier: 2;
       --v-theme-on-surface-variant: 0,0,0;
-      --v-theme-primary: 33,150,243;
+      --v-theme-primary: 74,144,226;
       --v-theme-primary-overlay-multiplier: 2;
       --v-theme-primary-darken-1: 39,124,193;
       --v-theme-primary-darken-1-overlay-multiplier: 2;
-      --v-theme-secondary: 255,64,129;
-      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary: 90,118,143;
+      --v-theme-secondary-overlay-multiplier: 1;
       --v-theme-secondary-darken-1: 72,169,166;
       --v-theme-secondary-darken-1-overlay-multiplier: 2;
-      --v-theme-error: 255,82,82;
+      --v-theme-error: 207,102,121;
       --v-theme-error-overlay-multiplier: 2;
       --v-theme-info: 33,150,243;
       --v-theme-info-overlay-multiplier: 2;
-      --v-theme-success: 76,175,80;
+      --v-theme-success: 102,187,106;
       --v-theme-success-overlay-multiplier: 2;
-      --v-theme-warning: 255,193,7;
+      --v-theme-warning: 255,167,38;
       --v-theme-warning-overlay-multiplier: 2;
-      --v-theme-accent: 255,64,129;
-      --v-theme-accent-overlay-multiplier: 2;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
       --v-theme-on-background: 255,255,255;
       --v-theme-on-surface: 255,255,255;
       --v-theme-on-surface-bright: 0,0,0;
       --v-theme-on-surface-light: 255,255,255;
-      --v-theme-on-primary: 255,255,255;
       --v-theme-on-primary-darken-1: 255,255,255;
-      --v-theme-on-secondary: 255,255,255;
       --v-theme-on-secondary-darken-1: 255,255,255;
       --v-theme-on-error: 255,255,255;
       --v-theme-on-info: 255,255,255;
       --v-theme-on-success: 255,255,255;
       --v-theme-on-warning: 0,0,0;
-      --v-theme-on-accent: 255,255,255;
       --v-border-color: 255, 255, 255;
       --v-border-opacity: 0.12;
       --v-high-emphasis-opacity: 1;
@@ -245,11 +236,6 @@
       background-color: rgb(var(--v-theme-warning)) !important;
       color: rgb(var(--v-theme-on-warning)) !important;
     }
-    .bg-accent {
-      --v-theme-overlay-multiplier: var(--v-theme-accent-overlay-multiplier);
-      background-color: rgb(var(--v-theme-accent)) !important;
-      color: rgb(var(--v-theme-on-accent)) !important;
-    }
     .text-background {
       color: rgb(var(--v-theme-background)) !important;
     }
@@ -331,11 +317,11 @@
     .border-warning {
       --v-border-color: var(--v-theme-warning);
     }
-    .text-accent {
-      color: rgb(var(--v-theme-accent)) !important;
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
     }
-    .border-accent {
-      --v-border-color: var(--v-theme-accent);
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
     }
     .on-background {
       color: rgb(var(--v-theme-on-background)) !important;
@@ -349,14 +335,8 @@
     .on-surface-light {
       color: rgb(var(--v-theme-on-surface-light)) !important;
     }
-    .on-primary {
-      color: rgb(var(--v-theme-on-primary)) !important;
-    }
     .on-primary-darken-1 {
       color: rgb(var(--v-theme-on-primary-darken-1)) !important;
-    }
-    .on-secondary {
-      color: rgb(var(--v-theme-on-secondary)) !important;
     }
     .on-secondary-darken-1 {
       color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
@@ -373,7 +353,4 @@
     .on-warning {
       color: rgb(var(--v-theme-on-warning)) !important;
     }
-    .on-accent {
-      color: rgb(var(--v-theme-on-accent)) !important;
-    }
-</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"><style>.v-container{max-width:1200px!important}</style><style>:root{--v-theme-background:#f7f8fc;--v-theme-surface:#fff;--v-theme-primary:#2c3e50;--v-theme-on-primary:#fff;--v-theme-secondary:#34495e;--v-theme-on-secondary:#fff}.fade-slide-enter-active,.fade-slide-leave-active{transition:opacity .3s ease,transform .3s ease}.fade-slide-enter-from,.fade-slide-leave-to{opacity:0;transform:translateY(10px)}.fade-slide-enter-to,.fade-slide-leave-from{opacity:1;transform:translateY(0)}.main-content{background-color:rgb(var(--v-theme-background));min-height:100vh}.custom-select-menu{max-width:300px;z-index:1000!important}.custom-select-menu .v-list{border-radius:12px;box-shadow:0 8px 20px #00000026;padding:8px 0}.custom-select-menu .v-list-item{border-radius:8px;margin:4px 8px;max-width:100%;overflow:hidden;text-overflow:ellipsis;transition:background-color .2s;white-space:nowrap}.custom-select-menu .v-list-item:hover{background-color:#2c3e501a}.custom-select-menu .v-list-item--active{background-color:rgb(var(--v-theme-primary))!important;color:#fff!important}.v-card.filter-card{border-radius:16px!important;box-shadow:0 4px 12px #0000000d!important;transition:box-shadow .2s}.v-card.filter-card:hover{box-shadow:0 8px 20px #0000001a!important}.filter-fields>*{margin-bottom:16px}.filter-fields>:last-child{margin-bottom:0}</style><style>.nav-btn[data-v-2553280f]{transition:transform .2s}.nav-btn[data-v-2553280f]:hover{transform:scale(1.05)}</style><style>.backdrop-image[data-v-6403c22d]{left:0;position:absolute;right:0;top:0;z-index:0}.content-container[data-v-6403c22d]{padding-top:150px;position:relative;z-index:1}.poster-column[data-v-6403c22d]{margin-top:-100px}.poster-card[data-v-6403c22d]{border-radius:16px;height:500px;max-width:340px;width:100%}.info-column[data-v-6403c22d]{padding-left:32px}</style><link rel="stylesheet" href="/cinema/_nuxt/entry.2yE22-oU.css" crossorigin><link rel="preload" as="fetch" crossorigin="anonymous" href="/cinema/content/series/m0cCwLDxS8WgaBlsma4yUg/_payload.json?559be584-c444-4cfe-98be-2647aa955385"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/C6foIY6H.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/DyPiQeEm.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/DmrmRSbS.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/CgRj3R7Z.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/OrVgww1f.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/CkT8uS_k.js"><script type="module" src="/cinema/_nuxt/C6foIY6H.js" crossorigin></script><link rel="icon" type="image/png" href="/favicon.png"></head><body><div id="__nuxt"><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style=""><div class="v-application__wrap"><!--[--><header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr v-app-bar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;transition:none !important;" app data-v-2553280f><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-toolbar-title text-h5 font-weight-bold v-app-bar-title" style="" data-v-2553280f><div class="v-toolbar-title__placeholder"><!----><!--[--> 🎬 Кинотеатр <!--]--></div></div><a href="/cinema/" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-2553280f><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Главная<!--]--><!--]--></span><!----><!----></a><a href="/cinema/movies" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-2553280f><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Фильмы<!--]--><!--]--></span><!----><!----></a><a href="/cinema/series" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-2553280f><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Сериалы<!--]--><!--]--></span><!----><!----></a><a href="/cinema/shows" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-2553280f><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Шоу<!--]--><!--]--></span><!----><!----></a><div class="v-spacer" style="" data-v-2553280f></div><div class="v-input v-input--horizontal v-input--center-affix v-input--density-compact v-theme--light v-locale--is-ltr v-text-field mx-4" style="max-width:300px;" data-v-2553280f><!----><div class="v-input__control"><!--[--><div class="v-field v-field--appended v-field--center-affix v-field--has-background v-field--prepended v-field--no-label v-field--variant-outlined v-theme--light bg-surface rounded-lg v-locale--is-ltr" style=""><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><div class="v-field__prepend-inner"><i class="mdi-magnify mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></div><div class="v-field__field" data-no-activator><!----><!----><!--[--><!--[--><!----><input value placeholder="Поиск" size="1" type="text" aria-labelledby="input-v-0-6-label" id="input-v-0-6" class="v-field__input"><!----><!--]--><!--]--></div><div class="v-field__clearable" style="display:none;"><!--[--><i class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" style="" role="button" aria-hidden="false" tabindex="-1" aria-label="Clear "></i><!--]--></div><div class="v-field__append-inner"><!----></div><div class="v-field__outline" style=""><!--[--><div class="v-field__outline__start"></div><!----><div class="v-field__outline__end"></div><!--]--><!----></div></div><!--]--></div><!----><!----></div><!--]--><!----></div><!--]--><!--[--><!----><!--]--></header><main class="v-main main-content" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;padding-top:64px;"><!--[--><div class="v-container v-container--fluid v-locale--is-ltr px-4 px-sm-6 px-md-8 px-lg-10" style=""><div data-v-6403c22d><div class="v-responsive v-img v-img--booting backdrop-image" style="height:450px;" data-v-6403c22d><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><img class="v-img__img v-img__img--preload v-img__img--cover" style="" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22600%22%20viewBox%3D%220%200%20400%20600%22%3E%3Crect%20width%3D%22400%22%20height%3D%22600%22%20fill%3D%22%23f0f0f0%22%2F%3E%3C%2Fsvg%3E"><div class="v-img__gradient" style="background-image:linear-gradient(to top, rgba(var(--v-theme-surface), 1) 10%, rgba(var(--v-theme-surface), 0.7) 30%, transparent 60%);"></div><!----><!----><!--]--><!--]--><!----></div><div class="v-container v-locale--is-ltr content-container" style="" data-v-6403c22d><div class="v-row" style="" data-v-6403c22d><div class="v-col-md-4 v-col-12 poster-column" style="" data-v-6403c22d><div class="v-card v-theme--light v-card--density-default elevation-10 rounded-lg v-card--variant-elevated poster-card" style="" data-v-6403c22d><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="v-responsive v-img v-img--booting" style="height:100%;" data-v-6403c22d><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><img class="v-img__img v-img__img--preload v-img__img--cover" style="" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22600%22%20viewBox%3D%220%200%20400%20600%22%3E%3Crect%20width%3D%22400%22%20height%3D%22600%22%20fill%3D%22%23f0f0f0%22%2F%3E%3C%2Fsvg%3E"><!----><!----><!----><!--]--><!--]--><!----></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-8 v-col-12 info-column" style="" data-v-6403c22d><ul class="v-breadcrumbs v-breadcrumbs--density-default pa-0 mb-2" style="" data-v-6403c22d><!----><!--[--><!--[--><li class="v-breadcrumbs-item" style=""><a class="v-breadcrumbs-item--link" href="/cinema/">Главная</a></li><li aria-hidden="true" class="v-breadcrumbs-divider" style="">/</li><!--]--><!--[--><li class="v-breadcrumbs-item" style=""><a class="v-breadcrumbs-item--link" href="/cinema/series">Сериалы</a></li><li aria-hidden="true" class="v-breadcrumbs-divider" style="">/</li><!--]--><!--[--><li class="v-breadcrumbs-item v-breadcrumbs-item--disabled" style="">Фиксики</li><!----><!--]--><!--]--><!----></ul><h1 class="text-h3 font-weight-bold" data-v-6403c22d>Фиксики</h1><div class="d-flex align-center my-4" data-v-6403c22d><!----><!----><span class="v-chip v-theme--light v-chip--density-default rounded-pill v-chip--size-small v-chip--variant-tonal ml-4" style="" draggable="false" data-v-6403c22d><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><!----><div class="v-chip__content" data-no-activator><!--[-->2010<!--]--></div><!----><!----></span></div><div class="mb-4" data-v-6403c22d><!--[--><!--]--></div><!--[--><div class="v-slide-group v-slide-group--mobile v-tabs v-tabs--horizontal v-tabs--align-tabs-start v-tabs--density-default bg-transparent mb-4" style="" tabindex="0" role="tablist" data-v-6403c22d><!----><div class="v-slide-group__container"><div class="v-slide-group__content"><!--[--><button tabindex="-1" type="button" class="v-btn v-tab-item--selected v-tab--selected v-theme--light text-primary v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text v-tab" style="" value="synopsis" role="tab" aria-selected="false" data-v-6403c22d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><!--[--><!--[-->Описание<!--]--><div class="v-tab__slider" style=""></div><!--]--><!--]--><!--]--></span><!----><!----></button><button tabindex="-1" type="button" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text v-tab" style="" value="cast" role="tab" aria-selected="false" data-v-6403c22d><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><!--[--><!--[-->Актеры и съемочная группа<!--]--><div class="v-tab__slider" style=""></div><!--]--><!--]--><!--]--></span><!----><!----></button><!--]--></div></div><!----></div><!----><!--]--><div class="v-window v-theme--light" style="" data-v-6403c22d><div class="v-window__container" style=""><!--[--><div class="v-window-item v-window-item--active" style="" data-v-6403c22d><!--[--><div class="v-alert v-theme--light text-info v-alert--density-default v-alert--variant-tonal mt-4" style="" role="alert" data-v-6403c22d><!--[--><!----><span class="v-alert__underlay"></span><!--]--><!----><div class="v-alert__prepend"><i class="mdi-information mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true" density="default"></i></div><div class="v-alert__content"><!----><!----><!--[--> Описание для этого материала пока отсутствует. <!--]--></div><!----><!----></div><!--]--></div><div class="v-window-item" style="display:none;" data-v-6403c22d><!----></div><!--]--><!----></div><!----></div></div></div></div></div></div><!--]--></main><!--]--></div></div></div><div id="teleports"></div><script>window.__NUXT__={};window.__NUXT__.config={public:{apiBaseUrl:"/api"},app:{baseURL:"/cinema/",buildId:"559be584-c444-4cfe-98be-2647aa955385",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/cinema/content/series/m0cCwLDxS8WgaBlsma4yUg/_payload.json?559be584-c444-4cfe-98be-2647aa955385">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"pinia":8,"prerenderedAt":12},["Reactive",2],{},["Set"],["ShallowReactive",5],{"content-series-m0cCwLDxS8WgaBlsma4yUg":-1,"main-data":-1},true,"\u002Fcontent\u002Fseries\u002Fm0cCwLDxS8WgaBlsma4yUg\u002F",{"showcase":9},{"data":10,"loading":11,"error":10},null,false,1773565239415]</script></body></html>
+</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"><style>.v-container{max-width:1200px!important}</style><style>.fade-slide-enter-active,.fade-slide-leave-active{transition:opacity .3s ease,transform .3s ease}.fade-slide-enter-from,.fade-slide-leave-to{opacity:0;transform:translateY(10px)}.fade-slide-enter-to,.fade-slide-leave-from{opacity:1;transform:translateY(0)}.main-content{background-color:rgb(var(--v-theme-background));min-height:100vh}.custom-select-menu{max-width:300px;z-index:1000!important}.custom-select-menu .v-list{border-radius:12px;box-shadow:0 8px 20px #00000026;padding:8px 0}.custom-select-menu .v-list-item{border-radius:8px;margin:4px 8px;max-width:100%;overflow:hidden;text-overflow:ellipsis;transition:background-color .2s;white-space:nowrap}.custom-select-menu .v-list-item:hover{background-color:#2c3e501a}.custom-select-menu .v-list-item--active{background-color:rgb(var(--v-theme-primary))!important;color:#fff!important}.v-card.filter-card{border-radius:16px!important;box-shadow:0 4px 12px #0000000d!important;transition:box-shadow .2s}.v-card.filter-card:hover{box-shadow:0 8px 20px #0000001a!important}.filter-fields>*{margin-bottom:16px}.filter-fields>:last-child{margin-bottom:0}</style><style>.nav-btn[data-v-8533745a]{transition:transform .2s}.nav-btn[data-v-8533745a]:hover{transform:scale(1.05)}</style><style>.backdrop-image[data-v-b7f00fef]{left:0;position:absolute;right:0;top:0;z-index:0}.content-container[data-v-b7f00fef]{padding-top:150px;position:relative;z-index:1}.poster-column[data-v-b7f00fef]{margin-top:-100px}.poster-card[data-v-b7f00fef]{border-radius:16px;height:500px;max-width:340px;width:100%}.info-column[data-v-b7f00fef]{padding-left:32px}</style><link rel="stylesheet" href="/cinema/_nuxt/entry.2yE22-oU.css" crossorigin><link rel="preload" as="fetch" crossorigin="anonymous" href="/cinema/content/series/m0cCwLDxS8WgaBlsma4yUg/_payload.json?3fb64432-7e86-48bd-8493-69ef9c8cfeef"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/CWpJc3jT.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/DcCgfgga.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/D0Iqp7NU.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/Bq8HWc5p.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/DLpVhQpk.js"><link rel="modulepreload" as="script" crossorigin href="/cinema/_nuxt/BjVEqWsi.js"><script type="module" src="/cinema/_nuxt/CWpJc3jT.js" crossorigin></script><link rel="icon" type="image/png" href="/favicon.png"></head><body><div id="__nuxt"><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style=""><div class="v-application__wrap"><!--[--><header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default v-theme--light v-locale--is-ltr v-app-bar" style="top:0;z-index:1004;transform:translateY(0%);position:fixed;transition:none !important;" app data-v-8533745a><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-toolbar-title text-h5 font-weight-bold v-app-bar-title" style="" data-v-8533745a><div class="v-toolbar-title__placeholder"><!----><!--[--> 🎬 Кинотеатр <!--]--></div></div><a href="/cinema/" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-8533745a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Главная<!--]--><!--]--></span><!----><!----></a><a href="/cinema/movies" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-8533745a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Фильмы<!--]--><!--]--></span><!----><!----></a><a href="/cinema/series" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-8533745a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Сериалы<!--]--><!--]--></span><!----><!----></a><a href="/cinema/shows" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text nav-btn" style="" data-v-8533745a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Шоу<!--]--><!--]--></span><!----><!----></a><div class="v-spacer" style="" data-v-8533745a></div><div class="v-input v-input--horizontal v-input--center-affix v-input--density-compact v-theme--light v-locale--is-ltr v-text-field mx-4" style="max-width:300px;" data-v-8533745a><!----><div class="v-input__control"><!--[--><div class="v-field v-field--appended v-field--center-affix v-field--has-background v-field--prepended v-field--no-label v-field--variant-outlined v-theme--light bg-surface rounded-lg v-locale--is-ltr" style=""><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><div class="v-field__prepend-inner"><i class="mdi-magnify mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></div><div class="v-field__field" data-no-activator><!----><!----><!--[--><!--[--><!----><input value placeholder="Поиск" size="1" type="text" aria-labelledby="input-v-0-6-label" id="input-v-0-6" class="v-field__input"><!----><!--]--><!--]--></div><div class="v-field__clearable" style="display:none;"><!--[--><i class="mdi-close-circle mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable" style="" role="button" aria-hidden="false" tabindex="-1" aria-label="Clear "></i><!--]--></div><div class="v-field__append-inner"><!----></div><div class="v-field__outline" style=""><!--[--><div class="v-field__outline__start"></div><!----><div class="v-field__outline__end"></div><!--]--><!----></div></div><!--]--></div><!----><!----></div><button type="button" class="v-btn v-btn--icon v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text" style="" data-v-8533745a><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><i class="mdi-weather-sunny mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true" data-v-8533745a></i><!--]--><!--]--></span><!----><!----></button><!--]--><!----></div><!--]--><!--[--><!----><!--]--></header><main class="v-main main-content" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;padding-top:64px;"><!--[--><div class="v-container v-container--fluid v-locale--is-ltr px-4 px-sm-6 px-md-8 px-lg-10" style=""><div data-v-b7f00fef><div class="v-responsive v-img v-img--booting backdrop-image" style="height:450px;" data-v-b7f00fef><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><img class="v-img__img v-img__img--preload v-img__img--cover" style="" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22600%22%20viewBox%3D%220%200%20400%20600%22%3E%3Crect%20width%3D%22400%22%20height%3D%22600%22%20fill%3D%22%23f0f0f0%22%2F%3E%3C%2Fsvg%3E"><div class="v-img__gradient" style="background-image:linear-gradient(to top, rgba(var(--v-theme-surface), 1) 10%, rgba(var(--v-theme-surface), 0.7) 30%, transparent 60%);"></div><!----><!----><!--]--><!--]--><!----></div><div class="v-container v-locale--is-ltr content-container" style="" data-v-b7f00fef><div class="v-row" style="" data-v-b7f00fef><div class="v-col-md-4 v-col-12 poster-column" style="" data-v-b7f00fef><div class="v-card v-theme--light border-sm v-card--density-default elevation-10 rounded-lg v-card--variant-elevated poster-card" style="" data-v-b7f00fef><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="v-responsive v-img v-img--booting" style="height:100%;" data-v-b7f00fef><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><img class="v-img__img v-img__img--preload v-img__img--cover" style="" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22600%22%20viewBox%3D%220%200%20400%20600%22%3E%3Crect%20width%3D%22400%22%20height%3D%22600%22%20fill%3D%22%23f0f0f0%22%2F%3E%3C%2Fsvg%3E"><!----><!----><!----><!--]--><!--]--><!----></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col-md-8 v-col-12 info-column" style="" data-v-b7f00fef><ul class="v-breadcrumbs v-breadcrumbs--density-default pa-0 mb-2" style="" data-v-b7f00fef><!----><!--[--><!--[--><li class="v-breadcrumbs-item" style=""><a class="v-breadcrumbs-item--link" href="/cinema/">Главная</a></li><li aria-hidden="true" class="v-breadcrumbs-divider" style="">/</li><!--]--><!--[--><li class="v-breadcrumbs-item" style=""><a class="v-breadcrumbs-item--link" href="/cinema/series">Сериалы</a></li><li aria-hidden="true" class="v-breadcrumbs-divider" style="">/</li><!--]--><!--[--><li class="v-breadcrumbs-item v-breadcrumbs-item--disabled" style="">Фиксики</li><!----><!--]--><!--]--><!----></ul><h1 class="text-h3 font-weight-bold" data-v-b7f00fef>Фиксики</h1><div class="d-flex align-center my-4" data-v-b7f00fef><!----><!----><span class="v-chip v-theme--light v-chip--density-default rounded-pill v-chip--size-small v-chip--variant-tonal ml-4" style="" draggable="false" data-v-b7f00fef><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><!----><div class="v-chip__content" data-no-activator><!--[-->2010<!--]--></div><!----><!----></span></div><div class="mb-4" data-v-b7f00fef><!--[--><!--]--></div><!--[--><div class="v-slide-group v-slide-group--mobile v-tabs v-tabs--horizontal v-tabs--align-tabs-start v-tabs--density-default bg-transparent mb-4" style="" tabindex="0" role="tablist" data-v-b7f00fef><!----><div class="v-slide-group__container"><div class="v-slide-group__content"><!--[--><button tabindex="-1" type="button" class="v-btn v-tab-item--selected v-tab--selected v-theme--light text-primary v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text v-tab" style="" value="synopsis" role="tab" aria-selected="false" data-v-b7f00fef><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><!--[--><!--[-->Описание<!--]--><div class="v-tab__slider" style=""></div><!--]--><!--]--><!--]--></span><!----><!----></button><button tabindex="-1" type="button" class="v-btn v-theme--light v-btn--density-default elevation-0 rounded-pill v-btn--size-default v-btn--variant-text v-tab" style="" value="cast" role="tab" aria-selected="false" data-v-b7f00fef><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><!--[--><!--[-->Актеры и съемочная группа<!--]--><div class="v-tab__slider" style=""></div><!--]--><!--]--><!--]--></span><!----><!----></button><!--]--></div></div><!----></div><!----><!--]--><div class="v-window v-theme--light" style="" data-v-b7f00fef><div class="v-window__container" style=""><!--[--><div class="v-window-item v-window-item--active" style="" data-v-b7f00fef><!--[--><div class="v-alert v-theme--light text-info v-alert--density-default v-alert--variant-tonal mt-4" style="" role="alert" data-v-b7f00fef><!--[--><!----><span class="v-alert__underlay"></span><!--]--><!----><div class="v-alert__prepend"><i class="mdi-information mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true" density="default"></i></div><div class="v-alert__content"><!----><!----><!--[--> Описание для этого материала пока отсутствует. <!--]--></div><!----><!----></div><!--]--></div><div class="v-window-item" style="display:none;" data-v-b7f00fef><!----></div><!--]--><!----></div><!----></div></div></div></div></div></div><!--]--></main><!--]--></div></div></div><div id="teleports"></div><script>window.__NUXT__={};window.__NUXT__.config={public:{apiBaseUrl:"/api"},app:{baseURL:"/cinema/",buildId:"3fb64432-7e86-48bd-8493-69ef9c8cfeef",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/cinema/content/series/m0cCwLDxS8WgaBlsma4yUg/_payload.json?3fb64432-7e86-48bd-8493-69ef9c8cfeef">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"pinia":8,"prerenderedAt":15},["Reactive",2],{},["Set"],["ShallowReactive",5],{"content-series-m0cCwLDxS8WgaBlsma4yUg":-1,"main-data":-1},true,"\u002Fcontent\u002Fseries\u002Fm0cCwLDxS8WgaBlsma4yUg\u002F",{"theme":9,"showcase":12},{"currentTheme":10},["Ref",11],"light",{"data":13,"loading":14,"error":13},null,false,1773570335499]</script></body></html>
