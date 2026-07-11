@@ -1,20 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-
-	<title>Range Slider Pips Documentation</title>
-
-  <link rel='icon' type='image/png' href='favicon.png'>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
-	<link rel='stylesheet' href='public/global.css'>
-	<link rel='stylesheet' href='public/code.css'>
-	<link rel='stylesheet' href='publicsliders.css'>
-	<link rel='stylesheet' href='public/build/bundle.css'>
-	<script defer src='public/build/bundle.js'></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <title>Modern Range Slider Demo</title>
+  <script type="module" crossorigin src="/assets/index-D_z9BHqD.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D4WIjnPE.css">
 </head>
-
 <body>
+<main class="page">
+  <section class="hero">
+    <h1>Range slider for modern interfaces.</h1>
+    <p>A polished TypeScript experience for single and range selection, with a consistent visual language across
+      every skin.</p>
+  </section>
+
+  <section class="demo-grid">
+    <article class="card">
+      <div class="card__header">
+        <div>
+          <p class="eyebrow">Single handle</p>
+          <h2>Choose one value</h2>
+        </div>
+        <span class="pill">Simple</span>
+      </div>
+      <label class="field-label" for="single">Current value</label>
+      <input id="single" type="number" value="42" />
+      <div id="single-slider" class="slider-panel"></div>
+      <div id="single-summary" class="slider-summary" aria-live="polite"></div>
+    </article>
+
+    <article class="card">
+      <div class="card__header">
+        <div>
+          <p class="eyebrow">Range</p>
+          <h2>Pick a span</h2>
+        </div>
+        <span class="pill pill--accent">Double</span>
+      </div>
+      <label class="field-label" for="double">Selected range</label>
+      <input id="double" type="text" value="25-75" />
+      <div id="double-slider" class="slider-panel"></div>
+      <div id="double-summary" class="slider-summary" aria-live="polite"></div>
+    </article>
+  </section>
+
+  <section class="section-heading">
+    <div>
+      <p class="eyebrow">Settings</p>
+      <h2>Flexible configuration</h2>
+    </div>
+    <p>Each sample is tuned around the same core options: min/max, step size, type, and skin. The slider also
+      supports keyboard navigation, grid labels, and custom formatting.</p>
+  </section>
+
+  <article class="card card--settings">
+    <div class="card__header">
+      <div>
+        <p class="eyebrow">Customization</p>
+        <h3>Configuration guide</h3>
+      </div>
+      <span class="pill pill--accent">API</span>
+    </div>
+    <div class="settings-stack">
+      <div class="settings-block">
+        <h4>Core options</h4>
+        <ul>
+          <li><strong>min</strong>, <strong>max</strong>, <strong>from</strong>, <strong>to</strong> —
+            define the range and initial values.</li>
+          <li><strong>step</strong> — controls the increment size for keyboard and pointer movement.</li>
+          <li><strong>type</strong> — use <code>single</code> or <code>double</code>.</li>
+          <li><strong>skin</strong> — switch themes: <code>flat</code>, <code>round</code>,
+            <code>big</code>, <code>sharp</code>, <code>square</code>, <code>modern</code>.
+          </li>
+        </ul>
+      </div>
+      <div class="settings-block">
+        <h4>Behavior controls</h4>
+        <ul>
+          <li><strong>hide_min_max</strong> and <strong>hide_from_to</strong> — hide or show labels.</li>
+          <li><strong>grid</strong>, <strong>grid_num</strong>, <strong>grid_snap</strong> — enable
+            ruler-like ticks.</li>
+          <li><strong>keyboard</strong> — turn on or off arrow-key navigation.</li>
+          <li><strong>disable</strong> and <strong>block</strong> — lock the slider state.</li>
+        </ul>
+      </div>
+      <div class="settings-block">
+        <h4>Examples</h4>
+        <pre><code>createRangeSlider(host, {
+  type: 'double',
+  min: 0,
+  max: 100,
+  from: 20,
+  to: 80,
+  step: 5,
+  skin: 'round',
+  grid: true
+});</code></pre>
+        <pre><code>createRangeSlider(host, {
+  type: 'single',
+  min: 10,
+  max: 100,
+  from: 42,
+  step: 1,
+  skin: 'sharp',
+  hide_min_max: false,
+  hide_from_to: false
+});</code></pre>
+      </div>
+    </div>
+  </article>
+
+  <section class="section-heading">
+    <div>
+      <p class="eyebrow">Visual themes</p>
+      <h2>Skins with range behavior</h2>
+    </div>
+    <p>Every preview below uses a double-handle slider so the experience matches the intended range use case.
+    </p>
+  </section>
+
+  <section class="demo-grid demo-grid--skins">
+    <article class="card card--skin">
+      <div class="card__header">
+        <h3>Flat</h3>
+        <span class="pill">Classic</span>
+      </div>
+      <div id="skin-flat" class="slider-panel"></div>
+    </article>
+    <article class="card card--skin">
+      <div class="card__header">
+        <h3>Round</h3>
+        <span class="pill">Soft</span>
+      </div>
+      <div id="skin-round" class="slider-panel"></div>
+    </article>
+    <article class="card card--skin">
+      <div class="card__header">
+        <h3>Big</h3>
+        <span class="pill">Bold</span>
+      </div>
+      <div id="skin-big" class="slider-panel"></div>
+    </article>
+    <article class="card card--skin">
+      <div class="card__header">
+        <h3>Sharp</h3>
+        <span class="pill">Modern</span>
+      </div>
+      <div id="skin-sharp" class="slider-panel"></div>
+    </article>
+    <article class="card card--skin">
+      <div class="card__header">
+        <h3>Square</h3>
+        <span class="pill">Structured</span>
+      </div>
+      <div id="skin-square" class="slider-panel"></div>
+    </article>
+    <article class="card card--skin">
+      <div class="card__header">
+        <h3>Default</h3>
+        <span class="pill pill--accent">Clean</span>
+      </div>
+      <div id="skin-modern" class="slider-panel"></div>
+    </article>
+  </section>
+</main>
+
 </body>
 </html>
