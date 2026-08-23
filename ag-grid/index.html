@@ -9,6 +9,25 @@
     href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=JetBrains+Mono&display=swap"
     rel="stylesheet"
   >
+  <script>
+    ;(function() {
+      try {
+        const redirect = sessionStorage.getItem('spa-redirect')
+
+        if (redirect) {
+          sessionStorage.removeItem('spa-redirect')
+
+          if (typeof redirect === 'string' &&
+            redirect.startsWith('/ag-grid/') &&
+            !redirect.includes('://') &&
+            !redirect.startsWith('//') &&
+            !redirect.includes('\\')) {
+            window.history.replaceState(null, '', redirect)
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
   <script type="module" crossorigin src="/ag-grid/assets/index-Bc4Mc_9k.js"></script>
   <link rel="stylesheet" crossorigin href="/ag-grid/assets/index-DkmolkP9.css">
 </head>
