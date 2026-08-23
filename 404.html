@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
+  <meta charset="UTF-8">
+  <title>Перенаправление...</title>
   <script>
     ;(function() {
       const path = window.location.pathname
       const segments = path.split('/').filter(Boolean)
+
       if (segments.length === 0) return
 
       const subfolder = segments[0]
-      const rest = segments.slice(1).join('/')
 
-      window.location.replace('/' + subfolder + '/?' + rest + window.location.search + window.location.hash);
+      try {
+        sessionStorage.setItem('spa-redirect', path + window.location.search + window.location.hash)
+      } catch(e) {/* ignore */}
+
+      window.location.replace('/' + subfolder + '/')
     })()
   </script>
 </head>
