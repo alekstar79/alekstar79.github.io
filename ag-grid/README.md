@@ -728,8 +728,8 @@ const applyQuickFilter = debounce((text: string) => {
   gridApi?.setGridOption('quickFilterText', text)
 }, 300)
 
-function onQuickFilterInput(event: Event) {
-  const value = (event.target as HTMLInputElement).value
+function onQuickFilterInput(e: Event) {
+  const value = (e.target as HTMLInputElement).value
   applyQuickFilter(value)
 }
 </script>
@@ -3055,19 +3055,7 @@ const defaultColDef = {
 
 AG Grid:
 
-https://habr.com/ru/search/?q=AG%20Grid
-
-AG Grid Vue:
-
-https://habr.com/ru/search/?q=AG%20Grid%20Vue
-
-AG Grid TypeScript:
-
-https://habr.com/ru/search/?q=AG%20Grid%20TypeScript
-
-AG Grid производительность:
-
-https://habr.com/ru/search/?q=AG%20Grid%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C
+https://habr.com/ru/search/?q=AG+Grid&target_type=posts&order=relevance
 
 ---
 
@@ -3155,9 +3143,9 @@ https://habr.com/ru/search/?q=AG%20Grid%20%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D
 
 ---
 
-# 33. Моя оценка уровня компетенций
+# 33. Оценка уровня компетенций
 
-На позиции Vue.js Developer по AG Grid я бы смотрел так:
+На позицию Vue.js Developer по AG Grid:
 
 ## Junior/Middle уровень
 
