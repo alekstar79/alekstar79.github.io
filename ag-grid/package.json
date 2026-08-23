@@ -1,0 +1,56 @@
+{
+  "name": "@alekstar79/ag-grid",
+  "version": "1.0.0",
+  "description": "Educational app with AG Grid usage examples (Vue 3 + TypeScript)",
+  "author": "Aleksey Tarasenko <alekstar79@yandex.ru>",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ag-grid",
+    "vue",
+    "table",
+    "grid",
+    "typescript",
+    "data-grid",
+    "examples",
+    "tutorial"
+  ],
+  "homepage": "https://alekstar79.github.io/ag-grid",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekstar79/ag-grid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alekstar79/ag-grid/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:pages": "vite build --mode pages",
+    "preview": "vite preview --mode pages"
+  },
+  "dependencies": {
+    "ag-grid-community": "^31.3.4",
+    "ag-grid-vue3": "^31.3.4",
+    "highlight.js": "^11.12.0",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^5.4.21",
+    "vue": "^3.5.41"
+  }
+}
