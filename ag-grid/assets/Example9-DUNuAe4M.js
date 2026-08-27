@@ -1,4 +1,4 @@
-import{A as B,E as q,C as T}from"./main.esm-CgUOTdan.js";import{d as b,i as z,o as D,e as _,u as I,s as y,w as R,b as v,r as V}from"./index-CvHQtGdr.js";const j=b({__name:"Example9.demo",emits:["log"],setup($,{emit:d}){const a=d,l=z("onGridReady"),c=Array.from({length:1e4},(e,t)=>({id:t+1,name:`Сотрудник ${t+1}`,age:20+t%50,salary:5e4+t%200*1e3})),M=y([{field:"id",headerName:"ID",width:90},{field:"name",headerName:"Имя"},{field:"age",headerName:"Возраст",filter:"agNumberColumnFilter"},{field:"salary",headerName:"Зарплата",filter:"agNumberColumnFilter",valueFormatter:e=>e.value?`${e.value.toLocaleString("ru-RU")} ₽`:""}]),N=y({sortable:!0,resizable:!0,filter:!0});let u=null,L=0,r=!1;const E={getRows(e){const t=e.startRow,f=e.endRow,m=++L;r&&a("log",`[Запрос ${m}] Загрузка строк ${t}–${f}...`),setTimeout(()=>{var p,w;let n=[...c];const o=e.filterModel;if((p=o==null?void 0:o.age)!=null&&p.filter){const s=Number(o.age.filter);n=n.filter(i=>i.age>=s)}if((w=o==null?void 0:o.salary)!=null&&w.filter){const s=Number(o.salary.filter);n=n.filter(i=>i.salary>=s)}const g=e.sortModel;if(g.length>0){const{colId:s,sort:i}=g[0];n.sort((S,x)=>{const C=S[s]-x[s];return i==="asc"?C:-C})}const A=Math.min(f,n.length),h=n.slice(t,A);r&&a("log",`[Запрос ${m}] Отправлено ${h.length} строк (всего в БД: ${n.length})`),e.successCallback(h,n.length)},200)}};function F(e){u=e.api,e.api.sizeColumnsToFit(),r=(l==null?void 0:l())??!1,u.addEventListener("bodyScroll",()=>{r=!0})}function G(e){r=!0,a("log","Сортировка изменена, данные будут запрошены заново")}function k(e){r=!0,a("log","Фильтры изменены, данные будут запрошены заново")}return(e,t)=>(D(),_(I(B),{style:{flex:"1",width:"100%"},columnDefs:M.value,defaultColDef:N.value,rowModelType:"infinite",datasource:E,cacheBlockSize:100,maxBlocksInCache:10,rowBuffer:20,onGridReady:F,onSortChanged:G,onFilterChanged:k},null,8,["columnDefs","defaultColDef"]))}}),U=`<template>
+import{A as B,E as q,C as T}from"./main.esm-DqBob0QU.js";import{d as b,i as z,o as D,e as _,u as I,s as y,w as R,b as v,r as V}from"./index-CwHQ-y8K.js";const j=b({__name:"Example9.demo",emits:["log"],setup($,{emit:d}){const a=d,l=z("onGridReady"),c=Array.from({length:1e4},(e,t)=>({id:t+1,name:`Сотрудник ${t+1}`,age:20+t%50,salary:5e4+t%200*1e3})),M=y([{field:"id",headerName:"ID",width:90},{field:"name",headerName:"Имя"},{field:"age",headerName:"Возраст",filter:"agNumberColumnFilter"},{field:"salary",headerName:"Зарплата",filter:"agNumberColumnFilter",valueFormatter:e=>e.value?`${e.value.toLocaleString("ru-RU")} ₽`:""}]),N=y({sortable:!0,resizable:!0,filter:!0});let u=null,L=0,r=!1;const E={getRows(e){const t=e.startRow,f=e.endRow,m=++L;r&&a("log",`[Запрос ${m}] Загрузка строк ${t}–${f}...`),setTimeout(()=>{var p,w;let n=[...c];const o=e.filterModel;if((p=o==null?void 0:o.age)!=null&&p.filter){const s=Number(o.age.filter);n=n.filter(i=>i.age>=s)}if((w=o==null?void 0:o.salary)!=null&&w.filter){const s=Number(o.salary.filter);n=n.filter(i=>i.salary>=s)}const g=e.sortModel;if(g.length>0){const{colId:s,sort:i}=g[0];n.sort((S,x)=>{const C=S[s]-x[s];return i==="asc"?C:-C})}const A=Math.min(f,n.length),h=n.slice(t,A);r&&a("log",`[Запрос ${m}] Отправлено ${h.length} строк (всего в БД: ${n.length})`),e.successCallback(h,n.length)},200)}};function F(e){u=e.api,e.api.sizeColumnsToFit(),r=(l==null?void 0:l())??!1,u.addEventListener("bodyScroll",()=>{r=!0})}function G(e){r=!0,a("log","Сортировка изменена, данные будут запрошены заново")}function k(e){r=!0,a("log","Фильтры изменены, данные будут запрошены заново")}return(e,t)=>(D(),_(I(B),{style:{flex:"1",width:"100%"},columnDefs:M.value,defaultColDef:N.value,rowModelType:"infinite",datasource:E,cacheBlockSize:100,maxBlocksInCache:10,rowBuffer:20,onGridReady:F,onSortChanged:G,onFilterChanged:k},null,8,["columnDefs","defaultColDef"]))}}),U=`<template>
   <AgGridVue
     style="flex: 1; width: 100%;"
     :columnDefs="columnDefs"
@@ -15,16 +15,9 @@ import{A as B,E as q,C as T}from"./main.esm-CgUOTdan.js";import{d as b,i as z,o 
 </template>
 
 <script setup lang="ts">
-import {inject, shallowRef} from 'vue'
-import {AgGridVue} from 'ag-grid-vue3'
-import type {
-  ColDef,
-  FilterChangedEvent,
-  GridApi,
-  GridReadyEvent,
-  IDatasource,
-  SortChangedEvent
-} from 'ag-grid-community'
+import { inject, shallowRef } from 'vue'
+import type { ColDef, FilterChangedEvent, GridApi, GridReadyEvent, IDatasource, SortChangedEvent } from 'ag-grid-community'
+import { AgGridVue } from 'ag-grid-vue3'
 
 /**
  * Infinite Row Model — данные подгружаются блоками при прокрутке.
