@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Polyhedrons</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  <script type="module" crossorigin src="/3d-polyhedra/assets/index-C4gzZAeT.js"></script>
+  <link rel="stylesheet" crossorigin href="/3d-polyhedra/assets/index-BWP65Iy-.css">
+</head>
+<body>
+<main id="app">
+  <canvas id="canvas" aria-label="Интерактивная 3D-сцена с многогранниками"></canvas>
+
+  <aside id="panel" class="panel" aria-label="Панель управления">
+    <button id="panel-toggle" class="panel-toggle" aria-expanded="true" aria-controls="controls">
+      <span class="toggle-icon" aria-hidden="true">▾</span>
+      <span class="toggle-text">Скрыть управление</span>
+    </button>
+
+    <div id="controls" class="controls">
+      <div class="control-group">
+        <label for="solid">Многогранник</label>
+        <input type="range" id="solid" min="0" max="4" step="1" value="3">
+        <output for="solid" class="value-display">Додекаэдр</output>
+      </div>
+
+      <div class="control-group">
+        <label for="division">Детализация</label>
+        <input type="range" id="division" min="0" max="4" step="1" value="0">
+        <output for="division" class="value-display">0</output>
+      </div>
+
+      <div class="control-group">
+        <label for="hole">Отверстие</label>
+        <input type="range" id="hole" min="0" max="0.9" step="0.01" value="0.7">
+        <output for="hole" class="value-display">0.70</output>
+      </div>
+
+      <div class="control-group">
+        <label for="color">Цвет</label>
+        <input type="range" id="color" min="0" max="1.2" step="0.01" value="0.5">
+        <output for="color" class="value-display">0.50</output>
+      </div>
+
+      <div class="control-group">
+        <label for="speed">Скорость вращения</label>
+        <input type="range" id="speed" min="0" max="4" step="0.05" value="1">
+        <output for="speed" class="value-display">1.00</output>
+      </div>
+
+      <div class="fps-container">
+        <span>FPS:</span>
+        <span id="fps" class="fps-value">--</span>
+      </div>
+    </div>
+  </aside>
+</main>
+</body>
+</html>
