@@ -1,0 +1,2 @@
+import"./draggable-B5OW4ovO.js";import{t as e}from"./flipper-_cvkXxxn.js";import{t}from"./calc-Jp2Bh0T_.js";import{t as n}from"./calendar-C_cqJVvw.js";var r=document.getElementById(`app`);if(!r)throw Error(`Element #app not found`);e({createFront:e=>t({onOff:e.onOff,onFlip:e.onFlip}),createBack:e=>n({locale:e.locale===`en`?`en`:`ru`,onOff:e.onOff,onFlip:e.onFlip}),backgroundColor:`#82b1ff`,initialEntity:`calculator`,initialOpacity:.7,onOff:()=>console.log(`[flipper] off`)}).mount(r);
+//# sourceMappingURL=combo-0XWnfRsl.js.map

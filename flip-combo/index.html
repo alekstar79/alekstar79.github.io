@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>Flip Combo</title>
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <style>*,:before,:after{box-sizing:border-box}html,body{color:#f0f0f5;-webkit-user-select:none;user-select:none;background:#06060f;height:100%;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}.scene{position:fixed;inset:0;overflow:hidden}.scene__bg{background:radial-gradient(at 20% 10%,#3b82f62e,#0000 55%),radial-gradient(at 80% 90%,#8b5cf62e,#0000 55%),linear-gradient(#0a0a1f 0%,#06060f 100%);position:absolute;inset:0}.scene__grid{background-image:linear-gradient(#ffffff06 1px,#0000 1px),linear-gradient(90deg,#ffffff06 1px,#0000 1px);background-size:40px 40px;position:absolute;inset:0;-webkit-mask-image:radial-gradient(#000 40%,#0000 90%);mask-image:radial-gradient(#000 40%,#0000 90%)}.scene__blob{filter:blur(100px);opacity:.55;will-change:transform;pointer-events:none;border-radius:50%;display:block;position:absolute}.scene__blob--blue{background:#2563eb;width:560px;height:560px;animation:24s ease-in-out infinite drift-a;top:-180px;left:-120px}.scene__blob--purple{background:#7c3aed;width:500px;height:500px;animation:28s ease-in-out infinite drift-b;bottom:-180px;right:-100px}.scene__blob--cyan{background:#06b6d4;width:420px;height:420px;animation:32s ease-in-out infinite drift-c;top:50%;left:50%;transform:translate(-50%,-50%)}@keyframes drift-a{0%,to{transform:translate(0)}50%{transform:translate(80px,60px)}}@keyframes drift-b{0%,to{transform:translate(0)}50%{transform:translate(-60px,-80px)}}@keyframes drift-c{0%,to{transform:translate(-50%,-50%)scale(1)}50%{transform:translate(-40%,-60%)scale(1.15)}}.scene__hero{text-align:center;pointer-events:none;max-width:90vw;padding:0 24px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.scene__title{letter-spacing:-.04em;background:linear-gradient(135deg,#fff 0%,#64748b 100%);-webkit-text-fill-color:transparent;color:#0000;-webkit-background-clip:text;background-clip:text;margin:0;font-size:clamp(56px,9vw,128px);font-weight:800;line-height:1}.scene__sep{color:#82b1ff;-webkit-text-fill-color:#82b1ff;margin:0 .05em;font-weight:400}.scene__subtitle{letter-spacing:.08em;color:#f0f0f566;text-transform:uppercase;margin:20px 0 0;font-size:13px;font-weight:500}.panel{-webkit-backdrop-filter:blur(20px);pointer-events:none;background:#ffffff0a;border:1px solid #ffffff14;border-radius:14px;min-width:180px;padding:14px 16px;font-size:12px;position:absolute}.panel--tl{top:24px;left:24px}.panel--tr{top:24px;right:24px}.panel--bl{bottom:24px;left:24px}.panel--br{bottom:24px;right:24px}.panel__head{letter-spacing:.14em;text-transform:uppercase;color:#f0f0f566;border-bottom:1px solid #ffffff0f;margin-bottom:10px;padding-bottom:8px;font-size:10px;font-weight:600}.panel__list{margin:0;padding:0;list-style:none}.panel__item{color:#f0f0f5bf;border-radius:6px;padding:4px 8px;font-weight:500}.panel__item--active{color:#82b1ff;background:#82b1ff26}.panel__stat{align-items:baseline;gap:6px;margin-bottom:6px;display:flex}.panel__stat-value{color:#f0f0f5;font-size:22px;font-weight:700}.panel__stat-label{color:#f0f0f566;font-size:11px}.panel__row{color:#f0f0f599;justify-content:space-between;padding:3px 0;display:flex}.panel__row strong{color:#f0f0f5;font-weight:600}.panel__row--muted{color:#f0f0f559;font-size:11px}.toolbar{-webkit-backdrop-filter:blur(20px);background:#ffffff0a;border:1px solid #ffffff14;border-radius:14px;flex-direction:column;gap:4px;padding:8px;display:flex;position:absolute;top:50%;left:24px;transform:translateY(-50%)}.toolbar__btn{color:#f0f0f599;cursor:default;background:0 0;border:none;border-radius:8px;justify-content:center;align-items:center;width:36px;height:36px;font-size:16px;transition:background .15s,color .15s;display:flex}.toolbar__btn:hover{color:#82b1ff;background:#82b1ff26}.scene__hint{color:#f0f0f566;pointer-events:none;white-space:nowrap;margin:0;font-size:13px;animation:2.4s ease-in-out infinite pulse;position:absolute;bottom:32px;left:50%;transform:translate(-50%)}.scene__hint-key{color:#82b1ff;background:#ffffff14;border:1px solid #ffffff1f;border-radius:5px;margin-right:4px;padding:2px 8px;font-family:ui-monospace,monospace;font-size:11px;display:inline-block}@keyframes pulse{0%,to{opacity:.4}50%{opacity:.8}}@media (max-width:720px){.panel--tl,.panel--bl,.toolbar,.scene__hint{display:none}.scene__title{font-size:clamp(40px,12vw,64px)}}#app{z-index:10;pointer-events:none;position:fixed;inset:0}#app .flipper{pointer-events:auto}</style>
+  <script type="module" crossorigin src="/flip-combo/assets/main-DsCUQwAI.js"></script>
+  <link rel="modulepreload" crossorigin href="/flip-combo/assets/draggable-B5OW4ovO.js">
+  <link rel="modulepreload" crossorigin href="/flip-combo/assets/calc-Jp2Bh0T_.js">
+  <link rel="modulepreload" crossorigin href="/flip-combo/assets/flipper-_cvkXxxn.js">
+  <link rel="modulepreload" crossorigin href="/flip-combo/assets/calendar-C_cqJVvw.js">
+  <link rel="stylesheet" crossorigin href="/flip-combo/assets/draggable-DjkOAHRZ.css">
+  <link rel="stylesheet" crossorigin href="/flip-combo/assets/calc-CZFPi6bi.css">
+  <link rel="stylesheet" crossorigin href="/flip-combo/assets/flipper-BqLCL82z.css">
+  <link rel="stylesheet" crossorigin href="/flip-combo/assets/calendar-CA4iFHZv.css">
+</head>
+<body>
+<div class="scene" aria-hidden="true">
+  <div class="scene__bg"></div>
+  <div class="scene__grid"></div>
+
+  <span class="scene__blob scene__blob--blue"></span>
+  <span class="scene__blob scene__blob--purple"></span>
+  <span class="scene__blob scene__blob--cyan"></span>
+
+  <header class="scene__hero">
+    <h1 class="scene__title">
+      flip<span class="scene__sep">·</span>combo
+    </h1>
+    <p class="scene__subtitle">
+      Vanilla TypeScript · framework-agnostic · zero dependencies
+    </p>
+  </header>
+
+  <aside class="panel panel--tl">
+    <header class="panel__head">Layers</header>
+    <ul class="panel__list">
+      <li class="panel__item panel__item--active">background</li>
+      <li class="panel__item">skewed panel</li>
+      <li class="panel__item">active</li>
+      <li class="panel__item">border1</li>
+      <li class="panel__item">profile1</li>
+    </ul>
+  </aside>
+
+  <aside class="panel panel--tr">
+    <header class="panel__head">Canvas</header>
+    <div class="panel__stat">
+      <span class="panel__stat-value">1 590</span>
+      <span class="panel__stat-label">× 400 px</span>
+    </div>
+    <div class="panel__row"><span>zoom</span><strong>82 %</strong></div>
+  </aside>
+
+  <aside class="panel panel--bl">
+    <header class="panel__head">Cursor</header>
+    <div class="panel__row"><span>x</span><strong>1285</strong></div>
+    <div class="panel__row"><span>y</span><strong>526</strong></div>
+  </aside>
+
+  <aside class="panel panel--br">
+    <header class="panel__head">Widget</header>
+    <div class="panel__row"><span>Last subscriber</span></div>
+    <div class="panel__row panel__row--muted"><span>Font · Casper</span></div>
+  </aside>
+
+  <nav class="toolbar">
+    <button class="toolbar__btn" type="button" tabindex="-1">✎</button>
+    <button class="toolbar__btn" type="button" tabindex="-1">T</button>
+    <button class="toolbar__btn" type="button" tabindex="-1">◆</button>
+    <button class="toolbar__btn" type="button" tabindex="-1">◫</button>
+    <button class="toolbar__btn" type="button" tabindex="-1">↻</button>
+    <button class="toolbar__btn" type="button" tabindex="-1">⌘</button>
+  </nav>
+
+  <p class="scene__hint">
+    <span class="scene__hint-key">Scroll</span>
+    over the widget to change its opacity
+  </p>
+</div>
+
+<div id="app"></div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+import"./draggable-B5OW4ovO.js";import{t as e}from"./calendar-C_cqJVvw.js";var t=document.getElementById(`calendar-host`);if(!t)throw Error(`Element #calendar-host not found`);var n=e({locale:`ru`,onOff:()=>console.log(`[calendar] off`),onFlip:()=>console.log(`[calendar] flip`)});n.mount(t),n.element.style.setProperty(`--calendar-bg`,`rgba(130, 177, 255, 0.7)`);
+//# sourceMappingURL=calendar-D3IADeqi.js.map

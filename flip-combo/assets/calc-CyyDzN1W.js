@@ -1,0 +1,2 @@
+import"./draggable-B5OW4ovO.js";import{t as e}from"./calc-Jp2Bh0T_.js";var t=document.getElementById(`calc-host`);if(!t)throw Error(`Element #calc-host not found`);var n=e({onOff:()=>console.log(`[calc] off`),onFlip:()=>console.log(`[calc] flip`),onCopy:e=>console.log(`[calc] copy:`,e)});n.mount(t),n.element.style.setProperty(`--calc-bg`,`rgba(130, 177, 255, 0.7)`);
+//# sourceMappingURL=calc-CyyDzN1W.js.map
