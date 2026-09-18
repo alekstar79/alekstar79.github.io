@@ -1,7 +1,7 @@
-import { openLightbox, closeLightbox, isLightboxOpen } from '/teaboom-product-card/js/modules/lightbox.js'
-import { showToast, hideToast, AUTO_HIDE_DELAY } from '/teaboom-product-card/js/modules/toast.js'
-import { getVariant, prepareVariantView } from '/teaboom-product-card/js/modules/variants.js'
-import { getNextWishlistState } from '/teaboom-product-card/js/modules/wishlist.js'
+import { openLightbox, closeLightbox, isLightboxOpen } from './modules/lightbox.js'
+import { showToast, hideToast, AUTO_HIDE_DELAY } from './modules/toast.js'
+import { getVariant, prepareVariantView } from './modules/variants.js'
+import { getNextWishlistState } from './modules/wishlist.js'
 
 // ----------------------------------------------------------
 // Уведомление о добавлении в корзину
@@ -10,17 +10,35 @@ import { getNextWishlistState } from '/teaboom-product-card/js/modules/wishlist.
 const toast = document.getElementById('cart-toast')
 let autoHideTimer = null
 
+/**
+ * Скрывает уведомление: снимает фокус, если он оказался внутри,
+ * затем помечает элемент как скрытый для клавиатуры и скринридеров.
+ * Порядок важен: браузер запрещает aria-hidden на элементе с фокусом
+ * внутри - поэтому сначала blur, потом атрибуты.
+ */
+const hideCartToast = () => {
+  if (!toast) return
+
+  hideToast({ toast })
+
+  if (toast.contains(document.activeElement)) {
+    document.activeElement.blur()
+  }
+
+  toast.setAttribute('aria-hidden', 'true')
+  toast.inert = true
+
+  clearTimeout(autoHideTimer)
+  autoHideTimer = null
+}
+
 if (toast) {
   toast.removeAttribute('hidden')
 
-  toast.querySelector('[data-js="toast-close"]')
-    .addEventListener('click', () => {
-      hideToast({ toast })
-      toast.setAttribute('aria-hidden', 'true')
-      toast.inert = true
-      clearTimeout(autoHideTimer)
-      autoHideTimer = null
-    })
+  const toastCloseButton = toast.querySelector('[data-js="toast-close"]')
+  if (toastCloseButton) {
+    toastCloseButton.addEventListener('click', hideCartToast)
+  }
 }
 
 /**
@@ -41,12 +59,7 @@ const showCartToast = (title) => {
   showToast({ toast })
 
   clearTimeout(autoHideTimer)
-  autoHideTimer = setTimeout(() => {
-    hideToast({ toast })
-    toast.setAttribute('aria-hidden', 'true')
-    toast.inert = true
-    autoHideTimer = null
-  }, AUTO_HIDE_DELAY)
+  autoHideTimer = setTimeout(hideCartToast, AUTO_HIDE_DELAY)
 }
 
 // ----------------------------------------------------------
@@ -87,7 +100,7 @@ if (root) {
 
   if (form) {
     form.querySelector('.variants__list')
-      .addEventListener('change', (event) => {
+      ?.addEventListener('change', (event) => {
         if (event.target instanceof HTMLInputElement) {
           renderVariant(event.target.value)
         }
@@ -164,7 +177,7 @@ if (lightbox && lightboxOpener) {
 }
 
 // ----------------------------------------------------------
-// Кнопка «В избранное»
+// Кнопка "В избранное"
 // ----------------------------------------------------------
 
 const wishlistButton = document.querySelector('[data-js="wishlist-toggle"]')
