@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>24 Modal Effects</title>
+  <title>Modal Effects</title>
   <link rel="icon" href="./favicon.png" type="image/png">
-  <script type="module" crossorigin src="/modal-effects/assets/index-CrdzBU8Y.js"></script>
-  <link rel="stylesheet" crossorigin href="/modal-effects/assets/index-PruKmod1.css">
+  <script type="module" crossorigin src="/modal-effects/assets/index-B-iBWGQ5.js"></script>
+  <link rel="stylesheet" crossorigin href="/modal-effects/assets/index-Ca6xIYGg.css">
 </head>
 <body>
 
-<h1 class="page-title" data-i18n="page.title">24 Modal Effects</h1>
+<h1 class="page-title" data-i18n="page.title">Modal Effects</h1>
 
 <button
   class="howto-btn"
@@ -34,29 +34,71 @@
 </button>
 
 <div class="buttons-container">
-  <button class="glow-button btn-violet" id="openModalTop"><span>Top → Bottom</span></button>
-  <button class="glow-button btn-green" id="openModalLeft"><span>Left → Right</span></button>
-  <button class="glow-button btn-pink" id="openModalBottom"><span>Bottom → Top</span></button>
-  <button class="glow-button btn-yellow" id="openModalRight"><span>Right → Left</span></button>
-  <button class="glow-button btn-light-violet" id="openModalSlideLeft"><span>Slide L → R</span></button>
-  <button class="glow-button btn-red" id="openModalSlideRight"><span>Slide R → L</span></button>
-  <button class="glow-button btn-blue" id="openModalSlideTop"><span>Slide T → B</span></button>
-  <button class="glow-button btn-light-green" id="openModalSlideBottom"><span>Slide B → T</span></button>
-  <button class="glow-button btn-orange" id="openModalSpring"><span>Spring</span></button>
-  <button class="glow-button btn-pink" id="openModalZoomRotate"><span>Zoom Rotate</span></button>
-  <button class="glow-button btn-turquoise" id="openModalPerspective"><span>3D</span></button>
-  <button class="glow-button btn-light-violet" id="openModalOrigami"><span>Origami L→R</span></button>
-  <button class="glow-button btn-red" id="openModalOrigamiRight"><span>Origami R→L</span></button>
-  <button class="glow-button btn-green" id="openModalBounce"><span>Bounce</span></button>
-  <button class="glow-button btn-cyan" id="openModalDiagonal"><span>Diagonal TL</span></button>
-  <button class="glow-button btn-dark-green" id="openModalDiagonalTopRight"><span>Diagonal TR</span></button>
+  <!-- Roll -->
+  <button class="glow-button btn-violet"        id="openModalTop"><span>Top → Bottom</span></button>
+  <button class="glow-button btn-green"         id="openModalLeft"><span>Left → Right</span></button>
+  <button class="glow-button btn-pink"          id="openModalBottom"><span>Bottom → Top</span></button>
+  <button class="glow-button btn-yellow"        id="openModalRight"><span>Right → Left</span></button>
+
+  <!-- Slide -->
+  <button class="glow-button btn-blue"          id="openModalSlideLeft"><span>Slide L → R</span></button>
+  <button class="glow-button btn-light-green"   id="openModalSlideRight"><span>Slide R → L</span></button>
+  <button class="glow-button btn-orange"        id="openModalSlideTop"><span>Slide T → B</span></button>
+  <button class="glow-button btn-turquoise"     id="openModalSlideBottom"><span>Slide B → T</span></button>
+  <button class="glow-button btn-cyan"          id="openModalSlideRotate"><span>Slide + Rotate</span></button>
+
+  <!-- Roll In -->
+  <button class="glow-button btn-magenta"       id="openModalRollInLeft"><span>Roll In L</span></button>
+  <button class="glow-button btn-dark-green"    id="openModalRollInRight"><span>Roll In R</span></button>
+
+  <!-- Spring / Elastic -->
+  <button class="glow-button btn-orange"        id="openModalSpring"><span>Spring</span></button>
+  <button class="glow-button btn-pink"          id="openModalRubberBand"><span>Rubber Band</span></button>
+  <button class="glow-button btn-red"           id="openModalHeartbeat"><span>Heartbeat</span></button>
+  <button class="glow-button btn-light-violet"  id="openModalJello"><span>Jello</span></button>
+
+  <!-- Zoom -->
+  <button class="glow-button btn-pink"          id="openModalZoomRotate"><span>Zoom Rotate</span></button>
+  <button class="glow-button btn-turquoise"     id="openModalZoomCorner"><span>Zoom Corner</span></button>
+
+  <!-- Rotate Z -->
+  <button class="glow-button btn-yellow-orange" id="openModalRotateDownLeft"><span>Rotate DL</span></button>
+  <button class="glow-button btn-dark-violet"   id="openModalRotateDownRight"><span>Rotate DR</span></button>
+
+  <!-- Diagonal -->
+  <button class="glow-button btn-cyan"          id="openModalDiagonal"><span>Diagonal TL</span></button>
+  <button class="glow-button btn-dark-green"    id="openModalDiagonalTopRight"><span>Diagonal TR</span></button>
   <button class="glow-button btn-yellow-orange" id="openModalDiagonalBottomLeft"><span>Diagonal BL</span></button>
-  <button class="glow-button btn-dark-violet" id="openModalDiagonalBottomRight"><span>Diagonal BR</span></button>
-  <button class="glow-button btn-magenta" id="openModalConvex"><span>Convex</span></button>
-  <button class="glow-button btn-flip-1" id="openModalFlipX"><span>Flip X</span></button>
-  <button class="glow-button btn-flip-2" id="openModalFlipYS"><span>Flip Y → Scale</span></button>
-  <button class="glow-button btn-flip-3" id="openModalFlipYSReverse"><span>Flip Y ← Scale</span></button>
-  <button class="glow-button btn-flip-3" id="openModalFlipMix"><span>Flip Mix</span></button>
+  <button class="glow-button btn-dark-violet"   id="openModalDiagonalBottomRight"><span>Diagonal BR</span></button>
+
+  <!-- Origami / Skew -->
+  <button class="glow-button btn-light-violet"  id="openModalOrigami"><span>Origami L → R</span></button>
+  <button class="glow-button btn-red"           id="openModalOrigamiRight"><span>Origami R → L</span></button>
+  <button class="glow-button btn-blue"          id="openModalSkewFade"><span>Skew Fade</span></button>
+  <button class="glow-button btn-light-green"   id="openModalLightSpeed"><span>Light Speed</span></button>
+
+  <!-- Bounce -->
+  <button class="glow-button btn-green"         id="openModalBounce"><span>Bounce</span></button>
+  <button class="glow-button btn-yellow"        id="openModalBounceDown"><span>Bounce Down</span></button>
+  <button class="glow-button btn-yellow"        id="openModalBounceUp"><span>Bounce Up</span></button>
+
+  <!-- Perspective 3D -->
+  <button class="glow-button btn-turquoise"     id="openModalPerspective"><span>3D</span></button>
+  <button class="glow-button btn-magenta"       id="openModalConvex"><span>Convex</span></button>
+
+  <!-- Flip -->
+  <button class="glow-button btn-flip-1"        id="openModalFlipX"><span>Flip X</span></button>
+  <button class="glow-button btn-flip-2"        id="openModalFlipYS"><span>Flip Y → Scale</span></button>
+  <button class="glow-button btn-flip-3"        id="openModalFlipYSReverse"><span>Flip Y ← Scale</span></button>
+  <button class="glow-button btn-flip-3"        id="openModalFlipMix"><span>Flip Mix</span></button>
+
+  <!-- Unfold -->
+  <button class="glow-button btn-orange"        id="openModalUnfoldBottom"><span>Unfold Bottom</span></button>
+  <button class="glow-button btn-yellow"        id="openModalUnfoldUp"><span>Unfold Up</span></button>
+  <button class="glow-button btn-cyan"          id="openModalUnfoldHorizontal"><span>Unfold H</span></button>
+
+  <!-- Blur -->
+  <button class="glow-button btn-violet"        id="openModalBlurIn"><span>Blur In</span></button>
 </div>
 
 <!-- 1. Top → Bottom -->
@@ -139,7 +181,37 @@
   </div>
 </div>
 
-<!-- 9. Spring -->
+<!-- 9. Slide + Rotate -->
+<div class="overlay overlay-slide-rotate" id="overlaySlideRotate" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="slideRotate.title">Slide + Rotate</h2>
+    <p data-i18n="slideRotate.desc">The modal <strong>rises from below</strong> while tilting through <code>rotate(15deg)</code> into place.</p>
+    <button class="close-btn" id="closeModalSlideRotate" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 10. Roll In Left -->
+<div class="overlay overlay-roll-left" id="overlayRollInLeft" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="rollInLeft.title">Roll In Left</h2>
+    <p data-i18n="rollInLeft.desc">The modal <strong>rolls in from the left</strong> with a full <code>rotate(-720deg)</code> spin.</p>
+    <button class="close-btn" id="closeModalRollInLeft" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 11. Roll In Right -->
+<div class="overlay overlay-roll-right" id="overlayRollInRight" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="rollInRight.title">Roll In Right</h2>
+    <p data-i18n="rollInRight.desc">Mirror of Roll In Left — a <strong>720° spin from the right</strong>.</p>
+    <button class="close-btn" id="closeModalRollInRight" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 12. Spring -->
 <div class="overlay overlay-spring" id="overlaySpring" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -149,7 +221,37 @@
   </div>
 </div>
 
-<!-- 11. Zoom + Rotation -->
+<!-- 13. Rubber Band -->
+<div class="overlay overlay-rubber" id="overlayRubberBand" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="rubberBand.title">Rubber Band</h2>
+    <p data-i18n="rubberBand.desc">A keyframed <strong>rubber-band</strong> pulse: the modal stretches horizontally, compresses vertically, and settles.</p>
+    <button class="close-btn" id="closeModalRubberBand" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 14. Heartbeat -->
+<div class="overlay overlay-heartbeat" id="overlayHeartbeat" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="heartbeat.title">Heartbeat</h2>
+    <p data-i18n="heartbeat.desc">A <strong>heartbeat</strong> pulse — the modal beats twice with a soft scale and steadies.</p>
+    <button class="close-btn" id="closeModalHeartbeat" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 15. Jello -->
+<div class="overlay overlay-jello" id="overlayJello" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="jello.title">Jello</h2>
+    <p data-i18n="jello.desc">A <strong>jello wobble</strong> — decaying skew on both axes.</p>
+    <button class="close-btn" id="closeModalJello" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 16. Zoom Rotate -->
 <div class="overlay overlay-zoomrotate" id="overlayZoomRotate" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -159,37 +261,37 @@
   </div>
 </div>
 
-<!-- 12. Perspective 3D -->
-<div class="overlay overlay-perspective" id="overlayPerspective" hidden>
+<!-- 17. Zoom From Corner -->
+<div class="overlay overlay-zoom-corner" id="overlayZoomCorner" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
-    <h2 data-i18n="perspective.title">3D</h2>
-    <p data-i18n="perspective.desc"><strong>Depth</strong> effect! The modal comes from far away <code>translateZ(-300px) rotateX(30deg)</code> to the center.</p>
-    <button class="close-btn" id="closeModalPerspective" data-i18n="modal.close">Close</button>
+    <h2 data-i18n="zoomCorner.title">Zoom From Corner</h2>
+    <p data-i18n="zoomCorner.desc">The modal <strong>zooms out from the top-left corner</strong> — a combined <code>scale(0)</code> and <code>translate(-100%, -100%)</code>.</p>
+    <button class="close-btn" id="closeModalZoomCorner" data-i18n="modal.close">Close</button>
   </div>
 </div>
 
-<!-- 13. Origami - Left → Right -->
-<div class="overlay overlay-origami" id="overlayOrigami" hidden>
+<!-- 18. Rotate In Down Left -->
+<div class="overlay overlay-rotate-down-left" id="overlayRotateDownLeft" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
-    <h2 data-i18n="origami.title">Origami L → R</h2>
-    <p data-i18n="origami.desc"><strong>Diagonal unfolding from the left</strong> effect! The modal unfolds from <code>rotate(-90deg) scale(0.3) skewX(20deg)</code> to center.</p>
-    <button class="close-btn" id="closeModalOrigami" data-i18n="modal.close">Close</button>
+    <h2 data-i18n="rotateDownLeft.title">Rotate In Down Left</h2>
+    <p data-i18n="rotateDownLeft.desc">The modal <strong>rotates in from the bottom-left corner</strong> with <code>rotate(-90deg) translateY(100%)</code>.</p>
+    <button class="close-btn" id="closeModalRotateDownLeft" data-i18n="modal.close">Close</button>
   </div>
 </div>
 
-<!-- 14. Bounce -->
-<div class="overlay overlay-bounce" id="overlayBounce" hidden>
+<!-- 19. Rotate In Down Right -->
+<div class="overlay overlay-rotate-down-right" id="overlayRotateDownRight" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
-    <h2 data-i18n="bounce.title">Bounce</h2>
-    <p data-i18n="bounce.desc"><strong>Bounce</strong> effect! The modal arrives with a <code>bounceIn</code> animation of 0.8s.</p>
-    <button class="close-btn" id="closeModalBounce" data-i18n="modal.close">Close</button>
+    <h2 data-i18n="rotateDownRight.title">Rotate In Down Right</h2>
+    <p data-i18n="rotateDownRight.desc">Mirror of Rotate In Down Left — <strong>rotates in from the bottom-right</strong>.</p>
+    <button class="close-btn" id="closeModalRotateDownRight" data-i18n="modal.close">Close</button>
   </div>
 </div>
 
-<!-- 15. Diagonal - Top Left -->
+<!-- 20. Diagonal Top Left -->
 <div class="overlay overlay-diagonal" id="overlayDiagonal" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -199,17 +301,7 @@
   </div>
 </div>
 
-<!-- 16. Convex -->
-<div class="overlay overlay-convex" id="overlayConvex" hidden>
-  <div class="modal">
-    <button class="lang-switcher" type="button">EN</button>
-    <h2 data-i18n="convex.title">Convex</h2>
-    <p data-i18n="convex.desc"><strong>Convex swelling</strong> effect! The modal starts as a small round bubble and <strong>inflates</strong> like a balloon to reach its final shape with a relief effect.</p>
-    <button class="close-btn" id="closeModalConvex" data-i18n="modal.close">Close</button>
-  </div>
-</div>
-
-<!-- 17. Diagonal - Top Right -->
+<!-- 21. Diagonal Top Right -->
 <div class="overlay overlay-diagonal-top-right" id="overlayDiagonalTopRight" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -219,7 +311,7 @@
   </div>
 </div>
 
-<!-- 18. Diagonal - Bottom Left -->
+<!-- 22. Diagonal Bottom Left -->
 <div class="overlay overlay-diagonal-bottom-left" id="overlayDiagonalBottomLeft" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -229,7 +321,7 @@
   </div>
 </div>
 
-<!-- 19. Diagonal - Bottom Right -->
+<!-- 23. Diagonal Bottom Right -->
 <div class="overlay overlay-diagonal-bottom-right" id="overlayDiagonalBottomRight" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -239,7 +331,17 @@
   </div>
 </div>
 
-<!-- 20. Origami - Right → Left -->
+<!-- 24. Origami L → R -->
+<div class="overlay overlay-origami" id="overlayOrigami" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="origami.title">Origami L → R</h2>
+    <p data-i18n="origami.desc"><strong>Diagonal unfolding from the left</strong> effect! The modal unfolds from <code>rotate(-90deg) scale(0.3) skewX(20deg)</code> to center.</p>
+    <button class="close-btn" id="closeModalOrigami" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 25. Origami R → L -->
 <div class="overlay overlay-origami-right" id="overlayOrigamiRight" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -249,7 +351,77 @@
   </div>
 </div>
 
-<!-- 21. Flip X -->
+<!-- 26. Skew Fade -->
+<div class="overlay overlay-skew" id="overlaySkewFade" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="skewFade.title">Skew Fade</h2>
+    <p data-i18n="skewFade.desc">The modal slides in <strong>skewed at 40°</strong> and half-scale, then straightens and fades up.</p>
+    <button class="close-btn" id="closeModalSkewFade" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 27. Light Speed In -->
+<div class="overlay overlay-light-speed" id="overlayLightSpeed" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="lightSpeed.title">Light Speed In</h2>
+    <p data-i18n="lightSpeed.desc">A <strong>light-speed entry</strong> — the modal races in from the right with a heavy <code>skewX(-30deg)</code>.</p>
+    <button class="close-btn" id="closeModalLightSpeed" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 28. Bounce -->
+<div class="overlay overlay-bounce" id="overlayBounce" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="bounce.title">Bounce</h2>
+    <p data-i18n="bounce.desc"><strong>Bounce</strong> effect! The modal arrives with a <code>bounceIn</code> animation of 0.8s.</p>
+    <button class="close-btn" id="closeModalBounce" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 29. Bounce In Down -->
+<div class="overlay overlay-bounce-down" id="overlayBounceDown" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="bounceDown.title">Bounce In Down</h2>
+    <p data-i18n="bounceDown.desc">A keyframed <strong>bounce from above</strong> — the modal falls, overshoots, and settles.</p>
+    <button class="close-btn" id="closeModalBounceDown" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 30. Bounce In Up -->
+<div class="overlay overlay-bounce-up" id="overlayBounceUp" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="bounceUp.title">Bounce In Up</h2>
+    <p data-i18n="bounceUp.desc">A keyframed <strong>bounce from below</strong> — mirror of Bounce In Down.</p>
+    <button class="close-btn" id="closeModalBounceUp" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 31. Perspective 3D -->
+<div class="overlay overlay-perspective" id="overlayPerspective" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="perspective.title">3D</h2>
+    <p data-i18n="perspective.desc"><strong>Depth</strong> effect! The modal comes from far away <code>translateZ(-300px) rotateX(30deg)</code> to the center.</p>
+    <button class="close-btn" id="closeModalPerspective" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 32. Convex -->
+<div class="overlay overlay-convex" id="overlayConvex" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="convex.title">Convex</h2>
+    <p data-i18n="convex.desc"><strong>Convex swelling</strong> effect! The modal starts as a small round bubble and <strong>inflates</strong> like a balloon to reach its final shape with a relief effect.</p>
+    <button class="close-btn" id="closeModalConvex" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 33. Flip X -->
 <div class="overlay overlay-flip-x" id="overlayFlipX" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -259,7 +431,7 @@
   </div>
 </div>
 
-<!-- 22. Flip Y + Scale (left to right) -->
+<!-- 34. Flip Y → Scale -->
 <div class="overlay overlay-flip-ys" id="overlayFlipYS" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -269,7 +441,7 @@
   </div>
 </div>
 
-<!-- 23. Flip Y + Scale (right to left - reverse) -->
+<!-- 35. Flip Y ← Scale -->
 <div class="overlay overlay-flip-ys-reverse" id="overlayFlipYSReverse" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
@@ -279,13 +451,53 @@
   </div>
 </div>
 
-<!-- 24. Flip Mix -->
+<!-- 36. Flip Mix -->
 <div class="overlay overlay-flip-mix" id="overlayFlipMix" hidden>
   <div class="modal">
     <button class="lang-switcher" type="button">EN</button>
     <h2 data-i18n="flipMix.title">Flip Mix</h2>
     <p data-i18n="flipMix.desc"><strong>Double flip</strong> effect! The modal flips on both axes with <code>rotateX(180deg) rotateY(180deg) scale(0.3)</code>.</p>
     <button class="close-btn" id="closeModalFlipMix" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 37. Unfold Bottom -->
+<div class="overlay overlay-unfold-bottom" id="overlayUnfoldBottom" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="unfoldBottom.title">Unfold Bottom</h2>
+    <p data-i18n="unfoldBottom.desc">The modal <strong>unfolds vertically</strong> with <code>scaleY(0)</code> from the top edge — reads as unfolding downward.</p>
+    <button class="close-btn" id="closeModalUnfoldBottom" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 38. Unfold Up -->
+<div class="overlay overlay-unfold-up" id="overlayUnfoldUp" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="unfoldUp.title">Unfold Up</h2>
+    <p data-i18n="unfoldUp.desc">The modal <strong>swings upward</strong> from the bottom edge, hinged at <code>transform-origin: bottom center</code>.</p>
+    <button class="close-btn" id="closeModalUnfoldUp" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 39. Unfold Horizontal -->
+<div class="overlay overlay-unfold-horizontal" id="overlayUnfoldHorizontal" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="unfoldHorizontal.title">Unfold Horizontal</h2>
+    <p data-i18n="unfoldHorizontal.desc">The modal <strong>unfolds horizontally</strong> with <code>scaleX(0)</code> from the left edge.</p>
+    <button class="close-btn" id="closeModalUnfoldHorizontal" data-i18n="modal.close">Close</button>
+  </div>
+</div>
+
+<!-- 40. Blur In -->
+<div class="overlay overlay-blur" id="overlayBlurIn" hidden>
+  <div class="modal">
+    <button class="lang-switcher" type="button">EN</button>
+    <h2 data-i18n="blurIn.title">Blur In</h2>
+    <p data-i18n="blurIn.desc">The modal <strong>fades in from a blur</strong> — starts at <code>blur(20px)</code> and <code>scale(1.2)</code>, resolves to sharp at rest.</p>
+    <button class="close-btn" id="closeModalBlurIn" data-i18n="modal.close">Close</button>
   </div>
 </div>
 
