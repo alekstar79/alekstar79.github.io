@@ -7,54 +7,61 @@
   <title>Responsive Image Lightbox</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  <script type="module" crossorigin src="/lightbox/assets/index-ChBzWvax.js"></script>
-  <link rel="stylesheet" crossorigin href="/lightbox/assets/index-BRSsuDpK.css">
+  <script type="module" crossorigin src="/lightbox/assets/index-RkMyILTI.js"></script>
+  <link rel="stylesheet" crossorigin href="/lightbox/assets/index-e2zSbuDZ.css">
 </head>
 <body>
-  <div class="header__container">
-    <h1>Gallery/Lightbox</h1>
-    <p>
-      A component approach in pure JavaScript. Splitting of image gallery code and view code with individual scope.
-      Features: slide, fit, zoom, pan, full screen, key control.
-    </p>
+<div class="header__container">
+  <h1>Gallery/Lightbox</h1>
+  <p>
+    A component approach in pure JavaScript. Splitting of image gallery code and view code with individual scope.
+    Features: slide, fit, zoom, pan, full screen, key control.
+  </p>
+</div>
+
+<div class="toggler">
+  <div class="justify-center">
+    <input type="checkbox" id="theme" checked>
+    <label for="theme">ON</label>
   </div>
 
-  <div class="toggler">
-    <div class="justify-center">
-      <input type="checkbox" id="theme" checked>
-      <label for="theme">ON</label>
-    </div>
-
-    <div class="btn refresh-btn">
-      <span class="fas fa-sync-alt"></span>
-    </div>
+  <div class="btn refresh-btn">
+    <span class="fas fa-sync-alt"></span>
   </div>
 
-  <div class="wrapper"></div>
+  <select id="theme-select" class="theme-select" aria-label="Color theme">
+    <option value="base">Base</option>
+    <option value="dark">Dark</option>
+    <option value="minimal">Minimal</option>
+    <option value="glass">Glass</option>
+  </select>
+</div>
 
-  <div class="shadow"></div>
+<div class="wrapper"></div>
 
-  <div class="preview-box">
-    <div class="details">
-      <span class="title"><p class="current-img"></p> / <p class="total-img"></p></span>
-      <div class="actions">
-        <span class="icon fas fa-expand"></span>
-        <span class="icon fas fa-times"></span>
-      </div>
-    </div>
-    <div class="image-box">
-      <img src="" alt="">
+<div class="shadow"></div>
 
-      <div class="pan-overlay"></div>
-
-      <div class="slide prev">
-        <i class="fas fa-angle-left"></i>
-      </div>
-      <div class="slide next">
-        <i class="fas fa-angle-right"></i>
-      </div>
+<div class="preview-box">
+  <div class="details">
+    <span class="title"><p class="current-img"></p> / <p class="total-img"></p></span>
+    <div class="actions">
+      <span class="icon fas fa-expand"></span>
+      <span class="icon fas fa-times"></span>
     </div>
   </div>
+  <div class="image-box">
+    <img src="" alt="">
+
+    <div class="pan-overlay"></div>
+
+    <div class="slide prev">
+      <i class="fas fa-angle-left"></i>
+    </div>
+    <div class="slide next">
+      <i class="fas fa-angle-right"></i>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
