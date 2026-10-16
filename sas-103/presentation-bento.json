@@ -1,0 +1,2114 @@
+{
+  "format": "bento/slides",
+  "version": 1,
+  "title": "Сеть химчисток «Чисто» — защита итоговой аттестационной работы",
+  "size": {
+    "width": 1280,
+    "height": 720
+  },
+  "theme": {
+    "background": "#F7F4EF",
+    "color": "#1B222A",
+    "accent": "#C1442A",
+    "fontFamily": "system-ui, sans-serif"
+  },
+  "meta": {
+    "author": "Тарасенко Алексей Сергеевич",
+    "subject": "Итоговая аттестационная работа",
+    "company": "Поток САС-103",
+    "event": "Преподаватель: Мотовникова Варвара Андреевна"
+  },
+  "slides": [
+    {
+      "id": "s1",
+      "background": "#F7F4EF",
+      "transition": "none",
+      "notes": "Добрый день! Меня зовут Тарасенко Алексей Сергеевич. Я являюсь слушателем потока САС-103 по дополнительной программе профессиональной переподготовки «Системный аналитик: с нуля до проектирования систем». Преподаватель: Мотовникова Варвара Андреевна. Представляю свою итоговую аттестационную работу. Работа посвящена автоматизации сети химчисток «Чисто». В работе — описание кейса, проблема, логика решения, аналитические артефакты и ключевые проектные решения.",
+      "elements": [
+        {
+          "id": "ttl-program",
+          "type": "text",
+          "x": 122,
+          "y": 207,
+          "w": 1082,
+          "h": 210,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "ИТОГОВАЯ АТТЕСТАЦИОННАЯ РАБОТА\u003cbr>\u003cbr>по дополнительной профессиональной программе\u003cbr>профессиональной переподготовки\u003cbr>\u003cb>Системный аналитик: с нуля до проектирования систем\u003c/b>",
+          "fontSize": 32,
+          "fontFamily": "'Montserrat', 'Montserrat Medium', 'Segoe UI', system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "center",
+          "valign": "top",
+          "lineHeight": 1.25,
+          "role": "title"
+        },
+        {
+          "id": "ttl-author",
+          "type": "text",
+          "x": 774,
+          "y": 513,
+          "w": 479,
+          "h": 150,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Выполнил: Тарасенко Алексей Сергеевич\u003cbr>Номер потока: САС-103\u003cbr>Преподаватель: Мотовникова Варвара Андреевна",
+          "fontSize": 24,
+          "fontFamily": "'Montserrat', 'Montserrat Medium', 'Segoe UI', system-ui, sans-serif",
+          "fontWeight": 500,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.4,
+          "role": "subtitle"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Сеть химчисток «Чисто» — это несколько пунктов приёма и один общий цех. Объект автоматизации — процесс приёма, обработки и выдачи заказа. Пункты приёма работают с девяти до двадцати одного без выходных. В процессе участвуют клиент, приёмщик, водитель-курьер, сотрудник цеха и менеджер сети. Первая версия системы рассчитана на три месяца, модернизация цеха в объём не входит.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Описание кейса",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Что за бизнес и какой процесс автоматизируем",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "case-h",
+          "type": "text",
+          "x": 96,
+          "y": 206,
+          "w": 620,
+          "h": 34,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Объект автоматизации",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "case-b",
+          "type": "text",
+          "x": 96,
+          "y": 250,
+          "w": 620,
+          "h": 230,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Сеть химчисток «Чисто»: несколько пунктов приёма и один общий цех.\u003cbr>\u003cbr>Автоматизируем процесс приёма, обработки и выдачи заказа — от передачи вещи клиентом до её выдачи.",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.6
+        },
+        {
+          "id": "case-t",
+          "type": "table",
+          "x": 748,
+          "y": 206,
+          "w": 436,
+          "h": 274,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 1.0
+            },
+            {
+              "w": 1.9
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "Участник"
+                },
+                {
+                  "html": "Роль в процессе"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Клиент"
+                },
+                {
+                  "html": "Сдаёт вещи, получает уведомления, забирает заказ"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Приёмщик"
+                },
+                {
+                  "html": "Принимает вещи, оформляет заказ и доставку"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Водитель-курьер"
+                },
+                {
+                  "html": "Возит вещи между пунктами и цехом"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Сотрудник цеха"
+                },
+                {
+                  "html": "Обрабатывает вещи, меняет статусы"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Менеджер сети"
+                },
+                {
+                  "html": "Тарифы, отчётность, решения по хранению"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 16,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "case-g",
+          "type": "shape",
+          "x": 96,
+          "y": 540,
+          "w": 1088,
+          "h": 84,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "rgba(193,68,42,0.08)",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 12
+        },
+        {
+          "id": "case-gt",
+          "type": "text",
+          "x": 124,
+          "y": 554,
+          "w": 1032,
+          "h": 56,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Первая версия системы — 3 месяца. Вне объёма: модернизация цеха, личный кабинет с историей заказов, программа лояльности.",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.5
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Сейчас учёт держится на бумаге. Приёмщик заполняет бланк, а водитель раз в день увозит бланки в цех. Если бланк потерялся, вещь «зависает» без статуса. Статус клиент узнаёт по цепочке звонков, акт о порче доезжает за сутки. Цель — сквозная прослеживаемость вещи от приёма до выдачи.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Проблема кейса",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Как процесс работает сейчас и что в нём теряется",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "p1",
+          "type": "shape",
+          "x": 96,
+          "y": 210,
+          "w": 620,
+          "h": 400,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#FFFFFF",
+          "stroke": "rgba(27,34,42,0.10)",
+          "strokeWidth": 1,
+          "radius": 14
+        },
+        {
+          "id": "p1t",
+          "type": "text",
+          "x": 128,
+          "y": 240,
+          "w": 556,
+          "h": 350,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Бумажный бланк — единственный идентификатор вещи.\u003cbr>Потерянный или нечитаемый бланк делает вещь «невидимой».\u003cbr>\u003cbr>Статус узнаётся только по цепочке звонков: клиент — приёмщик — цех.\u003cbr>\u003cbr>Акт о порче и список готовых заказов едут в пункт приёма машиной раз в день.",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.65
+        },
+        {
+          "id": "p2",
+          "type": "shape",
+          "x": 748,
+          "y": 210,
+          "w": 436,
+          "h": 400,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#FFFFFF",
+          "stroke": "rgba(27,34,42,0.10)",
+          "strokeWidth": 1,
+          "radius": 14
+        },
+        {
+          "id": "p2n",
+          "type": "text",
+          "x": 748,
+          "y": 262,
+          "w": 436,
+          "h": 140,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "24 ч",
+          "fontSize": 88,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#C1442A",
+          "align": "center",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "fx": {
+            "countUp": true
+          }
+        },
+        {
+          "id": "p2c",
+          "type": "text",
+          "x": 780,
+          "y": 400,
+          "w": 372,
+          "h": 90,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "задержка информации о готовности и о порче вещи",
+          "fontSize": 20,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "center",
+          "valign": "top",
+          "lineHeight": 1.4
+        },
+        {
+          "id": "p2f",
+          "type": "text",
+          "x": 96,
+          "y": 630,
+          "w": 1088,
+          "h": 40,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Цель системы — сквозная прослеживаемость вещи от приёма до выдачи.",
+          "fontSize": 20,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 600,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Решение состоит из пяти частей, таблица показывает, что делает каждая. Учёт заказов и вещей — заказ, вещи, дефекты и история статусов. Порча вещей и невостребованные заказы — акт с фотографией и контроль тридцати дней. Информирование клиента — статус заказа, уведомления и онлайн-оплата. Курьерская доставка и отчётность замыкают обмен данными с 1С. Главный принцип — единая цифровая история заказа вместо бумажных бланков. Решение — собственная разработка, а не готовая система.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Логика решения",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Из каких частей состоит система и на чём держится решение",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "logic-t",
+          "type": "table",
+          "x": 96,
+          "y": 206,
+          "w": 1088,
+          "h": 320,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 1.0
+            },
+            {
+              "w": 2.5
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "Часть системы"
+                },
+                {
+                  "html": "Что делает"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Учёт заказов и вещей"
+                },
+                {
+                  "html": "Заказ, клиент, вещи, дефекты, тариф, история статусов"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Порча вещей и невостребованные заказы"
+                },
+                {
+                  "html": "Акт о порче с фотографией, контроль срока 30 дней"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Информирование клиента"
+                },
+                {
+                  "html": "Статус заказа, уведомления SMS и email, онлайн-оплата"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Курьерская доставка"
+                },
+                {
+                  "html": "Адрес и временное окно, назначение курьера, результат визита"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Отчётность и интеграции"
+                },
+                {
+                  "html": "Выручка по тарифам и пунктам, выгрузка в 1С, платёжный шлюз"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 17,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "logic-g",
+          "type": "shape",
+          "x": 96,
+          "y": 552,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "rgba(193,68,42,0.08)",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 12
+        },
+        {
+          "id": "logic-gt",
+          "type": "text",
+          "x": 124,
+          "y": 566,
+          "w": 1032,
+          "h": 44,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Принцип: отказ от бумажных бланков и единая цифровая история заказа. Собственная разработка вместо доработки готовой системы.",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.5
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Основной артефакт — реестр требований: четырнадцать функциональных и семь нефункциональных. Он собран из протокола рабочей встречи, бланков заказов, журнала невостребованных заказов, договора оферты и требования 152-ФЗ. Часть требований я добавил сам: справочник типов вещей, пять ролей доступа, показатель доступности. Спорными остались коэффициент экспресс-тарифа и перечень завершённых статусов. Приоритеты расставлены по методу расстановки приоритетов MoSCoW. Все требования системы уровня Must, кроме масштабируемости.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Ключевые требования",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Реестр: 14 ФТ и 7 НФТ, приоритеты по MoSCoW",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "t5",
+          "type": "table",
+          "x": 96,
+          "y": 206,
+          "w": 1088,
+          "h": 340,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 0.9
+            },
+            {
+              "w": 0.5
+            },
+            {
+              "w": 3.0
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "ID"
+                },
+                {
+                  "html": "Тип"
+                },
+                {
+                  "html": "Требование"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "FR-01"
+                },
+                {
+                  "html": "ФТ"
+                },
+                {
+                  "html": "Создание заказа: обязательные поля и уникальный номер квитанции"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "FR-03"
+                },
+                {
+                  "html": "ФТ"
+                },
+                {
+                  "html": "Единый жизненный цикл: каждый переход с датой, временем и пользователем"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "FR-05"
+                },
+                {
+                  "html": "ФТ"
+                },
+                {
+                  "html": "Готовый заказ не выдан 30 дней — автоматический перевод на хранение"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "FR-14"
+                },
+                {
+                  "html": "ФТ"
+                },
+                {
+                  "html": "Уведомление клиента о порче в течение 30 минут"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "NFR-01"
+                },
+                {
+                  "html": "НФТ"
+                },
+                {
+                  "html": "Отклик экрана создания заказа — не более 2 секунд при 10 000 заказов"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "NFR-04"
+                },
+                {
+                  "html": "НФТ"
+                },
+                {
+                  "html": "Доступность не ниже 99,5% в рабочие часы пунктов приёма"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 18,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "c5",
+          "type": "text",
+          "x": 96,
+          "y": 566,
+          "w": 1088,
+          "h": 64,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Всего 14 функциональных и 7 нефункциональных требований. Приоритизация по MoSCoW: Must, Should, Could, Won’t — все требования первой версии системы уровня Must, кроме NFR-05.",
+          "fontSize": 18,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.5
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Сценариев два: оформление заказа в пункте приёма и уведомление клиента о смене статуса. Приёмщик фиксирует данные клиента, вещи и видимые дефекты. Клиент выбирает тариф: обычный пять-семь дней или экспресс двадцать четыре часа. Диаграмма показывает, что заказ попадает в систему до отправки вещей в цех.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Сценарий: оформление заказа",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Пользовательский сценарий, шаги 1–9",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c6",
+          "type": "shape",
+          "x": 96,
+          "y": 210,
+          "w": 500,
+          "h": 400,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#FFFFFF",
+          "stroke": "rgba(27,34,42,0.10)",
+          "strokeWidth": 1,
+          "radius": 14
+        },
+        {
+          "id": "i6",
+          "type": "image",
+          "x": 116,
+          "y": 230,
+          "w": 460,
+          "h": 360,
+          "rotation": 0,
+          "opacity": 1,
+          "src": "attachments/sequence-order-creation.png",
+          "fit": "contain",
+          "radius": 10
+        },
+        {
+          "id": "c6h",
+          "type": "text",
+          "x": 636,
+          "y": 210,
+          "w": 548,
+          "h": 34,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Основной поток",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c6b",
+          "type": "text",
+          "x": 636,
+          "y": 256,
+          "w": 548,
+          "h": 340,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "1. Приёмщик создаёт заказ и вносит данные клиента\u003cbr>2. Фиксирует перечень вещей и видимые дефекты\u003cbr>3. Клиент выбирает тариф: обычный 5–7 дней или экспресс 24 часа\u003cbr>4. Система рассчитывает стоимость заказа\u003cbr>5. Система присваивает статус «Принят» и отправляет подтверждение",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.55
+        },
+        {
+          "id": "c6f",
+          "type": "text",
+          "x": 636,
+          "y": 576,
+          "w": 548,
+          "h": 56,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Альтернативные потоки: экспресс-обработка и доставка курьером при выдаче.",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.4
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Жизненный цикл заказа, то есть что происходит с вещью после приёма. Основная линия — пять статусов, от «Принят» до «Выдан». Схема добавляет две ветки: порча вещи и невостребованный заказ. Порча требует фото и уведомления клиенту за тридцать минут, хранение — тридцать дней с момента уведомления.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Жизненный цикл заказа",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Основная линия, две ветки и правило 30 дней",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c7",
+          "type": "shape",
+          "x": 96,
+          "y": 210,
+          "w": 560,
+          "h": 410,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#FFFFFF",
+          "stroke": "rgba(27,34,42,0.10)",
+          "strokeWidth": 1,
+          "radius": 14
+        },
+        {
+          "id": "i7",
+          "type": "image",
+          "x": 112,
+          "y": 224,
+          "w": 528,
+          "h": 382,
+          "rotation": 0,
+          "opacity": 1,
+          "src": "attachments/state-diagram.png",
+          "fit": "contain",
+          "radius": 10
+        },
+        {
+          "id": "c7h",
+          "type": "text",
+          "x": 692,
+          "y": 210,
+          "w": 492,
+          "h": 34,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Две особые ветки",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c7b",
+          "type": "text",
+          "x": 692,
+          "y": 256,
+          "w": 492,
+          "h": 350,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Основная линия — 5 статусов: Принят → Передан в цех → В обработке → Готов → Выдан\u003cbr>\u003cbr>Другие состояния: Отменён, Порча, Урегулировано по порче, На хранении, благотворительность\u003cbr>\u003cbr>Ветка порчи: акт с обязательным фото, уведомление клиенту за 30 минут\u003cbr>\u003cbr>Хранение — через 30 дней после уведомления о готовности",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.55
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Анализ процесса дал пять проблемных участков: разрыв информации, задержку в сутки, узкое место логистики, ручную операцию и дублирование. Решение — единый цифровой реестр с маркировкой вещей вместо бумажных бланков. Ожидаемый эффект: сверка в цехе быстрее на восемьдесят процентов.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Анализ процесса и точки автоматизации",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Процесс «Приём, обработка и выдача заказа»",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "t8",
+          "type": "table",
+          "x": 96,
+          "y": 206,
+          "w": 1088,
+          "h": 330,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 1.25
+            },
+            {
+              "w": 1.7
+            },
+            {
+              "w": 1.15
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "Проблемный участок"
+                },
+                {
+                  "html": "Решение"
+                },
+                {
+                  "html": "Ожидаемый эффект"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Бланк теряется, почерк не читается"
+                },
+                {
+                  "html": "Цифровой реестр с маркировкой вещей (QR)"
+                },
+                {
+                  "html": "Сверка в цехе — на 80% быстрее"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Статус узнают только по звонку"
+                },
+                {
+                  "html": "Автоуведомления SMS/push и просмотр статуса клиентом"
+                },
+                {
+                  "html": "Ручной обзвон уходит из процесса"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Информация едет машиной раз в день"
+                },
+                {
+                  "html": "Статус фиксируется в системе сразу"
+                },
+                {
+                  "html": "Задержка 24 часа устранена"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Акт о порче — бумажный"
+                },
+                {
+                  "html": "Цифровой акт с фотофиксацией"
+                },
+                {
+                  "html": "Реакция в день обнаружения"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 18,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "c8",
+          "type": "text",
+          "x": 96,
+          "y": 556,
+          "w": 1088,
+          "h": 70,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Найдено пять проблемных участков: разрыв информации, задержка, узкое место логистики, ручная операция и дублирование. Приоритет — отказ от бумажных бланков и единая система.",
+          "fontSize": 18,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.5
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Логическая модель данных, ERD, это схема сущностей и связей. В ней двенадцать сущностей, семь добавлены при анализе. Это Вещь, Платёж, Уведомление, Акт проблемы, Доставка, Хранение и Партнёр хранения. Проектное решение — разделить «Выдан» и «Доставлен» и добавить недостающие атрибуты заказа. Без них правила отмены и тридцати дней не проверить.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Модель данных",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "12 сущностей, связи и выявленные пробелы",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c9",
+          "type": "shape",
+          "x": 96,
+          "y": 210,
+          "w": 520,
+          "h": 410,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#FFFFFF",
+          "stroke": "rgba(27,34,42,0.10)",
+          "strokeWidth": 1,
+          "radius": 14
+        },
+        {
+          "id": "i9",
+          "type": "image",
+          "x": 110,
+          "y": 224,
+          "w": 492,
+          "h": 382,
+          "rotation": 0,
+          "opacity": 1,
+          "src": "attachments/data-relationship-diagram.png",
+          "fit": "contain",
+          "radius": 10
+        },
+        {
+          "id": "c9h",
+          "type": "text",
+          "x": 656,
+          "y": 210,
+          "w": 528,
+          "h": 34,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "7 сущностей добавлено аналитиком",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c9b",
+          "type": "text",
+          "x": 656,
+          "y": 256,
+          "w": 528,
+          "h": 200,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Вещь · Платёж · Уведомление · Акт проблемы · Доставка · Хранение · Партнёр хранения\u003cbr>\u003cbr>Без них четыре правила кейса не реализуемы.",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.6
+        },
+        {
+          "id": "c9h2",
+          "type": "text",
+          "x": 656,
+          "y": 456,
+          "w": 528,
+          "h": 34,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Пробел: атрибуты заказа",
+          "fontSize": 21,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "c9b2",
+          "type": "text",
+          "x": 656,
+          "y": 498,
+          "w": 528,
+          "h": 132,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Дата начала обработки · Дата уведомления о готовности · Сумма доставки · Решение по невостребованному заказу",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.6
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Интеграций в работе шесть: платёжный шлюз, SMS-провайдер, push-сервис, 1С, партнёр хранения и приложение курьера. Для оплаты я описал API-контракт: метод POST /payments, это HTTP-метод создания платежа. В него добавлен заголовок Idempotency-Key: без него повторный запрос создал бы второе списание. Для каждой интеграции зафиксированы ограничения и риски сбоев.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Интеграции",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "6 интеграций и API-контракт",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "t10",
+          "type": "table",
+          "x": 96,
+          "y": 206,
+          "w": 1088,
+          "h": 300,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 1.0
+            },
+            {
+              "w": 2.4
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "Внешний участник"
+                },
+                {
+                  "html": "Что система инициирует и что получает"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Платёжный шлюз"
+                },
+                {
+                  "html": "Инициирует оплату заказа, получает статус транзакции по callback"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "SMS-провайдер"
+                },
+                {
+                  "html": "Отправляет текст о готовности или порче, получает статус доставки"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Push-сервис"
+                },
+                {
+                  "html": "Уведомление о смене статуса и ссылка на акт при статусе «проблема»"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Бухгалтерская система 1С"
+                },
+                {
+                  "html": "Ежемесячная выгрузка завершённых заказов, получает подтверждение приёма"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Партнёр по хранению"
+                },
+                {
+                  "html": "Передаёт невостребованный заказ, получает номер места хранения"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Приложение курьера"
+                },
+                {
+                  "html": "Передаёт задание на визит, получает результат визита"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 17,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "c10",
+          "type": "shape",
+          "x": 96,
+          "y": 526,
+          "w": 1088,
+          "h": 96,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "rgba(193,68,42,0.08)",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 12
+        },
+        {
+          "id": "c10t",
+          "type": "text",
+          "x": 124,
+          "y": 540,
+          "w": 1032,
+          "h": 68,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Метод API: POST /payments. Заголовок Idempotency-Key добавлен к трём обязательным заголовкам шаблона — он защищает от повторного списания.",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.5
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Требования проверялись на учебной выборке. Оплата: из пятнадцати заказов два нарушения, недополучено тысяча девятьсот рублей. Значит, нужна блокировка выдачи при неполной оплате. Порча на экспрессе — двадцать два и две десятых процента против пяти и девяти. Три готовых заказа из пяти ждут клиента больше тридцати дней.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Проверка требований и гипотез на SQL",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "4 запроса, 4 вывода — что подтвердилось, а что нет",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "t11",
+          "type": "table",
+          "x": 96,
+          "y": 206,
+          "w": 1088,
+          "h": 330,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 1.15
+            },
+            {
+              "w": 1.85
+            },
+            {
+              "w": 1.3
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "Проверка"
+                },
+                {
+                  "html": "Результат на учебной выборке"
+                },
+                {
+                  "html": "Вывод"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Оплата при выдаче и доставке"
+                },
+                {
+                  "html": "15 заказов, 2 нарушения, недополучено 1900 ₽"
+                },
+                {
+                  "html": "Требование не выполняется"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Порча на экспресс-тарифе"
+                },
+                {
+                  "html": "22,2% против 5,9% — в 3,8 раза выше"
+                },
+                {
+                  "html": "Гипотеза подтверждается"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Готовые заказы без выдачи"
+                },
+                {
+                  "html": "3 из 5 ждут больше 30 дней: 59, 50 и 40 дней"
+                },
+                {
+                  "html": "Гипотеза подтверждается"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Нормативный срок обработки"
+                },
+                {
+                  "html": "18 из 20 в норме; нарушения №15 и №19"
+                },
+                {
+                  "html": "Утверждение цеха не подтверждается"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 18,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "c11",
+          "type": "text",
+          "x": 96,
+          "y": 556,
+          "w": 1088,
+          "h": 80,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Оплата: заказ №13 не оплачен вовсе, по заказу №22 недоплата 300 ₽. Порча на экспрессе: 2 из 9 против 1 из 17. Сроки: заказ №15 — 8 дней вместо 5–7, заказ №19 — 2 дня вместо 1.",
+          "fontSize": 18,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.5
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "background": "#F7F4EF",
+      "transition": "morph",
+      "notes": "Три проверки из четырёх дали отклонения. Оплата не закрывается полностью, правило тридцати дней не работает, на экспрессе доля заказов со статусом «проблема» почти в 4 раза больше. Причина одна — данные появляются поздно. Значит, начинать нужно с фиксации событий: статус, дата, обязательные поля. Главный риск — привычка вести бумагу параллельно. На этом я завершаю, спасибо за внимание.",
+      "elements": [
+        {
+          "id": "head",
+          "type": "text",
+          "x": 96,
+          "y": 64,
+          "w": 1088,
+          "h": 72,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Метрики, риски и выводы",
+          "fontSize": 40,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "middle",
+          "lineHeight": 1.1,
+          "role": "title"
+        },
+        {
+          "id": "bar",
+          "type": "shape",
+          "x": 96,
+          "y": 150,
+          "w": 96,
+          "h": 5,
+          "rotation": 0,
+          "opacity": 1,
+          "shape": "rect",
+          "fill": "#C1442A",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "radius": 3
+        },
+        {
+          "id": "kick",
+          "type": "text",
+          "x": 96,
+          "y": 164,
+          "w": 1088,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Итог проверок, риски и что дальше",
+          "fontSize": 17,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "fin-h",
+          "type": "text",
+          "x": 96,
+          "y": 206,
+          "w": 620,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Метрики: сейчас → цель",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "fin-t",
+          "type": "table",
+          "x": 96,
+          "y": 244,
+          "w": 620,
+          "h": 290,
+          "rotation": 0,
+          "opacity": 1,
+          "header": true,
+          "columns": [
+            {
+              "w": 1.9
+            },
+            {
+              "w": 0.7
+            },
+            {
+              "w": 0.8
+            }
+          ],
+          "rows": [
+            {
+              "cells": [
+                {
+                  "html": "Метрика"
+                },
+                {
+                  "html": "Сейчас"
+                },
+                {
+                  "html": "Цель"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Звонки о статусе в день на пункт"
+                },
+                {
+                  "html": "30"
+                },
+                {
+                  "html": "≤ 6"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Жалобы «неизвестный статус» в месяц"
+                },
+                {
+                  "html": "≈20"
+                },
+                {
+                  "html": "≤ 5"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Готовые, не забранные больше 30 дней"
+                },
+                {
+                  "html": "≈15%"
+                },
+                {
+                  "html": "≤ 12%"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "html": "Подготовка месячного отчёта"
+                },
+                {
+                  "html": "≈3 дня"
+                },
+                {
+                  "html": "≤ 0,5 дня"
+                }
+              ]
+            }
+          ],
+          "style": {
+            "headerBg": "#EDE6DC",
+            "headerColor": "#C1442A",
+            "zebra": "rgba(27,34,42,0.035)",
+            "borderColor": "rgba(27,34,42,0.14)",
+            "borderWidth": 1,
+            "cellPadX": 14,
+            "cellPadY": 9,
+            "fontSize": 16,
+            "color": "#1B222A",
+            "radius": 10
+          }
+        },
+        {
+          "id": "fin-c",
+          "type": "text",
+          "x": 96,
+          "y": 548,
+          "w": 620,
+          "h": 70,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Значения — ориентиры проекта на шесть месяцев, их подтверждают с директором и владельцами процессов.",
+          "fontSize": 16,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "fin-h2",
+          "type": "text",
+          "x": 748,
+          "y": 206,
+          "w": 436,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Ключевой вывод",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "#C1442A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "fin-b",
+          "type": "text",
+          "x": 748,
+          "y": 244,
+          "w": 436,
+          "h": 150,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Три проверки из четырёх дали отклонения: оплата не закрывается, правило 30 дней не работает, на экспрессе проблем в 3,8 раза больше.",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "#1B222A",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.5
+        },
+        {
+          "id": "fin-h3",
+          "type": "text",
+          "x": 748,
+          "y": 400,
+          "w": 436,
+          "h": 30,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Главные риски",
+          "fontSize": 19,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 700,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.45
+        },
+        {
+          "id": "fin-r",
+          "type": "text",
+          "x": 748,
+          "y": 436,
+          "w": 436,
+          "h": 100,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Параллельный бумажный учёт · сбои SMS/push и платёжного шлюза · несогласованные статусы",
+          "fontSize": 18,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 400,
+          "color": "rgba(27,34,42,0.62)",
+          "align": "left",
+          "valign": "top",
+          "lineHeight": 1.5
+        },
+        {
+          "id": "fin-e",
+          "type": "text",
+          "x": 96,
+          "y": 630,
+          "w": 1088,
+          "h": 56,
+          "rotation": 0,
+          "opacity": 1,
+          "html": "Спасибо за внимание",
+          "fontSize": 32,
+          "fontFamily": "system-ui, sans-serif",
+          "fontWeight": 800,
+          "color": "#C1442A",
+          "align": "center",
+          "valign": "middle",
+          "lineHeight": 1.45
+        }
+      ]
+    }
+  ]
+}
