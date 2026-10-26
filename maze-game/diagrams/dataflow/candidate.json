@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Maze: поток данных игрока и статистики",
+    "output": ".archify/dataflow-maze-20261026-121500/maze-dataflow.html",
+    "quality_profile": "showcase"
+  },
+  "stages": [
+    { "label": "Браузер" },
+    { "label": "Авторизация" },
+    { "label": "Точка входа" },
+    { "label": "Статистика" },
+    { "label": "UI" }
+  ],
+  "nodes": [
+    { "id": "sessionStorage", "type": "database", "label": "sessionStorage", "sublabel": "maze.currentUser", "stage": 0, "row": 0, "tag": "персональные данные" },
+    { "id": "localStorage", "type": "database", "label": "localStorage", "sublabel": "maze.stats.v1", "stage": 0, "row": 2, "tag": "статистика" },
+
+    { "id": "auth", "type": "backend", "label": "auth.js", "sublabel": "login · logout · getCurrentUser", "stage": 1, "row": 0 },
+    { "id": "stats", "type": "database", "label": "stats.js", "sublabel": "getPlayer · recordWin", "stage": 1, "row": 2 },
+
+    { "id": "main", "type": "backend", "label": "main.js (точка входа)", "sublabel": "renderStats · updateAuthUI · recordWin", "stage": 2, "row": 0, "tag": "связывание" },
+
+    { "id": "player-data", "type": "external", "label": "Имя игрока", "sublabel": "имя или «гость»", "stage": 3, "row": 0, "tag": "персональные данные" },
+    { "id": "win-record", "type": "database", "label": "Запись победы", "sublabel": "{difficulty, mode, elapsedMs}", "stage": 3, "row": 2 },
+
+    { "id": "player-ui", "type": "frontend", "label": "Панель аккаунта", "sublabel": "#current-player · btn login/logout", "stage": 4, "row": 0 },
+    { "id": "stats-ui", "type": "frontend", "label": "Карточки статистики", "sublabel": "#stats · bento-карточки", "stage": 4, "row": 2 }
+  ],
+  "flows": [
+    { "id": "session-auth", "from": "sessionStorage", "to": "auth", "label": "чтение/запись имени", "classification": "maze.currentUser", "variant": "security", "fromSide": "right", "toSide": "left" },
+    { "id": "auth-main-user", "from": "auth", "to": "main", "label": "getCurrentUser() → имя|null", "classification": "имя игрока (PII)", "variant": "security", "fromSide": "right", "toSide": "left" },
+    { "id": "auth-ui-user", "from": "main", "to": "player-ui", "label": "updateAuthUI() → display name", "classification": "имя игрока", "variant": "security", "fromSide": "right", "toSide": "left" },
+
+    { "id": "stats-read", "from": "stats", "to": "main", "label": "getPlayer(name) → PlayerStats", "classification": "games · totalTimeMs · best", "variant": "default", "fromSide": "right", "toSide": "bottom" },
+    { "id": "main-write", "from": "main", "to": "win-record", "label": "recordWin(name, {difficulty, mode, elapsedMs})", "classification": "новая победа", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "win-stats", "from": "win-record", "to": "stats", "label": "data → stats.js", "classification": "+1 игра · += elapsed · лучшее время", "variant": "emphasis" },
+    { "id": "stats-store", "from": "stats", "to": "localStorage", "label": "запись maze.stats.v1", "classification": "players[имя] = PlayerStats", "variant": "security" },
+
+    { "id": "main-stats-ui", "from": "main", "to": "stats-ui", "label": "renderStats() → card values", "classification": "games · totalTime · best (diff/mode)", "variant": "default", "fromSide": "right", "toSide": "left" }
+  ],
+  "cards": [
+    { "dot": "rose", "title": "Персональные данные", "items": ["Имя игрока хранится в sessionStorage (maze.currentUser) — переживает F5, теряется при закрытии вкладки", "auth.js — единственный модуль, читающий/пишущий maze.currentUser", "main.js получает имя через getCurrentUser(), а не напрямую из storage"] },
+    { "dot": "emerald", "title": "Статистика", "items": ["stats.js читает/пишет localStorage по ключу maze.stats.v1", "Структура: { players: { имя: { games, totalTimeMs, best } } }", "Пустое имя нормализуется в GUEST_NAME «гость»"] },
+    { "dot": "cyan", "title": "Направления", "items": ["main.js связывает auth (имя) и stats (статистику) с DOM", "recordWin вызывается из main после победы; renderStats перестраивает карточки", "localStorage — источник правды статистики; UI — его проекция"] }
+  ]
+}

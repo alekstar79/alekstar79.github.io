@@ -1,0 +1,59 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Maze: запуск, игровой ход и завершение игры",
+    "output": ".archify/workflow-maze-20261026-121500/maze-workflow.html",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    { "id": "ui", "label": "Пользователь / Страница" },
+    { "id": "app", "label": "Точка входа · main.js" },
+    { "id": "engine", "label": "Игровая логика · game.js" },
+    { "id": "lib", "label": "Библиотеки · difficulty / timer / stats" }
+  ],
+  "mainPath": ["start-btn", "start-game", "measure", "handle-start", "timer-start", "arrow", "try-move", "exit-check", "handle-win"],
+  "nodes": [
+    { "id": "init", "lane": "app", "col": 0, "type": "backend", "label": "load", "sublabel": "i18n · theme · bind DOM" },
+    { "id": "start-btn", "lane": "ui", "col": 1, "type": "frontend", "label": "Клик «Start»", "sublabel": "кнопка #start" },
+
+    { "id": "start-game", "lane": "engine", "col": 1, "type": "backend", "label": "startGame()", "sublabel": "generateMaze · фаза → playing", "yOffset": -50 },
+    { "id": "measure", "lane": "engine", "col": 1, "type": "backend", "label": "measureSolutionLength", "sublabel": "grid.js · BFS", "yOffset": 50 },
+    { "id": "handle-start", "lane": "app", "col": 2, "type": "backend", "label": "handleStart", "sublabel": "onStart · выбор лимита" },
+    { "id": "compute-limit", "lane": "lib", "col": 2, "type": "backend", "label": "computeTimeLimit", "sublabel": "Timed · difficulty.js" },
+    { "id": "timer-start", "lane": "lib", "col": 3, "type": "backend", "label": "timer.start", "sublabel": "demo | timed(limitMs)" },
+
+    { "id": "arrow", "lane": "ui", "col": 3, "type": "frontend", "label": "keydown", "sublabel": "нажатие стрелки" },
+    { "id": "timeout", "lane": "lib", "col": 4, "type": "external", "label": "onExpire", "sublabel": "handleTimeout → endGame", "yOffset": 70 },
+    { "id": "try-move", "lane": "engine", "col": 4, "type": "backend", "label": "tryMove", "sublabel": "isPassable · drawPlayer" },
+    { "id": "exit-check", "lane": "engine", "col": 5, "type": "backend", "label": "isAtExit", "sublabel": "playerX=nx-1 && playerY=exitY" },
+    { "id": "handle-win", "lane": "app", "col": 5, "type": "backend", "label": "handleWin", "sublabel": "stop · recordWin · renderStats" },
+    { "id": "timer-stop", "lane": "lib", "col": 5, "type": "backend", "label": "timer.stop", "sublabel": "elapsed (getElapsed)", "yOffset": -70 },
+    { "id": "record-win", "lane": "lib", "col": 5, "type": "database", "label": "recordWin", "sublabel": "maze.stats.v1 → localStorage", "yOffset": 70 }
+  ],
+  "edges": [
+    { "id": "init-start", "from": "init", "to": "start-btn", "label": "строит игру, рисует idle" },
+    { "id": "start-startgame", "from": "start-btn", "to": "start-game", "label": "startGame(колонки, строки)", "variant": "emphasis" },
+    { "id": "startgame-measure", "from": "start-game", "to": "measure", "label": "после генерации сетки" },
+    { "id": "measure-onstart", "from": "measure", "to": "handle-start", "label": "onStart({nx, ny, solutionLength})", "role": "return" },
+    { "id": "onstart-limit", "from": "handle-start", "to": "compute-limit", "label": "Timed → computeTimeLimit", "role": "branch" },
+    { "id": "onstart-demo", "from": "handle-start", "to": "timer-start", "label": "Demo → timer.start", "role": "branch" },
+    { "id": "limit-start", "from": "compute-limit", "to": "timer-start", "label": "limitMs" },
+
+    { "id": "timer-arrow", "from": "timer-start", "to": "arrow", "label": "управление активно" },
+    { "id": "arrow-move", "from": "arrow", "to": "try-move", "label": "handleKeyDown → resolveMove", "variant": "emphasis" },
+    { "id": "blocked-return", "from": "try-move", "to": "arrow", "label": "стена → false", "role": "return", "variant": "dashed" },
+    { "id": "move-exit", "from": "try-move", "to": "exit-check", "label": "isAtExit" },
+    { "id": "exit-handlewin", "from": "exit-check", "to": "handle-win", "label": "onWin()", "variant": "emphasis" },
+
+    { "id": "win-stop", "from": "handle-win", "to": "timer-stop", "label": "timer.stop" },
+    { "id": "stop-record", "from": "timer-stop", "to": "record-win", "label": "getCurrentUser · recordWin" },
+
+    { "id": "expire-timeout", "from": "timer-start", "to": "timeout", "label": "Timed · elapsed ≥ limitMs", "variant": "security", "role": "error" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Старт", "items": ["startGame() регенерирует лабиринт (generateMaze) и замеряет длину решения (measureSolutionLength)", "onStart уведомляет main.js: для Timed считает лимит (computeTimeLimit), затем запускает таймер", "В Demo лимит не считается — таймер идёт вверх"] },
+    { "dot": "amber", "title": "Игровой цикл", "items": ["Стрелки обрабатываются только в фазе playing: keydown → handleKeyDown → resolveMove → tryMove", "isPassable проверяет бит стены; при стене ход отклоняется без изменения состояния (dashed-возврат)", "isAtExit срабатывает на последнем столбце на строке exitY"] },
+    { "dot": "rose", "title": "Завершение", "items": ["Победа: onWin → handleWin → timer.stop → recordWin → renderStats", "Таймаут (Timed): onExpire → handleTimeout → endGame() → статус ошибки", "Обе ветки обновляют контролы через updateControls"] }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Maze: архитектура",
+    "output": "diagrams/architecture-maze-20261026-121500/maze-architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "ui", "type": "external", "label": "Страница UI", "sublabel": "index.html · DOM", "pos": [30, 80], "size": [130, 60] },
+    { "id": "main", "type": "frontend", "label": "Точка входа", "sublabel": "src/main.js", "tag": "load", "pos": [210, 80], "size": [160, 60] },
+
+    { "id": "timer", "type": "backend", "label": "Timer", "sublabel": "src/lib/timer.js", "pos": [210, 240], "size": [140, 56] },
+    { "id": "stats", "type": "database", "label": "Player Stats", "sublabel": "src/lib/stats.js", "pos": [440, 240], "size": [150, 56] },
+    { "id": "game", "type": "backend", "label": "Игровая фабрика", "sublabel": "src/app/game.js", "tag": "game logic", "pos": [210, 390], "size": [160, 60] },
+    { "id": "grid", "type": "backend", "label": "Grid", "sublabel": "src/lib/grid.js", "pos": [210, 550], "size": [140, 56] },
+    { "id": "search", "type": "backend", "label": "Search", "sublabel": "src/lib/search.js", "pos": [440, 550], "size": [140, 56] },
+    { "id": "player", "type": "backend", "label": "Player", "sublabel": "src/lib/player.js", "pos": [210, 700], "size": [140, 56] },
+    { "id": "constants", "type": "backend", "label": "Constants", "sublabel": "src/lib/constants.js", "tag": "WALL · LIMITS · STORAGE_KEYS", "pos": [440, 700], "size": [170, 56] },
+    { "id": "auth", "type": "backend", "label": "Auth", "sublabel": "src/lib/auth.js", "pos": [210, 850], "size": [140, 56] },
+    { "id": "difficulty", "type": "backend", "label": "Difficulty", "sublabel": "src/lib/difficulty.js", "pos": [440, 850], "size": [160, 56] },
+
+    { "id": "renderer", "type": "frontend", "label": "Canvas Renderer", "sublabel": "src/app/renderer.js", "tag": "draw layer", "pos": [690, 390], "size": [160, 60] },
+    { "id": "canvas", "type": "frontend", "label": "Canvas 2D", "sublabel": "#mazeCanvas · 800×500", "pos": [700, 550], "size": [160, 56] },
+
+    { "id": "localStorage", "type": "database", "label": "localStorage", "sublabel": "maze.stats.v1", "pos": [700, 700], "size": [150, 56] },
+    { "id": "sessionStorage", "type": "database", "label": "sessionStorage", "sublabel": "maze.currentUser", "pos": [700, 850], "size": [160, 56] },
+
+    { "id": "theme", "type": "backend", "label": "Theme", "sublabel": "app/theme.js · getCanvasColors", "tag": "палитра", "pos": [950, 80], "size": [150, 60] },
+    { "id": "i18n", "type": "backend", "label": "i18n", "sublabel": "app/i18n.js · локализация", "pos": [950, 240], "size": [150, 60] },
+    { "id": "locales", "type": "database", "label": "Locales", "sublabel": "src/locales/en.js · ru.js", "pos": [950, 390], "size": [150, 56] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Точка входа и связывание", "wraps": ["ui", "main"] },
+    { "kind": "region", "label": "Игровая логика и библиотеки", "wraps": ["game", "grid", "search", "player", "timer", "stats", "auth", "difficulty", "constants"] },
+    { "kind": "region", "label": "Отрисовка (Canvas 2D)", "wraps": ["renderer", "canvas"] },
+    { "kind": "region", "label": "Презентация: локализация и тема", "wraps": ["theme", "i18n", "locales"] }
+  ],
+  "connections": [
+    { "id": "ui-main", "from": "ui", "to": "main", "label": "load · click · keydown" },
+    { "id": "main-game", "from": "main", "to": "game", "label": "useMazeGame()", "variant": "emphasis" },
+    { "id": "main-timer", "from": "main", "to": "timer", "label": "createTimer()" },
+    { "id": "main-stats", "from": "main", "to": "stats", "label": "getPlayer / recordWin" },
+    { "id": "main-auth", "from": "main", "to": "auth", "label": "getCurrentUser · login · logout" },
+    { "id": "main-difficulty", "from": "main", "to": "difficulty", "label": "computeTimeLimit" },
+    { "id": "main-theme", "from": "main", "to": "theme", "label": "getCanvasColors" },
+    { "id": "main-i18n", "from": "main", "to": "i18n", "label": "initI18n" },
+    { "id": "i18n-locales", "from": "i18n", "to": "locales", "label": "en · ru", "variant": "dashed" },
+    { "id": "game-grid", "from": "game", "to": "grid", "label": "generateMaze" },
+    { "id": "game-search", "from": "game", "to": "search", "label": "solveMaze" },
+    { "id": "game-player", "from": "game", "to": "player", "label": "player API" },
+    { "id": "game-renderer", "from": "game", "to": "renderer", "label": "eraseCell / drawPlayer", "variant": "emphasis" },
+    { "id": "game-constants", "from": "game", "to": "constants", "label": "LIMITS", "variant": "dashed" },
+    { "id": "renderer-theme", "from": "renderer", "to": "theme", "label": "getColors()", "variant": "dashed" },
+    { "id": "renderer-canvas", "from": "renderer", "to": "canvas", "label": "2D-заполнение" },
+    { "id": "renderer-constants", "from": "renderer", "to": "constants", "label": "WALL", "variant": "dashed" },
+    { "id": "auth-sessionStorage", "from": "auth", "to": "sessionStorage", "label": "maze.currentUser", "variant": "security" },
+    { "id": "stats-localStorage", "from": "stats", "to": "localStorage", "label": "maze.stats.v1", "variant": "security" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Граница «логика ↔ отрисовка»", "items": ["game.js владеет состоянием и правилами; renderer.js только рисует", "Единственный источник цветов — CSS-токены --color-canvas-*, которые renderer читает колбэком getColors()", "getColors() берётся из theme.getCanvasColors и передаётся в useMazeGame как options.getColors (через main)"] },
+    { "dot": "cyan", "title": "Презентационный слой (src/app)", "items": ["main.js импортирует i18n (initI18n, t, applyTranslations, setLocale) и theme (initTheme, setThemePreference, getCanvasColors)", "i18n.js тянет каталоги en/ru из src/locales/; форматирует числа и длительности", "theme.js хранит preference в localStorage (maze.theme) и отдаёт актуальную палитру Canvas"] },
+    { "dot": "amber", "title": "Хранилища и зависимости", "items": ["sessionStorage: maze.currentUser (auth.js) · переживает F5, теряется при закрытии вкладки", "localStorage: maze.stats.v1 (stats.js), maze.gridSizes.v1 (main.js), maze.theme (theme.js)", "main.js также импортирует MODE · DIFFICULTY · LIMITS · GUEST_NAME из constants"] }
+  ]
+}

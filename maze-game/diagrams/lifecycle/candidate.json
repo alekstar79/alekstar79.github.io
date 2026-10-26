@@ -1,0 +1,26 @@
+{
+  "schema_version": 3,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Maze: жизненный цикл",
+    "output": "diagrams/lifecycle-maze-20261026-121500/maze-lifecycle.html",
+    "quality_profile": "showcase"
+  },
+  "mainPath": ["idle", "playing", "finished"],
+  "states": [
+    { "id": "idle", "type": "start", "label": "idle", "sublabel": "лабиринт нарисован, управление выключено", "tag": "ожидание Start", "step": "01" },
+    { "id": "playing", "type": "active", "label": "playing", "sublabel": "ходы и автопоиск разрешены", "tag": "игра идёт", "step": "02" },
+    { "id": "finished", "type": "neutral", "label": "finished", "sublabel": "управление отключено", "tag": "игра завершена", "step": "03" }
+  ],
+  "transitions": [
+    { "id": "idle-playing", "from": "idle", "to": "playing", "label": "startGame()", "note": "повторно генерирует лабиринт; onStart запускает таймер" },
+    { "id": "playing-finished", "from": "playing", "to": "finished", "label": "onWin ()", "note": "победа: stop, recordWin, renderStats" },
+    { "id": "playing-endgame", "from": "playing", "to": "finished", "label": "таймаут → endGame()", "variant": "dashed", "note": "onExpire (Timed) → handleTimeout → endGame, статус ошибки" },
+    { "id": "finished-idle", "from": "finished", "to": "idle", "label": "reset() / startGame()", "note": "стоп таймера и новый лабиринт" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Переходы", "items": ["idle → playing только через startGame()", "playing → finished либо победой (onWin), либо таймаутом (Timed)", "finished → idle через reset() или startGame()"] },
+    { "dot": "amber", "title": "Побочные эффекты", "items": ["startGame запускает таймер (demo или timed); handleStart снимает фокус с контрол-селектов", "победа останавливает таймер, пишет recordWin и перерисовывает статистику (renderStats)", "обе ветки завершения вызывают updateControls — блокируют mode/difficulty и включают/выключают autosearch"] },
+    { "dot": "rose", "title": "Реализация", "items": ["фаза хранится в state.phase: 'idle' | 'playing' | 'finished' (src/app/game.js)", "внешний endGame() (dashed) переводит playing → finished; вызывается из main.js при таймауте, повторный вызов — no-op", "автопоиск (startSearch) работает только в фазе playing и только в Demo-режиме"] }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Maze: цикл обработки",
+    "output": ".archify/sequence-maze-20261026-121500/maze-sequence.html",
+    "quality_profile": "showcase"
+  },
+  "participants": [
+    { "id": "browser", "type": "external", "label": "Браузер", "sublabel": "keydown · DOM" },
+    { "id": "renderer", "type": "frontend", "label": "Canvas Renderer", "sublabel": "src/app/renderer.js" },
+    { "id": "main", "type": "backend", "label": "Точка входа", "sublabel": "main.js · handleWin" },
+    { "id": "game", "type": "backend", "label": "Игровая логика", "sublabel": "game.js · handleKeyDown" },
+    { "id": "player", "type": "backend", "label": "Player", "sublabel": "player.js" },
+    { "id": "timer", "type": "backend", "label": "Timer", "sublabel": "timer.js" },
+    { "id": "stats", "type": "database", "label": "Player Stats", "sublabel": "stats.js + localStorage" }
+  ],
+  "segments": [
+    { "from": 150, "to": 262, "label": "Заблокированный ход (стена)" },
+    { "from": 290, "to": 480, "label": "Успешный ход" },
+    { "from": 504, "to": 618, "label": "Победа" }
+  ],
+  "messages": [
+    { "id": "keydown", "from": "browser", "to": "game", "y": 160, "label": "keydown ArrowRight", "variant": "emphasis" },
+    { "id": "resolve", "from": "game", "to": "player", "y": 186, "label": "resolveMove(key)" },
+    { "id": "move-desc", "from": "player", "to": "game", "y": 214, "label": "{dx, dy, wall}", "variant": "return" },
+    { "id": "ispassable", "from": "game", "to": "player", "y": 242, "label": "isPassable(grid, x, y, move)" },
+
+    { "id": "blocked-true", "from": "player", "to": "game", "y": 270, "label": "false: стена стоит", "variant": "security" },
+    { "id": "blocked-return", "from": "game", "to": "browser", "y": 298, "label": "состояние и canvas не меняются", "variant": "dashed" },
+
+    { "id": "is-passable-true", "from": "player", "to": "game", "y": 330, "label": "true: стена удалена", "variant": "default" },
+    { "id": "erase", "from": "game", "to": "renderer", "y": 356, "label": "eraseCell(layout, prevX, prevY)" },
+    { "id": "draw", "from": "game", "to": "renderer", "y": 386, "label": "drawPlayer(layout, playerX, playerY)" },
+
+    { "id": "atexit", "from": "game", "to": "player", "y": 430, "label": "isAtExit(state)" },
+    { "id": "exit-false", "from": "player", "to": "game", "y": 458, "label": "false (не выход)", "variant": "return" },
+
+    { "id": "exit-true", "from": "player", "to": "game", "y": 500, "label": "true (последний столбец)", "variant": "return" },
+    { "id": "onwin", "from": "game", "to": "main", "y": 526, "label": "onWin()", "variant": "emphasis" },
+    { "id": "timer-elapsed", "from": "main", "to": "timer", "y": 556, "label": "getElapsed()" },
+    { "id": "stop", "from": "main", "to": "timer", "y": 586, "label": "timer.stop()", "variant": "emphasis" },
+    { "id": "record", "from": "main", "to": "stats", "y": 614, "label": "recordWin(user, {difficulty, mode, elapsedMs})" }
+  ],
+  "activations": [
+    { "participant": "game", "from": 160, "to": 540, "type": "backend" },
+    { "participant": "player", "from": 180, "to": 470, "type": "backend" },
+    { "participant": "renderer", "from": 350, "to": 395, "type": "frontend" },
+    { "participant": "main", "from": 520, "to": 612, "type": "backend" },
+    { "participant": "timer", "from": 548, "to": 584, "type": "backend" },
+    { "participant": "stats", "from": 605, "to": 615, "type": "database" }
+  ],
+  "cards": [
+    { "dot": "amber", "title": "Ход и стена", "items": ["handleKeyDown работает только в фазе playing", "resolveMove переводит клавишу в {dx, dy, wall}", "isPassable проверяет бит стены: при стене ход отклоняется без изменения состояния"] },
+    { "dot": "emerald", "title": "Успешный ход", "items": ["Оптимизированная точечная отрисовка: eraseCell старой клетки + drawPlayer новой (не полный redraw)", "После хода игрок удаляет покинутую клетку из pathCells (для автопоиска)", "Plyat-playerX/playerY обновляются только при проходимой стене"] },
+    { "dot": "rose", "title": "Победа", "items": ["isAtExit истинно на последнем столбце на строке exitY → фаза finished", "onWin → main.js: timer.stop + recordWin (getCurrentUser или гость)", "recordWin пишет в localStorage maze.stats.v1; renderStats строит карточки"] }
+  ]
+}

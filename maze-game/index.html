@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simple Maze — a browser-based maze game with timer, difficulty levels, and statistics.">
+  <title>Simple Maze</title>
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <!--
+    Pre-paint тема: применяем сохранённый preference ДО загрузки CSS, чтобы избежать flash of wrong theme.
+    Пишем в data-theme только 'light' или 'dark' — resolved override.
+    Для 'system' атрибут отсутствует, и медиа-запрос (prefers-color-scheme) в CSS управляет токенами сам.
+    Хранение preference, а не resolved value — см. src/app/theme.js.
+    Inline, синхронный, ES2022+: IIFE + const + optional catch.
+  -->
+  <script>
+    (() => {
+      try {
+        const preference = localStorage.getItem('maze.theme')
+        if (preference === 'light' || preference === 'dark') {
+          document.documentElement.dataset.theme = preference
+        }
+      } catch {/* storage unavailable */}
+    })()
+  </script>
+
+  <script type="module" crossorigin src="/maze-game/assets/index-DyzX7Xwo.js"></script>
+  <link rel="stylesheet" crossorigin href="/maze-game/assets/index-CCIdtzaX.css">
+</head>
+<body>
+<a class="skip-link" href="#game-main" data-i18n="a11y.skip">Skip to game</a>
+
+<div class="app-shell">
+  <!-- HUD: таймер и статус (diegetic, всегда на виду) -->
+  <header class="hud" role="banner">
+    <div class="hud__timer" id="timer-bar" role="timer" aria-live="off" aria-atomic="true">
+      <span class="visually-hidden" data-i18n="timer.remaining">Time remaining:</span>
+      <span id="timer-value">00:00</span>
+    </div>
+
+    <div id="status" class="hud__status" role="status" aria-live="polite"></div>
+
+    <!--
+      Переключатели темы и языка: часть HUD, но не игровой HUD-статус.
+      Расположены справа, компактны, нативные <select> для клавиатуры и мобильных.
+      Theme preference сохраняется в localStorage ('maze.theme': system|light|dark); locale — в 'maze.locale'.
+    -->
+    <div class="hud__settings">
+      <label class="control-inline" for="theme-select">
+        <span data-i18n="theme.label">Theme</span>
+        <select id="theme-select" autocomplete="off">
+          <option value="system" data-i18n="theme.system">System</option>
+          <option value="light" data-i18n="theme.light">Light</option>
+          <option value="dark" data-i18n="theme.dark">Dark</option>
+        </select>
+      </label>
+
+      <label class="control-inline" for="locale-select">
+        <span data-i18n="locale.label">Language</span>
+        <select id="locale-select" autocomplete="off">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main id="game-main" class="game-layout">
+    <!-- Игровое поле -->
+    <section
+      class="game-board"
+      aria-label="Maze game"
+      data-i18n-aria-label="game.aria.board"
+    >
+      <div class="canvas-wrapper">
+        <!--
+          tabindex="-1" — canvas фокусируется по клику (мышью), но не входит в Tab-порядок.
+          Это гарантирует, что клик по игровому полю снимает фокус с <select> в HUD,
+          иначе стрелки продолжали бы менять тему или язык вместо перемещения игрока.
+        -->
+        <canvas
+          id="mazeCanvas"
+          tabindex="-1"
+          width="800"
+          height="500"
+          aria-label="Maze board"
+          aria-describedby="game-instructions"
+          data-i18n-aria-label="game.aria.canvas"
+        ></canvas>
+      </div>
+      <p id="game-instructions" class="instructions">
+        <span data-i18n="instructions.move">Use arrow keys to move.</span>
+        <span data-i18n="instructions.solvePrefix">Press</span>
+        <kbd>S</kbd>
+        <span data-i18n="instructions.solveSuffix">for solution (Demo mode only).</span>
+        <span data-i18n="instructions.exit">Exit is on the right edge.</span>
+      </p>
+    </section>
+
+    <!-- Боковая панель: управление, аккаунт, статистика -->
+    <aside
+      class="sidebar"
+      aria-label="Game controls and statistics"
+      data-i18n-aria-label="game.aria.sidebar"
+    >
+      <!-- Аккаунт -->
+      <section
+        class="panel panel--auth"
+        id="auth-bar"
+        aria-labelledby="auth-heading"
+        data-i18n-aria-label="game.aria.auth"
+      >
+        <h2 id="auth-heading" class="panel__title" data-i18n="player.heading">Player</h2>
+        <div class="auth-row">
+            <span>
+              <span data-i18n="player.playingAs">Playing as:</span>
+              <strong id="current-player">Guest</strong>
+            </span>
+          <div class="auth-actions">
+            <button
+              type="button"
+              id="login"
+              class="btn btn--small"
+              data-i18n="auth.login"
+            >
+              Log in
+            </button>
+            <button
+              type="button"
+              id="logout"
+              class="btn btn--small"
+              data-i18n="auth.logout"
+            >
+              Log out
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Панель управления (glassmorphism) -->
+      <section
+        class="panel panel--controls"
+        id="game-controls"
+        aria-labelledby="controls-heading"
+        data-i18n-aria-label="game.aria.controls"
+      >
+        <h2 id="controls-heading" class="panel__title" data-i18n="controls.heading">Controls</h2>
+
+        <div class="controls-grid">
+          <div class="field">
+            <label for="mode" data-i18n="controls.mode">Mode:</label>
+            <select id="mode" autocomplete="off">
+              <option value="demo" data-i18n="mode.demo">Demo (no limit)</option>
+              <option value="timed" data-i18n="mode.timed">Timed</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="difficulty" data-i18n="controls.difficulty">Difficulty:</label>
+            <select id="difficulty" autocomplete="off">
+              <option value="easy" data-i18n="difficulty.easy">Easy</option>
+              <option value="medium" selected data-i18n="difficulty.medium">Medium</option>
+              <option value="hard" data-i18n="difficulty.hard">Hard</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button
+            type="button"
+            id="start"
+            class="btn btn--primary"
+            data-i18n="controls.start"
+          >
+            Start
+          </button>
+          <button
+            type="button"
+            id="autosearch"
+            class="btn btn--secondary"
+            data-i18n="controls.solve"
+            disabled
+          >
+            Solve
+          </button>
+        </div>
+
+        <form class="size-form" id="controls" novalidate>
+          <div class="field">
+            <label for="nx" data-i18n="controls.columns">columns:</label>
+            <input type="number" id="nx" name="nx" min="3" max="111" step="1" value="10" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="ny" data-i18n="controls.rows">rows:</label>
+            <input type="number" id="ny" name="ny" min="3" max="80" step="1" value="8" autocomplete="off" />
+          </div>
+          <button
+            type="submit"
+            id="button"
+            class="btn btn--outline"
+            data-i18n="controls.newGame"
+          >
+            Apply size
+          </button>
+        </form>
+      </section>
+
+      <!-- Статистика (bento-карточки) -->
+      <section
+        class="panel panel--stats"
+        id="stats"
+        aria-labelledby="stats-heading"
+        aria-live="polite"
+        data-i18n-aria-label="game.aria.stats"
+      >
+        <!-- Содержимое генерируется в main.js, но мы адаптируем стили под карточки -->
+      </section>
+    </aside>
+  </main>
+</div>
+
+<!-- Модалка входа (нативный dialog) -->
+<dialog id="login-dialog" aria-labelledby="login-dialog-title" class="dialog">
+  <form method="dialog" class="dialog__form">
+    <h2 id="login-dialog-title" data-i18n="auth.dialogTitle">Log in</h2>
+    <label for="login-name" data-i18n="auth.name">Name:</label>
+    <input type="text" id="login-name" name="login-name" autocomplete="nickname" maxlength="40" />
+    <div class="dialog__actions">
+      <button
+        type="submit"
+        value="ok"
+        class="btn btn--primary"
+        data-i18n="auth.confirm"
+      >
+        Confirm
+      </button>
+      <button
+        type="button"
+        id="login-cancel"
+        class="btn btn--outline"
+        data-i18n="auth.cancel"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</dialog>
+
+</body>
+</html>
