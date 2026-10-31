@@ -19,8 +19,7 @@ function prepareTicker(tickerEl) {
     track.appendChild(child.cloneNode(true))
   )
 
-  tickerEl.innerHTML = ''
-  tickerEl.appendChild(track)
+  tickerEl.replaceChildren(track)
 }
 
 /**

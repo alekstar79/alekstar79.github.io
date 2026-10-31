@@ -7,6 +7,9 @@ import { getVisibleCount, getGap } from './utils.js'
 export function setupInfiniteCarousel(root) {
   const list = root.querySelector('.participants__list')
   const viewport = root.querySelector('.participants__viewport')
+
+  if (!list || !viewport) return
+
   const slides = [...list.querySelectorAll('.participant')]
   const prevBtns = root.querySelectorAll('[data-prev]')
   const nextBtns = root.querySelectorAll('[data-next]')
@@ -21,8 +24,6 @@ export function setupInfiniteCarousel(root) {
   let isMoving = false
   let pausedByHover = false
 
-  if (!list || !viewport) return
-
   /**
    * Применяем сдвиг к списку слайдов.
    * @param {boolean} animate - нужно ли анимировать переход
@@ -35,7 +36,7 @@ export function setupInfiniteCarousel(root) {
   /** Обновляет отображаемый номер текущей страницы */
   function updatePage() {
     if (!pageSpan) return
-    const realIndex = ((currentIndex - visibleCount) + slides.length) % slides.length
+    const realIndex = (currentIndex - visibleCount + slides.length) % slides.length
     pageSpan.textContent = `${realIndex + 1}`
   }
 
@@ -49,6 +50,8 @@ export function setupInfiniteCarousel(root) {
 
   /** Запуск автоматической прокрутки */
   function startAutoplay() {
+    if (pausedByHover || document.visibilityState !== 'visible') return
+
     stopAutoplay()
     autoplayTimer = setInterval(() => moveSafe(1), 4000)
   }
@@ -101,13 +104,15 @@ export function setupInfiniteCarousel(root) {
   async function waitForImages() {
     const images = list.querySelectorAll('img')
 
-    await Promise.all([...images].map(img => {
-      if (img.complete) return Promise.resolve()
-      return new Promise(resolve => {
-        img.onload = resolve
-        img.onerror = resolve
+    await Promise.all(
+      [...images].map(img => {
+        if (img.complete) return Promise.resolve()
+        return new Promise(resolve => {
+          img.onload = resolve
+          img.onerror = resolve
+        })
       })
-    }))
+    )
   }
 
   /**
@@ -125,13 +130,11 @@ export function setupInfiniteCarousel(root) {
    * Строим DOM-структуру карусели с клонами для бесконечности.
    */
   function buildCarouselDOM() {
-    list.innerHTML = ''
-
     const clonesBefore = slides.slice(-visibleCount).map(el => el.cloneNode(true))
     const clonesAfter = slides.slice(0, visibleCount).map(el => el.cloneNode(true))
 
     allSlides = [...clonesBefore, ...slides, ...clonesAfter]
-    allSlides.forEach(s => list.appendChild(s))
+    list.replaceChildren(...allSlides)
     if (totalSpan) totalSpan.textContent = `${slides.length}`
   }
 
@@ -190,7 +193,7 @@ export function setupInfiniteCarousel(root) {
     resizeTimer = setTimeout(async () => {
       const newVisible = getVisibleCount({ name: 'participants' })
       if (newVisible !== visibleCount) {
-        const realIndex = ((currentIndex - visibleCount) + slides.length) % slides.length
+        const realIndex = (currentIndex - visibleCount + slides.length) % slides.length
         stopAutoplay()
         visibleCount = newVisible
         await initCarousel(realIndex)
