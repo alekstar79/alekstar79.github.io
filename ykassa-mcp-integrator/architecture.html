@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 3.2.0">
   <meta name="archify-reader-contract" content="declared-wide-v1">
-  <title>Архитектура ЮKassa MCP Integrator Diagram</title>
+  <title>Архитектура YooKassa MCP Integrator Diagram</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5194,17 +5194,17 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="BLUEPRINT / REV 01"
            data-preset-badge-editorial="EDITORIAL / FIELD NOTE">
         <div class="pulse-dot"></div>
-        <h1>Архитектура ЮKassa MCP Integrator</h1>
+        <h1>Архитектура YooKassa MCP Integrator</h1>
       </div>
     </div>
 
-    <script id="archify-source-evidence-data" type="application/json">{"schemaVersion":1,"verified":true,"repository":{"url":"git@github.com:alekstar79/ykassa-mcp-integrator","revision":"5ed55af465e7f7d726058c45565297fd23866b84","shortRevision":"5ed55af","label":"alekstar79/ykassa-mcp-integrator","linkMode":"local-only"},"referenceCount":20,"nodes":{"manager":[{"path":"apps/web/src/components/RequestForm.vue","line":75,"endLine":89},{"path":"apps/web/src/components/ApprovalCard.vue","line":100,"endLine":116}],"reference-ui":[{"path":"apps/web/src/App.vue","line":124,"endLine":167},{"path":"apps/web/src/composables/useClientApi.ts","line":96,"endLine":116},{"path":"apps/web/src/composables/useClientApi.ts","line":151,"endLine":165}],"headless-api":[{"path":"apps/api/src/lib.ts","line":13,"endLine":27},{"path":"apps/api/src/routes/ask.ts","line":111,"endLine":153},{"path":"apps/api/src/routes/approve.ts","line":47,"endLine":79}],"llm-provider":[{"path":"apps/api/src/factory.ts","line":7,"endLine":38},{"path":"apps/api/src/agent.ts","line":74,"endLine":114}],"yookassa-mcp":[{"path":"apps/api/src/config.ts","line":26,"endLine":31},{"path":"apps/api/src/agent.ts","line":26,"endLine":35}],"audit-log":[{"path":"apps/api/src/audit.ts","line":6,"endLine":21},{"path":"apps/api/src/toolExecutor.ts","line":13,"endLine":78}],"configurator":[{"path":"apps/configurator/src/composables/useDownload.ts","line":30,"endLine":58},{"path":"apps/configurator/src/export/buildZip.ts","line":146,"endLine":159},{"path":"apps/configurator/package.json","line":25,"endLine":40}],"contracts":[{"path":"packages/contracts/src/schema.ts","line":70,"endLine":77},{"path":"packages/contracts/src/types.ts","line":13,"endLine":22},{"path":"packages/contracts/src/palette.ts","line":16,"endLine":20}]}}</script>
+    <script id="archify-source-evidence-data" type="application/json">{"schemaVersion":1,"verified":true,"repository":{"url":"git@github.com:alekstar79/ykassa-mcp-integrator","revision":"0e404e16ca172743fc148c5d4dde3cd7d503b5ee","shortRevision":"0e404e1","label":"alekstar79/ykassa-mcp-integrator","linkMode":"local-only"},"referenceCount":14,"nodes":{"reference-ui":[{"path":"apps/web/src/App.vue","line":3,"endLine":13},{"path":"apps/web/src/composables/usePublicClient.ts","line":20,"endLine":40},{"path":"apps/web/package.json","line":25,"endLine":27}],"headless-api":[{"path":"apps/api/src/lib.ts","line":1,"endLine":27},{"path":"apps/api/src/agent.ts","line":20,"endLine":50},{"path":"apps/api/package.json","line":62,"endLine":67}],"llm-provider":[{"path":"apps/api/src/factory.ts","line":7,"endLine":38}],"yookassa-mcp":[{"path":"apps/api/src/toolExecutor.ts","line":5,"endLine":18}],"mcp-audit-log":[{"path":"apps/api/src/audit.ts","line":6,"endLine":17}],"configurator":[{"path":"apps/configurator/src/App.vue","line":1,"endLine":17},{"path":"apps/configurator/src/composables/useDownload.ts","line":30,"endLine":53},{"path":"apps/configurator/src/components/PreviewPanel.vue","line":1,"endLine":15}],"contracts":[{"path":"packages/contracts/src/index.ts","line":1,"endLine":7},{"path":"packages/contracts/package.json","line":2,"endLine":4}]}}</script>
     <script id="archify-i18n-data" type="application/json">{"locale":"en","messages":{"viewer.kind.frontend":"Frontend","viewer.kind.backend":"Backend","viewer.kind.database":"Database","viewer.kind.cloud":"Cloud","viewer.kind.security":"Security","viewer.kind.messagebus":"Message bus","viewer.kind.external":"External","viewer.kind.neutral":"Neutral","viewer.kind.node":"Node","viewer.kind.start":"Start","viewer.kind.active":"Active","viewer.kind.waiting":"Waiting","viewer.kind.decision":"Decision","viewer.kind.success":"Success","viewer.kind.failure":"Failure","viewer.toolbar.actions":"Diagram actions","viewer.theme.toggle.title":"Toggle theme (T)","viewer.theme.toggle":"Toggle color theme","viewer.theme.dark":"Dark","viewer.theme.light":"Light","viewer.preset.choose.title":"Choose visual style (S cycles)","viewer.preset.choose":"Choose visual style","viewer.preset.style":"Style","viewer.preset.menu":"Visual style","viewer.preset.identity":"Visual identity","viewer.preset.cycles":"to cycle","viewer.preset.classic":"Classic","viewer.preset.classic.short":"Classic","viewer.preset.classic.hint":"Stable technical default","viewer.preset.flow":"Signal Flow","viewer.preset.flow.short":"Flow","viewer.preset.flow.hint":"Motion-forward presentation","viewer.preset.blueprint":"Blueprint","viewer.preset.blueprint.hint":"Engineering review","viewer.preset.editorial":"Editorial","viewer.preset.editorial.hint":"Publication and launch notes","viewer.preset.badge.signalFlow":"SIGNAL FLOW","viewer.preset.badge.blueprint":"BLUEPRINT / REV 01","viewer.preset.badge.editorial":"EDITORIAL / FIELD NOTE","viewer.preset.badge.editorialPlate":"ARCHIFY / PLATE 04","viewer.preset.current":"Visual style: {style}. Choose visual style","viewer.motion.live":"Live","viewer.motion.still":"Still","viewer.motion.pause":"Pause motion","viewer.motion.resume":"Resume motion","viewer.motion.reduced":"Motion paused by reduced-motion preference","viewer.motion.hidden":"Motion paused while this page is hidden","viewer.motion.yielding":"Pause motion; currently yielding to {owner}","viewer.motion.yielding.title":"Live preview enabled · yielding to {owner}","viewer.owner.route":"Route Probe","viewer.owner.lens":"Semantic Lens","viewer.owner.relationship":"Relationship Preview","viewer.owner.intent":"Intent Trace","viewer.owner.focus":"semantic focus","viewer.owner.legend":"legend preview","viewer.owner.reader":"reader interaction","viewer.present.enter":"Enter presentation stage","viewer.present.enter.title":"Presentation stage (F)","viewer.present.exit":"Exit presentation stage","viewer.present.exit.title":"Exit presentation stage (F or Escape)","viewer.present.present":"Present","viewer.present.exit.label":"Exit","viewer.export.button":"Export","viewer.export.button.title":"Export diagram (E)","viewer.export.diagram":"Export diagram","viewer.export.menu":"Export","viewer.export.subtitle":"Portable, clean outputs","viewer.export.share":"Share","viewer.export.shareCard":"Share Card","viewer.export.routeShareCard":"Route Share Card","viewer.export.reachShareCard":"Reach Share Card","viewer.export.copyDiagram":"Copy diagram","viewer.export.clipboardPng":"PNG to clipboard","viewer.export.raster":"Raster images","viewer.export.image":"Image","viewer.export.lossless":"Lossless image","viewer.export.compact":"Compact image","viewer.export.modern":"Modern image","viewer.export.vectorMotion":"Vector and motion","viewer.export.vectorMotion.heading":"Vector \u0026 motion","viewer.export.editable":"Editable vector","viewer.export.svg.auto":"SVG · Auto","viewer.export.svg.auto.hint":"Matches host theme","viewer.export.svg.light":"SVG · Light","viewer.export.svg.light.hint":"Always light","viewer.export.svg.dark":"SVG · Dark","viewer.export.svg.dark.hint":"Always dark","viewer.export.motion6s":"6s motion","viewer.export.unsupported":"Not supported by this browser","viewer.export.clipboardUnsupported":"Clipboard image write not supported by this browser","viewer.export.clipboardUnsupported.short":"Clipboard image write not supported in this browser.","viewer.export.motionUnavailable":"Motion capture unavailable in this browser","viewer.export.webmUnavailable":"WebM unavailable in this browser","viewer.export.failed":"Export failed: {message}","viewer.export.unknownVariant":"Unknown Share Card variant: {variant}","viewer.export.routeRequired":"Trace a route before exporting a Route Share Card","viewer.export.reachRequired":"Trace authored reach before exporting a Reach Share Card","viewer.export.unknown":"unknown","viewer.export.routeFailed":"Route Share Card export failed: {message}","viewer.export.reachFailed":"Reach Share Card export failed: {message}","viewer.export.copyFailed":"Copy failed: {message}","viewer.export.copiedPng":"Copied PNG to clipboard","viewer.export.downloadedRoute":"Downloaded Route Share Card","viewer.export.downloadedReach":"Downloaded Reach Share Card","viewer.export.downloadedWebm":"Downloaded WebM","viewer.export.recording":"Recording 6 seconds of motion…","viewer.export.card.routeSummary.one":"Path: {source} → {target} · {count} step","viewer.export.card.routeSummary.other":"Path: {source} → {target} · {count} steps","viewer.export.card.reachSummary":"Authored {direction} from {origin} · {nodes} · {links} · max {hops}","viewer.export.card.node.one":"{count} node","viewer.export.card.node.other":"{count} nodes","viewer.export.card.link.one":"{count} link","viewer.export.card.link.other":"{count} links","viewer.export.card.hop.one":"{count} hop","viewer.export.card.hop.other":"{count} hops","viewer.export.card.routeBadge":"ARCHIFY · ROUTE · {hops}","viewer.export.card.reachBadge":"ARCHIFY · {direction} REACH","viewer.export.direction.upstream":"Upstream","viewer.export.direction.downstream":"Downstream","viewer.export.error.canvasUnavailable":"Canvas unavailable for {label}","viewer.export.error.contextUnavailable":"2D canvas context unavailable for {label}","viewer.export.error.toBlobUnavailable":"canvas.toBlob unavailable for {label}","viewer.export.error.toBlobNull":"canvas.toBlob returned no data for {label}","viewer.export.error.variantsCombined":"Share Card variants cannot be combined","viewer.export.error.viewerState":"Share Card export could not remove temporary viewer state","viewer.export.error.routeState":"Route Card export could not preserve the resolved route safely","viewer.export.error.reachState":"Reach Card export could not preserve authored reach safely","viewer.export.error.webmRequirements":"WebM motion export requires a trace animation and browser MediaRecorder support","viewer.export.error.mediaRecorder":"MediaRecorder failed","viewer.export.error.emptyWebm":"MediaRecorder produced an empty WebM","viewer.export.error.webmBackground":"SVG background could not be loaded for WebM export","viewer.guide.title":"Explore this system","viewer.focus.selectedNodes":"{count} selected nodes","viewer.guide.eyebrow":"Diagram guide","viewer.guide.close":"Close diagram guide","viewer.guide.inspecting":"Inspecting compiled semantics","viewer.guide.actions":"Diagram exploration actions","viewer.guide.find":"Find any node","viewer.guide.find.hint":"Search labels, responsibilities, kinds, and stable IDs.","viewer.guide.route":"Trace a route","viewer.guide.route.aria":"Trace a directed route","viewer.guide.route.hint":"Ask how two semantic nodes connect in authored direction.","viewer.guide.map":"See the whole system","viewer.guide.map.hint":"Open Semantic Radar with a live viewport and stable nodes.","viewer.guide.lens":"Compare semantic kinds","viewer.guide.lens.hint":"Count roles, reveal their traffic, and compare direct authored links.","viewer.guide.present":"Enter Presentation Stage","viewer.guide.present.hint":"Give the live diagram the viewport without changing export.","viewer.guide.shortcuts":"Additional keyboard shortcuts","viewer.guide.shortcut.export":"Export","viewer.guide.shortcut.theme":"Theme","viewer.guide.shortcut.style":"Style","viewer.guide.shortcut.reset":"Reset","viewer.guide.shortcut.zoomIn":"Zoom in","viewer.guide.shortcut.zoomOut":"Zoom out","viewer.guide.shortcut.close":"Close","viewer.guide.credit":"Find Archify useful? A star on GitHub helps","viewer.guide.star":"Star","viewer.guide.facts":"{nodes} · {relationships}","viewer.guide.fact.node.one":"{count} semantic node","viewer.guide.fact.node.other":"{count} semantic nodes","viewer.guide.fact.relationship.one":"{count} relationship","viewer.guide.fact.relationship.other":"{count} relationships","viewer.guide.open":"Open diagram guide","viewer.finder.title":"Find a node","viewer.finder.close":"Close node finder","viewer.finder.placeholder":"Search labels or IDs","viewer.finder.search":"Search diagram nodes","viewer.finder.results":"Diagram nodes","viewer.finder.empty":"No matching nodes","viewer.finder.result.focus":"Focus {label}","viewer.finder.result.routeStart":"Choose {label} as route start","viewer.finder.result.routeTarget":"Choose {label} as route destination, {links}","viewer.finder.status.empty":"No matching nodes","viewer.finder.status.count.one":"{count} matching node","viewer.finder.status.count.other":"{count} matching nodes","viewer.finder.noun.nodes":"nodes","viewer.finder.link.one":"{count} link","viewer.finder.link.other":"{count} links","viewer.finder.result.focus.one":"Focus {label}, {count} related connection","viewer.finder.result.focus.other":"Focus {label}, {count} related connections","viewer.finder.status.filtered":"{visible} of {available} {noun}","viewer.finder.status.all":"{available} {noun}","viewer.passport.eyebrow":"Semantic passport","viewer.passport.metadata":"Node metadata","viewer.passport.evidence":"Verified source evidence","viewer.passport.verified":"Verified source","viewer.passport.verificationScope":"Verified against local Git at the pinned revision. Remote access has not been checked.","viewer.passport.reach":"Authored reach","viewer.passport.reach.trace":"Trace authored reachability","viewer.passport.upstream":"Upstream","viewer.passport.downstream":"Downstream","viewer.passport.upstream.trace":"Trace upstream authored reachability","viewer.passport.downstream.trace":"Trace downstream authored reachability","viewer.passport.close":"Close semantic passport","viewer.passport.move":"Move semantic passport. Drag, use arrow keys, or press Home to reset.","viewer.passport.copy":"Copy link","viewer.passport.copy.focus":"Copy link to focused node","viewer.passport.relations":"Relations","viewer.passport.relations.show":"Show connected relationships","viewer.passport.relations.hide":"Hide connected relationships","viewer.passport.relations.list":"Connected relationships","viewer.passport.copyRelation":"Copy relation","viewer.passport.copyNode":"Copy node","viewer.passport.copyPinned":"Copy link to pinned relationship","viewer.passport.copySource":"Copy link to source node","viewer.passport.copy.focused.success":"Focused node link copied","viewer.passport.copy.pinned.success":"Pinned relationship link copied","viewer.passport.copy.focused.failed":"Could not copy focused node link","viewer.passport.copy.pinned.failed":"Could not copy pinned relationship link","viewer.passport.relationship.none":"No connected relationships","viewer.passport.relationship.count.one":"{count} relation","viewer.passport.relationship.count.other":"{count} relations","viewer.passport.relationship.show.one":"Show {count} connected relationship","viewer.passport.relationship.show.other":"Show {count} connected relationships","viewer.passport.relationship.summary":"{out} outgoing · {in} incoming{loops}","viewer.passport.relationship.loops":" · {count} loop","viewer.passport.relationship.explorer":"Direct relationship explorer","viewer.passport.relationship.help":"Use arrow keys to explore relationships. Press Enter or Space to pin details; Escape clears.","viewer.passport.relationship.loopsBack":"loops back","viewer.passport.relationship.connectsTo":"connects to","viewer.passport.relationship.connectsFrom":"connects from","viewer.passport.relationship.pinned":"Pinned relationship · {from} → {to} · {label}","viewer.passport.relationship.inspect":"Inspect relationship {index} of {total}: {from} to {to}, {label}. Press Enter for details.","viewer.passport.relationship.group.out":"Outgoing","viewer.passport.relationship.group.in":"Incoming","viewer.passport.relationship.group.loop":"Self loops","viewer.passport.relationship.row":"{group}: {relationship}, {neighbor}","viewer.passport.relationship.direction.out":"OUT →","viewer.passport.relationship.direction.in":"← IN","viewer.passport.relationship.direction.loop":"LOOP","viewer.passport.sourceCount.one":"{count} verified source reference","viewer.passport.sourceCount.other":"{count} verified source references","viewer.passport.repository.open":"Open verified repository revision {revision}","viewer.passport.source.open":"Open verified source {path} at revision {revision}","viewer.passport.source.openLink":"Open ↗","viewer.passport.reach.upstream.one":"Trace {count} upstream authored node","viewer.passport.reach.upstream.other":"Trace {count} upstream authored nodes","viewer.passport.reach.downstream.one":"Trace {count} downstream authored node","viewer.passport.reach.downstream.other":"Trace {count} downstream authored nodes","viewer.passport.reach.noUpstream":"No upstream authored nodes","viewer.passport.reach.noDownstream":"No downstream authored nodes","viewer.passport.reach.status":"{direction} · {nodes} nodes · {links} links · max {hops} hops","viewer.route.eyebrow":"Path","viewer.route.start":"Click where the path starts","viewer.route.start.find":"Find start","viewer.route.start.find.aria":"Find a route start","viewer.route.copy":"Copy link","viewer.route.copy.aria":"Copy link to traced route","viewer.route.clear":"Clear","viewer.route.clear.aria":"Clear route probe","viewer.route.traced":"Path","viewer.route.pickTwo":"Click two nodes on the diagram","viewer.route.pickOne":"Click a node on the diagram","viewer.route.controls":"Route journey controls","viewer.route.previous":"Previous route position","viewer.route.play":"Play route journey","viewer.route.pause":"Pause route journey","viewer.route.replay":"Replay route journey","viewer.route.next":"Next route position","viewer.route.journey":"Journey","viewer.route.pause.label":"Pause","viewer.route.replay.label":"Replay","viewer.route.overview":"Overview","viewer.route.overview.aria":"Show complete route overview","viewer.route.instructions":"Click a start, then an end. Paths follow the arrows.","viewer.route.destination":"Where does the path from {label} end?","viewer.route.destination.find":"Find target","viewer.route.destination.find.aria":"Find a reachable route destination","viewer.route.differentDestination":"Choose a different destination","viewer.route.distinct":"Pick two different nodes.","viewer.route.unreachable":"Cannot reach {label} from here","viewer.route.unreachable.detail":"{target} cannot be reached from {source} along the arrows. Pick a highlighted node.","viewer.route.start.instructions":"Next, pick the end. Only nodes you can reach will light up.","viewer.route.copy.success":"Traced route link copied","viewer.route.copy.failed":"Could not copy traced route link","viewer.route.position":"Route position {index} of {total}: {label}","viewer.route.step":"Step {index} of {total} · {phase} · {label}","viewer.route.motionRequired":"Automatic journey requires Live motion","viewer.route.trigger.clear":"Clear traced route","viewer.route.overview.status":"{nodes} · {hops} · shortest path","viewer.route.overview.node.one":"{count} node","viewer.route.overview.node.other":"{count} nodes","viewer.route.overview.hop.one":"{count} step","viewer.route.overview.hop.other":"{count} steps","viewer.route.phase.playing":"Playing","viewer.route.phase.complete":"Complete","viewer.route.phase.inspecting":"Inspecting","viewer.route.destination.count.one":"{count} reachable node is highlighted. Click it.","viewer.route.destination.count.other":"{count} reachable nodes are highlighted. Click one.","viewer.route.noOutgoing":"No arrows lead out of this node. Clear it and pick another start.","viewer.route.result.title":"{source} to {target}","viewer.route.finder.source.title":"Choose route start","viewer.route.finder.source.placeholder":"Search route sources","viewer.route.finder.source.empty":"No matching route sources","viewer.route.finder.source.results":"Nodes that can start a route","viewer.route.finder.source.noun":"route sources","viewer.route.finder.source.badge":"start","viewer.route.finder.target.title":"Destination from {label}","viewer.route.finder.target.placeholder":"Search reachable destinations","viewer.route.finder.target.empty":"No matching reachable destinations","viewer.route.finder.target.results":"Reachable route destinations","viewer.route.finder.target.noun":"reachable destinations","viewer.route.hop.one":"{count} hop","viewer.route.hop.other":"{count} hops","viewer.lens.eyebrow":"Semantic lens","viewer.lens.title":"Compare system roles","viewer.lens.close":"Close semantic lens","viewer.lens.instruction":"Choose up to two semantic kinds. One reveals its real traffic; two compare only direct authored relationships.","viewer.lens.kinds":"Semantic kinds","viewer.lens.choose":"Choose a kind to inspect its nodes and touching relationships.","viewer.lens.copy":"Copy link to semantic lens","viewer.lens.clear":"Clear semantic lens","viewer.lens.open":"Open semantic lens","viewer.lens.openActive":"Open active semantic lens","viewer.lens.legend":"Semantic legend","viewer.lens.legend.inspect.one":"Inspect {label}, {count} node","viewer.lens.legend.inspect.other":"Inspect {label}, {count} nodes","viewer.lens.kind.count.one":"{label}, {count} node","viewer.lens.kind.count.other":"{label}, {count} nodes","viewer.lens.compare.one":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direct relationship","viewer.lens.compare.other":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direct relationships","viewer.lens.single":"{nodes} · {relationships} · connected peers remain visible","viewer.lens.node.one":"{count} {label} node","viewer.lens.node.other":"{count} {label} nodes","viewer.lens.relationship.one":"{count} touching relationship","viewer.lens.relationship.other":"{count} touching relationships","viewer.radar.title":"Semantic radar","viewer.radar.building":"Building overview","viewer.radar.openFull":"Open full semantic radar","viewer.radar.open":"Open radar","viewer.radar.close":"Close semantic radar","viewer.radar.surface":"Diagram overview. Click a node to focus it, or use arrow keys to pan.","viewer.radar.click":"Click node","viewer.radar.drag":"Drag to pan","viewer.radar.space":"Semantic radar needs more MAP space.","viewer.radar.nodes":"Semantic diagram radar nodes","viewer.radar.focus":"Focus {label} from Semantic Radar","viewer.radar.status":"{count} nodes · {viewport}","viewer.radar.fullMap":"{count} nodes · full map","viewer.radar.compacted":"Radar compacted to avoid covering the Semantic Passport or MAP controls.","viewer.radar.cancelWaiting":"Cancel semantic radar waiting for more MAP space","viewer.radar.needsSpace":"Semantic radar needs more visible MAP space","viewer.radar.viewport.full":"full map","viewer.radar.viewport.width":"{percent}% width","viewer.radar.viewport.scale":"{percent}% viewport","viewer.nav.controls":"Diagram view controls","viewer.nav.route":"Trace a directed route","viewer.nav.route.title":"Trace route (R)","viewer.nav.route.short":"ROUTE","viewer.nav.radar":"Open semantic radar","viewer.nav.radar.title":"Semantic radar (M)","viewer.nav.radar.short":"MAP","viewer.nav.lens":"Open semantic lens","viewer.nav.lens.title":"Semantic lens (L)","viewer.nav.lens.short":"LENS","viewer.nav.find":"Find a node","viewer.nav.find.title":"Find a node (/)","viewer.outline.title":"Node index","viewer.rail.show":"Notes \u0026 index","viewer.rail.controls":"Side panel","viewer.rail.collapse":"Collapse side panel","viewer.rail.bottom":"Move panel below the diagram","viewer.rail.right":"Move panel beside the diagram","viewer.nav.guide":"Open diagram guide","viewer.nav.guide.title":"Diagram guide (?)","viewer.nav.zoomOut":"Zoom out","viewer.nav.zoomOut.title":"Zoom out (-)","viewer.nav.reset":"Reset diagram view","viewer.nav.reset.title":"Reset view (0)","viewer.nav.read":"READ","viewer.nav.zoomIn":"Zoom in","viewer.nav.zoomIn.title":"Zoom in (+)","viewer.nav.camera":"{hint}. Reset diagram view","viewer.nav.camera.title":"{semantic}{hint} · reset view (0)","viewer.nav.camera.semantic":"Semantic camera active · ","viewer.nav.level.map":"MAP","viewer.nav.level.read":"READ","viewer.nav.level.full":"FULL","viewer.nav.level.auto":"AUTO","viewer.nav.detail.map":"Zoom in to reveal relationship labels and node context","viewer.nav.detail.read":"Zoom in again to reveal tags and annotations","viewer.nav.detail.full":"Full diagram detail","viewer.intent.summary":"{label}. {out} outgoing, {in} incoming{loops}. {total} connections. Press Enter for details.","viewer.intent.loops":", {count} self loop","viewer.common.copied":"Copied","viewer.common.copyFailed":"Copy failed","viewer.common.copyLink":"Copy link","viewer.common.clear":"Clear","viewer.common.close":"Close"}}</script>
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 1265 688" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="blueprint" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14">
-        <title id="archify-diagram-title">Архитектура ЮKassa MCP Integrator</title>
+      <svg viewBox="0 0 1265 508" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="blueprint" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14">
+        <title id="archify-diagram-title">Архитектура YooKassa MCP Integrator</title>
         <desc id="archify-diagram-description">An architecture diagram generated by Archify.</desc>
         <!-- Definitions -->
         <defs>
@@ -5254,218 +5254,210 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <!-- Connection paths (before components for correct z-order) -->
         <g data-graph-role="automatic-crossover" style="--step:0">
-          <path data-graph-role="automatic-crossover-underlay" d="M 165 306 L 280 306" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="manager" data-edge-to="reference-ui" data-edge-label="ввод" data-edge-key="0" data-edge-id="manager-ui" data-composition-points="165,306;280,306" data-composition-crossover="halo" data-composition-independent="true" d="M 165 306 L 280 306" class="a-default" data-animate="edge" style="--step:0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 160 172 L 230 172" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="manager" data-edge-to="reference-ui" data-edge-label="request" data-edge-key="0" data-edge-id="manager-request" data-composition-points="160,172;230,172" data-composition-crossover="halo" data-composition-independent="true" d="M 160 172 L 230 172" class="a-emphasis" data-animate="edge" style="--step:0" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:1">
-          <path data-graph-role="automatic-crossover-underlay" d="M 149 360 L 149 538 Q 149 546 157 546 L 280 546" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="manager" data-edge-to="configurator" data-edge-label="настройка" data-edge-key="1" data-edge-id="manager-config" data-composition-points="149,360;149,546;280,546" data-composition-crossover="halo" data-composition-independent="true" d="M 149 360 L 149 538 Q 149 546 157 546 L 280 546" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 320 135 L 320 114 Q 320 106 328 106 L 632 106 Q 640 106 640 114 L 640 130" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="reference-ui" data-edge-to="headless-api" data-edge-label="/api/ask" data-edge-key="1" data-edge-id="ui-api-ask" data-composition-points="320,135;320,106;640,106;640,130" data-composition-crossover="halo" data-composition-independent="true" d="M 320 135 L 320 114 Q 320 106 328 106 L 632 106 Q 640 106 640 114 L 640 130" class="a-emphasis" data-animate="edge" style="--step:1" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:2">
-          <path data-graph-role="automatic-crossover-underlay" d="M 280 568 L 108 568 Q 100 568 100 560 L 100 360" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="configurator" data-edge-to="manager" data-edge-label="скачивание ZIP" data-edge-key="2" data-edge-id="config-zip" data-composition-points="280,568;100,568;100,360" data-composition-crossover="halo" data-composition-independent="true" d="M 280 568 L 108 568 Q 100 568 100 560 L 100 360" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 480 169 L 410 169" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="headless-api" data-edge-to="reference-ui" data-edge-label="202 / 200" data-edge-key="2" data-edge-id="api-ui-response" data-composition-points="480,169;410,169" data-composition-crossover="halo" data-composition-independent="true" d="M 480 169 L 410 169" class="a-emphasis" data-animate="edge" style="--step:2" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:3">
-          <path data-graph-role="automatic-crossover-underlay" d="M 370 270 L 370 254 Q 370 246 378 246 L 729.95 246 Q 737.95 246 737.95 254 L 737.95 270" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="reference-ui" data-edge-to="headless-api" data-edge-label="HTTP /api/ask" data-edge-key="3" data-edge-id="ask-request" data-composition-points="370,270;370,246;737.95,246;737.95,270" data-composition-crossover="halo" data-composition-independent="true" d="M 370 270 L 370 254 Q 370 246 378 246 L 729.95 246 Q 737.95 246 737.95 254 L 737.95 270" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 784 130 L 784 73.5 Q 784 65.5 792 65.5 L 860 65.5" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="headless-api" data-edge-to="llm-provider" data-edge-label="chat" data-edge-key="3" data-edge-id="api-llm-chat" data-composition-points="784,130;784,65.5;860,65.5" data-composition-crossover="halo" data-composition-independent="true" d="M 784 130 L 784 73.5 Q 784 65.5 792 65.5 L 860 65.5" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:4">
-          <path data-graph-role="automatic-crossover-underlay" d="M 460 290.95 L 655 290.95" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="reference-ui" data-edge-to="headless-api" data-edge-label="/api/approve" data-edge-key="4" data-edge-id="approval-request" data-composition-points="460,290.95;655,290.95" data-composition-crossover="halo" data-composition-independent="true" d="M 460 290.95 L 655 290.95" class="a-emphasis" data-animate="edge" style="--step:4" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 876 110 L 876 138 Q 876 146 868 146 L 800 146" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="llm-provider" data-edge-to="headless-api" data-edge-label="tool calls" data-edge-key="4" data-edge-id="llm-api-tools" data-composition-points="876,110;876,146;800,146" data-composition-crossover="halo" data-composition-independent="true" d="M 876 110 L 876 138 Q 876 146 868 146 L 800 146" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:5">
-          <path data-graph-role="automatic-crossover-underlay" d="M 655 306 L 460 306" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="headless-api" data-edge-to="reference-ui" data-edge-label="200 / 202 • ответ / proposal" data-edge-key="5" data-edge-id="api-response" data-composition-points="655,306;460,306" data-composition-crossover="halo" data-composition-independent="true" d="M 655 306 L 460 306" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 800 190 L 944.5 190 Q 952.5 190 952.5 198 L 952.5 265" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="headless-api" data-edge-to="yookassa-mcp" data-edge-label="tools" data-edge-key="5" data-edge-id="api-mcp-call" data-composition-points="800,190;952.5,190;952.5,265" data-composition-crossover="halo" data-composition-independent="true" d="M 800 190 L 944.5 190 Q 952.5 190 952.5 198 L 952.5 265" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:6">
-          <path data-graph-role="automatic-crossover-underlay" d="M 753 270 L 753 125" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="headless-api" data-edge-to="llm-provider" data-edge-label="prompt + MCP tools" data-edge-key="6" data-edge-id="api-llm" data-composition-points="753,270;753,125" data-composition-crossover="halo" data-composition-independent="true" d="M 753 270 L 753 125" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 860 281 L 792 281 Q 784 281 784 273 L 784 222" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="yookassa-mcp" data-edge-to="headless-api" data-edge-label="result" data-edge-key="6" data-edge-id="mcp-api-result" data-composition-points="860,281;784,281;784,222" data-composition-crossover="halo" data-composition-independent="true" d="M 860 281 L 792 281 Q 784 281 784 273 L 784 222" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
-          <path data-graph-role="automatic-crossover-underlay" d="M 767 125 L 767 270" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="llm-provider" data-edge-to="headless-api" data-edge-label="text + tool-call" data-edge-key="7" data-edge-id="llm-api" data-composition-points="767,125;767,270" data-composition-crossover="halo" data-composition-independent="true" d="M 767 125 L 767 270" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 800 176 L 1050 176" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="headless-api" data-edge-to="mcp-audit-log" data-edge-label="append JSONL" data-edge-key="7" data-edge-id="api-audit" data-composition-points="800,176;1050,176" data-composition-crossover="halo" data-composition-independent="true" d="M 800 176 L 1050 176" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
-          <path data-graph-role="automatic-crossover-underlay" d="M 865 306 L 1065 306" fill="none" stroke="var(--mask)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="headless-api" data-edge-to="yookassa-mcp" data-edge-label="StreamableHTTP" data-edge-key="8" data-edge-id="api-mcp" data-composition-points="865,306;1065,306" data-composition-crossover="halo" data-composition-independent="true" d="M 865 306 L 1065 306" class="a-emphasis" data-animate="edge" style="--step:8" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 410 186.5 L 449.5 186.5 Q 457.5 186.5 457.5 194.5 L 457.5 387.5 Q 457.5 395.5 465.5 395.5 L 505 395.5" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="reference-ui" data-edge-to="contracts" data-edge-label="imports types" data-edge-key="8" data-edge-id="ui-contracts" data-composition-points="410,186.5;457.5,186.5;457.5,395.5;505,395.5" data-composition-crossover="halo" data-composition-independent="true" d="M 410 186.5 L 449.5 186.5 Q 457.5 186.5 457.5 194.5 L 457.5 387.5 Q 457.5 395.5 465.5 395.5 L 505 395.5" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:9">
-          <path data-graph-role="automatic-crossover-underlay" d="M 1145 270 L 1145 254 Q 1145 246 1137 246 L 789 246 Q 781 246 781 254 L 781 270" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="yookassa-mcp" data-edge-to="headless-api" data-edge-label="result / isError" data-edge-key="9" data-edge-id="mcp-api" data-composition-points="1145,270;1145,246;781,246;781,270" data-composition-crossover="halo" data-composition-independent="true" d="M 1145 270 L 1145 254 Q 1145 246 1137 246 L 789 246 Q 781 246 781 254 L 781 270" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 640 222 L 640 365" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="headless-api" data-edge-to="contracts" data-edge-label="imports schema" data-edge-key="9" data-edge-id="api-contracts" data-composition-points="640,222;640,365" data-composition-crossover="halo" data-composition-independent="true" d="M 640 222 L 640 365" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:10">
-          <path data-graph-role="automatic-crossover-underlay" d="M 865 334 L 1033 334 Q 1041 334 1041 342 L 1041 567 Q 1041 575 1049 575 L 1065 575" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="headless-api" data-edge-to="audit-log" data-edge-label="JSONL success / error" data-edge-key="10" data-edge-id="api-audit" data-composition-points="865,334;1041,334;1041,575;1065,575" data-composition-crossover="halo" data-composition-independent="true" d="M 865 334 L 1033 334 Q 1041 334 1041 342 L 1041 567 Q 1041 575 1049 575 L 1065 575" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 410 409.5 L 505 409.5" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="configurator" data-edge-to="contracts" data-edge-label="shared contract" data-edge-key="10" data-edge-id="configurator-contracts" data-composition-points="410,409.5;505,409.5" data-composition-crossover="halo" data-composition-independent="true" d="M 410 409.5 L 505 409.5" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:11">
-          <path data-graph-role="automatic-crossover-underlay" d="M 760 530 L 760 370" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="contracts" data-edge-to="headless-api" data-edge-label="schema / types" data-edge-key="11" data-edge-id="contracts-api" data-composition-points="760,530;760,370" data-composition-crossover="halo" data-composition-independent="true" d="M 760 530 L 760 370" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 313 365 L 313 210" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="configurator" data-edge-to="reference-ui" data-edge-label="client config" data-edge-key="11" data-edge-id="configurator-preview" data-composition-points="313,365;313,210" data-composition-crossover="halo" data-composition-independent="true" d="M 313 365 L 313 210" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:12">
-          <path data-graph-role="automatic-crossover-underlay" d="M 655 568 L 613.5 568 Q 605.5 568 605.5 560 L 605.5 344 Q 605.5 336 597.5 336 L 460 336" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="contracts" data-edge-to="reference-ui" data-edge-label="types / palette" data-edge-key="12" data-edge-id="contracts-ui" data-composition-points="655,568;605.5,568;605.5,336;460,336" data-composition-crossover="halo" data-composition-independent="true" d="M 655 568 L 613.5 568 Q 605.5 568 605.5 560 L 605.5 344 Q 605.5 336 597.5 336 L 460 336" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        </g>
-        <g data-graph-role="automatic-crossover" style="--step:13">
-          <path data-graph-role="automatic-crossover-underlay" d="M 655 582 L 460 582" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="contracts" data-edge-to="configurator" data-edge-label="Zod schema" data-edge-key="13" data-edge-id="contracts-config" data-composition-points="655,582;460,582" data-composition-crossover="halo" data-composition-independent="true" d="M 655 582 L 460 582" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 327 210 L 327 365" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="reference-ui" data-edge-to="configurator" data-edge-label="preview reference" data-edge-key="12" data-edge-id="ui-preview-target" data-composition-points="327,210;327,365" data-composition-crossover="halo" data-composition-independent="true" d="M 327 210 L 327 365" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
 
         <!-- Components -->
-        <g id="node-manager" data-node-id="manager" data-node-label="Менеджер" tabindex="0" role="button" aria-label="Focus Менеджер, запрос • явное решение, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="запрос • явное решение" data-node-context="Architecture component">
-          <title>Менеджер · запрос • явное решение · Architecture component</title>
-          <rect x="35" y="280" width="130" height="80" rx="8" class="c-mask"/>
-          <rect x="35" y="280" width="130" height="80" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="person" class="semantic-sigil s-external" transform="translate(41 286) scale(0.6875)">
-            <circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2"/>
+        <g id="node-manager" data-node-id="manager" data-node-label="Менеджер" tabindex="0" role="button" aria-label="Focus Менеджер, запрос и решение, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="запрос и решение" data-node-context="Architecture component">
+          <title>Менеджер · запрос и решение · Architecture component</title>
+          <rect x="40" y="140" width="120" height="64" rx="8" class="c-mask"/>
+          <rect x="40" y="140" width="120" height="64" rx="8" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 146) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="100" y="318" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Менеджер</text>
-        <text data-detail="context" x="100" y="334" class="t-muted" font-size="9" text-anchor="middle">запрос • явное решение</text>
+          <text data-node-label="" data-detail-anchor="" x="100" y="170" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Менеджер</text>
+        <text data-detail="context" x="100" y="186" class="t-muted" font-size="9" text-anchor="middle">запрос и решение</text>
         </g>
 
-        <g id="node-reference-ui" data-node-id="reference-ui" data-node-label="Reference UI" tabindex="0" role="button" aria-label="Focus Reference UI, Vue 3 • заменяемый HTTP-клиент, Architecture component" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="Vue 3 • заменяемый HTTP-клиент" data-node-context="Architecture component">
-          <title>Reference UI · Vue 3 • заменяемый HTTP-клиент · Architecture component</title>
-          <rect x="280" y="270" width="180" height="90" rx="8" class="c-mask"/>
-          <rect x="280" y="270" width="180" height="90" rx="8" class="c-frontend" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(286 276) scale(0.6875)">
+        <g id="node-reference-ui" data-node-id="reference-ui" data-node-label="Reference UI" tabindex="0" role="button" aria-label="Focus Reference UI, чат · настройки · статусы, Architecture component" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="чат · настройки · статусы" data-node-context="Architecture component">
+          <title>Reference UI · чат · настройки · статусы · Architecture component</title>
+          <rect x="230" y="135" width="180" height="75" rx="8" class="c-mask"/>
+          <rect x="230" y="135" width="180" height="75" rx="8" class="c-frontend" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(236 141) scale(0.6875)">
             <rect x="2" y="3" width="12" height="10" rx="2"/>
             <path d="M2 6.5h12"/>
             <circle cx="4.1" cy="4.8" r=".7" class="sigil-fill"/>
             <circle cx="6.3" cy="4.8" r=".7" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="370" y="313" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Reference UI</text>
-        <text data-detail="context" x="370" y="329" class="t-muted" font-size="9" text-anchor="middle">Vue 3 • заменяемый HTTP-клиент</text>
+          <text data-node-label="" data-detail-anchor="" x="320" y="170.5" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Reference UI</text>
+        <text data-detail="context" x="320" y="186.5" class="t-muted" font-size="9" text-anchor="middle">чат · настройки · статусы</text>
         </g>
 
-        <g id="node-headless-api" data-node-id="headless-api" data-node-label="Headless API" tabindex="0" role="button" aria-label="Focus Headless API, Express • /api/ask • /api/approve, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Express • /api/ask • /api/approve" data-node-tag="agent + MCP client" data-node-context="Architecture component">
-          <title>Headless API · Express • /api/ask • /api/approve · Architecture component · agent + MCP client</title>
-          <rect x="655" y="270" width="210" height="100" rx="8" class="c-mask"/>
-          <rect x="655" y="270" width="210" height="100" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(661 276) scale(0.6875)">
+        <g id="node-headless-api" data-node-id="headless-api" data-node-label="Headless API" tabindex="0" role="button" aria-label="Focus Headless API, agent.ts · enrich.ts · validateToolCall.ts · overrides, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel="agent.ts · enrich.ts · validateToolCall.ts · overrides" data-node-context="Architecture component">
+          <title>Headless API · agent.ts · enrich.ts · validateToolCall.ts · overrides · Architecture component</title>
+          <rect x="480" y="130" width="320" height="92" rx="8" class="c-mask"/>
+          <rect x="480" y="130" width="320" height="92" rx="8" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(486 136) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="760" y="318" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Headless API</text>
-        <text data-detail="context" x="760" y="334" class="t-muted" font-size="9" text-anchor="middle">Express • /api/ask • /api/approve</text>
-        <text data-detail="fine" x="760" y="362" class="t-backend" font-size="7" text-anchor="middle">agent + MCP client</text>
+          <text data-node-label="" data-detail-anchor="" x="640" y="174" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Headless API</text>
+        <text data-detail="context" x="640" y="190" class="t-muted" font-size="9" text-anchor="middle">agent.ts · enrich.ts · validateToolCall.ts · overrides</text>
         </g>
 
-        <g id="node-llm-provider" data-node-id="llm-provider" data-node-label="LLM provider" tabindex="0" role="button" aria-label="Focus LLM provider, OpenAI • Anthropic • Google • Ollama, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="OpenAI • Anthropic • Google • Ollama" data-node-context="Architecture component">
-          <title>LLM provider · OpenAI • Anthropic • Google • Ollama · Architecture component</title>
-          <rect x="655" y="45" width="210" height="80" rx="8" class="c-mask"/>
-          <rect x="655" y="45" width="210" height="80" rx="8" class="c-external" data-animate="node" style="--step:7" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(661 51) scale(0.6875)">
+        <g id="node-llm-provider" data-node-id="llm-provider" data-node-label="LLM provider" tabindex="0" role="button" aria-label="Focus LLM provider, OpenAI · Anthropic · Google · Ollama, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="OpenAI · Anthropic · Google · Ollama" data-node-context="Architecture component">
+          <title>LLM provider · OpenAI · Anthropic · Google · Ollama · Architecture component</title>
+          <rect x="860" y="35" width="185" height="75" rx="8" class="c-mask"/>
+          <rect x="860" y="35" width="185" height="75" rx="8" class="c-external" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(866 41) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="760" y="83" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">LLM provider</text>
-        <text data-detail="context" x="760" y="99" class="t-muted" font-size="9" text-anchor="middle">OpenAI • Anthropic • Google • Ollama</text>
+          <text data-node-label="" data-detail-anchor="" x="952.5" y="70.5" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">LLM provider</text>
+        <text data-detail="context" x="952.5" y="86.5" class="t-muted" font-size="8.1" text-anchor="middle">OpenAI · Anthropic · Google · Ollama</text>
         </g>
 
-        <g id="node-yookassa-mcp" data-node-id="yookassa-mcp" data-node-label="Официальный YooKassa MCP" tabindex="0" role="button" aria-label="Focus Официальный YooKassa MCP, StreamableHTTP • mcp.yookassa.ru, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="StreamableHTTP • mcp.yookassa.ru" data-node-context="Architecture component">
-          <title>Официальный YooKassa MCP · StreamableHTTP • mcp.yookassa.ru · Architecture component</title>
-          <rect x="1065" y="270" width="160" height="90" rx="8" class="c-mask"/>
-          <rect x="1065" y="270" width="160" height="90" rx="8" class="c-external" data-animate="node" style="--step:9" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(1071 276) scale(0.6875)">
+        <g id="node-yookassa-mcp" data-node-id="yookassa-mcp" data-node-label="YooKassa MCP" tabindex="0" role="button" aria-label="Focus YooKassa MCP, официальный сервер · callTool, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="официальный сервер · callTool" data-node-context="Architecture component">
+          <title>YooKassa MCP · официальный сервер · callTool · Architecture component</title>
+          <rect x="860" y="265" width="185" height="75" rx="8" class="c-mask"/>
+          <rect x="860" y="265" width="185" height="75" rx="8" class="c-external" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(866 271) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1145" y="313" class="t-primary" font-size="10.5" font-weight="600" text-anchor="middle">Официальный YooKassa MCP</text>
-        <text data-detail="context" x="1145" y="329" class="t-muted" font-size="7.9" text-anchor="middle">StreamableHTTP • mcp.yookassa.ru</text>
+          <text data-node-label="" data-detail-anchor="" x="952.5" y="300.5" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">YooKassa MCP</text>
+        <text data-detail="context" x="952.5" y="316.5" class="t-muted" font-size="9" text-anchor="middle">официальный сервер · callTool</text>
         </g>
 
-        <g id="node-audit-log" data-node-id="audit-log" data-node-label="Audit log" tabindex="0" role="button" aria-label="Focus Audit log, logs/mcp-calls.jsonl • result / error, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="logs/mcp-calls.jsonl • result / error" data-node-context="Architecture component">
-          <title>Audit log · logs/mcp-calls.jsonl • result / error · Architecture component</title>
-          <rect x="1065" y="530" width="160" height="90" rx="8" class="c-mask"/>
-          <rect x="1065" y="530" width="160" height="90" rx="8" class="c-database" data-animate="node" style="--step:11" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1071 536) scale(0.6875)">
+        <g id="node-mcp-audit-log" data-node-id="mcp-audit-log" data-node-label="MCP audit log" tabindex="0" role="button" aria-label="Focus MCP audit log, logs/mcp-calls.jsonl · shop_id, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="logs/mcp-calls.jsonl · shop_id" data-node-context="Architecture component">
+          <title>MCP audit log · logs/mcp-calls.jsonl · shop_id · Architecture component</title>
+          <rect x="1050" y="130" width="175" height="75" rx="8" class="c-mask"/>
+          <rect x="1050" y="130" width="175" height="75" rx="8" class="c-database" data-animate="node" style="--step:8" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1056 136) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1145" y="573" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Audit log</text>
-        <text data-detail="context" x="1145" y="589" class="t-muted" font-size="6.8" text-anchor="middle">logs/mcp-calls.jsonl • result / error</text>
+          <text data-node-label="" data-detail-anchor="" x="1137.5" y="165.5" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MCP audit log</text>
+        <text data-detail="context" x="1137.5" y="181.5" class="t-muted" font-size="9" text-anchor="middle">logs/mcp-calls.jsonl · shop_id</text>
         </g>
 
-        <g id="node-configurator" data-node-id="configurator" data-node-label="Configurator" tabindex="0" role="button" aria-label="Focus Configurator, Vue 3 • ZIP: config.yaml + .env, Architecture component" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="Vue 3 • ZIP: config.yaml + .env" data-node-tag="без API / Reference UI" data-node-context="Architecture component">
-          <title>Configurator · Vue 3 • ZIP: config.yaml + .env · Architecture component · без API / Reference UI</title>
-          <rect x="280" y="530" width="180" height="90" rx="8" class="c-mask"/>
-          <rect x="280" y="530" width="180" height="90" rx="8" class="c-frontend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(286 536) scale(0.6875)">
+        <g id="node-configurator" data-node-id="configurator" data-node-label="Configurator" tabindex="0" role="button" aria-label="Focus Configurator, настройки клиента · ZIP, Architecture component" aria-pressed="false" data-node-kind="frontend" data-node-sublabel="настройки клиента · ZIP" data-node-context="Architecture component">
+          <title>Configurator · настройки клиента · ZIP · Architecture component</title>
+          <rect x="230" y="365" width="180" height="75" rx="8" class="c-mask"/>
+          <rect x="230" y="365" width="180" height="75" rx="8" class="c-frontend" data-animate="node" style="--step:10" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="frontend" class="semantic-sigil s-frontend" transform="translate(236 371) scale(0.6875)">
             <rect x="2" y="3" width="12" height="10" rx="2"/>
             <path d="M2 6.5h12"/>
             <circle cx="4.1" cy="4.8" r=".7" class="sigil-fill"/>
             <circle cx="6.3" cy="4.8" r=".7" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="370" y="573" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Configurator</text>
-        <text data-detail="context" x="370" y="589" class="t-muted" font-size="9" text-anchor="middle">Vue 3 • ZIP: config.yaml + .env</text>
-        <text data-detail="fine" x="370" y="612" class="t-frontend" font-size="7" text-anchor="middle">без API / Reference UI</text>
+          <text data-node-label="" data-detail-anchor="" x="320" y="400.5" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Configurator</text>
+        <text data-detail="context" x="320" y="416.5" class="t-muted" font-size="9" text-anchor="middle">настройки клиента · ZIP</text>
         </g>
 
-        <g id="node-contracts" data-node-id="contracts" data-node-label="@alekstar79/ykassa-contracts" tabindex="0" role="button" aria-label="Focus @alekstar79/ykassa-contracts, Zod schema • TS types • UI palette, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Zod schema • TS types • UI palette" data-node-context="Architecture component">
-          <title>@alekstar79/ykassa-contracts · Zod schema • TS types • UI palette · Architecture component</title>
-          <rect x="655" y="530" width="210" height="90" rx="8" class="c-mask"/>
-          <rect x="655" y="530" width="210" height="90" rx="8" class="c-backend" data-animate="node" style="--step:11" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(661 536) scale(0.6875)">
+        <g id="node-contracts" data-node-id="contracts" data-node-label="@alekstar79/ykassa-contracts" tabindex="0" role="button" aria-label="Focus @alekstar79/ykassa-contracts, Zod schema · types · defaults · palette, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Zod schema · types · defaults · palette" data-node-tag="shared workspace package" data-node-context="Architecture component">
+          <title>@alekstar79/ykassa-contracts · Zod schema · types · defaults · palette · Architecture component · shared workspace package</title>
+          <rect x="505" y="365" width="250" height="75" rx="8" class="c-mask"/>
+          <rect x="505" y="365" width="250" height="75" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(511 371) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="760" y="573" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">@alekstar79/ykassa-contracts</text>
-        <text data-detail="context" x="760" y="589" class="t-muted" font-size="9" text-anchor="middle">Zod schema • TS types • UI palette</text>
+          <text data-node-label="" data-detail-anchor="" x="630" y="400.5" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">@alekstar79/ykassa-contracts</text>
+        <text data-detail="context" x="630" y="416.5" class="t-muted" font-size="9" text-anchor="middle">Zod schema · types · defaults · palette</text>
+        <text data-detail="fine" x="630" y="432" class="t-backend" font-size="7" text-anchor="middle">shared workspace package</text>
         </g>
 
         <!-- Connection labels -->
-        <g data-detail="context" data-edge-from="manager" data-edge-to="reference-ui" data-edge-label="ввод" data-edge-key="0" data-edge-id="manager-ui">
-          <rect x="207.5" y="286" width="30" height="14" rx="3" class="c-mask"/>
-          <text x="222.5" y="296" class="t-edge-default" font-size="8" text-anchor="middle">ввод</text>
+        <g data-detail="context" data-edge-from="manager" data-edge-to="reference-ui" data-edge-label="request" data-edge-key="0" data-edge-id="manager-request">
+          <rect x="173.2" y="152" width="43.6" height="14" rx="3" class="c-mask"/>
+          <text x="195" y="162" class="t-edge-emphasis" font-size="8" text-anchor="middle">request</text>
         </g>
-        <g data-detail="context" data-edge-from="manager" data-edge-to="configurator" data-edge-label="настройка" data-edge-key="1" data-edge-id="manager-config">
-          <rect x="187.9" y="526" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="214.5" y="536" class="t-edge-default" font-size="8" text-anchor="middle">настройка</text>
+        <g data-detail="context" data-edge-from="reference-ui" data-edge-to="headless-api" data-edge-label="/api/ask" data-edge-key="1" data-edge-id="ui-api-ask">
+          <rect x="455.8" y="86" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="480" y="96" class="t-edge-emphasis" font-size="8" text-anchor="middle">/api/ask</text>
         </g>
-        <g data-detail="context" data-edge-from="configurator" data-edge-to="manager" data-edge-label="скачивание ZIP" data-edge-key="2" data-edge-id="config-zip">
-          <rect x="61.4" y="444" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="100" y="454" class="t-edge-default" font-size="8" text-anchor="middle">скачивание ZIP</text>
+        <g data-detail="context" data-edge-from="headless-api" data-edge-to="reference-ui" data-edge-label="202 / 200" data-edge-key="2" data-edge-id="api-ui-response">
+          <rect x="418.4" y="149" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="445" y="159" class="t-edge-emphasis" font-size="8" text-anchor="middle">202 / 200</text>
         </g>
-        <g data-detail="context" data-edge-from="reference-ui" data-edge-to="headless-api" data-edge-label="HTTP /api/ask" data-edge-key="3" data-edge-id="ask-request">
-          <rect x="517.775" y="226" width="72.4" height="14" rx="3" class="c-mask"/>
-          <text x="553.975" y="236" class="t-edge-emphasis" font-size="8" text-anchor="middle">HTTP /api/ask</text>
+        <g data-detail="context" data-edge-from="headless-api" data-edge-to="llm-provider" data-edge-label="chat" data-edge-key="3" data-edge-id="api-llm-chat">
+          <rect x="807" y="45.5" width="30" height="14" rx="3" class="c-mask"/>
+          <text x="822" y="55.5" class="t-edge-default" font-size="8" text-anchor="middle">chat</text>
         </g>
-        <g data-detail="context" data-edge-from="reference-ui" data-edge-to="headless-api" data-edge-label="/api/approve" data-edge-key="4" data-edge-id="approval-request">
-          <rect x="523.7" y="270.95" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="557.5" y="280.95" class="t-edge-emphasis" font-size="8" text-anchor="middle">/api/approve</text>
+        <g data-detail="context" data-edge-from="llm-provider" data-edge-to="headless-api" data-edge-label="tool calls" data-edge-key="4" data-edge-id="llm-api-tools">
+          <rect x="809" y="126" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="838" y="136" class="t-edge-default" font-size="8" text-anchor="middle">tool calls</text>
         </g>
-        <g data-detail="context" data-edge-from="headless-api" data-edge-to="reference-ui" data-edge-label="200 / 202 • ответ / proposal" data-edge-key="5" data-edge-id="api-response">
-          <rect x="485.3" y="316" width="144.4" height="14" rx="3" class="c-mask"/>
-          <text x="557.5" y="326" class="t-edge-default" font-size="8" text-anchor="middle">200 / 202 • ответ / proposal</text>
+        <g data-detail="context" data-edge-from="headless-api" data-edge-to="yookassa-mcp" data-edge-label="tools" data-edge-key="5" data-edge-id="api-mcp-call">
+          <rect x="935.5" y="207.5" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="952.5" y="217.5" class="t-edge-default" font-size="8" text-anchor="middle">tools</text>
         </g>
-        <g data-detail="context" data-edge-from="headless-api" data-edge-to="llm-provider" data-edge-label="prompt + MCP tools" data-edge-key="6" data-edge-id="api-llm">
-          <rect x="650.5999999999999" y="190.5" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
-          <text x="698.8" y="200.5" class="t-edge-default" font-size="8" text-anchor="middle">prompt + MCP tools</text>
+        <g data-detail="context" data-edge-from="yookassa-mcp" data-edge-to="headless-api" data-edge-label="result" data-edge-key="6" data-edge-id="mcp-api-result">
+          <rect x="764.6" y="231.5" width="38.8" height="14" rx="3" class="c-mask"/>
+          <text x="784" y="241.5" class="t-edge-default" font-size="8" text-anchor="middle">result</text>
         </g>
-        <g data-detail="context" data-edge-from="llm-provider" data-edge-to="headless-api" data-edge-label="text + tool-call" data-edge-key="7" data-edge-id="llm-api">
-          <rect x="773" y="190.5" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="816.4" y="200.5" class="t-edge-default" font-size="8" text-anchor="middle">text + tool-call</text>
+        <g data-detail="context" data-edge-from="headless-api" data-edge-to="mcp-audit-log" data-edge-label="append JSONL" data-edge-key="7" data-edge-id="api-audit">
+          <rect x="891.2" y="156" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="925" y="166" class="t-edge-default" font-size="8" text-anchor="middle">append JSONL</text>
         </g>
-        <g data-detail="context" data-edge-from="headless-api" data-edge-to="yookassa-mcp" data-edge-label="StreamableHTTP" data-edge-key="8" data-edge-id="api-mcp">
-          <rect x="926.4" y="286" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="965" y="296" class="t-edge-emphasis" font-size="8" text-anchor="middle">StreamableHTTP</text>
+        <g data-detail="context" data-edge-from="reference-ui" data-edge-to="contracts" data-edge-label="imports types" data-edge-key="8" data-edge-id="ui-contracts">
+          <rect x="421.3" y="271" width="72.4" height="14" rx="3" class="c-mask"/>
+          <text x="457.5" y="281" class="t-edge-default" font-size="8" text-anchor="middle">imports types</text>
         </g>
-        <g data-detail="context" data-edge-from="yookassa-mcp" data-edge-to="headless-api" data-edge-label="result / isError" data-edge-key="9" data-edge-id="mcp-api">
-          <rect x="919.6" y="226" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="963" y="236" class="t-edge-default" font-size="8" text-anchor="middle">result / isError</text>
+        <g data-detail="context" data-edge-from="headless-api" data-edge-to="contracts" data-edge-label="imports schema" data-edge-key="9" data-edge-id="api-contracts">
+          <rect x="556.8" y="286.5" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="595.4" y="296.5" class="t-edge-default" font-size="8" text-anchor="middle">imports schema</text>
         </g>
-        <g data-detail="context" data-edge-from="headless-api" data-edge-to="audit-log" data-edge-label="JSONL success / error" data-edge-key="10" data-edge-id="api-audit">
-          <rect x="985.6" y="434.5" width="110.8" height="14" rx="3" class="c-mask"/>
-          <text x="1041" y="444.5" class="t-edge-default" font-size="8" text-anchor="middle">JSONL success / error</text>
+        <g data-detail="context" data-edge-from="configurator" data-edge-to="contracts" data-edge-label="shared contract" data-edge-key="10" data-edge-id="configurator-contracts">
+          <rect x="416.5" y="419.5" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="457.5" y="429.5" class="t-edge-default" font-size="8" text-anchor="middle">shared contract</text>
         </g>
-        <g data-detail="context" data-edge-from="contracts" data-edge-to="headless-api" data-edge-label="schema / types" data-edge-key="11" data-edge-id="contracts-api">
-          <rect x="721.4" y="510" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="760" y="520" class="t-edge-default" font-size="8" text-anchor="middle">schema / types</text>
+        <g data-detail="context" data-edge-from="configurator" data-edge-to="reference-ui" data-edge-label="client config" data-edge-key="11" data-edge-id="configurator-preview">
+          <rect x="234.60000000000002" y="280.5" width="72.4" height="14" rx="3" class="c-mask"/>
+          <text x="270.8" y="290.5" class="t-edge-default" font-size="8" text-anchor="middle">client config</text>
         </g>
-        <g data-detail="context" data-edge-from="contracts" data-edge-to="reference-ui" data-edge-label="types / palette" data-edge-key="12" data-edge-id="contracts-ui">
-          <rect x="564.5" y="432" width="82" height="14" rx="3" class="c-mask"/>
-          <text x="605.5" y="442" class="t-edge-default" font-size="8" text-anchor="middle">types / palette</text>
-        </g>
-        <g data-detail="context" data-edge-from="contracts" data-edge-to="configurator" data-edge-label="Zod schema" data-edge-key="13" data-edge-id="contracts-config">
-          <rect x="528.5" y="562" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="557.5" y="572" class="t-edge-default" font-size="8" text-anchor="middle">Zod schema</text>
+        <g data-detail="context" data-edge-from="reference-ui" data-edge-to="configurator" data-edge-label="preview reference" data-edge-key="12" data-edge-id="ui-preview-target">
+          <rect x="333" y="241.75" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="378.8" y="251.75" class="t-edge-default" font-size="8" text-anchor="middle">preview reference</text>
         </g>
 
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
@@ -5473,22 +5465,22 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
         <!-- Legend -->
         <g data-legend="" data-legend-bridge="">
-          <text x="40" y="652" class="t-primary" font-size="12" font-weight="650">Legend</text>
-          <g data-legend-semantic-kind="frontend" data-legend-kind="frontend" data-legend-label="Frontend" data-legend-x="40" data-legend-baseline="672" data-legend-width="93">
-            <rect x="40" y="663" width="16" height="10" rx="2.5" class="c-frontend" stroke-width="1"/>
-            <text x="62" y="672" class="t-muted" font-size="10" font-weight="500">Frontend</text>
+          <text x="40" y="472" class="t-primary" font-size="12" font-weight="650">Legend</text>
+          <g data-legend-semantic-kind="frontend" data-legend-kind="frontend" data-legend-label="Frontend" data-legend-x="40" data-legend-baseline="492" data-legend-width="93">
+            <rect x="40" y="483" width="16" height="10" rx="2.5" class="c-frontend" stroke-width="1"/>
+            <text x="62" y="492" class="t-muted" font-size="10" font-weight="500">Frontend</text>
           </g>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="155" data-legend-baseline="672" data-legend-width="87">
-            <rect x="155" y="663" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
-            <text x="177" y="672" class="t-muted" font-size="10" font-weight="500">Backend</text>
+          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="155" data-legend-baseline="492" data-legend-width="87">
+            <rect x="155" y="483" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
+            <text x="177" y="492" class="t-muted" font-size="10" font-weight="500">Backend</text>
           </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="264" data-legend-baseline="672" data-legend-width="93">
-            <rect x="264" y="663" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
-            <text x="286" y="672" class="t-muted" font-size="10" font-weight="500">Database</text>
+          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="264" data-legend-baseline="492" data-legend-width="93">
+            <rect x="264" y="483" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
+            <text x="286" y="492" class="t-muted" font-size="10" font-weight="500">Database</text>
           </g>
-          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="379" data-legend-baseline="672" data-legend-width="93">
-            <rect x="379" y="663" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
-            <text x="401" y="672" class="t-muted" font-size="10" font-weight="500">External</text>
+          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="379" data-legend-baseline="492" data-legend-width="93">
+            <rect x="379" y="483" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
+            <text x="401" y="492" class="t-muted" font-size="10" font-weight="500">External</text>
           </g>
         </g>
       </svg>
@@ -5670,23 +5662,34 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div class="cards">
       <div class="card">
         <div class="card-header">
-          <div class="card-dot violet"></div>
-          <h3>Human-in-the-loop</h3>
+          <div class="card-dot emerald"></div>
+          <h3>Headless API: одно приложение</h3>
         </div>
         <ul>
-          <li>create_payment требует подтверждения при require_human_confirmation=true или amount &gt; approval_threshold.</li>
-          <li>До решения API возвращает proposed_actions; продолжение исполнения идёт через /api/approve.</li>
+          <li>createApp монтирует routes ask, approve и clientPublic; agent.ts координирует вызовы LLM и YooKassa MCP.</li>
+          <li>Внутренние шаги рабочей копии: enrich.ts дополняет аргументы, validateToolCall.ts проверяет их по схеме, overrides приходят из UI, risk gate решает вопрос подтверждения.</li>
+          <li>Client files и in-memory approval state остаются деталями API, а не отдельными приложениями.</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-dot slate"></div>
-          <h3>Аудит ошибок</h3>
+          <div class="card-dot cyan"></div>
+          <h3>Общий контракт</h3>
         </div>
         <ul>
-          <li>MCP isError и исключение вызова передаются как error.</li>
-          <li>JSONL содержит timestamp, shop_id, tool, args и result либо error.</li>
+          <li>@alekstar79/ykassa-contracts экспортирует Zod schema, типы, defaults и палитру; три приложения подключают один workspace package.</li>
+          <li>Configurator формирует клиентский ZIP, а Reference UI показывает настроенный интерфейс без импорта кода Configurator.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot amber"></div>
+          <h3>Вызовы и аудит</h3>
+        </div>
+        <ul>
+          <li>Headless API выбирает LLM provider через factory, выполняет MCP callTool и записывает результат в logs/mcp-calls.jsonl с shop_id.</li>
         </ul>
       </div>
     </div>
